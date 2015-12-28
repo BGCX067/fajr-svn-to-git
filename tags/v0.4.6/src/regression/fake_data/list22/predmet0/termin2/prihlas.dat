@@ -1,0 +1,6 @@
+return array(
+  'mozePrihlasit' => false,
+  'mozeOdhlasit' => false,
+  'nemozePrihlasitDovod' =>
+    'Nemôžem prihlásiť na termín, lebo z predmetu nie je zaevidované predbežné hodnotenie'
+);

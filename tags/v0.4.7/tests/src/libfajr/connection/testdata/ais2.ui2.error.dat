@@ -1,0 +1,4 @@
+<html><script>
+var webui = window.parent.webui;
+function main() { webui.onAppClosedOnServer('Aplikácia je na serveri skončená.'); }
+</script><body onload='main();'></body></html>

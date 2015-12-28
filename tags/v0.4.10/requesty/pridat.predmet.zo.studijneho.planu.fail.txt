@@ -1,0 +1,168 @@
+Mam otvorenu aplikaciu "VSES213: zapis predmetov, kredity".
+
+Kliknem na pridat predmet zo studijneho planu.
+
+POST na url=
+https://ais2.uniba.sk/ais/servlets/WebUIServlet?appId=12436494&antiCache=-58675879471000&viewer=web
+
+s parametrom xml_spec=
+<request>
+      <serial>2</serial>
+      <events>
+            <ev>
+                  <dlgName>VSES213_ZapisPredmetovKredityDlg0</dlgName>
+                  <compName>pridatPredmetAction</compName>
+                  <event class='avc.ui.event.AVCActionEvent'></event>
+            </ev>
+      </events>
+      <changedProps>
+            <changedProperties>
+                  <objName>app</objName>
+                  <propertyValues>
+                        <nameValue>
+                              <name>activeDlgName</name>
+                              <value>VSES213_ZapisPredmetovKredityDlg0</value>
+                        </nameValue>
+                  </propertyValues>
+            </changedProperties>
+            <changedProperties>
+                  <objName>VSES213_ZapisPredmetovKredityDlg0</objName>
+                  <propertyValues>
+                        <nameValue>
+                              <name>x</name>
+                              <value>-4</value>
+                        </nameValue>
+                        <nameValue>
+                              <name>y</name>
+                              <value>-4</value>
+                        </nameValue>
+                        <nameValue>
+                              <name>focusedComponent</name>
+                              <value>pridatPredmetButton</value>
+                        </nameValue>
+                  </propertyValues>
+                  <embObjChProps> </embObjChProps>
+            </changedProperties>
+      </changedProps>
+</request>
+
+odpoved=
+<html id='resultFrameHTML'><head><meta http-equiv='Content-Type' content='text/html; charset=utf-8'></meta>
+<script type='application/javascript'>
+window.parent.Logger_log('Received response', window.parent.Logger_DEBUG);
+
+function webui() { return window.parent.webui; }
+function f() { return window.parent.factory; }
+function dm() { return window.parent.dialogManager; }
+function isResponseIdle(rs) { return webui().lastDoneRequest == rs; }
+
+function main0() {
+if (isResponseIdle(2)) { return; }
+window.parent.Logger_log('start updating components', window.parent.Logger_DEBUG);
+webui().prepareUpdatingDialogs();
+webui().messageBox("Momentálne nie je povolený zápis predmetov.","Upozornenie","bigWarning","");
+}
+
+function main() {
+if (isResponseIdle(2)) { return; }
+webui().noteLastDoneRequest(2);
+window.parent.Logger_log('Response main started', window.parent.Logger_DEBUG);
+dm().setActiveDialogName('VSES213_ZapisPredmetovKredityDlg0');
+webui().enableApplication();
+}
+
+main0();
+
+</script>
+</head>
+<body onload='main()'>
+</body>
+</html>
+
+
+Zobrazi sa message box s textom "Momentálne nie je povolený zápis predmetov."
+a jedinym buttonom "OK".
+Po jeho stlaceni
+
+POST na url=
+https://ais2.uniba.sk/ais/servlets/WebUIServlet?appId=12436494&antiCache=-58675879287000&viewer=web
+
+s parametrom xml_spec=
+<request>
+      <serial>3</serial>
+      <changedProps>
+            <changedProperties>
+                  <objName>app</objName>
+                  <propertyValues>
+                        <nameValue>
+                              <name>activeDlgName</name>
+                              <value>MessageBox</value>
+                        </nameValue>
+                        <nameValue>
+                              <name>width</name>
+                              <value>1304</value>
+                        </nameValue>
+                        <nameValue>
+                              <name>height</name>
+                              <value>655</value>
+                        </nameValue>
+                  </propertyValues>
+            </changedProperties>
+            <changedProperties>
+                  <objName>VSES213_ZapisPredmetovKredityDlg0</objName>
+                  <propertyValues>
+                        <nameValue>
+                              <name>width</name>
+                              <value>1296</value>
+                        </nameValue>
+                        <nameValue>
+                              <name>height</name>
+                              <value>647</value>
+                        </nameValue>
+                        <nameValue>
+                              <name>x</name>
+                              <value>-4</value>
+                        </nameValue>
+                        <nameValue>
+                              <name>y</name>
+                              <value>-4</value>
+                        </nameValue>
+                  </propertyValues>
+                  <embObjChProps> </embObjChProps>
+            </changedProperties>
+      </changedProps>
+</request>
+
+odpoved=
+<html id='resultFrameHTML'><head><meta http-equiv='Content-Type' content='text/html; charset=utf-8'></meta>
+<script type='application/javascript'>
+window.parent.Logger_log('Received response', window.parent.Logger_DEBUG);
+
+function webui() { return window.parent.webui; }
+function f() { return window.parent.factory; }
+function dm() { return window.parent.dialogManager; }
+function isResponseIdle(rs) { return webui().lastDoneRequest == rs; }
+
+function main0() {
+if (isResponseIdle(3)) { return; }
+window.parent.Logger_log('start updating components', window.parent.Logger_DEBUG);
+webui().prepareUpdatingDialogs();
+}
+
+function main() {
+if (isResponseIdle(3)) { return; }
+webui().noteLastDoneRequest(3);
+window.parent.Logger_log('Response main started', window.parent.Logger_DEBUG);
+dm().setActiveDialogName('MessageBox');
+webui().enableApplication();
+}
+
+main0();
+
+</script>
+</head>
+<body onload='main()'>
+</body>
+</html>
+
+Po tom som spat v aplikacii tam kde som bol na zaciatku.

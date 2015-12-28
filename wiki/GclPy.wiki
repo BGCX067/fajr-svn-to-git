@@ -1,0 +1,27 @@
+# "Mommy, I want to use perforce." "Dont be ridiculous, use svn and gcl.py"
+
+= Description =
+gcl/gcl.py is a script wrapper, which provides some nice functionality
+to svn. At first, it let's you manage changelists, using "gcl change"
+and "gcl changes" (Yes, svn supports changelists, but they are not
+working really well). Secondly, this tool uses upload.py to upload
+your changelist onto review server, where other developers may check
+your code. And finally, it allows you to commit the code.
+
+= Commands =
+
+== gcl change ==
+== gcl change -c cl ==
+== gcl {status,st} `[-c cl]` ==
+== gcl upload -c cl ==
+== gcl commit -c cl ==
+== gcl diff `[-c cl]` ==
+== gcl delete -c cl ==
+
+= Upcoming features =
+== gcl add files ==
+== gcl revert -c cl ==
+== gcl revert files ==
+== gcl mv files ==
+== gcl cp files ==
+== gcl reopen -c cl files ==

@@ -1,0 +1,92 @@
+Index: /home/ppershing/tmp/js-test-driver-read-only2/tags/1.2.2/JsTestDriver/src/com/google/jstestdriver/CommandTask.java
+===================================================================
+--- /home/ppershing/tmp/js-test-driver-read-only2/tags/1.2.2/JsTestDriver/src/com/google/jstestdriver/CommandTask.java	(revision 817)
++++ /home/ppershing/tmp/js-test-driver-read-only2/tags/1.2.2/JsTestDriver/src/com/google/jstestdriver/CommandTask.java	(working copy)
+@@ -277,11 +277,14 @@
+   }
+ 
+   private boolean sameFiles(Collection<FileInfo> filesToUpload, Collection<FileInfo> fileSet) {
++    return true; // hack by ppershing, force browser to realod files (load them in correct order)
++    /*
+     for (FileInfo info : fileSet) {
+       if (!info.isServeOnly() && !filesToUpload.contains(info)) {
+         return false;
+       }
+     }
+     return true;
++    */
+   }
+ }
+Index: /home/ppershing/tmp/js-test-driver-read-only2/tags/1.2.2/JsTestDriver/src/com/google/jstestdriver/javascript/Heartbeat.js
+===================================================================
+--- /home/ppershing/tmp/js-test-driver-read-only2/tags/1.2.2/JsTestDriver/src/com/google/jstestdriver/javascript/Heartbeat.js	(revision 817)
++++ /home/ppershing/tmp/js-test-driver-read-only2/tags/1.2.2/JsTestDriver/src/com/google/jstestdriver/javascript/Heartbeat.js	(working copy)
+@@ -43,7 +43,7 @@
+ 
+ jstestdriver.Heartbeat.CAPTURE_PATH = '/capture';
+ 
+-jstestdriver.Heartbeat.RETRY_LIMIT = 50;
++jstestdriver.Heartbeat.RETRY_LIMIT = 1000000;
+ 
+ 
+ jstestdriver.Heartbeat.prototype.start = function() {
+Index: /home/ppershing/tmp/js-test-driver-read-only2/tags/1.2.2/JsTestDriver/src/com/google/jstestdriver/FileSetServlet.java
+===================================================================
+--- /home/ppershing/tmp/js-test-driver-read-only2/tags/1.2.2/JsTestDriver/src/com/google/jstestdriver/FileSetServlet.java	(revision 817)
++++ /home/ppershing/tmp/js-test-driver-read-only2/tags/1.2.2/JsTestDriver/src/com/google/jstestdriver/FileSetServlet.java	(working copy)
+@@ -28,6 +28,7 @@
+ import java.util.Observable;
+ import java.util.Observer;
+ import java.util.Set;
++import java.util.HashSet;
+ import java.util.UUID;
+ import java.util.concurrent.ConcurrentHashMap;
+ 
+@@ -35,6 +36,14 @@
+ import javax.servlet.http.HttpServletRequest;
+ import javax.servlet.http.HttpServletResponse;
+ 
++import java.io.UnsupportedEncodingException;
++import java.nio.charset.CharsetEncoder;
++import java.nio.charset.CharsetDecoder;
++import java.nio.charset.Charset;
++import java.nio.CharBuffer;
++import java.nio.ByteBuffer;
++import java.io.IOException;
++
+ /**
+  * @author jeremiele@google.com (Jeremie Lenfant-Engelmann)
+  */
+@@ -136,7 +145,9 @@
+     Collection<FileInfo> clientFileSet =
+       gson.fromJson(fileSet, new TypeToken<Collection<FileInfo>>() {}.getType());
+     SlaveBrowser browser = capturedBrowsers.getBrowser(browserId);
+-    Set<FileInfo> browserFileSet = browser.getFileSet();
++    // Hack by ppershing: always reload all files, as there might be dependencies
++    // between sources and tests which must be loaded in order!
++    Set<FileInfo> browserFileSet = new HashSet<FileInfo>(); //browser.getFileSet();
+     Set<FileInfo> filesToRequest = strategy.createExpiredFileSet(clientFileSet, browserFileSet);
+     if (!filesToRequest.isEmpty()) {
+       if (browser.getBrowserInfo().getName().contains("Safari")
+@@ -182,7 +193,20 @@
+ 
+     for (FileInfo f : filesData) {
+       String path = f.getFileName();
+-      filesCache.addFile(path, f);
++      try {
++        // Big hack, don't ask my why, but this works on fks.sk
++        // Problem is that gson.fromJson mess up encoding.
++        CharsetEncoder encoder = Charset.forName("UTF-8").newEncoder();
++        CharsetDecoder decoder = Charset.forName("ISO-8859-1").newDecoder();
++
++        ByteBuffer bbuf = encoder.encode(CharBuffer.wrap(f.getData()));
++        CharBuffer cbuf = decoder.decode(bbuf);
++
++        String utf = cbuf.toString();
++        f.setData(utf);
++        filesCache.addFile(path, f);
++      } catch (IOException e) {
++      }
+     }
+   }
+ }

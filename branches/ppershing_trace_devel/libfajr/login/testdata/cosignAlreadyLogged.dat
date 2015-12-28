@@ -1,0 +1,821 @@
+<?xml version="1.0" encoding="utf-8"?><!DOCTYPE html
+     PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+     "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="sk" lang="sk">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link rel="stylesheet" type="text/css" href="css/web_uk.css" media="screen" />
+<link rel="stylesheet" type="text/css" href="css/print.css" media="print" />
+<meta name="keywords" content="Univerzita Komenského,Bratislava,Portál," />
+<meta name="robots" content="index, follow" />
+<title>Portál centrálnych služieb IT na UK</title>
+<meta name="generator" content="TYPO3 4.2 CMS" />
+<meta name="description" content="Univerzita Komenského, Bratislava" />
+<script type="text/javascript">
+	/*<![CDATA[*/
+<!--
+		// JS function for mouse-over
+	function over(name,imgObj)	{	//
+		if (version == "n3" && document[name]) {document[name].src = eval(name+"_h.src");}
+		else if (document.getElementById && document.getElementById(name)) {document.getElementById(name).src = eval(name+"_h.src");}
+		else if (imgObj)	{imgObj.src = eval(name+"_h.src");}
+	}
+		// JS function for mouse-out
+	function out(name,imgObj)	{	//
+		if (version == "n3" && document[name]) {document[name].src = eval(name+"_n.src");}
+		else if (document.getElementById && document.getElementById(name)) {document.getElementById(name).src = eval(name+"_n.src");}
+		else if (imgObj)	{imgObj.src = eval(name+"_n.src");}
+	}
+
+// -->
+	/*]]>*/
+</script>
+</head>
+<body>
+<div id="body">
+  <div id="container">
+    <div id="container1">
+      <div id="container2">
+        <div id="header">
+          <div id="header2">
+            <div id="header3"></div>
+          </div>
+          <img id="top_left_bg" src="/css/header_bg.jpg" alt="" /> <img id="top_left" src="/css/top_left.jpg" alt="" /> <img id="top_right" src="/css/top_right.jpg" alt="" /> <a id="logoUK_link" href="http://www.uniba.sk/" accesskey="1" title="Univerzita Komenského"><img id="logoUK" src="/css/logo_uk.gif" alt="Univerzita Komenského" /></a> <a id="titleUK_link" href="?id=1" accesskey="1" title="Univerzita Komenského"><img id="titleUK" src="/css/header_title.jpg" alt="Univerzita Komenského" /></a>
+          <div id="header_in">
+            <div id="menu_top">
+              <ul>
+                <li></li>
+              </ul>
+            </div>
+            <br style="clear: right;" />
+          </div>
+        </div>
+        <div id="menu_path">
+          <div id="menu_path_in"> <a href="https://moja.uniba.sk" target="_top" onfocus="blurLink(this);"  >Portál UK </a></div>
+        </div>
+        <div id="content">
+          <div id="content_in">
+            <div id="right">
+              <ul>
+                <li>
+                  <h2>Portál moja.uniba.sk</h2>
+                </li>
+                <li><a href="https://www.uniba.sk/index.php?id=2950">Vaše pripomienky</a></li>
+				<li><a href="/navod/">Ako používať?</a></li>                
+                
+              </ul>
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        <ul>
+  <li>
+    <h2><strong>Pomocné nás<?xml version="1.0" encoding="utf-8"?><!DOCTYPE html
+     PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+     "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="sk" lang="sk">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link rel="stylesheet" type="text/css" href="css/web_uk.css" media="screen" />
+<link rel="stylesheet" type="text/css" href="css/print.css" media="print" />
+<meta name="keywords" content="Univerzita Komenského,Bratislava,Portál," />
+<meta name="robots" content="index, follow" />
+<title>Portál centrálnych služieb IT na UK</title>
+<meta name="generator" content="TYPO3 4.2 CMS" />
+<meta name="description" content="Univerzita Komenského, Bratislava" />
+<script type="text/javascript">
+	/*<![CDATA[*/
+<!--
+		// JS function for mouse-over
+	function over(name,imgObj)	{	//
+		if (version == "n3" && document[name]) {document[name].src = eval(name+"_h.src");}
+		else if (document.getElementById && document.getElementById(name)) {document.getElementById(name).src = eval(name+"_h.src");}
+		else if (imgObj)	{imgObj.src = eval(name+"_h.src");}
+	}
+		// JS function for mouse-out
+	function out(name,imgObj)	{	//
+		if (version == "n3" && document[name]) {document[name].src = eval(name+"_n.src");}
+		else if (document.getElementById && document.getElementById(name)) {document.getElementById(name).src = eval(name+"_n.src");}
+		else if (imgObj)	{imgObj.src = eval(name+"_n.src");}
+	}
+
+// -->
+	/*]]>*/
+</script>
+</head>
+<body>
+<div id="body">
+  <div id="container">
+    <div id="container1">
+      <div id="container2">
+        <div id="header">
+          <div id="header2">
+            <div id="header3"></div>
+          </div>
+          <img id="top_left_bg" src="/css/header_bg.jpg" alt="" /> <img id="top_left" src="/css/top_left.jpg" alt="" /> <img id="top_right" src="/css/top_right.jpg" alt="" /> <a id="logoUK_link" href="http://www.uniba.sk/" accesskey="1" title="Univerzita Komenského"><img id="logoUK" src="/css/logo_uk.gif" alt="Univerzita Komenského" /></a> <a id="titleUK_link" href="?id=1" accesskey="1" title="Univerzita Komenského"><img id="titleUK" src="/css/header_title.jpg" alt="Univerzita Komenského" /></a>
+          <div id="header_in">
+            <div id="menu_top">
+              <ul>
+                <li></li>
+              </ul>
+            </div>
+            <br style="clear: right;" />
+          </div>
+        </div>
+        <div id="menu_path">
+          <div id="menu_path_in"> <a href="https://moja.uniba.sk" target="_top" onfocus="blurLink(this);"  >Portál UK </a></div>
+        </div>
+        <div id="content">
+          <div id="content_in">
+            <div id="right">
+              <ul>
+                <li>
+                  <h2>Portál moja.uniba.sk</h2>
+                </li>
+                <li><a href="https://www.uniba.sk/index.php?id=2950">Vaše pripomienky</a></li>
+				<li><a href="/navod/">Ako používať?</a></li>                
+                
+              </ul>
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        <ul>
+  <li>
+    <h2><strong>Pomocné nás<?xml version="1.0" encoding="utf-8"?><!DOCTYPE html
+     PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+     "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="sk" lang="sk">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link rel="stylesheet" type="text/css" href="css/web_uk.css" media="screen" />
+<link rel="stylesheet" type="text/css" href="css/print.css" media="print" />
+<meta name="keywords" content="Univerzita Komenského,Bratislava,Portál," />
+<meta name="robots" content="index, follow" />
+<title>Portál centrálnych služieb IT na UK</title>
+<meta name="generator" content="TYPO3 4.2 CMS" />
+<meta name="description" content="Univerzita Komenského, Bratislava" />
+<script type="text/javascript">
+	/*<![CDATA[*/
+<!--
+		// JS function for mouse-over
+	function over(name,imgObj)	{	//
+		if (version == "n3" && document[name]) {document[name].src = eval(name+"_h.src");}
+		else if (document.getElementById && document.getElementById(name)) {document.getElementById(name).src = eval(name+"_h.src");}
+		else if (imgObj)	{imgObj.src = eval(name+"_h.src");}
+	}
+		// JS function for mouse-out
+	function out(name,imgObj)	{	//
+		if (version == "n3" && document[name]) {document[name].src = eval(name+"_n.src");}
+		else if (document.getElementById && document.getElementById(name)) {document.getElementById(name).src = eval(name+"_n.src");}
+		else if (imgObj)	{imgObj.src = eval(name+"_n.src");}
+	}
+
+// -->
+	/*]]>*/
+</script>
+</head>
+<body>
+<div id="body">
+  <div id="container">
+    <div id="container1">
+      <div id="container2">
+        <div id="header">
+          <div id="header2">
+            <div id="header3"></div>
+          </div>
+          <img id="top_left_bg" src="/css/header_bg.jpg" alt="" /> <img id="top_left" src="/css/top_left.jpg" alt="" /> <img id="top_right" src="/css/top_right.jpg" alt="" /> <a id="logoUK_link" href="http://www.uniba.sk/" accesskey="1" title="Univerzita Komenského"><img id="logoUK" src="/css/logo_uk.gif" alt="Univerzita Komenského" /></a> <a id="titleUK_link" href="?id=1" accesskey="1" title="Univerzita Komenského"><img id="titleUK" src="/css/header_title.jpg" alt="Univerzita Komenského" /></a>
+          <div id="header_in">
+            <div id="menu_top">
+              <ul>
+                <li></li>
+              </ul>
+            </div>
+            <br style="clear: right;" />
+          </div>
+        </div>
+        <div id="menu_path">
+          <div id="menu_path_in"> <a href="https://moja.uniba.sk" target="_top" onfocus="blurLink(this);"  >Portál UK </a></div>
+        </div>
+        <div id="content">
+          <div id="content_in">
+            <div id="right">
+              <ul>
+                <li>
+                  <h2>Portál moja.uniba.sk</h2>
+                </li>
+                <li><a href="https://www.uniba.sk/index.php?id=2950">Vaše pripomienky</a></li>
+				<li><a href="/navod/">Ako používať?</a></li>                
+                
+              </ul>
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        <ul>
+  <li>
+    <h2><strong>Pomocné nás<?xml version="1.0" encoding="utf-8"?><!DOCTYPE html
+     PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+     "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="sk" lang="sk">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link rel="stylesheet" type="text/css" href="css/web_uk.css" media="screen" />
+<link rel="stylesheet" type="text/css" href="css/print.css" media="print" />
+<meta name="keywords" content="Univerzita Komenského,Bratislava,Portál," />
+<meta name="robots" content="index, follow" />
+<title>Portál centrálnych služieb IT na UK</title>
+<meta name="generator" content="TYPO3 4.2 CMS" />
+<meta name="description" content="Univerzita Komenského, Bratislava" />
+<script type="text/javascript">
+	/*<![CDATA[*/
+<!--
+		// JS function for mouse-over
+	function over(name,imgObj)	{	//
+		if (version == "n3" && document[name]) {document[name].src = eval(name+"_h.src");}
+		else if (document.getElementById && document.getElementById(name)) {document.getElementById(name).src = eval(name+"_h.src");}
+		else if (imgObj)	{imgObj.src = eval(name+"_h.src");}
+	}
+		// JS function for mouse-out
+	function out(name,imgObj)	{	//
+		if (version == "n3" && document[name]) {document[name].src = eval(name+"_n.src");}
+		else if (document.getElementById && document.getElementById(name)) {document.getElementById(name).src = eval(name+"_n.src");}
+		else if (imgObj)	{imgObj.src = eval(name+"_n.src");}
+	}
+
+// -->
+	/*]]>*/
+</script>
+</head>
+<body>
+<div id="body">
+  <div id="container">
+    <div id="container1">
+      <div id="container2">
+        <div id="header">
+          <div id="header2">
+            <div id="header3"></div>
+          </div>
+          <img id="top_left_bg" src="/css/header_bg.jpg" alt="" /> <img id="top_left" src="/css/top_left.jpg" alt="" /> <img id="top_right" src="/css/top_right.jpg" alt="" /> <a id="logoUK_link" href="http://www.uniba.sk/" accesskey="1" title="Univerzita Komenského"><img id="logoUK" src="/css/logo_uk.gif" alt="Univerzita Komenského" /></a> <a id="titleUK_link" href="?id=1" accesskey="1" title="Univerzita Komenského"><img id="titleUK" src="/css/header_title.jpg" alt="Univerzita Komenského" /></a>
+          <div id="header_in">
+            <div id="menu_top">
+              <ul>
+                <li></li>
+              </ul>
+            </div>
+            <br style="clear: right;" />
+          </div>
+        </div>
+        <div id="menu_path">
+          <div id="menu_path_in"> <a href="https://moja.uniba.sk" target="_top" onfocus="blurLink(this);"  >Portál UK </a></div>
+        </div>
+        <div id="content">
+          <div id="content_in">
+            <div id="right">
+              <ul>
+                <li>
+                  <h2>Portál moja.uniba.sk</h2>
+                </li>
+                <li><a href="https://www.uniba.sk/index.php?id=2950">Vaše pripomienky</a></li>
+				<li><a href="/navod/">Ako používať?</a></li>                
+                
+              </ul>
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        <ul>
+  <li>
+    <h2><strong>Pomocné nástroje</strong></h2>
+                </li>
+  <li><a href="https://www.uniba.sk/index.php?id=2716"  >Zmena/zistenie hesla</a></li>
+  <li><a href="https://int-app1.rec.uniba.sk/CDO2Web/public/findPK"  >Zistenie používateľského mena/prístupového kódu</a></li>
+  <li><a href="https://int-app1.rec.uniba.sk/CDO2Web/public/uoc"  >Zistenie UOČ (univerzitného osobného čísla)</a></li>
+  <li><a href="https://www.uniba.sk/cepit"  >CePIT UK (Hotline)</a></li>
+  </li>
+</ul>
+</div>
+            <div id="content_left">
+              <!--TYPO3SEARCH_begin-->
+              <!--  CONTENT ELEMENT, uid:4354/text [begin] -->
+              <a id="c4354"></a>
+              <!--  Header: [begin] -->
+              <div class="csc-header csc-header-n1">
+                <h1>Moja Univerzita Komenského</h1>
+                <p>Portál Univerzity Komenského moja.uniba.sk slúži ako brána k celouniverzitným informačným systémom a službám informačných technológií Univerzity Komenskeho v Bratislave, ktoré zabezpečuje <a
+                href="http://cit.uniba.sk">Centrum Informačných Technológií UK</a>.</p>
+                <table id="announcement">
+                  <tr>
+                    <td><div align="center">
+                        <h2>Plánované výpadky služieb</h2><p>AIS - pripravovaná odstávka je naplánovaná na stredu 18.8.2010 od 13:00 do 17:00 v dôsledku údržby systému.
+</p><p>
+</p><p>Pracovníci CIT vynaložia maximálne úsilie, aby ste čo najskôr mohli pre  Vašu prácu znova využívať všetky IT služby, ktoré sú na UK štandardom. </p><p></p>
+                    </div></td>
+                  </tr>
+                </table><!--                <table id="announcement">
+                  <tr>
+                    <td><div align="center">
+                        <h2>Zoznam služieb v novom šate</h2>
+                        <p>Vážení návštevníci,<br />
+                        z dôvodu neustále sa rozširujúceho portfólia služieb  Vám ponúkame ich zoznam v novej podobe.</p>
+                        <p>K dispozícii je do 11.6.2010 aj <a href="stara.php" target="_blank">stará verzia (v novom okne)</a>.</p>
+                        <p>&nbsp;</p>
+                    </div></td>
+                  </tr>
+                </table>-->
+                <p align="left">&nbsp;</p>
+                <h2>Celouniverzitné služby informačných technológií</h2>
+                <p>Služby informačných technológií pre všetky súčasti  univerzity.<br />
+                Ak hľadáte služby  informačných technológií poskytované fakultami, prosím, navštívte stránky  príslušnej fakulty.</p>
+                <table class="no_border" width="100%">
+                  <tr>
+                    <td class="no_border"><ul>
+                        <li class="no_border">
+                          <a class="headline" href="https://ais2.uniba.sk">AIS2</a><br />
+                          <a href="https://ais2.uniba.sk">Prihlásenie</a> <a href="http://www.uniba.sk/index.php?id=2662">Príručky</a> <a href="http://www.uniba.sk/index.php?id=2665">Často kladené otázky</a> <a href="http://www.uniba.sk/?id=ais">AIS2 - web stránky</a>  <br /><a href="/kontakty/studijne-oddelenia/">Kontakty na študijné oddelenia </a> </li>
+                        <li class="no_border">
+                        <a href="https://theses.cz/system/auth_cosign.pl" class="headline">THESES</a> <br /> <a href="https://theses.cz/system/auth_cosign.pl">Prihlásenie</a> <a href="/theses/">Overovanie prác - info</a> <a href="/theses/dokumenty/THESES_prirucka.pdf">Príručka THESES (pdf)</a></li>
+                      <li class="no_border">
+                        <a href="https://int-app1.rec.uniba.sk/PUCWeb/index.do" class="headline">E-ubytovanie</a><br />                          <a href="https://int-app1.rec.uniba.sk/PUCWeb/index.do">Prihlásenie</a> <a href="http://www.uniba.sk/?id=139">Informácie</a></li>
+                      <li class="no_border">
+               troje</strong></h2>
+                </li>
+  <li><a href="https://www.uniba.sk/index.php?id=2716"  >Zmena/zistenie hesla</a></li>
+  <li><a href="https://int-app1.rec.uniba.sk/CDO2Web/public/findPK"  >Zistenie používateľského mena/prístupového kódu</a></li>
+  <li><a href="https://int-app1.rec.uniba.sk/CDO2Web/public/uoc"  >Zistenie UOČ (univerzitného osobného čísla)</a></li>
+  <li><a href="https://www.uniba.sk/cepit"  >CePIT UK (Hotline)</a></li>
+  </li>
+</ul>
+</div>
+            <div id="content_left">
+              <!--TYPO3SEARCH_begin-->
+              <!--  CONTENT ELEMENT, uid:4354/text [begin] -->
+              <a id="c4354"></a>
+              <!--  Header: [begin] -->
+              <div class="csc-header csc-header-n1">
+                <h1>Moja Univerzita Komenského</h1>
+                <p>Portál Univerzity Komenského moja.uniba.sk slúži ako brána k celouniverzitným informačným systémom a službám informačných technológií Univerzity Komenskeho v Bratislave, ktoré zabezpečuje <a
+                href="http://cit.uniba.sk">Centrum Informačných Technológií UK</a>.</p>
+                <table id="announcement">
+                  <tr>
+                    <td><div align="center">
+                        <h2>Plánované výpadky služieb</h2><p>AIS - pripravovaná odstávka je naplánovaná na stredu 18.8.2010 od 13:00 do 17:00 v dôsledku údržby systému.
+</p><p>
+</p><p>Pracovníci CIT vynaložia maximálne úsilie, aby ste čo najskôr mohli pre  Vašu prácu znova využívať všetky IT služby, ktoré sú na UK štandardom. </p><p></p>
+                    </div></td>
+                  </tr>
+                </table><!--                <table id="announcement">
+                  <tr>
+                    <td><div align="center">
+                        <h2>Zoznam služieb v novom šate</h2>
+                        <p>Vážení návštevníci,<br />
+                        z dôvodu neustále sa rozširujúceho portfólia služieb  Vám ponúkame ich zoznam v novej podobe.</p>
+                        <p>K dispozícii je do 11.6.2010 aj <a href="stara.php" target="_blank">stará verzia (v novom okne)</a>.</p>
+                        <p>&nbsp;</p>
+                    </div></td>
+                  </tr>
+                </table>-->
+                <p align="left">&nbsp;</p>
+                <h2>Celouniverzitné služby informačných technológií</h2>
+                <p>Služby informačných technológií pre všetky súčasti  univerzity.<br />
+                Ak hľadáte služby  informačných technológií poskytované fakultami, prosím, navštívte stránky  príslušnej fakulty.</p>
+                <table class="no_border" width="100%">
+                  <tr>
+                    <td class="no_border"><ul>
+                        <li class="no_border">
+                          <a class="headline" href="https://ais2.uniba.sk">AIS2</a><br />
+                          <a href="https://ais2.uniba.sk">Prihlásenie</a> <a href="http://www.uniba.sk/index.php?id=2662">Príručky</a> <a href="http://www.uniba.sk/index.php?id=2665">Často kladené otázky</a> <a href="http://www.uniba.sk/?id=ais">AIS2 - web stránky</a>  <br /><a href="/kontakty/studijne-oddelenia/">Kontakty na študijné oddelenia </a> </li>
+                        <li class="no_border">
+                        <a href="https://theses.cz/system/auth_cosign.pl" class="headline">THESES</a> <br /> <a href="https://theses.cz/system/auth_cosign.pl">Prihlásenie</a> <a href="/theses/">Overovanie prác - info</a> <a href="/theses/dokumenty/THESES_prirucka.pdf">Príručka THESES (pdf)</a></li>
+                      <li class="no_border">
+                        <a href="https://int-app1.rec.uniba.sk/PUCWeb/index.do" class="headline">E-ubytovanie</a><br />                          <a href="https://int-app1.rec.uniba.sk/PUCWeb/index.do">Prihlásenie</a> <a href="http://www.uniba.sk/?id=139">Informácie</a></li>
+                      <li class="no_border">
+               troje</strong></h2>
+                </li>
+  <li><a href="https://www.uniba.sk/index.php?id=2716"  >Zmena/zistenie hesla</a></li>
+  <li><a href="https://int-app1.rec.uniba.sk/CDO2Web/public/findPK"  >Zistenie používateľského mena/prístupového kódu</a></li>
+  <li><a href="https://int-app1.rec.uniba.sk/CDO2Web/public/uoc"  >Zistenie UOČ (univerzitného osobného čísla)</a></li>
+  <li><a href="https://www.uniba.sk/cepit"  >CePIT UK (Hotline)</a></li>
+  </li>
+</ul>
+</div>
+            <div id="content_left">
+              <!--TYPO3SEARCH_begin-->
+              <!--  CONTENT ELEMENT, uid:4354/text [begin] -->
+              <a id="c4354"></a>
+              <!--  Header: [begin] -->
+              <div class="csc-header csc-header-n1">
+                <h1>Moja Univerzita Komenského</h1>
+                <p>Portál Univerzity Komenského moja.uniba.sk slúži ako brána k celouniverzitným informačným systémom a službám informačných technológií Univerzity Komenskeho v Bratislave, ktoré zabezpečuje <a
+                href="http://cit.uniba.sk">Centrum Informačných Technológií UK</a>.</p>
+                <table id="announcement">
+                  <tr>
+                    <td><div align="center">
+                        <h2>Plánované výpadky služieb</h2><p>AIS - pripravovaná odstávka je naplánovaná na stredu 18.8.2010 od 13:00 do 17:00 v dôsledku údržby systému.
+</p><p>
+</p><p>Pracovníci CIT vynaložia maximálne úsilie, aby ste čo najskôr mohli pre  Vašu prácu znova využívať všetky IT služby, ktoré sú na UK štandardom. </p><p></p>
+                    </div></td>
+                  </tr>
+                </table><!--                <table id="announcement">
+                  <tr>
+                    <td><div align="center">
+                        <h2>Zoznam služieb v novom šate</h2>
+                        <p>Vážení návštevníci,<br />
+                        z dôvodu neustále sa rozširujúceho portfólia služieb  Vám ponúkame ich zoznam v novej podobe.</p>
+                        <p>K dispozícii je do 11.6.2010 aj <a href="stara.php" target="_blank">stará verzia (v novom okne)</a>.</p>
+                        <p>&nbsp;</p>
+                    </div></td>
+                  </tr>
+                </table>-->
+                <p align="left">&nbsp;</p>
+                <h2>Celouniverzitné služby informačných technológií</h2>
+                <p>Služby informačných technológií pre všetky súčasti  univerzity.<br />
+                Ak hľadáte služby  informačných technológií poskytované fakultami, prosím, navštívte stránky  príslušnej fakulty.</p>
+                <table class="no_border" width="100%">
+                  <tr>
+                    <td class="no_border"><ul>
+                        <li class="no_border">
+                          <a class="headline" href="https://ais2.uniba.sk">AIS2</a><br />
+                          <a href="https://ais2.uniba.sk">Prihlásenie</a> <a href="http://www.uniba.sk/index.php?id=2662">Príručky</a> <a href="http://www.uniba.sk/index.php?id=2665">Často kladené otázky</a> <a href="http://www.uniba.sk/?id=ais">AIS2 - web stránky</a>  <br /><a href="/kontakty/studijne-oddelenia/">Kontakty na študijné oddelenia </a> </li>
+                        <li class="no_border">
+                        <a href="https://theses.cz/system/auth_cosign.pl" class="headline">THESES</a> <br /> <a href="https://theses.cz/system/auth_cosign.pl">Prihlásenie</a> <a href="/theses/">Overovanie prác - info</a> <a href="/theses/dokumenty/THESES_prirucka.pdf">Príručka THESES (pdf)</a></li>
+                      <li class="no_border">
+                        <a href="https://int-app1.rec.uniba.sk/PUCWeb/index.do" class="headline">E-ubytovanie</a><br />                          <a href="https://int-app1.rec.uniba.sk/PUCWeb/index.do">Prihlásenie</a> <a href="http://www.uniba.sk/?id=139">Informácie</a></li>
+                      <li class="no_border">
+               troje</strong></h2>
+                </li>
+  <li><a href="https://www.uniba.sk/index.php?id=2716"  >Zmena/zistenie hesla</a></li>
+  <li><a href="https://int-app1.rec.uniba.sk/CDO2Web/public/findPK"  >Zistenie používateľského mena/prístupového kódu</a></li>
+  <li><a href="https://int-app1.rec.uniba.sk/CDO2Web/public/uoc"  >Zistenie UOČ (univerzitného osobného čísla)</a></li>
+  <li><a href="https://www.uniba.sk/cepit"  >CePIT UK (Hotline)</a></li>
+  </li>
+</ul>
+</div>
+            <div id="content_left">
+              <!--TYPO3SEARCH_begin-->
+              <!--  CONTENT ELEMENT, uid:4354/text [begin] -->
+              <a id="c4354"></a>
+              <!--  Header: [begin] -->
+              <div class="csc-header csc-header-n1">
+                <h1>Moja Univerzita Komenského</h1>
+                <p>Portál Univerzity Komenského moja.uniba.sk slúži ako brána k celouniverzitným informačným systémom a službám informačných technológií Univerzity Komenskeho v Bratislave, ktoré zabezpečuje <a
+                href="http://cit.uniba.sk">Centrum Informačných Technológií UK</a>.</p>
+                <table id="announcement">
+                  <tr>
+                    <td><div align="center">
+                        <h2>Plánované výpadky služieb</h2><p>AIS - pripravovaná odstávka je naplánovaná na stredu 18.8.2010 od 13:00 do 17:00 v dôsledku údržby systému.
+</p><p>
+</p><p>Pracovníci CIT vynaložia maximálne úsilie, aby ste čo najskôr mohli pre  Vašu prácu znova využívať všetky IT služby, ktoré sú na UK štandardom. </p><p></p>
+                    </div></td>
+                  </tr>
+                </table><!--                <table id="announcement">
+                  <tr>
+                    <td><div align="center">
+                        <h2>Zoznam služieb v novom šate</h2>
+                        <p>Vážení návštevníci,<br />
+                        z dôvodu neustále sa rozširujúceho portfólia služieb  Vám ponúkame ich zoznam v novej podobe.</p>
+                        <p>K dispozícii je do 11.6.2010 aj <a href="stara.php" target="_blank">stará verzia (v novom okne)</a>.</p>
+                        <p>&nbsp;</p>
+                    </div></td>
+                  </tr>
+                </table>-->
+                <p align="left">&nbsp;</p>
+                <h2>Celouniverzitné služby informačných technológií</h2>
+                <p>Služby informačných technológií pre všetky súčasti  univerzity.<br />
+                Ak hľadáte služby  informačných technológií poskytované fakultami, prosím, navštívte stránky  príslušnej fakulty.</p>
+                <table class="no_border" width="100%">
+                  <tr>
+                    <td class="no_border"><ul>
+                        <li class="no_border">
+                          <a class="headline" href="https://ais2.uniba.sk">AIS2</a><br />
+                          <a href="https://ais2.uniba.sk">Prihlásenie</a> <a href="http://www.uniba.sk/index.php?id=2662">Príručky</a> <a href="http://www.uniba.sk/index.php?id=2665">Často kladené otázky</a> <a href="http://www.uniba.sk/?id=ais">AIS2 - web stránky</a>  <br /><a href="/kontakty/studijne-oddelenia/">Kontakty na študijné oddelenia </a> </li>
+                        <li class="no_border">
+                        <a href="https://theses.cz/system/auth_cosign.pl" class="headline">THESES</a> <br /> <a href="https://theses.cz/system/auth_cosign.pl">Prihlásenie</a> <a href="/theses/">Overovanie prác - info</a> <a href="/theses/dokumenty/THESES_prirucka.pdf">Príručka THESES (pdf)</a></li>
+                      <li class="no_border">
+                        <a href="https://int-app1.rec.uniba.sk/PUCWeb/index.do" class="headline">E-ubytovanie</a><br />                          <a href="https://int-app1.rec.uniba.sk/PUCWeb/index.do">Prihlásenie</a> <a href="http://www.uniba.sk/?id=139">Informácie</a></li>
+                      <li class="no_border">
+                          <a href="http://www.uniba.sk/index.php?id=akuk" class="headline">Virtuálna knižnica</a><br />
+                          <a href="http://www.uniba.sk/index.php?id=akuk">Informácie</a> <a href="http://alis.uniba.sk:8000/cgi-bin/gw_49_3_8/chameleon?skin=katalog">Online katalóg</a> <a href="http://alis.uniba.sk:8000/cgi-bin/gw_49_3_8/chameleon?skin=epc">Publikačná činnosť UK</a> <a href="http://www.uniba.sk/index.php?id=1867">Externé informačné zdroje</a>                      </li>
+                      
+                      <li class="no_border">
+                          <a href="http://e-learn.uniba.sk" class="headline">
+                          E-learning</a><br />
+                        <a href="http://e-learn.uniba.sk">Prihlásenie</a> <a href="http://www.uniba.sk/index.php?id=29">Informácie</a>                      </li>
+                      <li class="no_border">
+                          <a href="https://int-app2.rec.uniba.sk/GUKWeb/index.do" class="headline">Granty mladých UK</a> <br />
+                        <a href="https://int-app2.rec.uniba.sk/GUKWeb/index.do">Prihlásenie</a> <a href="http://www.uniba.sk/index.php?id=1321">Informácie</a> <a href="http://www.uniba.sk/index.php?id=34">Kontakty</a>                      </li>
+                      <li class="no_border"><a href="http://www.uniba.sk/index.php?id=939" class="headline">
+                          Finančný informačný systém</a> (Sofia)<br />
+                        <a href="http://www.uniba.sk/index.php?id=939">Informácie</a> <a href="https://forum.uniba.sk/zmenyfis/">Zmeny údajov o dodávateľoch</a> <a href="https://forum.uniba.sk/sap_hdsw/">Nahlasovanie problémov</a> <a href="http://www.uniba.sk/index.php?id=fisman">Manuál</a> 
+                      <br /><a href="http://www.uniba.sk/fileadmin/user_upload/editors/subory/legislativa/prikaz_rektora_2008_12_podpora_sofia.pdf">Príkaz rektora o podpore FIS</a> </li>
+                      <li class="no_border"><a href="https://kurzy.uniba.sk" class="headline">
+                          Vzdelávanie zamestnancov</a><br />
+                        <h5><a href="https://kurzy.uniba.sk">Prihlásenie na školenie</a> <a href="http://www.uniba.sk/?id=1708">Prehľad školení</a> <a href="http://cit.uniba.sk/vzdelavanie/">Pre novoprijatých zamestnancov</a></h5>
+                      </li>
+                      <li class="no_border"><span class="headline"><a href="http://int-app2.rec.uniba.sk/AbsolventiWeb/index.do" class="headline">
+                        Databáza absolventov</a></span><br />
+                        <a href="http://int-app2.rec.uniba.sk/AbsolventiWeb/index.do">Vstup do databázy</a> <a href="http://www.uniba.sk/index.php?id=vysvetlivky0">Informácie a pomoc pri vyhľadávaní</a>                      </li>
+                    </ul></td>
+                    <td valign="top" class="no_border"><ul>
+                        <li class="no_border">
+                          <a href="http://www.uniba.sk/cepit" class="headline">CePIT</a><br />
+                          <a href="http://www.uniba.sk/cepit">Informácie</a> <a href="https://www.uniba.sk/index.php?id=2941">Podporované súčasti a služby</a>
+                        </li>
+                      <li class="no_border">
+                          <a href="http://www.uniba.sk/index.php?id=1846" class="headline">WiFi (Eduroam)</a><br />
+                          <a href="http://www.uniba.sk/index.php?id=1846">Informácie</a> <a href="http://www.uniba.sk/index.php?id=1847">Prístupové miesta</a> <a href="http://www.uniba.sk/index.php?id=2765">Nastavenie</a>
+                      </li>
+                      <li class="no_border">
+                          <a href="https://sip.uniba.sk" class="headline">Telefónia</a><br />
+                       <a href="https://sip.uniba.sk">Prihlásenie</a> <a href="http://www.uniba.sk/index.php?id=voip">Informácie</a>
+                          
+                      </li>
+                      <li class="no_border">
+                          <a href="http://www.uniba.sk/ind           <a href="http://www.uniba.sk/index.php?id=akuk" class="headline">Virtuálna knižnica</a><br />
+                          <a href="http://www.uniba.sk/index.php?id=akuk">Informácie</a> <a href="http://alis.uniba.sk:8000/cgi-bin/gw_49_3_8/chameleon?skin=katalog">Online katalóg</a> <a href="http://alis.uniba.sk:8000/cgi-bin/gw_49_3_8/chameleon?skin=epc">Publikačná činnosť UK</a> <a href="http://www.uniba.sk/index.php?id=1867">Externé informačné zdroje</a>                      </li>
+                      
+                      <li class="no_border">
+                          <a href="http://e-learn.uniba.sk" class="headline">
+                          E-learning</a><br />
+                        <a href="http://e-learn.uniba.sk">Prihlásenie</a> <a href="http://www.uniba.sk/index.php?id=29">Informácie</a>                      </li>
+                      <li class="no_border">
+                          <a href="https://int-app2.rec.uniba.sk/GUKWeb/index.do" class="headline">Granty mladých UK</a> <br />
+                        <a href="https://int-app2.rec.uniba.sk/GUKWeb/index.do">Prihlásenie</a> <a href="http://www.uniba.sk/index.php?id=1321">Informácie</a> <a href="http://www.uniba.sk/index.php?id=34">Kontakty</a>                      </li>
+                      <li class="no_border"><a href="http://www.uniba.sk/index.php?id=939" class="headline">
+                          Finančný informačný systém</a> (Sofia)<br />
+                        <a href="http://www.uniba.sk/index.php?id=939">Informácie</a> <a href="https://forum.uniba.sk/zmenyfis/">Zmeny údajov o dodávateľoch</a> <a href="https://forum.uniba.sk/sap_hdsw/">Nahlasovanie problémov</a> <a href="http://www.uniba.sk/index.php?id=fisman">Manuál</a> 
+                      <br /><a href="http://www.uniba.sk/fileadmin/user_upload/editors/subory/legislativa/prikaz_rektora_2008_12_podpora_sofia.pdf">Príkaz rektora o podpore FIS</a> </li>
+                      <li class="no_border"><a href="https://kurzy.uniba.sk" class="headline">
+                          Vzdelávanie zamestnancov</a><br />
+                        <h5><a href="https://kurzy.uniba.sk">Prihlásenie na školenie</a> <a href="http://www.uniba.sk/?id=1708">Prehľad školení</a> <a href="http://cit.uniba.sk/vzdelavanie/">Pre novoprijatých zamestnancov</a></h5>
+                      </li>
+                      <li class="no_border"><span class="headline"><a href="http://int-app2.rec.uniba.sk/AbsolventiWeb/index.do" class="headline">
+                        Databáza absolventov</a></span><br />
+                        <a href="http://int-app2.rec.uniba.sk/AbsolventiWeb/index.do">Vstup do databázy</a> <a href="http://www.uniba.sk/index.php?id=vysvetlivky0">Informácie a pomoc pri vyhľadávaní</a>                      </li>
+                    </ul></td>
+                    <td valign="top" class="no_border"><ul>
+                        <li class="no_border">
+                          <a href="http://www.uniba.sk/cepit" class="headline">CePIT</a><br />
+                          <a href="http://www.uniba.sk/cepit">Informácie</a> <a href="https://www.uniba.sk/index.php?id=2941">Podporované súčasti a služby</a>
+                        </li>
+                      <li class="no_border">
+                          <a href="http://www.uniba.sk/index.php?id=1846" class="headline">WiFi (Eduroam)</a><br />
+                          <a href="http://www.uniba.sk/index.php?id=1846">Informácie</a> <a href="http://www.uniba.sk/index.php?id=1847">Prístupové miesta</a> <a href="http://www.uniba.sk/index.php?id=2765">Nastavenie</a>
+                      </li>
+                      <li class="no_border">
+                          <a href="https://sip.uniba.sk" class="headline">Telefónia</a><br />
+                       <a href="https://sip.uniba.sk">Prihlásenie</a> <a href="http://www.uniba.sk/index.php?id=voip">Informácie</a>
+                          
+                      </li>
+                      <li class="no_border">
+                          <a href="http://www.uniba.sk/ind           <a href="http://www.uniba.sk/index.php?id=akuk" class="headline">Virtuálna knižnica</a><br />
+                          <a href="http://www.uniba.sk/index.php?id=akuk">Informácie</a> <a href="http://alis.uniba.sk:8000/cgi-bin/gw_49_3_8/chameleon?skin=katalog">Online katalóg</a> <a href="http://alis.uniba.sk:8000/cgi-bin/gw_49_3_8/chameleon?skin=epc">Publikačná činnosť UK</a> <a href="http://www.uniba.sk/index.php?id=1867">Externé informačné zdroje</a>                      </li>
+                      
+                      <li class="no_border">
+                          <a href="http://e-learn.uniba.sk" class="headline">
+                          E-learning</a><br />
+                        <a href="http://e-learn.uniba.sk">Prihlásenie</a> <a href="http://www.uniba.sk/index.php?id=29">Informácie</a>                      </li>
+                      <li class="no_border">
+                          <a href="https://int-app2.rec.uniba.sk/GUKWeb/index.do" class="headline">Granty mladých UK</a> <br />
+                        <a href="https://int-app2.rec.uniba.sk/GUKWeb/index.do">Prihlásenie</a> <a href="http://www.uniba.sk/index.php?id=1321">Informácie</a> <a href="http://www.uniba.sk/index.php?id=34">Kontakty</a>                      </li>
+                      <li class="no_border"><a href="http://www.uniba.sk/index.php?id=939" class="headline">
+                          Finančný informačný systém</a> (Sofia)<br />
+                        <a href="http://www.uniba.sk/index.php?id=939">Informácie</a> <a href="https://forum.uniba.sk/zmenyfis/">Zmeny údajov o dodávateľoch</a> <a href="https://forum.uniba.sk/sap_hdsw/">Nahlasovanie problémov</a> <a href="http://www.uniba.sk/index.php?id=fisman">Manuál</a> 
+                      <br /><a href="http://www.uniba.sk/fileadmin/user_upload/editors/subory/legislativa/prikaz_rektora_2008_12_podpora_sofia.pdf">Príkaz rektora o podpore FIS</a> </li>
+                      <li class="no_border"><a href="https://kurzy.uniba.sk" class="headline">
+                          Vzdelávanie zamestnancov</a><br />
+                        <h5><a href="https://kurzy.uniba.sk">Prihlásenie na školenie</a> <a href="http://www.uniba.sk/?id=1708">Prehľad školení</a> <a href="http://cit.uniba.sk/vzdelavanie/">Pre novoprijatých zamestnancov</a></h5>
+                      </li>
+                      <li class="no_border"><span class="headline"><a href="http://int-app2.rec.uniba.sk/AbsolventiWeb/index.do" class="headline">
+                        Databáza absolventov</a></span><br />
+                        <a href="http://int-app2.rec.uniba.sk/AbsolventiWeb/index.do">Vstup do databázy</a> <a href="http://www.uniba.sk/index.php?id=vysvetlivky0">Informácie a pomoc pri vyhľadávaní</a>                      </li>
+                    </ul></td>
+                    <td valign="top" class="no_border"><ul>
+                        <li class="no_border">
+                          <a href="http://www.uniba.sk/cepit" class="headline">CePIT</a><br />
+                          <a href="http://www.uniba.sk/cepit">Informácie</a> <a href="https://www.uniba.sk/index.php?id=2941">Podporované súčasti a služby</a>
+                        </li>
+                      <li class="no_border">
+                          <a href="http://www.uniba.sk/index.php?id=1846" class="headline">WiFi (Eduroam)</a><br />
+                          <a href="http://www.uniba.sk/index.php?id=1846">Informácie</a> <a href="http://www.uniba.sk/index.php?id=1847">Prístupové miesta</a> <a href="http://www.uniba.sk/index.php?id=2765">Nastavenie</a>
+                      </li>
+                      <li class="no_border">
+                          <a href="https://sip.uniba.sk" class="headline">Telefónia</a><br />
+                       <a href="https://sip.uniba.sk">Prihlásenie</a> <a href="http://www.uniba.sk/index.php?id=voip">Informácie</a>
+                          
+                      </li>
+                      <li class="no_border">
+                          <a href="http://www.uniba.sk/ind           <a href="http://www.uniba.sk/index.php?id=akuk" class="headline">Virtuálna knižnica</a><br />
+                          <a href="http://www.uniba.sk/index.php?id=akuk">Informácie</a> <a href="http://alis.uniba.sk:8000/cgi-bin/gw_49_3_8/chameleon?skin=katalog">Online katalóg</a> <a href="http://alis.uniba.sk:8000/cgi-bin/gw_49_3_8/chameleon?skin=epc">Publikačná činnosť UK</a> <a href="http://www.uniba.sk/index.php?id=1867">Externé informačné zdroje</a>                      </li>
+                      
+                      <li class="no_border">
+                          <a href="http://e-learn.uniba.sk" class="headline">
+                          E-learning</a><br />
+                        <a href="http://e-learn.uniba.sk">Prihlásenie</a> <a href="http://www.uniba.sk/index.php?id=29">Informácie</a>                      </li>
+                      <li class="no_border">
+                          <a href="https://int-app2.rec.uniba.sk/GUKWeb/index.do" class="headline">Granty mladých UK</a> <br />
+                        <a href="https://int-app2.rec.uniba.sk/GUKWeb/index.do">Prihlásenie</a> <a href="http://www.uniba.sk/index.php?id=1321">Informácie</a> <a href="http://www.uniba.sk/index.php?id=34">Kontakty</a>                      </li>
+                      <li class="no_border"><a href="http://www.uniba.sk/index.php?id=939" class="headline">
+                          Finančný informačný systém</a> (Sofia)<br />
+                        <a href="http://www.uniba.sk/index.php?id=939">Informácie</a> <a href="https://forum.uniba.sk/zmenyfis/">Zmeny údajov o dodávateľoch</a> <a href="https://forum.uniba.sk/sap_hdsw/">Nahlasovanie problémov</a> <a href="http://www.uniba.sk/index.php?id=fisman">Manuál</a> 
+                      <br /><a href="http://www.uniba.sk/fileadmin/user_upload/editors/subory/legislativa/prikaz_rektora_2008_12_podpora_sofia.pdf">Príkaz rektora o podpore FIS</a> </li>
+                      <li class="no_border"><a href="https://kurzy.uniba.sk" class="headline">
+                          Vzdelávanie zamestnancov</a><br />
+                        <h5><a href="https://kurzy.uniba.sk">Prihlásenie na školenie</a> <a href="http://www.uniba.sk/?id=1708">Prehľad školení</a> <a href="http://cit.uniba.sk/vzdelavanie/">Pre novoprijatých zamestnancov</a></h5>
+                      </li>
+                      <li class="no_border"><span class="headline"><a href="http://int-app2.rec.uniba.sk/AbsolventiWeb/index.do" class="headline">
+                        Databáza absolventov</a></span><br />
+                        <a href="http://int-app2.rec.uniba.sk/AbsolventiWeb/index.do">Vstup do databázy</a> <a href="http://www.uniba.sk/index.php?id=vysvetlivky0">Informácie a pomoc pri vyhľadávaní</a>                      </li>
+                    </ul></td>
+                    <td valign="top" class="no_border"><ul>
+                        <li class="no_border">
+                          <a href="http://www.uniba.sk/cepit" class="headline">CePIT</a><br />
+                          <a href="http://www.uniba.sk/cepit">Informácie</a> <a href="https://www.uniba.sk/index.php?id=2941">Podporované súčasti a služby</a>
+                        </li>
+                      <li class="no_border">
+                          <a href="http://www.uniba.sk/index.php?id=1846" class="headline">WiFi (Eduroam)</a><br />
+                          <a href="http://www.uniba.sk/index.php?id=1846">Informácie</a> <a href="http://www.uniba.sk/index.php?id=1847">Prístupové miesta</a> <a href="http://www.uniba.sk/index.php?id=2765">Nastavenie</a>
+                      </li>
+                      <li class="no_border">
+                          <a href="https://sip.uniba.sk" class="headline">Telefónia</a><br />
+                       <a href="https://sip.uniba.sk">Prihlásenie</a> <a href="http://www.uniba.sk/index.php?id=voip">Informácie</a>
+                          
+                      </li>
+                      <li class="no_border">
+                          <a href="http://www.uniba.sk/index.php?id=proxy" class="headline">Proxy</a><br />
+                        <a href="http://www.uniba.sk/index.php?id=proxy">Nastavenie proxy servera</a>
+                      </li>
+                      <li class="no_border">
+                          <span class="headline">Centrálna databáza osôb </span><br />
+                        <a href="https://www.uniba.sk/index.php?id=2716">Zmena hesla</a> <a href="https://int-app1.rec.uniba.sk/CDO2Web/public/uoc">Zistenie UOČ</a> <a href="https://int-app1.rec.uniba.sk/CDO2Web/public/findPK">Zistenie prístupového kódu</a>                      </li>
+                      <li class="no_border">
+                          <a href="http://www.uniba.sk/preukazy" class="headline">Univerzitné preukazy</a><br />
+                          <a href="http://www.uniba.sk/preukazy">Informácie</a><a href="/theses/dokumenty/THESES_prirucka.pdf"></a>
+                      </li>
+                    </ul></td>
+                  </tr>
+                </table>
+                <p>
+                  <!--  Text: [end] -->
+                  <!--  CONTENT ELEMENT, uid:4351/text [end] -->
+                  <!--TYPO3SEARCH_end-->
+                <a href="#" class="top_page" title="Hore"></a> </p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="clear"></div>
+        <div id="footer">
+          <div id="footer_in"> <img id="bottom_left" src="/css/bottom_left.jpg" alt="" /> <img id="bottom_right" src="/css/bottom_right.jpg" alt="" />
+            <div id="content_bottom">
+              <div id="content_bottom_in"> &nbsp; </div>
+            </div>
+            <div id="copyright">Copyright © UK 2009</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- toto tu pridal texo, 2007-04-10 -->
+<!--  Prototype Window Class Part -->
+<script type="text/javascript">
+var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+</script>
+<script type="text/javascript">
+try {
+var pageTracker = _gat._getTracker("UA-11431529-10");
+pageTracker._trackPageview();
+} catch(err) {}</script>
+</body>
+</html>
+ex.php?id=proxy" class="headline">Proxy</a><br />
+                        <a href="http://www.uniba.sk/index.php?id=proxy">Nastavenie proxy servera</a>
+                      </li>
+                      <li class="no_border">
+                          <span class="headline">Centrálna databáza osôb </span><br />
+                        <a href="https://www.uniba.sk/index.php?id=2716">Zmena hesla</a> <a href="https://int-app1.rec.uniba.sk/CDO2Web/public/uoc">Zistenie UOČ</a> <a href="https://int-app1.rec.uniba.sk/CDO2Web/public/findPK">Zistenie prístupového kódu</a>                      </li>
+                      <li class="no_border">
+                          <a href="http://www.uniba.sk/preukazy" class="headline">Univerzitné preukazy</a><br />
+                          <a href="http://www.uniba.sk/preukazy">Informácie</a><a href="/theses/dokumenty/THESES_prirucka.pdf"></a>
+                      </li>
+                    </ul></td>
+                  </tr>
+                </table>
+                <p>
+                  <!--  Text: [end] -->
+                  <!--  CONTENT ELEMENT, uid:4351/text [end] -->
+                  <!--TYPO3SEARCH_end-->
+                <a href="#" class="top_page" title="Hore"></a> </p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="clear"></div>
+        <div id="footer">
+          <div id="footer_in"> <img id="bottom_left" src="/css/bottom_left.jpg" alt="" /> <img id="bottom_right" src="/css/bottom_right.jpg" alt="" />
+            <div id="content_bottom">
+              <div id="content_bottom_in"> &nbsp; </div>
+            </div>
+            <div id="copyright">Copyright © UK 2009</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- toto tu pridal texo, 2007-04-10 -->
+<!--  Prototype Window Class Part -->
+<script type="text/javascript">
+var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+</script>
+<script type="text/javascript">
+try {
+var pageTracker = _gat._getTracker("UA-11431529-10");
+pageTracker._trackPageview();
+} catch(err) {}</script>
+</body>
+</html>
+ex.php?id=proxy" class="headline">Proxy</a><br />
+                        <a href="http://www.uniba.sk/index.php?id=proxy">Nastavenie proxy servera</a>
+                      </li>
+                      <li class="no_border">
+                          <span class="headline">Centrálna databáza osôb </span><br />
+                        <a href="https://www.uniba.sk/index.php?id=2716">Zmena hesla</a> <a href="https://int-app1.rec.uniba.sk/CDO2Web/public/uoc">Zistenie UOČ</a> <a href="https://int-app1.rec.uniba.sk/CDO2Web/public/findPK">Zistenie prístupového kódu</a>                      </li>
+                      <li class="no_border">
+                          <a href="http://www.uniba.sk/preukazy" class="headline">Univerzitné preukazy</a><br />
+                          <a href="http://www.uniba.sk/preukazy">Informácie</a><a href="/theses/dokumenty/THESES_prirucka.pdf"></a>
+                      </li>
+                    </ul></td>
+                  </tr>
+                </table>
+                <p>
+                  <!--  Text: [end] -->
+                  <!--  CONTENT ELEMENT, uid:4351/text [end] -->
+                  <!--TYPO3SEARCH_end-->
+                <a href="#" class="top_page" title="Hore"></a> </p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="clear"></div>
+        <div id="footer">
+          <div id="footer_in"> <img id="bottom_left" src="/css/bottom_left.jpg" alt="" /> <img id="bottom_right" src="/css/bottom_right.jpg" alt="" />
+            <div id="content_bottom">
+              <div id="content_bottom_in"> &nbsp; </div>
+            </div>
+            <div id="copyright">Copyright © UK 2009</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- toto tu pridal texo, 2007-04-10 -->
+<!--  Prototype Window Class Part -->
+<script type="text/javascript">
+var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+</script>
+<script type="text/javascript">
+try {
+var pageTracker = _gat._getTracker("UA-11431529-10");
+pageTracker._trackPageview();
+} catch(err) {}</script>
+</body>
+</html>
+ex.php?id=proxy" class="headline">Proxy</a><br />
+                        <a href="http://www.uniba.sk/index.php?id=proxy">Nastavenie proxy servera</a>
+                      </li>
+                      <li class="no_border">
+                          <span class="headline">Centrálna databáza osôb </span><br />
+                        <a href="https://www.uniba.sk/index.php?id=2716">Zmena hesla</a> <a href="https://int-app1.rec.uniba.sk/CDO2Web/public/uoc">Zistenie UOČ</a> <a href="https://int-app1.rec.uniba.sk/CDO2Web/public/findPK">Zistenie prístupového kódu</a>                      </li>
+                      <li class="no_border">
+                          <a href="http://www.uniba.sk/preukazy" class="headline">Univerzitné preukazy</a><br />
+                          <a href="http://www.uniba.sk/preukazy">Informácie</a><a href="/theses/dokumenty/THESES_prirucka.pdf"></a>
+                      </li>
+                    </ul></td>
+                  </tr>
+                </table>
+                <p>
+                  <!--  Text: [end] -->
+                  <!--  CONTENT ELEMENT, uid:4351/text [end] -->
+                  <!--TYPO3SEARCH_end-->
+                <a href="#" class="top_page" title="Hore"></a> </p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="clear"></div>
+        <div id="footer">
+          <div id="footer_in"> <img id="bottom_left" src="/css/bottom_left.jpg" alt="" /> <img id="bottom_right" src="/css/bottom_right.jpg" alt="" />
+            <div id="content_bottom">
+              <div id="content_bottom_in"> &nbsp; </div>
+            </div>
+            <div id="copyright">Copyright © UK 2009</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- toto tu pridal texo, 2007-04-10 -->
+<!--  Prototype Window Class Part -->
+<script type="text/javascript">
+var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+</script>
+<script type="text/javascript">
+try {
+var pageTracker = _gat._getTracker("UA-11431529-10");
+pageTracker._trackPageview();
+} catch(err) {}</script>
+</body>
+</html>
+

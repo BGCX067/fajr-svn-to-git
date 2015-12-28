@@ -1,0 +1,843 @@
+<html><title>VSES017: Administrácia štúdií študenta</title>
+ <head><meta http-equiv='Content-Type' content='text/html; charset=utf-8'></meta></head>
+<link rel='stylesheet' href='/ais/webui2/web/styles-common.css?4.29' type='text/css'/>
+<link rel='stylesheet' href='/ais/webui2/web/styles-commonff.css?4.29' type='text/css'/>
+<link rel='stylesheet' href='/ais/webui2/web/styles.css?4.29' type='text/css'/>
+<link rel='stylesheet' href='/ais/web/styles.css' type='text/css'/>
+ <script type='text/javascript'>
+ var w=window;
+ var top=window.parent;
+ var webui=top.webui;
+ var f=top.factory;
+ var comfac=top.factory;
+ var dialogName="VSES017_StudentZapisneListyDlg0";
+ var jsArray = new Array();
+ function getDialogJSObject() { return jsArray[dialogName]; }
+ function setDialogJSObject(jsObject) { jsArray[dialogName] = jsObject; }
+ function getJSObject(id) { return jsArray[id]; }
+ function setJSObject(id, jsObject) { jsArray[id] = jsObject; }
+ top.Logger_log('nacitany dialog: ' + dialogName + ' zacina renderovanie', top.Logger_DEBUG);  </script>
+
+ <body focusedComponent='studentTextField' firstFocusableComponent='studentTextField' jsct='body' onload='f.initDialogBodyJSO(event,w)' onkeydown='f.hbe(event,w)' ondoubleclick='f.hbe(event,w)' onclick='f.hbe(event,w)' onmousedown='f.hbe(event,w)' onmouseup='f.hbe(event,w)' onmouseover='f.hbe(event,w)' scroll='no' minHeight='594' minWidth='616' id='VSES017_StudentZapisneListyDlg0' usedListenersMask='2' oncontextmenu='f.onContextMenu(event, this,w)'
+ style=' height:594px; position:absolute; color:#333333; width:829px; font-size:11; top:30px; left:63px;' >
+<div class='menuBack' jsct='popupMenu' id='exportyPracePopupMenu'>
+<table class='menuBorder' cellSpacing='0' cellPadding='0'>
+<tr class='menuItem' jsct='menuItem' id='licencnaZmluvaMenuItem' label='Tlač licenčnej zmluvy'>
+ <td class='miIconNone'></td>
+ <td class='miMainText' nowrap='true'>Tlač licenčnej zmluvy</td>
+ <td class='miRightText' nowrap='true'></td>
+ <td class='miSubpopup'></td>
+</tr>
+<tr class='menuItem' jsct='menuItem' id='vyhlasenieMenuItem' label='Tlač vyhlásenia o poskytnutí práce'>
+ <td class='miIconNone'></td>
+ <td class='miMainText' nowrap='true'>Tlač vyhlásenia o poskytnutí práce</td>
+ <td class='miRightText' nowrap='true'></td>
+ <td class='miSubpopup'></td>
+</tr>
+<tr class='menuItem' jsct='menuItem' id='analytickyListMenuItem' label='Tlač analytického listu'>
+ <td class='miIconNone'></td>
+ <td class='miMainText' nowrap='true'>Tlač analytického listu</td>
+ <td class='miRightText' nowrap='true'></td>
+ <td class='miSubpopup'></td>
+</tr>
+</table>
+</div>
+<div class='menuBack' jsct='popupMenu' id='zpPopupMenu'>
+<table class='menuBorder' cellSpacing='0' cellPadding='0'>
+<tr class='menuItem' jsct='menuItem' id='c16MenuItem' label='Prílohy záverečnej práce'>
+ <td class='miIconNone'></td>
+ <td class='miMainText' nowrap='true'>Prílohy záverečnej práce</td>
+ <td class='miRightText' nowrap='true'></td>
+ <td class='miSubpopup'></td>
+</tr>
+<tr class='menuItem' jsct='menuItem' id='c5MenuItem' label='Abstrakt záverečnej práce'>
+ <td class='miIconNone'></td>
+ <td class='miMainText' nowrap='true'>Abstrakt záverečnej práce</td>
+ <td class='miRightText' nowrap='true'></td>
+ <td class='miSubpopup'></td>
+</tr>
+<tr class='menuItem' jsct='menuItem' id='c6MenuItem' label='Evidovať licenčnú zmluvu'>
+ <td class='miIconNone'></td>
+ <td class='miMainText' nowrap='true'>Evidovať licenčnú zmluvu</td>
+ <td class='miRightText' nowrap='true'></td>
+ <td class='miSubpopup'></td>
+</tr>
+<tr class='menuItem' jsct='menuItem' id='c7MenuItem' label='Označiť prácu ako finálnu'>
+ <td class='miIconNone'></td>
+ <td class='miMainText' nowrap='true'>Označiť prácu ako finálnu</td>
+ <td class='miRightText' nowrap='true'></td>
+ <td class='miSubpopup'></td>
+</tr>
+<tr class='menuItem' jsct='menuItem' id='c8MenuItem' label='Detail licenčnej zmluvy'>
+ <td class='miIconNone'></td>
+ <td class='miMainText' nowrap='true'>Detail licenčnej zmluvy</td>
+ <td class='miRightText' nowrap='true'></td>
+ <td class='miSubpopup'></td>
+</tr>
+<tr class='menuItem' jsct='menuItem' id='c9MenuItem' actionName='detailHodnoteniaAction' label='Detail hodnotenia'>
+ <td class='miIconNone'></td>
+ <td class='miMainText' nowrap='true'>Detail hodnotenia</td>
+ <td class='miRightText' nowrap='true'></td>
+ <td class='miSubpopup'></td>
+</tr>
+</table>
+</div>
+<div class='menuBack' jsct='popupMenu' id='PopupMenu1'>
+<table class='menuBorder' cellSpacing='0' cellPadding='0'>
+<tr class='menuItem' jsct='menuItem' id='PridatMenuItem' actionName='pridatZapisnyListAction' label='Pridať zápisný list'>
+ <td class='miIconNone'></td>
+ <td class='miMainText' nowrap='true'>Pridať zápisný list</td>
+ <td class='miRightText' nowrap='true'></td>
+ <td class='miSubpopup'></td>
+</tr>
+<tr class='menuItem' jsct='menuItem' id='menuItem7' actionName='zrusitZapisnyListAction' label='Odstrániť zápisný list'>
+ <td class='miIconNone'></td>
+ <td class='miMainText' nowrap='true'>Odstrániť zápisný list</td>
+ <td class='miRightText' nowrap='true'></td>
+ <td class='miSubpopup'></td>
+</tr>
+<tr class='menuSeparator'><td colspan='4' style='height:10px;'><span class='menuSeparatorSpan'></span></td></tr>
+<tr class='menuItem' jsct='menuItem' id='menuItem35' actionName='zapisPredmetovKredityAction' label='Zápis predmetov, kredity'>
+ <td class='miIconNone'></td>
+ <td class='miMainText' nowrap='true'>Zápis predmetov, kredity</td>
+ <td class='miRightText' nowrap='true'></td>
+ <td class='miSubpopup'></td>
+</tr>
+<tr class='menuItem' jsct='menuItem' id='menuItem36' actionName='priebezneHodnotenieAction' label='Priebežné hodnotenie'>
+ <td class='miIconNone'></td>
+ <td class='miMainText' nowrap='true'>Priebežné hodnotenie</td>
+ <td class='miRightText' nowrap='true'></td>
+ <td class='miSubpopup'></td>
+</tr>
+<tr class='menuItem' jsct='menuItem' id='menuItem40' actionName='terminyHodnoteniaAction' label='Termíny hodnotenia'>
+ <td class='miIconNone'></td>
+ <td class='miMainText' nowrap='true'>Termíny hodnotenia</td>
+ <td class='miRightText' nowrap='true'></td>
+ <td class='miSubpopup'></td>
+</tr>
+<tr class='menuItem' jsct='menuItem' id='menuItem41' actionName='hodnoteniaPriemeryAction' label='Hodnotenia, priemery'>
+ <td class='miIconNone'></td>
+ <td class='miMainText' nowrap='true'>Hodnotenia, priemery</td>
+ <td class='miRightText' nowrap='true'></td>
+ <td class='miSubpopup'></td>
+</tr>
+<tr class='menuItem' jsct='menuItem' id='menuItem42' actionName='zaradenieNaRozvrhAction' label='Prihlásenie / Odhlásenie z rozvrhu'>
+ <td class='miIconNone'></td>
+ <td class='miMainText' nowrap='true'>Prihlásenie / Odhlásenie z rozvrhu</td>
+ <td class='miRightText' nowrap='true'></td>
+ <td class='miSubpopup'></td>
+</tr>
+<tr class='menuItem' jsct='menuItem' id='menuItem43' actionName='kontrolaPrerekvizitPredmetovAction' label='Kontrola prerekvizít predmetov'>
+ <td class='miIconNone'></td>
+ <td class='miMainText' nowrap='true'>Kontrola prerekvizít predmetov</td>
+ <td class='miRightText' nowrap='true'></td>
+ <td class='miSubpopup'></td>
+</tr>
+<tr class='menuSeparator'><td colspan='4' style='height:10px;'><span class='menuSeparatorSpan'></span></td></tr>
+<tr class='menuItem' jsct='menuItem' id='odporucanyStudijnyPlan2MenuItem' actionName='odporucanyStudijnyPlanAction' label='Odporúčaný študijný plán'>
+ <td class='miIconNone'></td>
+ <td class='miMainText' nowrap='true'>Odporúčaný študijný plán</td>
+ <td class='miRightText' nowrap='true'></td>
+ <td class='miSubpopup'></td>
+</tr>
+</table>
+</div>
+<div class='menuBack' jsct='popupMenu' id='runZapisneListyPopupMenu'>
+<table class='menuBorder' cellSpacing='0' cellPadding='0'>
+<tr class='menuItem' jsct='menuItem' id='menuItem1' actionName='zapisPredmetovKredityAction' label='Zápis predmetov, kredity'>
+ <td class='miIconNone'></td>
+ <td class='miMainText' nowrap='true'>Zápis predmetov, kredity</td>
+ <td class='miRightText' nowrap='true'></td>
+ <td class='miSubpopup'></td>
+</tr>
+<tr class='menuItem' jsct='menuItem' id='menuItem2' actionName='priebezneHodnotenieAction' label='Priebežné hodnotenie'>
+ <td class='miIconNone'></td>
+ <td class='miMainText' nowrap='true'>Priebežné hodnotenie</td>
+ <td class='miRightText' nowrap='true'></td>
+ <td class='miSubpopup'></td>
+</tr>
+<tr class='menuItem' jsct='menuItem' id='menuItem6' actionName='terminyHodnoteniaAction' label='Termíny hodnotenia'>
+ <td class='miIconNone'></td>
+ <td class='miMainText' nowrap='true'>Termíny hodnotenia</td>
+ <td class='miRightText' nowrap='true'></td>
+ <td class='miSubpopup'></td>
+</tr>
+<tr class='menuItem' jsct='menuItem' id='menuItem5' actionName='hodnoteniaPriemeryAction' label='Hodnotenia, priemery'>
+ <td class='miIconNone'></td>
+ <td class='miMainText' nowrap='true'>Hodnotenia, priemery</td>
+ <td class='miRightText' nowrap='true'></td>
+ <td class='miSubpopup'></td>
+</tr>
+<tr class='menuItem' jsct='menuItem' id='menuItem4' actionName='zaradenieNaRozvrhAction' label='Prihlásenie / Odhlásenie z rozvrhu'>
+ <td class='miIconNone'></td>
+ <td class='miMainText' nowrap='true'>Prihlásenie / Odhlásenie z rozvrhu</td>
+ <td class='miRightText' nowrap='true'></td>
+ <td class='miSubpopup'></td>
+</tr>
+<tr class='menuItem' jsct='menuItem' id='menuItem3' actionName='kontrolaPrerekvizitPredmetovAction' label='Kontrola prerekvizít predmetov'>
+ <td class='miIconNone'></td>
+ <td class='miMainText' nowrap='true'>Kontrola prerekvizít predmetov</td>
+ <td class='miRightText' nowrap='true'></td>
+ <td class='miSubpopup'></td>
+</tr>
+<tr class='menuSeparator'><td colspan='4' style='height:10px;'><span class='menuSeparatorSpan'></span></td></tr>
+<tr class='menuItem' jsct='menuItem' id='odporucanyStudijnyPlanMenuItem' actionName='odporucanyStudijnyPlanAction' label='Odporúčaný študijný plán'>
+ <td class='miIconNone'></td>
+ <td class='miMainText' nowrap='true'>Odporúčaný študijný plán</td>
+ <td class='miRightText' nowrap='true'></td>
+ <td class='miSubpopup'></td>
+</tr>
+</table>
+</div>
+<div class='menuBack' jsct='popupMenu' id='runZoznamStudiiPopupMenu'>
+<table class='menuBorder' cellSpacing='0' cellPadding='0'>
+<tr class='menuItem' jsct='menuItem' id='mobilityMenuItem' actionName='mobilityStudiaAction' label='Mobility'>
+ <td class='miIconNone'></td>
+ <td class='miMainText' nowrap='true'>Mobility</td>
+ <td class='miRightText' nowrap='true'></td>
+ <td class='miSubpopup'></td>
+</tr>
+<tr class='menuItem' jsct='menuItem' id='menuItem11' actionName='ukonceniaAction' label='Ukončenia'>
+ <td class='miIconNone'></td>
+ <td class='miMainText' nowrap='true'>Ukončenia</td>
+ <td class='miRightText' nowrap='true'></td>
+ <td class='miSubpopup'></td>
+</tr>
+<tr class='menuItem' jsct='menuItem' id='menuItem12' actionName='poznamkyKStudiuAction' label='Poznámky k štúdiu'>
+ <td class='miIconNone'></td>
+ <td class='miMainText' nowrap='true'>Poznámky k štúdiu</td>
+ <td class='miRightText' nowrap='true'></td>
+ <td class='miSubpopup'></td>
+</tr>
+<tr class='menuItem' jsct='menuItem' id='menuItem13' actionName='prestupyZoStudiaAction' label='Prestupy zo štúdia'>
+ <td class='miIconNone'></td>
+ <td class='miMainText' nowrap='true'>Prestupy zo štúdia</td>
+ <td class='miRightText' nowrap='true'></td>
+ <td class='miSubpopup'></td>
+</tr>
+<tr class='menuItem' jsct='menuItem' id='menuItem14' actionName='prerusenieStudiaAction' label='Prerušenie štúdia'>
+ <td class='miIconNone'></td>
+ <td class='miMainText' nowrap='true'>Prerušenie štúdia</td>
+ <td class='miRightText' nowrap='true'></td>
+ <td class='miSubpopup'></td>
+</tr>
+<tr class='menuItem' jsct='menuItem' id='MenuItem' actionName='skolnePoplatkyAction' label='Školné a poplatky'>
+ <td class='miIconNone'></td>
+ <td class='miMainText' nowrap='true'>Školné a poplatky</td>
+ <td class='miRightText' nowrap='true'></td>
+ <td class='miSubpopup'></td>
+</tr>
+<tr class='menuItem' jsct='menuItem' id='doplnujuceInformacieMenuItem' actionName='doplnujuceInformacieAction' label='Doplňujúce informácie'>
+ <td class='miIconNone'></td>
+ <td class='miMainText' nowrap='true'>Doplňujúce informácie</td>
+ <td class='miRightText' nowrap='true'></td>
+ <td class='miSubpopup'></td>
+</tr>
+<tr class='menuItem' jsct='menuItem' id='kontrolaPopupMenu_title' pmid='kontrolaPopupMenu'>
+ <td class='miIconNone'></td>
+ <td class='miMainText' nowrap='true'>Kontrola</td>
+ <td class='miRightText' nowrap='true'></td>
+ <td class='miSubpopup'><img src='/ais/webui2/components/images/arrow-right.gif?4.29'/></td>
+</tr>
+</table>
+</div>
+<div class='menuBack' jsct='popupMenu' id='kontrolaPopupMenu'>
+<table class='menuBorder' cellSpacing='0' cellPadding='0'>
+<tr class='menuItem' jsct='menuItem' id='AbsolvovaniaMenuItem' actionName='absolvovaniePovinnychPredmetovAction' label='Absolvovania povinných predmetov'>
+ <td class='miIconNone'></td>
+ <td class='miMainText' nowrap='true'>Absolvovania povinných predmetov</td>
+ <td class='miRightText' nowrap='true'></td>
+ <td class='miSubpopup'></td>
+</tr>
+<tr class='menuItem' jsct='menuItem' id='pocetMenuItem' actionName='pocetNeuspesnychZapisovPredmetuAction' label='Počtu neúspešných zápisov predmetu'>
+ <td class='miIconNone'></td>
+ <td class='miMainText' nowrap='true'>Počtu neúspešných zápisov predmetu</td>
+ <td class='miRightText' nowrap='true'></td>
+ <td class='miSubpopup'></td>
+</tr>
+<tr class='menuItem' jsct='menuItem' id='menuItem15' actionName='absolvovaniePredmetovAction' label='Absolvovania predmetov'>
+ <td class='miIconNone'></td>
+ <td class='miMainText' nowrap='true'>Absolvovania predmetov</td>
+ <td class='miRightText' nowrap='true'></td>
+ <td class='miSubpopup'></td>
+</tr>
+<tr class='menuItem' jsct='menuItem' id='ziskaneMenuItem' actionName='ziskaneKredityAction' label='Získaných kreditov, prehľad hodnotenia'>
+ <td class='miIconNone'></td>
+ <td class='miMainText' nowrap='true'>Získaných kreditov, prehľad hodnotenia</td>
+ <td class='miRightText' nowrap='true'></td>
+ <td class='miSubpopup'></td>
+</tr>
+</table>
+</div>
+<div class='menuBack' jsct='popupMenu' id='predmetyTerminuPopupMenu'>
+<table class='menuBorder' cellSpacing='0' cellPadding='0'>
+<tr class='menuItem' jsct='menuItem' id='menuItem37' enabledInUI='false' disabled='true' style=' color: #999999;' actionName='kontrolaPrerekvizitAction' label='Kontrola prerekvizít'>
+ <td class='miIconNone'></td>
+ <td class='miMainText' nowrap='true'>Kontrola prerekvizít</td>
+ <td class='miRightText' nowrap='true'></td>
+ <td class='miSubpopup'></td>
+</tr>
+<tr class='menuSeparator'><td colspan='4' style='height:10px;'><span class='menuSeparatorSpan'></span></td></tr>
+<tr class='menuItem' jsct='menuItem' id='menuItem38' enabledInUI='false' disabled='true' style=' color: #999999;' actionName='ziadostOUznanieAction' label='Žiadosť o uznanie'>
+ <td class='miIconNone'></td>
+ <td class='miMainText' nowrap='true'>Žiadosť o uznanie</td>
+ <td class='miRightText' nowrap='true'></td>
+ <td class='miSubpopup'></td>
+</tr>
+<tr class='menuItem' jsct='menuItem' id='menuItem10' enabledInUI='false' disabled='true' style=' color: #999999;' actionName='zrusitZiadostOUznanieAction' label='Zrušiť žiadosť o uznanie'>
+ <td class='miIconNone'></td>
+ <td class='miMainText' nowrap='true'>Zrušiť žiadosť o uznanie</td>
+ <td class='miRightText' nowrap='true'></td>
+ <td class='miSubpopup'></td>
+</tr>
+<tr class='menuSeparator'><td colspan='4' style='height:10px;'><span class='menuSeparatorSpan'></span></td></tr>
+<tr class='menuItem' jsct='menuItem' id='obsahovaNaplnMenuItem' enabledInUI='false' disabled='true' style=' color: #999999;' actionName='obsahovaNaplnAction' label='Obsahová náplň štátnicového predmetu'>
+ <td class='miIconNone'></td>
+ <td class='miMainText' nowrap='true'>Obsahová náplň štátnicového predmetu</td>
+ <td class='miRightText' nowrap='true'></td>
+ <td class='miSubpopup'></td>
+</tr>
+<tr class='menuItem' jsct='menuItem' id='menuItem39' enabledInUI='false' disabled='true' style=' color: #999999;' actionName='otazkyPredmetuStatnejSkuskyAction' label='Otázky predmetu štátnej skúšky'>
+ <td class='miIconNone'></td>
+ <td class='miMainText' nowrap='true'>Otázky predmetu štátnej skúšky</td>
+ <td class='miRightText' nowrap='true'></td>
+ <td class='miSubpopup'></td>
+</tr>
+</table>
+</div>
+<div class='menuBack' jsct='popupMenu' id='zoznamTemTablePopupMenu'>
+<table class='menuBorder' cellSpacing='0' cellPadding='0'>
+<tr class='menuItem' jsct='menuItem' id='menuItem26' actionName='pridatTemuAction' label='Prihlásiť sa na zadanie záverečnej práce'>
+ <td class='miIconNone'></td>
+ <td class='miMainText' nowrap='true'>Prihlásiť sa na zadanie záverečnej práce</td>
+ <td class='miRightText' nowrap='true'></td>
+ <td class='miSubpopup'></td>
+</tr>
+<tr class='menuItem' jsct='menuItem' id='menuItem28' actionName='odobratTemuAction' label='Odhlásiť sa zo zadania záverečnej práce'>
+ <td class='miIconNone'></td>
+ <td class='miMainText' nowrap='true'>Odhlásiť sa zo zadania záverečnej práce</td>
+ <td class='miRightText' nowrap='true'></td>
+ <td class='miSubpopup'></td>
+</tr>
+<tr class='menuSeparator'><td colspan='4' style='height:10px;'><span class='menuSeparatorSpan'></span></td></tr>
+<tr class='menuItem' jsct='menuItem' id='c2MenuItem' actionName='podrobnostiZaverecnejPraceAction' label='Detail atribútov zadania záverečnej práce'>
+ <td class='miIconNone'></td>
+ <td class='miMainText' nowrap='true'>Detail atribútov zadania záverečnej práce</td>
+ <td class='miRightText' nowrap='true'></td>
+ <td class='miSubpopup'></td>
+</tr>
+<tr class='menuSeparator'><td colspan='4' style='height:10px;'><span class='menuSeparatorSpan'></span></td></tr>
+<tr class='menuItem' jsct='menuItem' id='c4MenuItem' actionName='prehladTemAction' label='Prehľad zaevidovaných záverečných prác'>
+ <td class='miIconNone'></td>
+ <td class='miMainText' nowrap='true'>Prehľad zaevidovaných záverečných prác</td>
+ <td class='miRightText' nowrap='true'></td>
+ <td class='miSubpopup'></td>
+</tr>
+<tr class='menuSeparator'><td colspan='4' style='height:10px;'><span class='menuSeparatorSpan'></span></td></tr>
+<tr class='menuItem' jsct='menuItem' id='tlacPrihlaskyMenuItem' actionName='vytlacitPrihlaskuAction' label='Vytlačiť prihlášku na záverečnú prácu'>
+ <td class='miIconNone'></td>
+ <td class='miMainText' nowrap='true'>Vytlačiť prihlášku na záverečnú prácu</td>
+ <td class='miRightText' nowrap='true'></td>
+ <td class='miSubpopup'></td>
+</tr>
+<tr class='menuSeparator'><td colspan='4' style='height:10px;'><span class='menuSeparatorSpan'></span></td></tr>
+<tr class='menuItem' jsct='menuItem' id='c19MenuItem' actionName='zaverecnaPracaAction' label='Záverečná práca'>
+ <td class='miIconNone'></td>
+ <td class='miMainText' nowrap='true'>Záverečná práca</td>
+ <td class='miRightText' nowrap='true'></td>
+ <td class='miSubpopup'></td>
+</tr>
+<tr class='menuItem' jsct='menuItem' id='c20MenuItem' actionName='hodnoteniePraceAction' label='Hodnotenie práce, posudok'>
+ <td class='miIconNone'></td>
+ <td class='miMainText' nowrap='true'>Hodnotenie práce, posudok</td>
+ <td class='miRightText' nowrap='true'></td>
+ <td class='miSubpopup'></td>
+</tr>
+</table>
+</div>
+<div class='menuBack' jsct='popupMenu' id='hodnoteniaPopupMenu'>
+<table class='menuBorder' cellSpacing='0' cellPadding='0'>
+<tr class='menuItem' jsct='menuItem' id='menuItem29' label='Detail hodnotenia'>
+ <td class='miIconNone'></td>
+ <td class='miMainText' nowrap='true'>Detail hodnotenia</td>
+ <td class='miRightText' nowrap='true'></td>
+ <td class='miSubpopup'></td>
+</tr>
+</table>
+</div>
+<div class='menuBack' jsct='popupMenu' id='statneSkuskyTablePopupMenu'>
+<table class='menuBorder' cellSpacing='0' cellPadding='0'>
+<tr class='menuItem' jsct='menuItem' id='menuItem30' label='Pridať termín štátnej skúšky'>
+ <td class='miIconNone'></td>
+ <td class='miMainText' nowrap='true'>Pridať termín štátnej skúšky</td>
+ <td class='miRightText' nowrap='true'></td>
+ <td class='miSubpopup'></td>
+</tr>
+<tr class='menuItem' jsct='menuItem' id='menuItem31' label='Odobrať termín štátnej skúšky'>
+ <td class='miIconNone'></td>
+ <td class='miMainText' nowrap='true'>Odobrať termín štátnej skúšky</td>
+ <td class='miRightText' nowrap='true'></td>
+ <td class='miSubpopup'></td>
+</tr>
+</table>
+</div>
+<div class='menuBack' jsct='popupMenu' id='predmetyTerminuTablePopupMenu'>
+<table class='menuBorder' cellSpacing='0' cellPadding='0'>
+<tr class='menuItem' jsct='menuItem' id='menuItem32' actionName='pridatPredmetAction' label='Pridať predmet termínu'>
+ <td class='miIconNone'></td>
+ <td class='miMainText' nowrap='true'>Pridať predmet termínu</td>
+ <td class='miRightText' nowrap='true'></td>
+ <td class='miSubpopup'></td>
+</tr>
+<tr class='menuItem' jsct='menuItem' id='menuItem33' enabledInUI='false' disabled='true' style=' color: #999999;' actionName='odobratPredmetAction' label='Odobrať predmet termínu'>
+ <td class='miIconNone'></td>
+ <td class='miMainText' nowrap='true'>Odobrať predmet termínu</td>
+ <td class='miRightText' nowrap='true'></td>
+ <td class='miSubpopup'></td>
+</tr>
+<tr class='menuSeparator'><td colspan='4' style='height:10px;'><span class='menuSeparatorSpan'></span></td></tr>
+<tr class='menuItem' jsct='menuItem' id='menuItem8' enabledInUI='false' disabled='true' style=' color: #999999;' actionName='kontrolaPrerekvizitAction' label='Kontrola prerekvizít'>
+ <td class='miIconNone'></td>
+ <td class='miMainText' nowrap='true'>Kontrola prerekvizít</td>
+ <td class='miRightText' nowrap='true'></td>
+ <td class='miSubpopup'></td>
+</tr>
+<tr class='menuSeparator'><td colspan='4' style='height:10px;'><span class='menuSeparatorSpan'></span></td></tr>
+<tr class='menuItem' jsct='menuItem' id='menuItem9' enabledInUI='false' disabled='true' style=' color: #999999;' actionName='ziadostOUznanieAction' label='Žiadosť o uznanie'>
+ <td class='miIconNone'></td>
+ <td class='miMainText' nowrap='true'>Žiadosť o uznanie</td>
+ <td class='miRightText' nowrap='true'></td>
+ <td class='miSubpopup'></td>
+</tr>
+<tr class='menuItem' jsct='menuItem' id='menuItem34' enabledInUI='false' disabled='true' style=' color: #999999;' actionName='zrusitZiadostOUznanieAction' label='Zrušiť žiadosť o uznanie'>
+ <td class='miIconNone'></td>
+ <td class='miMainText' nowrap='true'>Zrušiť žiadosť o uznanie</td>
+ <td class='miRightText' nowrap='true'></td>
+ <td class='miSubpopup'></td>
+</tr>
+<tr class='menuSeparator'><td colspan='4' style='height:10px;'><span class='menuSeparatorSpan'></span></td></tr>
+<tr class='menuItem' jsct='menuItem' id='obsahovaNaplnTableMenuItem' enabledInUI='false' disabled='true' style=' color: #999999;' actionName='obsahovaNaplnAction' label='Obsahová náplň štátnicového predmetu'>
+ <td class='miIconNone'></td>
+ <td class='miMainText' nowrap='true'>Obsahová náplň štátnicového predmetu</td>
+ <td class='miRightText' nowrap='true'></td>
+ <td class='miSubpopup'></td>
+</tr>
+<tr class='menuItem' jsct='menuItem' id='menuItem25' enabledInUI='false' disabled='true' style=' color: #999999;' actionName='otazkyPredmetuStatnejSkuskyAction' label='Otázky predmetu štátnej skúšky'>
+ <td class='miIconNone'></td>
+ <td class='miMainText' nowrap='true'>Otázky predmetu štátnej skúšky</td>
+ <td class='miRightText' nowrap='true'></td>
+ <td class='miSubpopup'></td>
+</tr>
+</table>
+</div>
+<div class='menuBack' jsct='popupMenu' id='zaverecnePraceRunButtonPopupMenu'>
+<table class='menuBorder' cellSpacing='0' cellPadding='0'>
+<tr class='menuItem' jsct='menuItem' id='c3MenuItem' actionName='prehladTemAction' label='Prehľad zaevidovaných záverečných prác'>
+ <td class='miIconNone'></td>
+ <td class='miMainText' nowrap='true'>Prehľad zaevidovaných záverečných prác</td>
+ <td class='miRightText' nowrap='true'></td>
+ <td class='miSubpopup'></td>
+</tr>
+<tr class='menuSeparator'><td colspan='4' style='height:10px;'><span class='menuSeparatorSpan'></span></td></tr>
+<tr class='menuItem' jsct='menuItem' id='c18MenuItem' actionName='zaverecnaPracaAction' label='Záverečná práca'>
+ <td class='miIconNone'></td>
+ <td class='miMainText' nowrap='true'>Záverečná práca</td>
+ <td class='miRightText' nowrap='true'></td>
+ <td class='miSubpopup'></td>
+</tr>
+<tr class='menuItem' jsct='menuItem' id='c17MenuItem' actionName='hodnoteniePraceAction' label='Hodnotenie práce, posudok'>
+ <td class='miIconNone'></td>
+ <td class='miMainText' nowrap='true'>Hodnotenie práce, posudok</td>
+ <td class='miRightText' nowrap='true'></td>
+ <td class='miSubpopup'></td>
+</tr>
+</table>
+</div>
+<div class='menuBack' jsct='popupMenu' id='pracePopupMenu'>
+<table class='menuBorder' cellSpacing='0' cellPadding='0'>
+<tr class='menuItem' jsct='menuItem' id='c15MenuItem' label='Prílohy záverečnej práce'>
+ <td class='miIconNone'></td>
+ <td class='miMainText' nowrap='true'>Prílohy záverečnej práce</td>
+ <td class='miRightText' nowrap='true'></td>
+ <td class='miSubpopup'></td>
+</tr>
+<tr class='menuSeparator'><td colspan='4' style='height:10px;'><span class='menuSeparatorSpan'></span></td></tr>
+<tr class='menuItem' jsct='menuItem' id='c14MenuItem' label='Prevziať prácu z úložiska'>
+ <td class='miIconNone'></td>
+ <td class='miMainText' nowrap='true'>Prevziať prácu z úložiska</td>
+ <td class='miRightText' nowrap='true'></td>
+ <td class='miSubpopup'></td>
+</tr>
+<tr class='menuSeparator'><td colspan='4' style='height:10px;'><span class='menuSeparatorSpan'></span></td></tr>
+<tr class='menuItem' jsct='menuItem' id='c1MenuItem' actionName='detailHodnoteniaZPAction' label='Detail hodnotenia'>
+ <td class='miIconNone'></td>
+ <td class='miMainText' nowrap='true'>Detail hodnotenia</td>
+ <td class='miRightText' nowrap='true'></td>
+ <td class='miSubpopup'></td>
+</tr>
+<tr class='menuSeparator'><td colspan='4' style='height:10px;'><span class='menuSeparatorSpan'></span></td></tr>
+<tr class='menuItem' jsct='menuItem' id='c12MenuItem' label='Akstrakt, texty, vlastnosti práce'>
+ <td class='miIconNone'></td>
+ <td class='miMainText' nowrap='true'>Akstrakt, texty, vlastnosti práce</td>
+ <td class='miRightText' nowrap='true'></td>
+ <td class='miSubpopup'></td>
+</tr>
+<tr class='menuSeparator'><td colspan='4' style='height:10px;'><span class='menuSeparatorSpan'></span></td></tr>
+<tr class='menuItem' jsct='menuItem' id='c10MenuItem' label='Evidovať licenčnú zmluvu'>
+ <td class='miIconNone'></td>
+ <td class='miMainText' nowrap='true'>Evidovať licenčnú zmluvu</td>
+ <td class='miRightText' nowrap='true'></td>
+ <td class='miSubpopup'></td>
+</tr>
+<tr class='menuItem' jsct='menuItem' id='c11MenuItem' label='Detail licenčnej zmluvy'>
+ <td class='miIconNone'></td>
+ <td class='miMainText' nowrap='true'>Detail licenčnej zmluvy</td>
+ <td class='miRightText' nowrap='true'></td>
+ <td class='miSubpopup'></td>
+</tr>
+<tr class='menuSeparator'><td colspan='4' style='height:10px;'><span class='menuSeparatorSpan'></span></td></tr>
+<tr class='menuItem' jsct='menuItem' id='c13MenuItem' label='Označiť prácu ako finálnu'>
+ <td class='miIconNone'></td>
+ <td class='miMainText' nowrap='true'>Označiť prácu ako finálnu</td>
+ <td class='miRightText' nowrap='true'></td>
+ <td class='miSubpopup'></td>
+</tr>
+</table>
+</div>
+  <span id='dialogComponentsSpan' xstyle='visibility:hidden;'>
+<div class='panelUser' jsct='panel' oncontextmenu='f.onContextMenu(event, this,w);'  id='studentPanel' minWidth='0' minHeight='0' pastHeight='36' pastWidth='813' collapsed='false' collapsable='false' autoscrolls='false'
+ style='position:absolute;z-index:0; border:1px solid #8D8D80; left: 8px; top: 40px; width: 813px; height: 36px; font-size: 11; color: #333333; background-color: #dedec8;' anchors='rlt'>
+<label class='labelDefault' style=' left: 8px; top: 12px; width: 38;'
+ jsct='label' for='studentTextField' id='label1'>Študent</label>
+<input jsct='textField'  class='textFieldDefault' ondragstart='f.h(event,this,w)' ondrop='f.h(event,this,w)' ondeactivate='f.h(event,this,w)' onblur='f.h(event,this,w)' onfocus='f.onFocus(event,this,w)' onkeydown='f.h(event,this,w)' onkeypress='f.h(event,this,w)' onchange='f.h(event,this,w)' onpropertychange='f.h(event,this,w)' onpaste='f.h(event,this,w)' oncut='f.h(event,this,w)' oncontextmenu='f.h(event,this,w)' value='Peter Perešíni, UOC: 26516223, PIK: 84856964' tabIndex='1' pFCName='helpButton' nFCName='detailStudentaButton'
+ id='studentTextField' selStart='0'
+ ttlt='true' dbgc='#fefefe' robgc='#ebead8' _readOnly='true' enterToNext='false'
+ style=' background-color:#ebead8; left: 62px; top: 8px; width: 697; text-align: left;' anchors='rlt'/>
+<button jsct='button' onclick='f.h(event,this,w)' onfocus='f.onFocus(event,this,w)' onmousedown='f.h(event,this,w)' onblur='f.h(event,this,w)' onmouseover='f.h(event,this,w)' onmouseout='f.h(event,this,w)' tabIndex='2' pFCName='studentTextField' nFCName='runZoznamStudiiButton' actionName='detailStudentaAction' id='detailStudentaButton' title='Detail&nbsp;študenta' oncontextmenu='f.onContextMenu(event, this,w)' anchors='rt' class='buttonWithIconOnly' style=' position:absolute; top:6px; left:763px;'
+ _image='glasses'><div><img id='buttonImage' class='buttonImageOnly' src='/ais/images/glasses.gif'/><img id='buttonPopupArrow' style='display: none;' src='/ais/webui2/components/images/arrow-down.gif?4.29'/><span id='buttonSpan' style=' display:none;' ></span></div></button>
+  </div>
+<div class='panelUser' jsct='panel' oncontextmenu='f.onContextMenu(event, this,w);'  id='panel1' minWidth='0' minHeight='0' pastHeight='508' pastWidth='813' collapsed='false' collapsable='false' autoscrolls='false'
+ style='position:absolute;z-index:0; border:1px solid #8D8D80; left: 8px; top: 80px; width: 813px; height: 508px; font-size: 11; color: #333333; background-color: #dedec8;' anchors='rblt'>
+<div class='splitPane' jsct='splitPane'  orientation='0' lastDividerLocation='149' dividerSize='7' orientationChangeEnabled='false' minWidth='0' minHeight='0' minLeftComponentWidth='100' minRightComponentWidth='100' oneTouchExpandable='true' splitResizingMainComponent='0' id='splitPane1' oncontextmenu='f.onContextMenu(event, this,w)' anchors='rblt'
+ style=' height:492px; position:absolute; color:#333333; width:797px; font-size:11; top:8px; left:8px;'>
+ <div class='splitPaneDividerV' tabIndex='-1' onblur='f.h(event,f.getMasterComponent(this),w)' onfocus='f.onFocus(event,f.getMasterComponent(this),w)' onmousedown='f.h(event,f.getMasterComponent(this),w)' onclick='f.h(event,f.getMasterComponent(this),w)' onkeydown='f.h(event,f.getMasterComponent(this),w)' style=' top: 149; width: 797;'><img id='splitPaneMoveLeftV' src='/ais/webui2/components/images/arrow-up-gray.gif?4.29'/><img id='splitPaneMoveRightV' src='/ais/webui2/components/images/arrow-down-gray.gif?4.29'/><img id='splitPaneMoveCenterV' src='/ais/webui2/components/images/splitCenterV.gif?4.29'/></div>
+ <div class='splitPaneExitedDivider'></div>
+
+<div class='panelUser' jsct='panel' oncontextmenu='f.onContextMenu(event, this,w);'  id='zoznamStudiiPanel' title='Panel&nbsp;zoznam&nbsp;štúdií&nbsp;študenta' minWidth='0' minHeight='0' pastHeight='149' pastWidth='797' collapsed='false' collapsable='false' autoscrolls='false'
+ style='position:absolute;z-index:0; border:1px solid #333333; left: 0px; top: 0px; width: 797px; height: 149px; font-size: 11; color: #333333; background-color: #dedec8;' anchors='rblt'>
+<span class='titledBorder' id='zoznamStudiiPanel_title_'>Zoznam štúdií</span>
+<button jsct='button' onclick='f.h(event,this,w)' onfocus='f.onFocus(event,this,w)' onmousedown='f.h(event,this,w)' onblur='f.h(event,this,w)' onmouseover='f.h(event,this,w)' onmouseout='f.h(event,this,w)' tabIndex='3' pFCName='detailStudentaButton' nFCName='studiaTable' id='runZoznamStudiiButton' title='Zoznam&nbsp;štúdií&nbsp;študenta&nbsp;popupMenu' popupMenu='runZoznamStudiiPopupMenu' oncontextmenu='f.onContextMenu(event, this,w)' flat='true' class='buttonRun' style=' position:absolute; top:20px; left:8px;'
+ _image='run'><div><img id='buttonImage' class='buttonImageWithText' src='/ais/images/run.gif'/><img id='buttonPopupArrow' src='/ais/webui2/components/images/arrow-down.gif?4.29'/><span id='buttonSpan' style=' display:none;' ></span></div></button>
+<span jsct='table' class='tableSpan' onfocus='f.onFocus(event,this,w)' multipleSelection='false' cellSelectionMode='false' sortable='true' allwaysSelected='true' activeRow='-1' minNoFixedColumnsWidth='40' upDownEnabled='false' userAddRemoveRowsEnabled='false' selectAllEnabled='false' readOnly='true' scrollBottomEnabled='false' statusVisible='false' rowNumbersVisible='false' visibleStatusButtons='19' supportedEvents='SET_COLUMNS|SET_SORTING|ROW_COUNT|DEBUG_INFO|' tabIndex='4' pFCName='runZoznamStudiiButton' nFCName='nacitatButton' id='studiaTable' usedListenersMask='145600' title='Tabuľka&nbsp;štúdií&nbsp;študenta' popupMenu='runZoznamStudiiPopupMenu' oncontextmenu='f.onContextMenu(event, this,w)' anchors='rblt' style=' height:93px; position:absolute; color:#333333; background-color:#ffffff; width:749px; font-size:11; top:46px; left:8px;' title='WebUI&nbsp;Tabuľka'>
+ <iframe frameborder='1' id='studiaTable_frame' title='WebUI&nbsp;Tabuľka' style='display: none; width: 749px; height: 93px;'></iframe>
+ <span style='display:none; white-space:pre;' id='studiaTable_dataView'>
+ <script type='text/plain'  id='columnModel'><!--<table id='headerTab' cellspacing='0' cellpadding='0' tabIndex='-1' style='width: 1665px;'><thead><tr>
+<td class='btSepLeft' style='cursor:default;'><div>&nbsp;</div></td><td id='headerCell' tabIndex='-1' index='0' shortname='rokDoporuceny' valign='bottom' title='Ročník' style=' text-align: center; width:40px;'><div tabIndex='-1' style='width: 40px;'>Ročník</div></td><td class='btSepRight' id='s'><div>&nbsp;</div></td>
+<td class='btSepLeft' id='s'><div>&nbsp;</div></td><td id='headerCell' tabIndex='-1' index='1' shortname='studijnyProgramSkratka' valign='bottom' title='Skratka študijného programu' style=' text-align: center; width:36px;'><div tabIndex='-1' style='width: 36px;'>Š. pr.</div></td><td class='btSepRight' id='s'><div>&nbsp;</div></td>
+<td class='btSepLeft' id='s'><div>&nbsp;</div></td><td id='headerCell' tabIndex='-1' index='2' shortname='kodKruzok' valign='bottom' title='Kód krúžku' style=' text-align: center; width:37px;'><div tabIndex='-1' style='width: 37px;'>Kód krúžku</div></td><td class='btSepRight' id='s'><div>&nbsp;</div></td>
+<td class='btSepLeft' id='s'><div>&nbsp;</div></td><td id='headerCell' tabIndex='-1' index='3' shortname='studijnyProgramPopis' valign='bottom' title='Popis študijného programu' style=' text-align: center; width:136px;'><div tabIndex='-1' style='width: 136px;'>Študijný program</div></td><td class='btSepRight' id='s'><div>&nbsp;</div></td>
+<td class='btSepLeft' id='s'><div>&nbsp;</div></td><td id='headerCell' tabIndex='-1' index='4' shortname='studijnyProgramDoplnUdaje' valign='bottom' title='Doplňujúce údaje (vlastnosti)' style=' text-align: center; width:100px;'><div tabIndex='-1' style='width: 100px;'>Doplň. údaje</div></td><td class='btSepRight' id='s'><div>&nbsp;</div></td>
+<td class='btSepLeft' id='s'><div>&nbsp;</div></td><td id='headerCell' tabIndex='-1' index='5' shortname='zaciatokStudia' valign='bottom' title='Začiatok štúdia' style=' text-align: center; width:82px;'><div tabIndex='-1' style='width: 82px;'>Začiatok štúdia</div></td><td class='btSepRight' id='s'><div>&nbsp;</div></td>
+<td class='btSepLeft' id='s'><div>&nbsp;</div></td><td id='headerCell' tabIndex='-1' index='6' shortname='koniecStudia' valign='bottom' title='Koniec štúdia' style=' text-align: center; width:82px;'><div tabIndex='-1' style='width: 82px;'>Koniec štúdia</div></td><td class='btSepRight' id='s'><div>&nbsp;</div></td>
+<td class='btSepLeft' id='s'><div>&nbsp;</div></td><td id='headerCell' tabIndex='-1' index='7' shortname='studijnyProgramDlzka' valign='bottom' title='Štandardná dĺžka (v semestroch)' style=' text-align: center; width:47px;'><div tabIndex='-1' style='width: 47px;'>Dĺžka</div></td><td class='btSepRight' id='s'><div>&nbsp;</div></td>
+<td class='btSepLeft' id='s'><div>&nbsp;</div></td><td id='headerCell' tabIndex='-1' index='8' shortname='dobaStudia' valign='bottom' title='Dĺžka štúdia' style=' text-align: center; width:59px;'><div tabIndex='-1' style='width: 59px;'>Dĺžka študia</div></td><td class='btSepRight' id='s'><div>&nbsp;</div></td>
+<td class='btSepLeft' id='s'><div>&nbsp;</div></td><td id='headerCell' tabIndex='-1' index='9' shortname='cisloDiplomu' valign='bottom' title='Číslo diplomu' style=' text-align: center; width:82px;'><div tabIndex='-1' style='width: 82px;'>Číslo diplomu</div></td><td class='btSepRight' id='s'><div>&nbsp;</div></td>
+<td class='btSepLeft' id='s'><div>&nbsp;</div></td><td id='headerCell' tabIndex='-1' index='10' shortname='cisloMatriky' valign='bottom' title='Číslo z matriky' style=' text-align: center; width:75px;'><div tabIndex='-1' style='width: 75px;'>Číslo z matriky</div></td><td class='btSepRight' id='s'><div>&nbsp;</div></td>
+<td class='btSepLeft' id='s'><div>&nbsp;</div></td><td id='headerCell' tabIndex='-1' index='11' shortname='cisloVysvedcenia' valign='bottom' title='Výrobné číslo vysvedčenia' style=' text-align: center; width:145px;'><div tabIndex='-1' style='width: 145px;'>Číslo vysvedčenia</div></td><td class='btSepRight' id='s'><div>&nbsp;</div></td>
+<td class='btSepLeft' id='s'><div>&nbsp;</div></td><td id='headerCell' tabIndex='-1' index='12' shortname='cisloDodatku' valign='bottom' title='Výrobné číslo dodatku' style=' text-align: center; width:109px;'><div tabIndex='-1' style='width: 109px;'>Číslo dodatku</div></td><td class='btSepRight' id='s'><div>&nbsp;</div></td>
+<td class='btSepLeft' id='s'><div>&nbsp;</div></td><td id='headerCell' tabIndex='-1' index='13' shortname='studijnyProgramIdEviCRS' valign='bottom' title='Číslo EVI' style=' text-align: center; width:91px;'><div tabIndex='-1' style='width: 91px;'>Číslo EVI</div></td><td class='btSepRight' id='s'><div>&nbsp;</div></td>
+<td class='btSepLeft' id='s'><div>&nbsp;</div></td><td id='headerCell' tabIndex='-1' index='14' shortname='studijnyProgramIdProgramCRS' valign='bottom' title='Číslo programu' style=' text-align: center; width:91px;'><div tabIndex='-1' style='width: 91px;'>Číslo programu</div></td><td class='btSepRight' id='s'><div>&nbsp;</div></td>
+<td class='btSepLeft' id='s'><div>&nbsp;</div></td><td id='headerCell' tabIndex='-1' index='15' shortname='priznak' valign='bottom' title='Atribút označenia štúdia' style=' text-align: center; width:28px;'><div tabIndex='-1' style='width: 28px;'>Príznak</div></td><td class='btSepRight' id='s'><div>&nbsp;</div></td>
+<td class='btSepLeft' id='s'><div>&nbsp;</div></td><td id='headerCell' tabIndex='-1' index='16' shortname='studijnyProgramSkratkaAkreditOJ' valign='bottom' title='Skratka organizačnej jednotky' style=' text-align: center; width:253px;'><div tabIndex='-1' style='width: 253px;'>Skratka organizačnej jednotky</div></td><td class='btSepRight' id='s'><div>&nbsp;</div></td>
+<td class='btSepLeft' id='s'><div>&nbsp;</div></td><td id='headerCell' tabIndex='-1' index='17' shortname='rokStudia' valign='bottom' title='Rok štúdia' style=' text-align: center; width:28px;'><div tabIndex='-1' style='width: 28px;'>Rok štúdia</div></td><td class='btSepRight' id='s'><div>&nbsp;</div></td>
+</tr></thead></table>
+--></script>
+ <script type='text/plain'  id='dataTabColGroup'><!--<col shortname='rokDoporuceny' sortable='true' style=' text-align: center;' width='48px'/><col shortname='studijnyProgramSkratka' sortable='true' width='44px'/><col shortname='kodKruzok' sortable='true' style=' text-align: center;' width='45px'/><col shortname='studijnyProgramPopis' sortable='true' width='144px'/><col shortname='studijnyProgramDoplnUdaje' sortable='true' width='108px'/><col shortname='zaciatokStudia' sortable='true' style=' text-align: center;' width='90px'/><col shortname='koniecStudia' sortable='true' style=' text-align: center;' width='90px'/><col shortname='studijnyProgramDlzka' sortable='true' style=' text-align: right;' width='55px'/><col shortname='dobaStudia' sortable='true' style=' text-align: right;' width='67px'/><col shortname='cisloDiplomu' sortable='true' width='90px'/><col shortname='cisloMatriky' sortable='true' width='83px'/><col shortname='cisloVysvedcenia' sortable='true' width='153px'/><col shortname='cisloDodatku' sortable='true' width='117px'/><col shortname='studijnyProgramIdEviCRS' sortable='true' style=' text-align: center;' width='99px'/><col shortname='studijnyProgramIdProgramCRS' sortable='true' style=' text-align: center;' width='99px'/><col shortname='priznak' sortable='true' style=' text-align: center;' width='36px'/><col shortname='studijnyProgramSkratkaAkreditOJ' sortable='true' style=' text-align: center;' width='261px'/><col shortname='rokStudia' sortable='true' style=' text-align: center;' width='36px'/>--></script>
+<script type='text/plain'  id='selectionModel' selection='0' invertedSelection='false' multipleSelection='false' editMode='false'><!----></script>
+<script type='text/plain'  id='dataTabBodies'  bufferSize='50' dataSendType='update' showSelectionInUpdate='false'><!--
+<tbody id='dataTabBody0'>
+<tr id='row_0' rid='0'><td style=' text-align:center;'>1</td><td>mINF</td><td style=' text-align:center;'>&nbsp;</td><td>informatika</td><td><div>(Jednoodborové štúdium, magisterský II. st., denná forma)</div></td><td style=' text-align:center;'>02.09.2009</td><td style=' text-align:center;'>&nbsp;</td><td style=' text-align:right;'>4</td><td style=' text-align:right;'>1,0</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td style=' text-align:center;'>&nbsp;</td><td style=' text-align:center;'>4017</td><td style=' text-align:center;'>&nbsp;</td><td style=' text-align:center;'>FMFI</td><td style=' text-align:center;'>1</td></tr><tr id='row_1' rid='1'><td style=' text-align:center;'>3</td><td>INF</td><td style=' text-align:center;'>&nbsp;</td><td>informatika</td><td><div>(Jednoodborové štúdium, bakalársky I. st., denná forma)</div></td><td style=' text-align:center;'>04.09.2006</td><td style=' text-align:center;'>23.06.2009</td><td style=' text-align:right;'>6</td><td style=' text-align:right;'>3,0</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td style=' text-align:center;'>&nbsp;</td><td style=' text-align:center;'>4016</td><td style=' text-align:center;'>&nbsp;</td><td style=' text-align:center;'>FMFI</td><td style=' text-align:center;'>3</td></tr> </tbody>
+--></script>
+ <script type='text/plain'  id='dataPositionSpan' isEnd='true' newData='true' rowCount='2' declaredRowCount='2'></script>
+ <script type='text/plain'  id='rowHeaderDataTabBodies'><!--<tbody id='rowHeaderDataTabBody0'><tr><td><div>1</div></td></tr><tr><td><div>2</div></td></tr> </tbody>
+--></script>
+
+ </span>
+</span>
+<button jsct='button' onclick='f.h(event,this,w)' onfocus='f.onFocus(event,this,w)' onmousedown='f.h(event,this,w)' onblur='f.h(event,this,w)' onmouseover='f.h(event,this,w)' onmouseout='f.h(event,this,w)' tabIndex='5' pFCName='studiaTable' nFCName='tabbedPane' actionName='nacitatDataAction' id='nacitatButton' title='Načítať&nbsp;údaje' oncontextmenu='f.onContextMenu(event, this,w)' anchors='rb' class='buttonWithIconOnly' style=' position:absolute; top:117px; left:763px;'
+ _image='nacitat'><div><img id='buttonImage' class='buttonImageOnly' src='/ais/images/nacitat.gif'/><img id='buttonPopupArrow' style='display: none;' src='/ais/webui2/components/images/arrow-down.gif?4.29'/><span id='buttonSpan' style=' display:none;' ></span></div></button>
+  </div>
+<div class='tabbedPane' jsct='tabbedPane' onkeydown='f.onKeyDown(event, this,w)' selectedIndex='0' tabIndex='-1' pFCName='nacitatButton' nFCName='pridatZapisnyListButton' id='tabbedPane' oncontextmenu='f.onContextMenu(event, this,w)' anchors='rblt'
+ style=' height:336px; position:absolute; color:#333333; width:797px; background-color:inherit; font-size:11; top:156px; left:0px;'>
+<div class='tabbedPaneSelector' onselectstart='f.cancelEvent(event)'  style='width: 797px;'><table class='tabbedPaneSelectorTable' cellspacing='0' cellpadding='0' id='tabbedPaneTabs'><tr>
+ <td><table cellspacing='0' cellpadding='0' border='0' onmousedown='this.rows[1].cells[1].focus();' class='tabbedPaneTabSelected' id='tabbedPanetab_0' index='0' _for='zapisneListyTab'>
+<tr style='height: 2px;'><td class='tp_lefttop'><div></div></td><td class='tp_top'><div></div></td><td class='tp_righttop'><div></div></td></tr><tr style='height: 21px;'>  <td class='tp_left_selected_class'><div></div></td>  <td class='tp_tab_selected_class' onfocus='window.getJSObject("tabbedPane").getSelector().focusTab(this);' onkeydown='window.getJSObject("tabbedPane").getSelector().keydown(event);' tabIndex='6'><span id='zapisneListyTab_title_'>Zápisné&nbsp;listy</span></td>  <td class='tp_right_selected_class'><div></div></td></tr></table></td>
+ <td><table cellspacing='0' cellpadding='0' border='0' onmousedown='this.rows[1].cells[1].focus();' class='tabbedPaneTab' id='tabbedPanetab_1' index='1' _for='zaverecnePraceTab'>
+<tr style='height: 2px;'><td class='tp_lefttop'><div></div></td><td class='tp_top'><div></div></td><td class='tp_righttop'><div></div></td></tr><tr style='height: 19px;'>  <td class='tp_left_class' style='border-bottom: 1px solid #FFFFFF;'><div></div></td>  <td class='tp_tab_class'  style='border-bottom: 1px solid #FFFFFF;' onfocus='window.getJSObject("tabbedPane").getSelector().focusTab(this);' onkeydown='window.getJSObject("tabbedPane").getSelector().keydown(event);' tabIndex='-1'><span id='zaverecnePraceTab_title_'>Záverečné&nbsp;práce</span></td>  <td class='tp_right_class' style='border-bottom: 1px solid #FFFFFF;'><div></div></td></tr></table></td>
+ <td><table cellspacing='0' cellpadding='0' border='0' onmousedown='this.rows[1].cells[1].focus();' class='tabbedPaneTab' id='tabbedPanetab_2' index='2' _for='statneSkuskyTab'>
+<tr style='height: 2px;'><td class='tp_lefttop'><div></div></td><td class='tp_top'><div></div></td><td class='tp_righttop'><div></div></td></tr><tr style='height: 19px;'>  <td class='tp_left_class' style='border-bottom: 1px solid #FFFFFF;'><div></div></td>  <td class='tp_tab_class'  style='border-bottom: 1px solid #FFFFFF;' onfocus='window.getJSObject("tabbedPane").getSelector().focusTab(this);' onkeydown='window.getJSObject("tabbedPane").getSelector().keydown(event);' tabIndex='-1'><span id='statneSkuskyTab_title_'>Štátne&nbsp;skúšky</span></td>  <td class='tp_right_class' style='border-bottom: 1px solid #FFFFFF;'><div></div></td></tr></table></td>
+</tr></table>
+<span id='tabbedPaneSelectorBeforeSpan'></span>
+</div>
+<span id='tabbedPaneSelectorButtons'><button id='TPbuttonLeft' tabIndex='-1' onclick='window.getJSObject(this.parentNode.parentNode.id).getSelector().clickButton(event, this)'><img src='/ais/webui2/components/images/arrow-left.gif'/></button> <button id='TPbuttonRight' tabIndex='-1' onclick='window.getJSObject(this.parentNode.parentNode.id).getSelector().clickButton(event, this)'><img src='/ais/webui2/components/images/arrow-right.gif'/></button></span><div id='tabbedPaneArena' class='tabbedPaneArena' style='width:797px;height:313px;'>
+<div class='panelOnTabbedPane' autoscrolls='false' style=' height:313; width:797;' jsct='panel' oncontextmenu='f.onContextMenu(event, this,w);' tabId='tabbedPanetab_0' name='Zápisné listy' id='zapisneListyTab' title='Panel&nbsp;zápisné&nbsp;listy' minWidth='0' minHeight='0' pastHeight='313' pastWidth='797'>
+<div class='panelUser' jsct='panel' oncontextmenu='f.onContextMenu(event, this,w);'  id='panel2' minWidth='0' minHeight='0' pastHeight='291' pastWidth='775' collapsed='false' collapsable='false' autoscrolls='false'
+ style='position:absolute;z-index:0; border:1px solid #333333; left: 8px; top: 8px; width: 775px; height: 291px; font-size: 11; color: #333333; background-color: #dedec8;' anchors='rblt'>
+<span class='titledBorder' id='panel2_title_'>Zoznam zápisných listov</span>
+<button jsct='button' onclick='f.h(event,this,w)' onfocus='f.onFocus(event,this,w)' onmousedown='f.h(event,this,w)' onblur='f.h(event,this,w)' onmouseover='f.h(event,this,w)' onmouseout='f.h(event,this,w)' tabIndex='7' pFCName='tabbedPane' nFCName='odobratZapisnyListButton' actionName='pridatZapisnyListAction' id='pridatZapisnyListButton' title='Pridať&nbsp;nový&nbsp;zápisný&nbsp;list' oncontextmenu='f.onContextMenu(event, this,w)' class='buttonWithIconOnly' style=' position:absolute; top:20px; left:8px;'
+ _image='add'><div><img id='buttonImage' class='buttonImageOnly' src='/ais/images/add.gif'/><img id='buttonPopupArrow' style='display: none;' src='/ais/webui2/components/images/arrow-down.gif?4.29'/><span id='buttonSpan' style=' display:none;' ></span></div></button>
+<button jsct='button' onclick='f.h(event,this,w)' onfocus='f.onFocus(event,this,w)' onmousedown='f.h(event,this,w)' onblur='f.h(event,this,w)' onmouseover='f.h(event,this,w)' onmouseout='f.h(event,this,w)' tabIndex='8' pFCName='pridatZapisnyListButton' nFCName='runZapisneListyButton' actionName='zrusitZapisnyListAction' id='odobratZapisnyListButton' title='Zrušiť&nbsp;zápisný&nbsp;list' oncontextmenu='f.onContextMenu(event, this,w)' class='buttonWithIconOnly' style=' position:absolute; top:20px; left:34px;'
+ _image='odstranit'><div><img id='buttonImage' class='buttonImageOnly' src='/ais/images/odstranit.gif'/><img id='buttonPopupArrow' style='display: none;' src='/ais/webui2/components/images/arrow-down.gif?4.29'/><span id='buttonSpan' style=' display:none;' ></span></div></button>
+<button jsct='button' onclick='f.h(event,this,w)' onfocus='f.onFocus(event,this,w)' onmousedown='f.h(event,this,w)' onblur='f.h(event,this,w)' onmouseover='f.h(event,this,w)' onmouseout='f.h(event,this,w)' tabIndex='9' pFCName='odobratZapisnyListButton' nFCName='zapisneListyTable' id='runZapisneListyButton' popupMenu='runZapisneListyPopupMenu' oncontextmenu='f.onContextMenu(event, this,w)' flat='true' class='buttonRun' style=' position:absolute; top:20px; left:76px;'
+ _image='run'><div><img id='buttonImage' class='buttonImageWithText' src='/ais/images/run.gif'/><img id='buttonPopupArrow' src='/ais/webui2/components/images/arrow-down.gif?4.29'/><span id='buttonSpan' style=' display:none;' ></span></div></button>
+<span jsct='table' class='tableSpan' onfocus='f.onFocus(event,this,w)' multipleSelection='false' cellSelectionMode='false' sortable='true' allwaysSelected='true' activeRow='-1' minNoFixedColumnsWidth='40' upDownEnabled='false' userAddRemoveRowsEnabled='false' selectAllEnabled='false' readOnly='true' scrollBottomEnabled='false' statusVisible='false' rowNumbersVisible='false' visibleStatusButtons='19' supportedEvents='SET_COLUMNS|SET_SORTING|ROW_COUNT|DEBUG_INFO|' tabIndex='10' pFCName='runZapisneListyButton' nFCName='pridatTemuButton' id='zapisneListyTable' usedListenersMask='145472' title='Tabuľka&nbsp;zápisné&nbsp;listy' popupMenu='PopupMenu1' oncontextmenu='f.onContextMenu(event, this,w)' anchors='rblt' style=' height:237px; position:absolute; color:#333333; background-color:#ffffff; width:758px; font-size:11; top:46px; left:8px;' title='WebUI&nbsp;Tabuľka'>
+ <iframe frameborder='1' id='zapisneListyTable_frame' title='WebUI&nbsp;Tabuľka' style='display: none; width: 758px; height: 237px;'></iframe>
+ <span style='display:none; white-space:pre;' id='zapisneListyTable_dataView'>
+ <script type='text/plain'  id='columnModel'><!--<table id='headerTab' cellspacing='0' cellpadding='0' tabIndex='-1' style='width: 1596px;'><thead><tr>
+<td class='btSepLeft' style='cursor:default;'><div>&nbsp;</div></td><td id='headerCell' tabIndex='-1' index='0' shortname='popisAkadRok' valign='bottom' title='Akademický rok' style=' text-align: center; width:77px;'><div tabIndex='-1' style='width: 77px;'>Akademický rok</div></td><td class='btSepRight' id='s'><div>&nbsp;</div></td>
+<td class='btSepLeft' id='s'><div>&nbsp;</div></td><td id='headerCell' tabIndex='-1' index='1' shortname='rokRocnik' valign='bottom' title='Ročník' style=' text-align: center; width:40px;'><img class='sortArrow' src='/ais/webui2/components/images/arrow-up-gray.gif?4.29'/><div tabIndex='-1' style='width: 33px;'>Ročník</div></td><td class='btSepRight' id='s'><div>&nbsp;</div></td>
+<td class='btSepLeft' id='s'><div>&nbsp;</div></td><td id='headerCell' tabIndex='-1' index='2' shortname='studProgramSkratka' valign='bottom' title='Skratka študijného programu' style=' text-align: center; width:37px;'><div tabIndex='-1' style='width: 37px;'>Š. pr.</div></td><td class='btSepRight' id='s'><div>&nbsp;</div></td>
+<td class='btSepLeft' id='s'><div>&nbsp;</div></td><td id='headerCell' tabIndex='-1' index='3' shortname='studProgramPopis' valign='bottom' title='Popis študijného programu' style=' text-align: center; width:136px;'><div tabIndex='-1' style='width: 136px;'>Študijný program</div></td><td class='btSepRight' id='s'><div>&nbsp;</div></td>
+<td class='btSepLeft' id='s'><div>&nbsp;</div></td><td id='headerCell' tabIndex='-1' index='4' shortname='studProgramDoplnUdaje' valign='bottom' title='Doplňujúce údaje (vlastnosti)' style=' text-align: center; width:177px;'><div tabIndex='-1' style='width: 177px;'>Doplň. údaje</div></td><td class='btSepRight' id='s'><div>&nbsp;</div></td>
+<td class='btSepLeft' id='s'><div>&nbsp;</div></td><td id='headerCell' tabIndex='-1' index='5' shortname='datumZapisu' valign='bottom' title='Dátum vytvorenia zápisného listu' style=' text-align: center; width:82px;'><div tabIndex='-1' style='width: 82px;'>Dát. zápisu</div></td><td class='btSepRight' id='s'><div>&nbsp;</div></td>
+<td class='btSepLeft' id='s'><div>&nbsp;</div></td><td id='headerCell' tabIndex='-1' index='6' shortname='poplatok' valign='bottom' title='Potvrdený zápis' style=' text-align: center; width:28px;'><div tabIndex='-1' style='width: 28px;'>Potv. zápis</div></td><td class='btSepRight' id='s'><div>&nbsp;</div></td>
+<td class='btSepLeft' id='s'><div>&nbsp;</div></td><td id='headerCell' tabIndex='-1' index='7' shortname='podmienecne' valign='bottom' title='Podmienečný zápis' style=' text-align: center; width:28px;'><div tabIndex='-1' style='width: 28px;'>Podm. zápis</div></td><td class='btSepRight' id='s'><div>&nbsp;</div></td>
+<td class='btSepLeft' id='s'><div>&nbsp;</div></td><td id='headerCell' tabIndex='-1' index='8' shortname='studProgramDlzka' valign='bottom' title='Štandardná dĺžka (v semestroch)' style=' text-align: center; width:46px;'><div tabIndex='-1' style='width: 46px;'>Dĺžka</div></td><td class='btSepRight' id='s'><div>&nbsp;</div></td>
+<td class='btSepLeft' id='s'><div>&nbsp;</div></td><td id='headerCell' tabIndex='-1' index='9' shortname='studProgramIdEviCRS' valign='bottom' title='Číslo EVI' style=' text-align: center; width:91px;'><div tabIndex='-1' style='width: 91px;'>Číslo EVI</div></td><td class='btSepRight' id='s'><div>&nbsp;</div></td>
+<td class='btSepLeft' id='s'><div>&nbsp;</div></td><td id='headerCell' tabIndex='-1' index='10' shortname='studProgramIdProgramCRS' valign='bottom' title='Číslo programu' style=' text-align: center; width:91px;'><div tabIndex='-1' style='width: 91px;'>Číslo programu</div></td><td class='btSepRight' id='s'><div>&nbsp;</div></td>
+<td class='btSepLeft' id='s'><div>&nbsp;</div></td><td id='headerCell' tabIndex='-1' index='11' shortname='datumSplnenia' valign='bottom' title='Dátum splnenia podmienok pre ďalšie štúdium' style=' text-align: center; width:82px;'><div tabIndex='-1' style='width: 82px;'>Dátum splnenia</div></td><td class='btSepRight' id='s'><div>&nbsp;</div></td>
+<td class='btSepLeft' id='s'><div>&nbsp;</div></td><td id='headerCell' tabIndex='-1' index='12' shortname='priznak' valign='bottom' title='Atribút označenia štúdia v akademickom roku' style=' text-align: center; width:28px;'><div tabIndex='-1' style='width: 28px;'>Príznak</div></td><td class='btSepRight' id='s'><div>&nbsp;</div></td>
+<td class='btSepLeft' id='s'><div>&nbsp;</div></td><td id='headerCell' tabIndex='-1' index='13' shortname='studProgramSkratkaAkreditOJ' valign='bottom' title='Skratka organizačnej jednotky' style=' text-align: center; width:253px;'><div tabIndex='-1' style='width: 253px;'>Skratka organizačnej jednotky</div></td><td class='btSepRight' id='s'><div>&nbsp;</div></td>
+<td class='btSepLeft' id='s'><div>&nbsp;</div></td><td id='headerCell' tabIndex='-1' index='14' shortname='typFinacovaniaPopis' valign='bottom' title='Popis typu finacovania štúdia' style=' text-align: center; width:100px;'><div tabIndex='-1' style='width: 100px;'>Financovanie</div></td><td class='btSepRight' id='s'><div>&nbsp;</div></td>
+<td class='btSepLeft' id='s'><div>&nbsp;</div></td><td id='headerCell' tabIndex='-1' index='15' shortname='typFinacovaniaSkratPopis' valign='bottom' title='Skrátený popis typu finacovania štúdia' style=' text-align: center; width:172px;'><div tabIndex='-1' style='width: 172px;'>T. f. (skrát. popis)</div></td><td class='btSepRight' id='s'><div>&nbsp;</div></td>
+</tr></thead></table>
+--></script>
+ <script type='text/plain'  id='dataTabColGroup'><!--<col shortname='popisAkadRok' sortable='true' style=' text-align: center;' width='85px'/><col shortname='rokRocnik' sortable='true' style=' text-align: center;' width='48px'/><col shortname='studProgramSkratka' sortable='true' width='45px'/><col shortname='studProgramPopis' sortable='true' width='144px'/><col shortname='studProgramDoplnUdaje' sortable='true' width='185px'/><col shortname='datumZapisu' sortable='true' style=' text-align: center;' width='90px'/><col shortname='poplatok' sortable='true' style=' text-align: center;' width='36px'/><col shortname='podmienecne' sortable='true' style=' text-align: center;' width='36px'/><col shortname='studProgramDlzka' sortable='true' style=' text-align: right;' width='54px'/><col shortname='studProgramIdEviCRS' sortable='true' style=' text-align: center;' width='99px'/><col shortname='studProgramIdProgramCRS' sortable='true' style=' text-align: center;' width='99px'/><col shortname='datumSplnenia' sortable='true' style=' text-align: center;' width='90px'/><col shortname='priznak' sortable='true' style=' text-align: center;' width='36px'/><col shortname='studProgramSkratkaAkreditOJ' sortable='true' style=' text-align: center;' width='261px'/><col shortname='typFinacovaniaPopis' sortable='true' width='108px'/><col shortname='typFinacovaniaSkratPopis' sortable='true' width='180px'/>--></script>
+<script type='text/plain'  id='selectionModel' selection='0' invertedSelection='false' multipleSelection='false' editMode='false'><!----></script>
+<script type='text/plain'  id='dataTabBodies'  bufferSize='50' dataSendType='update' showSelectionInUpdate='true'><!--
+<tbody id='dataTabBody0'>
+<tr id='row_0' rid='0'><td style=' text-align:center;'><div>2009/2010</div></td><td style=' text-align:center;'>1</td><td>mINF</td><td>informatika</td><td><div>(Jednoodborové štúdium, magisterský II. st., denná forma)</div></td><td style=' text-align:center;'>14.09.2009</td><td style=' text-align:center;'>A</td><td style=' text-align:center;'>N</td><td style=' text-align:right;'>4</td><td style=' text-align:center;'>&nbsp;</td><td style=' text-align:center;'>4017</td><td style=' text-align:center;'>&nbsp;</td><td style=' text-align:center;'>&nbsp;</td><td style=' text-align:center;'>FMFI</td><td>&nbsp;</td><td>&nbsp;</td></tr> </tbody>
+--></script>
+ <script type='text/plain'  id='dataPositionSpan' isEnd='true' newData='true' rowCount='1' declaredRowCount='1'></script>
+ <script type='text/plain'  id='rowHeaderDataTabBodies'><!--<tbody id='rowHeaderDataTabBody0'><tr><td><div>1</div></td></tr> </tbody>
+--></script>
+
+ </span>
+</span>
+<label class='labelDefault' visible='false' style=' left: 359px; top: 20px; width: 36; visibility:hidden;'
+ jsct='label' id='label2'>334</label>
+  </div>
+</div>
+<div class='panelOnTabbedPane' autoscrolls='false' style=' height:313; visibility:hidden; width:797;' jsct='panel' oncontextmenu='f.onContextMenu(event, this,w);' tabId='tabbedPanetab_1' name='Záverečné práce' id='zaverecnePraceTab' title='Panel&nbsp;záverečné&nbsp;práce' minWidth='0' minHeight='0' pastHeight='313' pastWidth='797'>
+<div class='panelUser' jsct='panel' oncontextmenu='f.onContextMenu(event, this,w);' name='Zoznam zadaní záverečných prác'  id='panel8' minWidth='0' minHeight='0' pastHeight='296' pastWidth='781' collapsed='false' collapsable='false' autoscrolls='false'
+ style='position:absolute;z-index:0; border:1px solid #8D8D80; left: 8px; top: 8px; width: 781px; height: 296px; font-size: 11; color: #333333; background-color: #dedec8;' anchors='rblt'>
+<span class='titledBorder' id='panel8_title_'>Zoznam zadaní záverečných prác</span>
+<button jsct='button' onclick='f.h(event,this,w)' onfocus='f.onFocus(event,this,w)' onmousedown='f.h(event,this,w)' onblur='f.h(event,this,w)' onmouseover='f.h(event,this,w)' onmouseout='f.h(event,this,w)' tabIndex='11' pFCName='zapisneListyTable' nFCName='detailTemyButton' actionName='pridatTemuAction' id='pridatTemuButton' title='Prihlásiť&nbsp;sa&nbsp;na&nbsp;zadanie&nbsp;záverečnej&nbsp;práce' oncontextmenu='f.onContextMenu(event, this,w)' class='buttonWithIconOnly' style=' position:absolute; top:20px; left:8px;'
+ _image='add'><div><img id='buttonImage' class='buttonImageOnly' src='/ais/images/add.gif'/><img id='buttonPopupArrow' style='display: none;' src='/ais/webui2/components/images/arrow-down.gif?4.29'/><span id='buttonSpan' style=' display:none;' ></span></div></button>
+<button jsct='button' onclick='f.h(event,this,w)' onfocus='f.onFocus(event,this,w)' onmousedown='f.h(event,this,w)' onblur='f.h(event,this,w)' onmouseover='f.h(event,this,w)' onmouseout='f.h(event,this,w)' tabIndex='12' pFCName='pridatTemuButton' nFCName='odobratTemuButton' actionName='podrobnostiZaverecnejPraceAction' id='detailTemyButton' title='Detail&nbsp;atribútov&nbsp;zadania&nbsp;záverečnej&nbsp;práce' oncontextmenu='f.onContextMenu(event, this,w)' class='buttonWithIconOnly' style=' position:absolute; top:20px; left:80px;'
+ _image='glasses'><div><img id='buttonImage' class='buttonImageOnly' src='/ais/images/glasses.gif'/><img id='buttonPopupArrow' style='display: none;' src='/ais/webui2/components/images/arrow-down.gif?4.29'/><span id='buttonSpan' style=' display:none;' ></span></div></button>
+<button jsct='button' onclick='f.h(event,this,w)' onfocus='f.onFocus(event,this,w)' onmousedown='f.h(event,this,w)' onblur='f.h(event,this,w)' onmouseover='f.h(event,this,w)' onmouseout='f.h(event,this,w)' tabIndex='13' pFCName='detailTemyButton' nFCName='c1Button' actionName='odobratTemuAction' id='odobratTemuButton' title='Odhlásiť&nbsp;sa&nbsp;zo&nbsp;zadania&nbsp;záverečnej&nbsp;práce' oncontextmenu='f.onContextMenu(event, this,w)' class='buttonWithIconOnly' style=' position:absolute; top:20px; left:32px;'
+ _image='odstranit'><div><img id='buttonImage' class='buttonImageOnly' src='/ais/images/odstranit.gif'/><img id='buttonPopupArrow' style='display: none;' src='/ais/webui2/components/images/arrow-down.gif?4.29'/><span id='buttonSpan' style=' display:none;' ></span></div></button>
+<button jsct='button' onclick='f.h(event,this,w)' onfocus='f.onFocus(event,this,w)' onmousedown='f.h(event,this,w)' onblur='f.h(event,this,w)' onmouseover='f.h(event,this,w)' onmouseout='f.h(event,this,w)' tabIndex='14' pFCName='odobratTemuButton' nFCName='c2Button' id='c1Button' popupMenu='zaverecnePraceRunButtonPopupMenu' oncontextmenu='f.onContextMenu(event, this,w)' class='buttonRun' style=' position:absolute; top:20px; left:128px;'
+ _image='run'><div><img id='buttonImage' class='buttonImageWithText' src='/ais/images/run.gif'/><img id='buttonPopupArrow' src='/ais/webui2/components/images/arrow-down.gif?4.29'/><span id='buttonSpan' style=' display:none;' ></span></div></button>
+<button jsct='button' onclick='f.h(event,this,w)' onfocus='f.onFocus(event,this,w)' onmousedown='f.h(event,this,w)' onblur='f.h(event,this,w)' onmouseover='f.h(event,this,w)' onmouseout='f.h(event,this,w)' tabIndex='15' pFCName='c1Button' nFCName='zoznamTemTable' actionName='vytlacitPrihlaskuAction' id='c2Button' title='Vytlačiť&nbsp;prihlášku&nbsp;na&nbsp;záverečnú&nbsp;prácu' oncontextmenu='f.onContextMenu(event, this,w)' class='buttonWithIconOnly' style=' position:absolute; top:20px; left:188px;'
+ _image='print2'><div><img id='buttonImage' class='buttonImageOnly' src='/ais/images/print2.gif'/><img id='buttonPopupArrow' style='display: none;' src='/ais/webui2/components/images/arrow-down.gif?4.29'/><span id='buttonSpan' style=' display:none;' ></span></div></button>
+<span jsct='table' class='tableSpan' onfocus='f.onFocus(event,this,w)' multipleSelection='false' cellSelectionMode='false' sortable='true' allwaysSelected='true' activeRow='-1' minNoFixedColumnsWidth='40' upDownEnabled='false' userAddRemoveRowsEnabled='false' selectAllEnabled='false' readOnly='true' scrollBottomEnabled='false' statusVisible='true' rowNumbersVisible='false' visibleStatusButtons='19' supportedEvents='SET_COLUMNS|SET_SORTING|ROW_COUNT|DEBUG_INFO|' tabIndex='16' pFCName='c2Button' nFCName='intervalPrihlasovaniaTemaTextField' id='zoznamTemTable' usedListenersMask='145472' title='Tabuľka&nbsp;záverečné&nbsp;práce' popupMenu='zoznamTemTablePopupMenu' oncontextmenu='f.onContextMenu(event, this,w)' anchors='rblt' style=' height:241px; position:absolute; color:#333333; background-color:#ffffff; width:763px; font-size:11; top:46px; left:8px;' title='WebUI&nbsp;Tabuľka'>
+ <iframe frameborder='1' id='zoznamTemTable_frame' title='WebUI&nbsp;Tabuľka' style='display: none; width: 763px; height: 241px;'></iframe>
+ <span style='display:none; white-space:pre;' id='zoznamTemTable_dataView'>
+ <script type='text/plain'  id='columnModel'><!--<table id='headerTab' cellspacing='0' cellpadding='0' tabIndex='-1' style='width: 1442px;'><thead><tr>
+<td class='btSepLeft' style='cursor:default;'><div>&nbsp;</div></td><td id='headerCell' tabIndex='-1' index='0' shortname='datumPrihlas' valign='bottom' title='Dátum prihlásenia na tému záverečnej práce' style=' text-align: center; width:99px;'><div tabIndex='-1' style='width: 99px;'>Dátum prihlásenia</div></td><td class='btSepRight' id='s'><div>&nbsp;</div></td>
+<td class='btSepLeft' id='s'><div>&nbsp;</div></td><td id='headerCell' tabIndex='-1' index='1' shortname='vybraty' valign='bottom' title='Príznak, že študent bol vybraný na tému záverečnej práce' style=' text-align: center; width:40px;'><div tabIndex='-1' style='width: 40px;'>Príznak vybrania</div></td><td class='btSepRight' id='s'><div>&nbsp;</div></td>
+<td class='btSepLeft' id='s'><div>&nbsp;</div></td><td id='headerCell' tabIndex='-1' index='2' shortname='potvrdeny' valign='bottom' title='Príznak, že študent bol akceptovaný na tému záverečnej práce' style=' text-align: center; width:37px;'><div tabIndex='-1' style='width: 37px;'>Príznak potvrdenia</div></td><td class='btSepRight' id='s'><div>&nbsp;</div></td>
+<td class='btSepLeft' id='s'><div>&nbsp;</div></td><td id='headerCell' tabIndex='-1' index='3' shortname='temyKodJazykTemy' valign='bottom' title='Kód jazyka' style=' text-align: center; width:28px;'><div tabIndex='-1' style='width: 28px;'>Kód jazyka</div></td><td class='btSepRight' id='s'><div>&nbsp;</div></td>
+<td class='btSepLeft' id='s'><div>&nbsp;</div></td><td id='headerCell' tabIndex='-1' index='4' shortname='temyKodSekundarnyJazykTemy' valign='bottom' title='Kód jazyka' style=' text-align: center; width:28px;'><div tabIndex='-1' style='width: 28px;'>Kód jazyka</div></td><td class='btSepRight' id='s'><div>&nbsp;</div></td>
+<td class='btSepLeft' id='s'><div>&nbsp;</div></td><td id='headerCell' tabIndex='-1' index='5' shortname='temyKodTypPraceOJ' valign='bottom' title='Kód záverečenej práce' style=' text-align: center; width:37px;'><div tabIndex='-1' style='width: 37px;'>Kód záverečenej práce</div></td><td class='btSepRight' id='s'><div>&nbsp;</div></td>
+<td class='btSepLeft' id='s'><div>&nbsp;</div></td><td id='headerCell' tabIndex='-1' index='6' shortname='temyPopisAkadRok' valign='bottom' title='Akademický rok' style=' text-align: center; width:82px;'><div tabIndex='-1' style='width: 82px;'>Akademický rok</div></td><td class='btSepRight' id='s'><div>&nbsp;</div></td>
+<td class='btSepLeft' id='s'><div>&nbsp;</div></td><td id='headerCell' tabIndex='-1' index='7' shortname='temySkratkaOrgJednotka' valign='bottom' title='Skratka organizačnej jednotky' style=' text-align: center; width:253px;'><div tabIndex='-1' style='width: 253px;'>Skratka organizačnej jednotky</div></td><td class='btSepRight' id='s'><div>&nbsp;</div></td>
+<td class='btSepLeft' id='s'><div>&nbsp;</div></td><td id='headerCell' tabIndex='-1' index='8' shortname='temyNazov' valign='bottom' title='Téma' style=' text-align: center; width:28px;'><div tabIndex='-1' style='width: 28px;'>Téma</div></td><td class='btSepRight' id='s'><div>&nbsp;</div></td>
+<td class='btSepLeft' id='s'><div>&nbsp;</div></td><td id='headerCell' tabIndex='-1' index='9' shortname='temyDatZadania' valign='bottom' title='Dátum zadania záverečnej práce' style=' text-align: center; width:163px;'><div tabIndex='-1' style='width: 163px;'>Dátum zadania</div></td><td class='btSepRight' id='s'><div>&nbsp;</div></td>
+<td class='btSepLeft' id='s'><div>&nbsp;</div></td><td id='headerCell' tabIndex='-1' index='10' shortname='temyPlanDatOdovzdania' valign='bottom' title='Plánovaný dátum odovzdania záverečnej práce' style=' text-align: center; width:82px;'><div tabIndex='-1' style='width: 82px;'>Plán. odovzdania</div></td><td class='btSepRight' id='s'><div>&nbsp;</div></td>
+<td class='btSepLeft' id='s'><div>&nbsp;</div></td><td id='headerCell' tabIndex='-1' index='11' shortname='temyDatVlozenia' valign='bottom' title='Dátum, dokedy môže študent vkladť atribúty záverečnej práce' style=' text-align: center; width:82px;'><div tabIndex='-1' style='width: 82px;'>Dátum vkladania</div></td><td class='btSepRight' id='s'><div>&nbsp;</div></td>
+<td class='btSepLeft' id='s'><div>&nbsp;</div></td><td id='headerCell' tabIndex='-1' index='12' shortname='temyUplnost' valign='bottom' title='Úplnosť záverečnej práce' style=' text-align: center; width:28px;'><div tabIndex='-1' style='width: 28px;'>Úplnosť</div></td><td class='btSepRight' id='s'><div>&nbsp;</div></td>
+<td class='btSepLeft' id='s'><div>&nbsp;</div></td><td id='headerCell' tabIndex='-1' index='13' shortname='temyObmedzeniePoctu' valign='bottom' title='Obmedzenie počtu zapísaných študentov' style=' text-align: center; width:46px;'><div tabIndex='-1' style='width: 46px;'>Obmedzenie</div></td><td class='btSepRight' id='s'><div>&nbsp;</div></td>
+<td class='btSepLeft' id='s'><div>&nbsp;</div></td><td id='headerCell' tabIndex='-1' index='14' shortname='temySkratkaFakulta' valign='bottom' title='Skratka organizačnej jednotky' style=' text-align: center; width:253px;'><div tabIndex='-1' style='width: 253px;'>Skratka organizačnej jednotky</div></td><td class='btSepRight' id='s'><div>&nbsp;</div></td>
+<td class='btSepLeft' id='s'><div>&nbsp;</div></td><td id='headerCell' tabIndex='-1' index='15' shortname='temyPriznak' valign='bottom' title='Príznak zadania záverečnej práce' style=' text-align: center; width:28px;'><div tabIndex='-1' style='width: 28px;'>Príznak</div></td><td class='btSepRight' id='s'><div>&nbsp;</div></td>
+</tr></thead></table>
+--></script>
+ <script type='text/plain'  id='dataTabColGroup'><!--<col shortname='datumPrihlas' sortable='true' style=' text-align: center;' width='107px'/><col shortname='vybraty' sortable='true' style=' text-align: center;' width='48px'/><col shortname='potvrdeny' sortable='true' style=' text-align: center;' width='45px'/><col shortname='temyKodJazykTemy' sortable='true' style=' text-align: center;' width='36px'/><col shortname='temyKodSekundarnyJazykTemy' sortable='true' style=' text-align: center;' width='36px'/><col shortname='temyKodTypPraceOJ' sortable='true' style=' text-align: center;' width='45px'/><col shortname='temyPopisAkadRok' sortable='true' style=' text-align: center;' width='90px'/><col shortname='temySkratkaOrgJednotka' sortable='true' style=' text-align: center;' width='261px'/><col shortname='temyNazov' sortable='true' width='36px'/><col shortname='temyDatZadania' sortable='true' style=' text-align: center;' width='171px'/><col shortname='temyPlanDatOdovzdania' sortable='true' style=' text-align: center;' width='90px'/><col shortname='temyDatVlozenia' sortable='true' style=' text-align: center;' width='90px'/><col shortname='temyUplnost' sortable='true' style=' text-align: center;' width='36px'/><col shortname='temyObmedzeniePoctu' sortable='true' style=' text-align: right;' width='54px'/><col shortname='temySkratkaFakulta' sortable='true' style=' text-align: center;' width='261px'/><col shortname='temyPriznak' sortable='true' style=' text-align: center;' width='36px'/>--></script>
+<script type='text/plain'  id='selectionModel' selection='0' invertedSelection='false' multipleSelection='false' editMode='false'><!----></script>
+<script type='text/plain'  id='dataTabBodies'  bufferSize='50' dataSendType='update' showSelectionInUpdate='true'><!--
+<tbody id='dataTabBody0'>
+<tr id='row_0' rid='0'><td style=' text-align:center;'><div>08.02.2010 13:37:11</div></td><td style=' text-align:center;' dataType='boolean'><div><img class='checkedImg' src='/ais/webui2/components/images/checked.gif?4.29'/></div></td><td style=' text-align:center;' dataType='boolean'><div><img class='checkedImg' src='/ais/webui2/components/images/checked.gif?4.29'/></div></td><td style=' text-align:center;'>SK</td><td style=' text-align:center;'>&nbsp;</td><td style=' text-align:center;'>D</td><td style=' text-align:center;'><div>2009/2010</div></td><td style=' text-align:center;'>FMFI.KI</td><td><div>Efektívna implementácia algoritmov a ich overovanie</div></td><td style=' text-align:center;'><div>20.11.2009 00:00:00</div></td><td style=' text-align:center;'>&nbsp;</td><td style=' text-align:center;'>&nbsp;</td><td style=' text-align:center;'>N</td><td style=' text-align:right;'>&nbsp;</td><td style=' text-align:center;'>FMFI</td><td style=' text-align:center;'>&nbsp;</td></tr> </tbody>
+--></script>
+ <script type='text/plain'  id='dataPositionSpan' isEnd='true' newData='true' rowCount='1' declaredRowCount='1'></script>
+ <script type='text/plain'  id='rowHeaderDataTabBodies'><!--<tbody id='rowHeaderDataTabBody0'><tr><td><div>1</div></td></tr> </tbody>
+--></script>
+
+ </span>
+</span>
+<label class='labelDefault' visible='false' style=' left: 168px; top: 22px; width: 190; visibility:hidden;'
+ jsct='label' id='c1Label'>Interval pre prihlasovanie/odhlasovanie</label>
+<input jsct='textField'  class='textFieldDefault' ondragstart='f.h(event,this,w)' ondrop='f.h(event,this,w)' ondeactivate='f.h(event,this,w)' onblur='f.h(event,this,w)' onfocus='f.onFocus(event,this,w)' onkeydown='f.h(event,this,w)' onkeypress='f.h(event,this,w)' onchange='f.h(event,this,w)' onpropertychange='f.h(event,this,w)' onpaste='f.h(event,this,w)' oncut='f.h(event,this,w)' oncontextmenu='f.h(event,this,w)' value='Nie je definovaný' tabIndex='17' pFCName='zoznamTemTable' nFCName='pridatPredmetButton'
+ id='intervalPrihlasovaniaTemaTextField' selStart='0' title='Dátumové&nbsp;intervaly,&nbsp;v&nbsp;ktorých&nbsp;je&nbsp;možné&nbsp;sa&nbsp;na&nbsp;témy&nbsp;záverečných&nbsp;prác&nbsp;prihlasovať,&nbsp;resp.&nbsp;z&nbsp;nich&nbsp;odhlasovať' visible='false'
+ ttlt='true' dbgc='#fefefe' robgc='#ebead8' _readOnly='true' enterToNext='false'
+ style=' background-color:#ebead8; left: 364px; top: 19px; width: 408; visibility:hidden; text-align: left;' anchors='rlt'/>
+  </div>
+</div>
+<div class='panelOnTabbedPane' autoscrolls='false' style=' height:313; visibility:hidden; width:797;' jsct='panel' oncontextmenu='f.onContextMenu(event, this,w);' tabId='tabbedPanetab_2' name='Štátne skúšky' id='statneSkuskyTab' title='Panel&nbsp;štátne&nbsp;skúšky' minWidth='0' minHeight='0' pastHeight='313' pastWidth='797'>
+<div class='panelUser' jsct='panel' oncontextmenu='f.onContextMenu(event, this,w);'  id='panel10' minWidth='0' minHeight='0' pastHeight='291' pastWidth='775' collapsed='false' collapsable='false' autoscrolls='false'
+ style='position:absolute;z-index:0; border:1px solid #333333; left: 8px; top: 8px; width: 775px; height: 291px; font-size: 11; color: #333333; background-color: #dedec8;' anchors='rblt'>
+<span class='titledBorder' id='panel10_title_'>Predmety termínu štátnej skúšky</span>
+<button jsct='button' onclick='f.h(event,this,w)' onfocus='f.onFocus(event,this,w)' onmousedown='f.h(event,this,w)' onblur='f.h(event,this,w)' onmouseover='f.h(event,this,w)' onmouseout='f.h(event,this,w)' tabIndex='18' pFCName='intervalPrihlasovaniaTemaTextField' nFCName='odobratPredmetButton' actionName='pridatPredmetAction' id='pridatPredmetButton' title='Pridať&nbsp;predmet&nbsp;termínu' oncontextmenu='f.onContextMenu(event, this,w)' class='buttonWithIconOnly' style=' position:absolute; top:20px; left:8px;'
+ _image='add'><div><img id='buttonImage' class='buttonImageOnly' src='/ais/images/add.gif'/><img id='buttonPopupArrow' style='display: none;' src='/ais/webui2/components/images/arrow-down.gif?4.29'/><span id='buttonSpan' style=' display:none;' ></span></div></button>
+<button jsct='button' onclick='f.h(event,this,w)' onfocus='f.onFocus(event,this,w)' onmousedown='f.h(event,this,w)' onblur='f.h(event,this,w)' onmouseover='f.h(event,this,w)' onmouseout='f.h(event,this,w)' tabIndex='19' pFCName='pridatPredmetButton' nFCName='runPredmetyTerminuButton' actionName='odobratPredmetAction' id='odobratPredmetButton' title='Odobrať&nbsp;predmet&nbsp;termínu' enabledInUI='false' disabled='true' oncontextmenu='f.onContextMenu(event, this,w)' class='buttonWithIconOnly' style=' position:absolute; top:20px; left:34px;'
+ _image='odstranit'><div><img id='buttonImage' class='buttonImageOnly' style='-moz-opacity:0.2; opacity:0.2; filter:alpha(opacity=25, style=0) gray;' src='/ais/images/odstranit.gif'/><img id='buttonPopupArrow' style='display: none;' src='/ais/webui2/components/images/arrow-down-gray.gif?4.29'/><span id='buttonSpan' style='color: #999999; display:none;' disabled='true'></span></div></button>
+<button jsct='button' onclick='f.h(event,this,w)' onfocus='f.onFocus(event,this,w)' onmousedown='f.h(event,this,w)' onblur='f.h(event,this,w)' onmouseover='f.h(event,this,w)' onmouseout='f.h(event,this,w)' tabIndex='20' pFCName='odobratPredmetButton' nFCName='statneSkuskyTable' id='runPredmetyTerminuButton' popupMenu='predmetyTerminuPopupMenu' oncontextmenu='f.onContextMenu(event, this,w)' flat='true' class='buttonRun' style=' position:absolute; top:20px; left:76px;'
+ _image='run'><div><img id='buttonImage' class='buttonImageWithText' src='/ais/images/run.gif'/><img id='buttonPopupArrow' src='/ais/webui2/components/images/arrow-down.gif?4.29'/><span id='buttonSpan' style=' display:none;' ></span></div></button>
+<span jsct='table' class='tableSpan' onfocus='f.onFocus(event,this,w)' multipleSelection='false' cellSelectionMode='false' sortable='true' allwaysSelected='true' activeRow='-1' minNoFixedColumnsWidth='40' upDownEnabled='false' userAddRemoveRowsEnabled='false' selectAllEnabled='false' readOnly='true' scrollBottomEnabled='false' statusVisible='false' rowNumbersVisible='false' visibleStatusButtons='19' supportedEvents='SET_COLUMNS|SET_SORTING|ROW_COUNT|DEBUG_INFO|' tabIndex='21' pFCName='runPredmetyTerminuButton' nFCName='exitButton' id='statneSkuskyTable' usedListenersMask='145472' title='Tabuľka&nbsp;štátne&nbsp;skúšky' popupMenu='predmetyTerminuTablePopupMenu' oncontextmenu='f.onContextMenu(event, this,w)' anchors='rblt' style=' height:237px; position:absolute; color:#333333; background-color:#ffffff; width:758px; font-size:11; top:46px; left:8px;' title='WebUI&nbsp;Tabuľka'>
+ <iframe frameborder='1' id='statneSkuskyTable_frame' title='WebUI&nbsp;Tabuľka' style='display: none; width: 758px; height: 237px;'></iframe>
+ <span style='display:none; white-space:pre;' id='statneSkuskyTable_dataView'>
+ <script type='text/plain'  id='columnModel'><!--<table id='headerTab' cellspacing='0' cellpadding='0' tabIndex='-1' style='width: 1593px;'><thead><tr>
+<td class='btSepLeft' style='cursor:default;'><div>&nbsp;</div></td><td id='headerCell' tabIndex='-1' index='0' shortname='typStatSkuskySkratka' valign='bottom' title='Skratka typu štátnej skúšky' style=' text-align: center; width:31px;'><div tabIndex='-1' style='width: 31px;'>Š. sk.</div></td><td class='btSepRight' id='s'><div>&nbsp;</div></td>
+<td class='btSepLeft' id='s'><div>&nbsp;</div></td><td id='headerCell' tabIndex='-1' index='1' shortname='predmetSkratka' valign='bottom' title='Skratka predmetu' style=' text-align: center; width:75px;'><div tabIndex='-1' style='width: 75px;'>Sk. predmetu</div></td><td class='btSepRight' id='s'><div>&nbsp;</div></td>
+<td class='btSepLeft' id='s'><div>&nbsp;</div></td><td id='headerCell' tabIndex='-1' index='2' shortname='predmetNazov' valign='bottom' title='Názov predmetu' style=' text-align: center; width:104px;'><div tabIndex='-1' style='width: 104px;'>Predmet</div></td><td class='btSepRight' id='s'><div>&nbsp;</div></td>
+<td class='btSepLeft' id='s'><div>&nbsp;</div></td><td id='headerCell' tabIndex='-1' index='3' shortname='kodKlasifikacnyStupen' valign='bottom' title='Kód hodnotenia predmetu' style=' text-align: center; width:31px;'><div tabIndex='-1' style='width: 31px;'>Kód hodnotenia predmetu</div></td><td class='btSepRight' id='s'><div>&nbsp;</div></td>
+<td class='btSepLeft' id='s'><div>&nbsp;</div></td><td id='headerCell' tabIndex='-1' index='4' shortname='klasifikacnyStupenPopis' valign='bottom' title='Popis hodnotenia predmetu' style=' text-align: center; width:89px;'><div tabIndex='-1' style='width: 89px;'>Hodnotenie</div></td><td class='btSepRight' id='s'><div>&nbsp;</div></td>
+<td class='btSepLeft' id='s'><div>&nbsp;</div></td><td id='headerCell' tabIndex='-1' index='5' shortname='kodTermin' valign='bottom' title='Kód termínu hodnotenia' style=' text-align: center; width:28px;'><div tabIndex='-1' style='width: 28px;'>Kód termínu hodnotenia</div></td><td class='btSepRight' id='s'><div>&nbsp;</div></td>
+<td class='btSepLeft' id='s'><div>&nbsp;</div></td><td id='headerCell' tabIndex='-1' index='6' shortname='datumPrihlas' valign='bottom' title='Dátum prihlásenia' style=' text-align: center; width:99px;'><div tabIndex='-1' style='width: 99px;'>Dátum prihlas.</div></td><td class='btSepRight' id='s'><div>&nbsp;</div></td>
+<td class='btSepLeft' id='s'><div>&nbsp;</div></td><td id='headerCell' tabIndex='-1' index='7' shortname='ziadostUznania' valign='bottom' title='Žiadosť o uznanie predmetu štátnej skúšky' style=' text-align: center; width:28px;'><div tabIndex='-1' style='width: 28px;'>Žiadosť o uznanie</div></td><td class='btSepRight' id='s'><div>&nbsp;</div></td>
+<td class='btSepLeft' id='s'><div>&nbsp;</div></td><td id='headerCell' tabIndex='-1' index='8' shortname='uznanie' valign='bottom' title='Príznak uznania predmetu štátnej skúšky' style=' text-align: center; width:28px;'><div tabIndex='-1' style='width: 28px;'>Uznanie</div></td><td class='btSepRight' id='s'><div>&nbsp;</div></td>
+<td class='btSepLeft' id='s'><div>&nbsp;</div></td><td id='headerCell' tabIndex='-1' index='9' shortname='datumHodnot' valign='bottom' title='Dátum hodnotenia' style=' text-align: center; width:82px;'><div tabIndex='-1' style='width: 82px;'>Dátum hodn.</div></td><td class='btSepRight' id='s'><div>&nbsp;</div></td>
+<td class='btSepLeft' id='s'><div>&nbsp;</div></td><td id='headerCell' tabIndex='-1' index='10' shortname='datumZarad' valign='bottom' title='Dátum zaradenia' style=' text-align: center; width:100px;'><div tabIndex='-1' style='width: 100px;'>Dátum zarad.</div></td><td class='btSepRight' id='s'><div>&nbsp;</div></td>
+<td class='btSepLeft' id='s'><div>&nbsp;</div></td><td id='headerCell' tabIndex='-1' index='11' shortname='statnaSkuskaKodKlasifikacnyStupen' valign='bottom' title='Kód hodnotenia predmetu' style=' text-align: center; width:23px;'><div tabIndex='-1' style='width: 23px;'>Kód hodnotenia predmetu</div></td><td class='btSepRight' id='s'><div>&nbsp;</div></td>
+<td class='btSepLeft' id='s'><div>&nbsp;</div></td><td id='headerCell' tabIndex='-1' index='12' shortname='statnaSkuskaKodProspech' valign='bottom' title='Kód hodnotenia predmetu' style=' text-align: center; width:21px;'><div tabIndex='-1' style='width: 21px;'>Kód hodnotenia predmetu</div></td><td class='btSepRight' id='s'><div>&nbsp;</div></td>
+<td class='btSepLeft' id='s'><div>&nbsp;</div></td><td id='headerCell' tabIndex='-1' index='13' shortname='statnaSkuskaPopisAkadRok' valign='bottom' title='Akademický rok' style=' text-align: center; width:82px;'><div tabIndex='-1' style='width: 82px;'>Akademický rok</div></td><td class='btSepRight' id='s'><div>&nbsp;</div></td>
+<td class='btSepLeft' id='s'><div>&nbsp;</div></td><td id='headerCell' tabIndex='-1' index='14' shortname='statnaSkuskaCisloProtokolu' valign='bottom' title='Číslo protokolu' style=' text-align: center; width:58px;'><div tabIndex='-1' style='width: 58px;'>Číslo protokolu</div></td><td class='btSepRight' id='s'><div>&nbsp;</div></td>
+<td class='btSepLeft' id='s'><div>&nbsp;</div></td><td id='headerCell' tabIndex='-1' index='15' shortname='terminPopis' valign='bottom' title='Popis termínu hodnotenia' style=' text-align: center; width:145px;'><div tabIndex='-1' style='width: 145px;'>Termín hodnotenia</div></td><td class='btSepRight' id='s'><div>&nbsp;</div></td>
+<td class='btSepLeft' id='s'><div>&nbsp;</div></td><td id='headerCell' tabIndex='-1' index='16' shortname='hodnotilPlneMeno' valign='bottom' title='Plné meno' style=' text-align: center; width:73px;'><div tabIndex='-1' style='width: 73px;'>Plné meno</div></td><td class='btSepRight' id='s'><div>&nbsp;</div></td>
+<td class='btSepLeft' id='s'><div>&nbsp;</div></td><td id='headerCell' tabIndex='-1' index='17' shortname='prihlasilPlneMeno' valign='bottom' title='Plné meno' style=' text-align: center; width:73px;'><div tabIndex='-1' style='width: 73px;'>Plné meno</div></td><td class='btSepRight' id='s'><div>&nbsp;</div></td>
+<td class='btSepLeft' id='s'><div>&nbsp;</div></td><td id='headerCell' tabIndex='-1' index='18' shortname='terminSSPoznamka' valign='bottom' title='Poznámka termínu' style=' text-align: center; width:64px;'><div tabIndex='-1' style='width: 64px;'>Poznámka</div></td><td class='btSepRight' id='s'><div>&nbsp;</div></td>
+<td class='btSepLeft' id='s'><div>&nbsp;</div></td><td id='headerCell' tabIndex='-1' index='19' shortname='komisia' valign='bottom' title='Komisia' style=' text-align: center; width:28px;'><div tabIndex='-1' style='width: 28px;'>Komisia</div></td><td class='btSepRight' id='s'><div>&nbsp;</div></td>
+<td class='btSepLeft' id='s'><div>&nbsp;</div></td><td id='headerCell' tabIndex='-1' index='20' shortname='datumChcenia' valign='bottom' title='Dátum, kde by chcel byť zaradený študent' style=' text-align: center; width:163px;'><div tabIndex='-1' style='width: 163px;'>Očakávaný dátum</div></td><td class='btSepRight' id='s'><div>&nbsp;</div></td>
+</tr></thead></table>
+--></script>
+ <script type='text/plain'  id='dataTabColGroup'><!--<col shortname='typStatSkuskySkratka' sortable='true' width='39px'/><col shortname='predmetSkratka' sortable='true' width='83px'/><col shortname='predmetNazov' sortable='true' width='112px'/><col shortname='kodKlasifikacnyStupen' sortable='true' style=' text-align: center;' width='39px'/><col shortname='klasifikacnyStupenPopis' sortable='true' width='97px'/><col shortname='kodTermin' sortable='true' style=' text-align: center;' width='36px'/><col shortname='datumPrihlas' sortable='true' style=' text-align: center;' width='107px'/><col shortname='ziadostUznania' sortable='true' style=' text-align: center;' width='36px'/><col shortname='uznanie' sortable='true' style=' text-align: center;' width='36px'/><col shortname='datumHodnot' sortable='true' style=' text-align: center;' width='90px'/><col shortname='datumZarad' sortable='true' style=' text-align: center;' width='108px'/><col shortname='statnaSkuskaKodKlasifikacnyStupen' sortable='true' style=' text-align: center;' width='31px'/><col shortname='statnaSkuskaKodProspech' sortable='true' style=' text-align: center;' width='29px'/><col shortname='statnaSkuskaPopisAkadRok' sortable='true' style=' text-align: center;' width='90px'/><col shortname='statnaSkuskaCisloProtokolu' sortable='true' width='66px'/><col shortname='terminPopis' sortable='true' width='153px'/><col shortname='hodnotilPlneMeno' sortable='true' width='81px'/><col shortname='prihlasilPlneMeno' sortable='true' width='81px'/><col shortname='terminSSPoznamka' sortable='true' width='72px'/><col shortname='komisia' sortable='true' width='36px'/><col shortname='datumChcenia' sortable='true' style=' text-align: center;' width='171px'/>--></script>
+<script type='text/plain'  id='selectionModel' selection='' invertedSelection='false' multipleSelection='false' editMode='false'><!----></script>
+<script type='text/plain'  id='dataTabBodies'  bufferSize='50' dataSendType='update' showSelectionInUpdate='true'><!--
+<tbody id='dataTabBody0'>
+ </tbody>
+--></script>
+ <script type='text/plain'  id='dataPositionSpan' isEnd='true' newData='true' rowCount='0' declaredRowCount='0'></script>
+ <script type='text/plain'  id='rowHeaderDataTabBodies'><!--<tbody id='rowHeaderDataTabBody0'> </tbody>
+--></script>
+
+ </span>
+</span>
+  </div>
+</div>
+</div>
+</div>
+
+  </div>
+  </div>
+<div class='panelDefault' jsct='panel' oncontextmenu='f.onContextMenu(event, this,w);'  id='buttonPanel' minWidth='0' minHeight='0' pastHeight='28' pastWidth='813' collapsed='false' collapsable='false' autoscrolls='false'
+ style='position:absolute;z-index:0; border:1px solid #8d8d80; left: 8px; top: 8px; width: 813px; height: 28px;' anchors='rlt'>
+<button jsct='button' onclick='f.h(event,this,w)' onfocus='f.onFocus(event,this,w)' onmousedown='f.h(event,this,w)' onblur='f.h(event,this,w)' onmouseover='f.h(event,this,w)' onmouseout='f.h(event,this,w)' tabIndex='22' pFCName='statneSkuskyTable' nFCName='printButton' actionName='exitAction' id='exitButton' title='Ukončiť&nbsp;aplikáciu' oncontextmenu='f.onContextMenu(event, this,w)' class='buttonOnToolbar' style=' position:absolute; top:2px; left:4px;'
+ _image='close'><div><img id='buttonImage' class='buttonImageOnly' src='/ais/images/close.gif'/><img id='buttonPopupArrow' style='display: none;' src='/ais/webui2/components/images/arrow-down.gif?4.29'/><span id='buttonSpan' style=' display:none;' ></span></div></button>
+<button jsct='button' onclick='f.h(event,this,w)' onfocus='f.onFocus(event,this,w)' onmousedown='f.h(event,this,w)' onblur='f.h(event,this,w)' onmouseover='f.h(event,this,w)' onmouseout='f.h(event,this,w)' tabIndex='23' pFCName='exitButton' nFCName='exportButton' actionName='printAction' id='printButton' title='Tlač' oncontextmenu='f.onContextMenu(event, this,w)' class='buttonOnToolbar' style=' position:absolute; top:2px; left:55px;'
+ _image='print'><div><img id='buttonImage' class='buttonImageOnly' src='/ais/images/print.gif'/><img id='buttonPopupArrow' style='display: none;' src='/ais/webui2/components/images/arrow-down.gif?4.29'/><span id='buttonSpan' style=' display:none;' ></span></div></button>
+<button jsct='button' onclick='f.h(event,this,w)' onfocus='f.onFocus(event,this,w)' onmousedown='f.h(event,this,w)' onblur='f.h(event,this,w)' onmouseover='f.h(event,this,w)' onmouseout='f.h(event,this,w)' tabIndex='24' pFCName='printButton' nFCName='refreshButton' actionName='exportAction' id='exportButton' title='Export' oncontextmenu='f.onContextMenu(event, this,w)' class='buttonOnToolbar' style=' position:absolute; top:2px; left:81px;'
+ _image='export'><div><img id='buttonImage' class='buttonImageOnly' src='/ais/images/export.gif'/><img id='buttonPopupArrow' style='display: none;' src='/ais/webui2/components/images/arrow-down.gif?4.29'/><span id='buttonSpan' style=' display:none;' ></span></div></button>
+<button jsct='button' onclick='f.h(event,this,w)' onfocus='f.onFocus(event,this,w)' onmousedown='f.h(event,this,w)' onblur='f.h(event,this,w)' onmouseover='f.h(event,this,w)' onmouseout='f.h(event,this,w)' tabIndex='25' pFCName='exportButton' nFCName='registryButton' actionName='refreshAction' id='refreshButton' title='Obnovenie&nbsp;obsahu&nbsp;obrazovky' oncontextmenu='f.onContextMenu(event, this,w)' class='buttonOnToolbar' style=' position:absolute; top:2px; left:131px;'
+ _image='refresh'><div><img id='buttonImage' class='buttonImageOnly' src='/ais/images/refresh.gif'/><img id='buttonPopupArrow' style='display: none;' src='/ais/webui2/components/images/arrow-down.gif?4.29'/><span id='buttonSpan' style=' display:none;' ></span></div></button>
+<button jsct='button' onclick='f.h(event,this,w)' onfocus='f.onFocus(event,this,w)' onmousedown='f.h(event,this,w)' onblur='f.h(event,this,w)' onmouseover='f.h(event,this,w)' onmouseout='f.h(event,this,w)' tabIndex='26' pFCName='refreshButton' nFCName='infoButton' actionName='registryAction' id='registryButton' title='Uloženie&nbsp;nastavení' oncontextmenu='f.onContextMenu(event, this,w)' class='buttonOnToolbar' style=' position:absolute; top:2px; left:157px;'
+ _image='registry'><div><img id='buttonImage' class='buttonImageOnly' src='/ais/images/registry.gif'/><img id='buttonPopupArrow' style='display: none;' src='/ais/webui2/components/images/arrow-down.gif?4.29'/><span id='buttonSpan' style=' display:none;' ></span></div></button>
+<button jsct='button' onclick='f.h(event,this,w)' onfocus='f.onFocus(event,this,w)' onmousedown='f.h(event,this,w)' onblur='f.h(event,this,w)' onmouseover='f.h(event,this,w)' onmouseout='f.h(event,this,w)' tabIndex='27' pFCName='registryButton' nFCName='helpButton' actionName='infoAction' id='infoButton' title='Informácie&nbsp;o&nbsp;prihlásení' oncontextmenu='f.onContextMenu(event, this,w)' class='buttonOnToolbar' style=' position:absolute; top:2px; left:206px;'
+ _image='info'><div><img id='buttonImage' class='buttonImageOnly' src='/ais/images/info.gif'/><img id='buttonPopupArrow' style='display: none;' src='/ais/webui2/components/images/arrow-down.gif?4.29'/><span id='buttonSpan' style=' display:none;' ></span></div></button>
+<button jsct='button' onclick='f.h(event,this,w)' onfocus='f.onFocus(event,this,w)' onmousedown='f.h(event,this,w)' onblur='f.h(event,this,w)' onmouseover='f.h(event,this,w)' onmouseout='f.h(event,this,w)' tabIndex='28' pFCName='infoButton' nFCName='studentTextField' actionName='helpAction' id='helpButton' title='Nápoveda' oncontextmenu='f.onContextMenu(event, this,w)' anchors='rt' class='buttonOnToolbar' style=' position:absolute; top:2px; left:778px;'
+ _image='help'><div><img id='buttonImage' class='buttonImageOnly' src='/ais/images/help.gif'/><img id='buttonPopupArrow' style='display: none;' src='/ais/webui2/components/images/arrow-down.gif?4.29'/><span id='buttonSpan' style=' display:none;' ></span></div></button>
+  </div>
+  </span>
+
+  <span id='radioGroupsSpan'>
+  </span>
+
+  <span id='actionsSpan'>
+   <span jsct='actionList' id='viewActionList' ownerContainerName='AppButtonPanelView'>
+    <span jsct='action' id='exitAction' enabledInUI='true' usedListenersMask='131136' toolTipText='Zavrieť aplikáciu' visible='true' visibleInUI='true' accessible='true' label='Zavrieť aplikáciu' components='exitButton'></span>
+    <span jsct='action' id='printAction' enabledInUI='true' usedListenersMask='131136' visible='true' visibleInUI='true' accessible='true' label='Tlač' components='printButton'></span>
+    <span jsct='action' id='exportAction' enabledInUI='true' usedListenersMask='131136' visible='true' visibleInUI='true' accessible='true' label='Export' components='exportButton'></span>
+    <span jsct='action' id='refreshAction' enabledInUI='true' usedListenersMask='131136' visible='true' visibleInUI='true' accessible='true' label='Obnovenie obsahu obrazovky' components='refreshButton'></span>
+    <span jsct='action' id='registryAction' enabledInUI='true' usedListenersMask='131136' visible='true' visibleInUI='true' accessible='true' label='Uloženie nastavení obrazovky do registrov' components='registryButton'></span>
+    <span jsct='action' id='infoAction' enabledInUI='true' usedListenersMask='131136' visible='true' visibleInUI='true' accessible='true' label='infoAction' components='infoButton'></span>
+    <span jsct='action' id='helpAction' enabledInUI='true' usedListenersMask='131136' visible='true' visibleInUI='true' accessible='true' label='Help' components='helpButton'></span>
+   </span>
+   <span jsct='actionList' id='actionList1'>
+    <span jsct='action' id='podrobnostiZaverecnejPraceAction' enabledInUI='true' usedListenersMask='131136' visible='true' visibleInUI='true' accessible='true' label='Zobraziť podrobnosti záverečnej práce' components='detailTemyButton,c2MenuItem'></span>
+    <span jsct='action' id='skolnePoplatkyAction' enabledInUI='true' usedListenersMask='131136' visible='true' visibleInUI='true' accessible='true' label='Školné a poplatky' components='MenuItem'></span>
+    <span jsct='action' id='pridatZapisnyListAction' enabledInUI='true' usedListenersMask='131136' visible='true' visibleInUI='true' accessible='true' label='Pridať zápisný list' components='pridatZapisnyListButton,PridatMenuItem'></span>
+    <span jsct='action' id='detailZapisnehoListuAction' enabledInUI='true' usedListenersMask='131136' visible='true' visibleInUI='true' accessible='true' label='Zobraziť detail zápisného listu' components=''></span>
+    <span jsct='action' id='nacitatDataAction' enabledInUI='true' usedListenersMask='131136' visible='true' visibleInUI='true' accessible='true' label='Zobraziť vyhovujúce údaje' components='nacitatButton'></span>
+    <span jsct='action' id='zrusitZapisnyListAction' enabledInUI='true' usedListenersMask='131136' visible='true' visibleInUI='true' accessible='true' label='Zrušiť zápisný list' components='odobratZapisnyListButton,menuItem7'></span>
+    <span jsct='action' id='detailStudentaAction' enabledInUI='true' usedListenersMask='131136' visible='true' visibleInUI='true' accessible='true' label='Zobraziť detail študenta' components='detailStudentaButton'></span>
+    <span jsct='action' id='zrusitZiadostOUznanieAction' enabledInUI='false' usedListenersMask='131136' visible='true' visibleInUI='true' accessible='true' label='Zrušiť žiadosť o uznanie' components='menuItem10,menuItem34'></span>
+   </span>
+   <span jsct='actionList' id='zoznamStudiiActionList'>
+    <span jsct='action' id='mobilityStudiaAction' enabledInUI='true' usedListenersMask='131136' visible='true' visibleInUI='true' accessible='true' label='Mobility' components='mobilityMenuItem'></span>
+    <span jsct='action' id='ukonceniaAction' enabledInUI='true' usedListenersMask='131136' visible='true' visibleInUI='true' accessible='true' label='Ukončenia Action' components='menuItem11'></span>
+    <span jsct='action' id='poznamkyKStudiuAction' enabledInUI='true' usedListenersMask='131136' visible='true' visibleInUI='true' accessible='true' label='Poznámky k štúdiu Action' components='menuItem12'></span>
+    <span jsct='action' id='prestupyZoStudiaAction' enabledInUI='true' usedListenersMask='131136' visible='true' visibleInUI='true' accessible='true' label='Prestupy zo štúdia Action' components='menuItem13'></span>
+    <span jsct='action' id='prerusenieStudiaAction' enabledInUI='true' usedListenersMask='131136' visible='true' visibleInUI='true' accessible='true' label='Prerušenie štúdia Action' components='menuItem14'></span>
+    <span jsct='action' id='doplnujuceInformacieAction' enabledInUI='true' usedListenersMask='131136' visible='true' visibleInUI='true' accessible='true' label='Doplňujúce informácie Action' components='doplnujuceInformacieMenuItem'></span>
+    <span jsct='action' id='absolvovaniePovinnychPredmetovAction' enabledInUI='true' usedListenersMask='131136' visible='true' visibleInUI='true' accessible='true' label='Kontrola absolvovania povinných predmetov Action' components='AbsolvovaniaMenuItem'></span>
+    <span jsct='action' id='pocetNeuspesnychZapisovPredmetuAction' enabledInUI='true' usedListenersMask='131136' visible='true' visibleInUI='true' accessible='true' label='Počet neúspešných zápisov predmetu Action' components='pocetMenuItem'></span>
+    <span jsct='action' id='absolvovaniePredmetovAction' enabledInUI='true' usedListenersMask='131136' visible='true' visibleInUI='true' accessible='true' label='Kontrola absolvovania predmetov Action' components='menuItem15'></span>
+    <span jsct='action' id='ziskaneKredityAction' enabledInUI='true' usedListenersMask='131136' visible='true' visibleInUI='true' accessible='true' label='Kontrola získaných kreditov, prehľad hodnotenia Action' components='ziskaneMenuItem'></span>
+   </span>
+   <span jsct='actionList' id='actionList2'>
+    <span jsct='action' id='zapisPredmetovKredityAction' enabledInUI='true' usedListenersMask='131136' visible='true' visibleInUI='true' accessible='true' label='Zápis predmetov, kredity Action' components='menuItem35,menuItem1'></span>
+    <span jsct='action' id='priebezneHodnotenieAction' enabledInUI='true' usedListenersMask='131136' visible='true' visibleInUI='true' accessible='true' label='Priebežné hodnotenie' components='menuItem36,menuItem2'></span>
+    <span jsct='action' id='terminyHodnoteniaAction' enabledInUI='true' usedListenersMask='131136' visible='true' visibleInUI='true' accessible='true' label='Termíny hodnotenia Action' components='menuItem40,menuItem6'></span>
+    <span jsct='action' id='hodnoteniaPriemeryAction' enabledInUI='true' usedListenersMask='131136' visible='true' visibleInUI='true' accessible='true' label='Hodnotenia, priemery Action' components='menuItem41,menuItem5'></span>
+    <span jsct='action' id='zaradenieNaRozvrhAction' enabledInUI='true' usedListenersMask='131136' visible='true' visibleInUI='true' accessible='true' label='Zaradenie na rozvrh Action' components='menuItem42,menuItem4'></span>
+    <span jsct='action' id='kontrolaPrerekvizitPredmetovAction' enabledInUI='true' usedListenersMask='131136' visible='true' visibleInUI='true' accessible='true' label='Kontrola prerekvizít predmetov Action' components='menuItem43,menuItem3'></span>
+    <span jsct='action' id='odporucanyStudijnyPlanAction' enabledInUI='true' usedListenersMask='131136' visible='true' visibleInUI='true' accessible='true' label='Odporúčaný študijný plán' components='odporucanyStudijnyPlan2MenuItem,odporucanyStudijnyPlanMenuItem'></span>
+   </span>
+   <span jsct='actionList' id='zaverecnePraceActionList'>
+    <span jsct='action' id='zaverecnaPracaAction' enabledInUI='true' usedListenersMask='131136' visible='true' visibleInUI='true' accessible='true' label='Záverečná práca' components='c19MenuItem,c18MenuItem'></span>
+    <span jsct='action' id='hodnoteniePraceAction' enabledInUI='true' usedListenersMask='131136' visible='true' visibleInUI='true' accessible='true' label='Hodnotenie práce, posudok' components='c20MenuItem,c17MenuItem'></span>
+    <span jsct='action' id='detailHodnoteniaZPAction' enabledInUI='true' usedListenersMask='131136' visible='true' visibleInUI='true' accessible='true' components='c1MenuItem'></span>
+    <span jsct='action' id='vytlacitPrihlaskuAction' enabledInUI='true' usedListenersMask='131136' visible='true' visibleInUI='true' accessible='true' label='Vyplačiť prihlášku na ZP' components='c2Button,tlacPrihlaskyMenuItem'></span>
+    <span jsct='action' id='prehladTemAction' enabledInUI='true' usedListenersMask='131136' visible='true' visibleInUI='true' accessible='true' components='c4MenuItem,c3MenuItem'></span>
+    <span jsct='action' id='pridatTemuAction' enabledInUI='true' usedListenersMask='131136' visible='true' visibleInUI='true' accessible='true' label='Pridať tému' components='pridatTemuButton,menuItem26'></span>
+    <span jsct='action' id='odobratTemuAction' enabledInUI='true' usedListenersMask='131136' visible='true' visibleInUI='true' accessible='true' label='Odobrať tému' components='odobratTemuButton,menuItem28'></span>
+    <span jsct='action' id='detailHodnoteniaAction' enabledInUI='true' usedListenersMask='131136' visible='true' visibleInUI='true' accessible='true' label='Detail hodnotenia záverečnej práce' components='c9MenuItem'></span>
+    <span jsct='action' id='odobratAbstraktAction' enabledInUI='true' usedListenersMask='131136' visible='true' visibleInUI='true' accessible='true' label='Odobrať abstrakt' components=''></span>
+   </span>
+   <span jsct='actionList' id='statneSkuskyActionList'>
+    <span jsct='action' id='pridatPredmetAction' enabledInUI='true' usedListenersMask='131136' visible='true' visibleInUI='true' accessible='true' label='Pridať predmet štátnej skúšky' components='pridatPredmetButton,menuItem32'></span>
+    <span jsct='action' id='odobratPredmetAction' enabledInUI='false' usedListenersMask='131136' visible='true' visibleInUI='true' accessible='true' label='Odobrať predmet štátnej skúšky' components='odobratPredmetButton,menuItem33'></span>
+    <span jsct='action' id='kontrolaPrerekvizitAction' enabledInUI='false' usedListenersMask='131136' visible='true' visibleInUI='true' accessible='true' label='Kontrola prerekvizít' components='menuItem37,menuItem8'></span>
+    <span jsct='action' id='ziadostOUznanieAction' enabledInUI='false' usedListenersMask='131136' visible='true' visibleInUI='true' accessible='true' label='Zaevidovať žiadosť o uznanie predmetu ŠS' components='menuItem38,menuItem9'></span>
+    <span jsct='action' id='obsahovaNaplnAction' enabledInUI='false' usedListenersMask='131136' visible='true' visibleInUI='true' accessible='true' label='Obsahová náplň štátnicového predmetu' components='obsahovaNaplnMenuItem,obsahovaNaplnTableMenuItem'></span>
+    <span jsct='action' id='otazkyPredmetuStatnejSkuskyAction' enabledInUI='false' usedListenersMask='131136' visible='true' visibleInUI='true' accessible='true' label='Zobraziť otázky predmetu ŠS' components='menuItem39,menuItem25'></span>
+   </span>
+  </span>
+
+  <span id='interactivesSpan'>
+<span jsct='valueInteractive' invertLogic='false' ifSourceIndex='-2' ifSourceSelectedCount='0' targetsDisabled='true' targetsHidden='false' targetsChanged='false' condTrueTargetsIndex='-2' id='valueInteractive1' sourceControlName='studiaTable' targetControlNames='ukonceniaAction'></span>
+<span jsct='valueInteractive' invertLogic='false' ifSourceIndex='-2' ifSourceSelectedCount='0' targetsDisabled='true' targetsHidden='false' targetsChanged='false' condTrueTargetsIndex='-2' id='valueInteractive2' sourceControlName='statneSkuskyTable' targetControlNames='odobratPredmetAction,kontrolaPrerekvizitAction,ziadostOUznanieAction,otazkyPredmetuStatnejSkuskyAction,zrusitZiadostOUznanieAction,obsahovaNaplnAction'></span>
+<span jsct='valueInteractive' invertLogic='false' ifSourceIndex='-2' ifSourceSelectedCount='0' targetsDisabled='true' targetsHidden='false' targetsChanged='false' condTrueTargetsIndex='-2' id='zoznamTemEmptyTableValueInteractive' sourceControlName='zoznamTemTable' targetControlNames='odobratTemuAction,podrobnostiZaverecnejPraceAction'></span>
+<span jsct='valueInteractive' invertLogic='false' ifSourceIndex='-2' ifSourceSelectedCount='0' targetsDisabled='true' targetsHidden='false' targetsChanged='false' condTrueTargetsIndex='-2' id='valueInteractive4' sourceControlName='zapisneListyTable' targetControlNames='zrusitZapisnyListAction,zapisPredmetovKredityAction,priebezneHodnotenieAction,terminyHodnoteniaAction,hodnoteniaPriemeryAction,zaradenieNaRozvrhAction,kontrolaPrerekvizitPredmetovAction,odporucanyStudijnyPlanAction'></span>
+  </span>
+  <script type='text/javascript'>
+    var initElements = new Array();
+    initElements[initElements.length] = 'studiaTable';
+    initElements[initElements.length] = 'zapisneListyTable';
+    initElements[initElements.length] = 'zoznamTemTable';
+    initElements[initElements.length] = 'statneSkuskyTable';
+    initElements[initElements.length] = 'tabbedPane';
+    initElements[initElements.length] = 'splitPane1';
+  </script>
+ </body>
+

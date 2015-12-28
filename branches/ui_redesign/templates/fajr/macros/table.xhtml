@@ -1,0 +1,12 @@
+{% macro column(title) %}
+  <th class="sortable">{{ title }}</th>
+{% endmacro %}
+
+{% macro row(class, selected) %}
+  {% if not class %}{% set class="" %}{% endif %}
+  {% if selected %}{% set class %}{{ class }} selected{% endset %}{% endif %}
+  <tr {% if class %}class="{{ class }}"{% endif %}>
+{% endmacro %}
+{% macro endrow() %}
+  </tr>
+{% endmacro %}

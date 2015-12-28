@@ -1,0 +1,64 @@
+{##
+ # TODO: description
+ #
+ # @copyright  Copyright (c) 2010-2011 The Fajr authors (see AUTHORS).
+ #             Use of this source code is governed by a MIT license that can be
+ #             found in the LICENSE file in the project root directory.
+ # @author     TODO
+ #}
+{% extends "layout/studium.xhtml" %}
+{% block title %}Zápisný list{% endblock %}
+{% block application_content %}
+{% import "macros/decorators.xhtml" as decorators %}
+{% import "macros/studium.xhtml" as studiumMacros %}
+{% import "macros/table.xhtml" as table %}
+{% parent %}
+{% set tabContent %}
+  {% set head %}
+    {{ table.column("semester", "sortable-text favour-reverse") }}
+    {{ table.column("názov predmetu", "sortable-text") }}
+    {{ table.column("kredit", "sortable-numeric") }}
+    {{ table.column("kód typu výučby", "sortable-text") }}
+    {{ table.column("skratka", "sortable-text") }}
+  {% endset %}
+
+  {% set body %}
+    {% for row in predmetyZapisnehoListu %}
+      {% if row.kodSemester == 'L' %}
+        {% set rowClass = 'leto' %}
+      {% elseif row.kodSemester == 'Z' %}
+        {% set rowClass = 'zima' %}
+      {% else %}
+        {% set rowClass = 'rok' %}
+      {% endif %}
+      {{ table.row(rowClass) }}
+        <td>{{ row.kodSemester }}</td>
+        <td>{{ row.nazov }}</td>
+        <td>{{ row.kredit }}</td>
+        <td>{{ row.kodTypVyucby }}</td>
+        <td>{{ row.skratka }}</td>
+      {{ table.endrow() }}
+    {% endfor %}
+  {% endset %}
+
+  {% set foot %}
+    {{ table.row(none, false) }}
+      <td></td>
+      <td>Celkom {{ predmetyStatistika.obdobia.rok.predmetovCelkom() }} predmetov
+        ({{ predmetyStatistika.obdobia.zima.predmetovCelkom() }} v zime,
+         {{ predmetyStatistika.obdobia.leto.predmetovCelkom() }} v lete)</td>
+      <td>{{ predmetyStatistika.obdobia.rok.kreditovCelkom() }}
+        ({{ predmetyStatistika.obdobia.zima.kreditovCelkom() }}+{{
+            predmetyStatistika.obdobia.leto.kreditovCelkom() }})</td>
+      <td></td>
+      <td></td>
+    {{ table.endrow() }}
+  {% endset %}
+
+  {{ decorators.table(none, head, body, foot, predmetyZapisnehoListu|length == 0) }}
+
+{% endset %}
+
+{{ studiumMacros.studiumTabs(tabContent, 'ZapisnyList', studium, zapisnyList) }}
+
+{% endblock %}

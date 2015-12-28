@@ -1,0 +1,112 @@
+{% extends "layout/studium.xhtml" %}
+{% block title %}Moje skúšky{% endblock %}
+{% block application_content %}
+{% import "macros/decorators.xhtml" as decorators %}
+{% import "macros/table.xhtml" as table %}
+{% import "macros/studium.xhtml" as studiumMacros %}
+{% parent %}
+{% set tabContent %}
+  {% set head %}
+    {{ table.column("predmet") }}
+    {{ table.column("čas") }}
+    {{ table.column("dátum") }}
+    {{ table.column("miestnosť") }}
+    {{ table.column("hodnotiaci") }}
+    {{ table.column("počet prihlásených") }}
+    {{ table.column("maximálny počet") }}
+    {{ table.column("poznámka") }}
+    {{ table.column("prihlasovanie") }}
+    {{ table.column("odhlasovanie") }}
+    {{ table.column("Odhlás") }}
+    {{ table.column("známka") }}
+  {% endset %}
+
+  {% macro riadok(row, odhlas, studium, zapisnyList, action) %}
+    {% url link for ['action': action,
+                     'studium': studium,
+                     'list': zapisnyList,
+                     'termin': row.index] %}
+    <td><a href="{{ link }}">{{ row.predmetNazov }}</a></td>
+    <td>{{ row.cas }}</td>
+    <td>{{ row.dat }}</td>
+    <td>{{ row.miestnosti }}</td>
+    <td>{{ row.hodnotiaci }}</td>
+    <td>{{ row.pocetPrihlasenych }}</td>
+    <td>{{ row.maxPocet }}</td>
+    <td>{{ row.poznamka }}</td>
+    <td>{{ row.prihlasovanie }}</td>
+    <td>{{ row.odhlasovanie }}</td>
+    <td>{{ odhlas|safe }}</td>
+    <td>{{ row.znamka }}</td>
+  {% endmacro %}
+
+  {% set body %}
+    {% for row in terminyActive %}
+      {{ table.row(none, (termin != none) and (row.index == termin)) }}
+        {% if row.mozeOdhlasit == 1 %}
+          {% set class="terminmozeodhlasit" %}
+          {% url formAction for ['action': 'studium.OdhlasZoSkusky',
+                                 'studium': studium,
+                                 'list': zapisnyList] %}
+          {% set odhlas %}
+            <form method="post" action="{{ formAction }}">
+              <div>
+                <input type="hidden" name="odhlasIndex" value="{{ row.index }}" />
+                <input type="hidden" name="hash" value="{{ row.hashNaOdhlasenie }}"/>
+                <button name="submit" type="submit" class="tableButton negative">
+                  <img src="images/cross.png" alt="" />Odhlás
+                </button>
+              </div>
+            </form>
+          {% endset %}
+        {% else %}
+          {% set class="terminnemozeodhlasit" %}
+          {% set odhlas="nedá sa" %}
+        {% endif %}
+        {% if row.prihlaseny != 'A' %}
+          {% set class="terminodhlaseny" %}
+          {% set odhlas="Si odhlásený. Ak chceš, opäť sa prihlás." %}
+        {% endif %}
+        {{ _self.riadok(row, odhlas, studium, zapisnyList, action) }}
+      {{ table.endrow() }}
+    {% endfor %}
+  {% endset %}
+
+  {% set title %}
+    <h2>Aktuálne termíny hodnotenia</h2>
+  {% endset %}
+
+  {% set tableHTML %}
+  {{ decorators.table(none, head, body, none, terminyActive|length == 0) }}
+  {% endset %}
+
+  {{ decorators.collapsible(title, tableHTML, false) }}
+
+  {# -- stare terminy #}
+
+  {% set body %}
+    {% for row in terminyOld %}
+      {{ table.row(none, (termin != none) and (row.index == termin)) }}
+        {{ _self.riadok(row, "Skúška už bola.", studium, zapisnyList, action) }}
+      {{ table.endrow() }}
+    {% endfor %}
+  {% endset %}
+
+  {% set title %}
+    <h2>Staré termíny hodnotenia</h2>
+  {% endset %}
+
+  {% set tableHTML %}
+  {{ decorators.table(none, head, body, none, terminyOld|length == 0) }}
+  {% endset %}
+
+  {{ decorators.collapsible(title, tableHTML, false) }}
+
+  {# -- zoznam prihlasenych na termin #}
+  {{ studiumMacros.zoznamPrihlasenych(prihlaseni) }}
+
+{% endset %}
+
+{{ decorators.studiumtabs(tabContent, 'TerminyHodnotenia', studium, zapisnyList) }}
+
+{% endblock %}

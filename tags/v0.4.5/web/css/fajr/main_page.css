@@ -1,0 +1,22 @@
+.login-box input {
+  width: 100%;
+}
+
+.velkyDisclaimer {
+  font-size: 150%;
+}
+
+.velkyDisclaimer em {
+  color: red;
+  font-style: normal;
+}
+
+.velkyDisclaimer em a {
+  color: red;
+}
+
+.velkyDisclaimer strong {
+  color: red;
+  font-style: normal;
+  font-weight: bold;
+}

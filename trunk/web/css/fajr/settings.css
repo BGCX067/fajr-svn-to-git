@@ -1,0 +1,15 @@
+img.skinSelect {
+  vertical-align:middle;
+  width: 200px;
+  height: 130px;
+  border: solid 1px black;
+}
+
+div.skinSelect {
+  margin: 2em;
+}
+
+button.saveSettings {
+  padding-left: 36px;
+  background: transparent url("../../images/third_party/silk/disk.png") 10px 50% no-repeat;
+}

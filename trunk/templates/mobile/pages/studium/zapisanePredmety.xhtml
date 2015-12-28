@@ -1,0 +1,102 @@
+{##
+ # TODO: description
+ #
+ # @copyright  Copyright (c) 2010-2011 The Fajr authors (see AUTHORS).
+ #             Use of this source code is governed by a MIT license that can be
+ #             found in the LICENSE file in the project root directory.
+ # @author     TODO
+ #}
+
+{% extends "layout/studium.xhtml" %}
+{% block title %}Zápisný list{% endblock %}
+{% block application_content %}
+{% import "macros/decorators.xhtml" as decorators %}
+{% import "macros/studium.xhtml" as studiumMacros %}
+{% import "macros/table.xhtml" as table %}
+{% parent %}
+
+{% macro tabulkaPredmety(row) %}    
+    {% import "macros/decorators.xhtml" as decorators %} 
+    {% set title %}
+      {{decorators.span(row.nazov,"table_box_title")}}
+    {% endset %}
+    {% set content %}
+    <div class="table_box">
+      <ul class="table_box">
+        {{ decorators.riadok("Semester:",row.kodSemester) }}
+        {{ decorators.riadok("Kredit:",row.kredit) }}
+        {{ decorators.riadok("Kód typu výučby:",row.kodTypVyucby) }}
+        {{ decorators.riadok("Skratka:",row.skratka) }}
+      </ul>      
+    </div>
+    {% endset %}      
+    {{ decorators.collapsible(title, content, true) }}
+  {% endmacro %}
+
+
+{% set tabContent %}
+  
+  {% set body %}
+    {% for row in predmetyZapisnehoListu %}
+      {% if row.kodSemester == 'Z' %}
+        {{_self.tabulkaPredmety(row)}}
+      {% endif %}
+    {% endfor %}
+  {% endset %}
+ 
+  {% set content %}
+  
+    {{ decorators.printbox(body, predmetyZapisnehoListu|length == 0) }}
+  {% endset %}
+  {{ decorators.collapsible("<h2>Zima:</h2>", content, false) }}
+  
+ 
+  {% set body %}
+    {% for row in predmetyZapisnehoListu %}
+      {% if row.kodSemester == 'L' %}
+        {{_self.tabulkaPredmety(row)}}
+      {% endif %}
+    {% endfor %}
+  {% endset %}  
+  
+  {% set content %}
+  
+    {{ decorators.printbox(body, predmetyZapisnehoListu|length == 0) }}
+  {% endset %}
+  {{ decorators.collapsible("<h2>Leto:</h2>", content, false) }}
+
+  {% set body %}{#
+    #}{% for row in predmetyZapisnehoListu %}{#
+      #}{% if row.kodSemester != 'Z' and row.kodSemester != 'L' %}{#
+        #}{{_self.tabulkaPredmety(row)}}{#
+      #}{% endif %}{#
+    #}{% endfor %}{#
+  #}{% endset %}  
+
+  {% set content %}  
+    {{ decorators.printbox(body, predmetyZapisnehoListu|length == 0) }}
+  {% endset %}  
+  
+  {% if body %}
+    {{ decorators.collapsible("<h2>Rok:</h2>", content, false) }}  
+  {% endif %}
+  
+  
+
+  {% set foot %}    
+      Celkom {{ predmetyStatistika.obdobia.rok.predmetovCelkom() }} predmetov
+        ({{ predmetyStatistika.obdobia.zima.predmetovCelkom() }} v zime,
+         {{ predmetyStatistika.obdobia.leto.predmetovCelkom() }} v lete)
+      {{ predmetyStatistika.obdobia.rok.kreditovCelkom() }}
+        ({{ predmetyStatistika.obdobia.zima.kreditovCelkom() }}+{{
+            predmetyStatistika.obdobia.leto.kreditovCelkom() }}) kreditov.   
+  {% endset %}  
+
+  {{ decorators.span(foot,"foot") }}
+
+{% endset %}
+
+
+{{ studiumMacros.studiumTabs(tabContent, 'ZapisnyList', studium, zapisnyList) }}
+
+{% endblock %}

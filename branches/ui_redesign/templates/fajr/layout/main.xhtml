@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="{{ language }}" lang="{{ language }}">
+  {% import "macros/trace.xhtml" as traceGen %}
+  <head>
+    {% block head %}
+      <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+      {% if base %}
+        <base href="{{ base }}" />
+      {% endif %}
+      <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/prototype/1.6.1.0/prototype.js"></script>
+      <script type="text/javascript" src="javascripts/fajr.js"></script>
+      <script type="text/javascript" src="javascripts/toggleVisibility.js"></script>
+      <script type="text/javascript" src="javascripts/tablesort.min.js"></script>
+      <link rel="stylesheet" href="css/screen.css" type="text/css" media="screen, projection" />
+      <link rel="stylesheet" href="css/plugins/buttons/screen.css" type="text/css" media="screen, projection" />
+      <link rel="stylesheet" href="css/custom.css" type="text/css" media="screen, projection" />
+      <link rel="stylesheet" href="css/print.css" type="text/css" media="print" />
+      <link rel="stylesheet" href="css/customprint.css" type="text/css" media="print" />
+      <!--[if lt IE 8]><link rel="stylesheet" href="css/ie.css" type="text/css" media="screen, projection" /><![endif]-->
+      <link href="images/favicon.ico" rel="icon" type="image/x-icon" />
+      <title>{% block title %}{% endblock %} - Fajr</title>
+    {% endblock %}
+  </head>
+  <body>
+    <div class="container">
+      <h1>FAJR: {% display title %}</h1>
+      {% if banner_debug %}
+        <div class="warningBanner">
+          <strong>Development verzia. Ostrú verziu nájdeš na
+          <a href="https://fajr.dcs.fmph.uniba.sk"> fajr.dcs.fmph.uniba.sk </a></strong>
+        </div>
+      {% endif %}
+      {% if banner_beta %}
+        <div class="warningBanner">
+          <strong>Používa sa AIS2 BETA. Všetky informácie v tejto inštancii AISu sú
+          dočasné a neovplyvňujú ostrú verziu AISu!</strong>
+        </div>
+      {% endif %}
+      {% block content %}{% endblock %}
+      {% if trace %}
+        <div class="span-24">
+          {{ traceGen.trace(trace) }}
+        </div>
+      {% endif %}
+    </div>
+    {% if google_analytics %}
+      <script type="text/javascript">
+        var _gaq = _gaq || [];
+        _gaq.push(['_setAccount', '{{ google_analytics }}']);
+        _gaq.push(['_trackPageview']);
+
+        (function() {
+          var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+          ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+          var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+        })();
+      </script>
+    {% endif %}
+  </body>
+</html>

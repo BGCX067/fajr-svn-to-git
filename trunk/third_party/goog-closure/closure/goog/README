@@ -1,0 +1,3 @@
+PPershing: this is sparse checkout of google closure library.
+Whole library if 20M and we don't really need it.
+If you need anything from google closure, please just copy it here.

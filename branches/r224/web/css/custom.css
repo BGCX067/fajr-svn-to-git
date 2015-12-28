@@ -1,0 +1,220 @@
+/* expand/collapse elements */
+.togglevisibility {
+	cursor:pointer;
+}
+
+div.collapsible h2.togglevisibility {
+	padding-left: 22px;
+	background-image: url('../images/arrow_in.png');
+	background-position: 3px 3px;
+	background-repeat: no-repeat;
+}
+
+div.collapsible.collapsed h2.togglevisibility {
+	background-image: url('../images/arrow_out.png');
+}
+
+div.collapsible.collapsed div.collapsiblecontent {
+	display: none;
+}
+
+/* div around all collapsible elements */
+div.collapsible {
+	border: 1px solid black;
+	margin: 5px;
+	margin-bottom: 15px;
+}
+
+
+/* ??? */
+
+.increase-line-height {
+	line-height:1.5;
+}
+
+/* general style for all clickable elements */
+.clickable { 
+	cursor: pointer;
+}
+
+.clickable:hover {
+	background-color: #85FF85;
+}
+
+table {
+	margin: 2px;
+	padding-right: 5px;
+}
+
+tr {
+	padding: 5px;
+	margin: 5px;
+}
+
+/* table headers */
+thead th {
+	background-color:#b3c9ef;
+}
+
+th.forwardSort, th.reverseSort { 
+	background-color: yellow;
+}
+
+/* table rows */
+td,th {
+	border-bottom: 1px solid #999;
+}
+
+tr:hover {
+	background-color: #fdc;
+}
+
+tr:nth-child(even) {
+	background-color: #F0F8FF;
+}
+
+tr.selected {background-color:yellow;}
+
+tr.terminold {
+	color:gray;
+}
+
+tr.terminmozeodhlasit {
+	color:green;
+}
+
+tr.terminnemozeodhlasit {
+	color: orange;
+}
+
+tr.terminodhlaseny {
+	color: #aaa;
+}
+
+tr.leto {
+	background-color: #FFFFE0;
+}
+
+tr.leto:nth-child(even) {
+	background-color: #FFFFC2;
+}
+
+tr.zima {
+	background-color: #E0E0FF;
+}
+
+tr.zima:nth-child(even) {
+	background-color: #D1D1FF;
+}
+
+/* table footer */
+
+tfoot tr {
+	background-color:#efefef;
+	font-style: italic;
+}
+
+
+/* Tabs */
+
+.tab_header {
+	border-bottom: 2px solid black;
+  padding: 6px;
+	margin: 0px;
+	margin-top: 20px;
+	margin-bottom: 10px;
+}
+
+.tab a, .tab_selected a {
+	text-decoration: none;
+	font-size: 18px;
+}
+
+.tab:hover, .tab_selected:hover {
+	background-color: lightgreen;
+}
+
+.tab, .tab_selected{
+	margin-left: 15px;
+	padding: 4px;
+	border: 2px solid black;
+	padding-bottom: 5px;
+	background-color: #dfd;
+}
+.tab_selected {
+	border-bottom: 0px;
+	padding-bottom: 7px;
+}
+
+.tab_selected {
+	background-color:yellow;
+}
+
+
+/* Logo and logout */
+
+.logo {
+	padding-left: 10px;
+	padding-top: 10px;
+}
+
+.logout {
+	position: absolute;
+	right: 20px;
+	top: 20px;
+}
+
+
+/* Buttons */
+
+.logout button
+{
+	border:1px solid #fbc2c4;
+}
+
+button.tableButton
+{
+	white-space:nowrap;
+	margin:0 0 0 0;
+}
+
+/* Debug */
+
+.debug {
+	border: 1px solid black;
+	padding: 2px;
+	margin: 5px;
+}
+
+.debug_connection {
+	margin-bottom: 0.5em;
+}
+
+.debug_connection_header, .debug_connection_block_title {
+	border-bottom: 1px solid #999;
+	padding: 2px;
+	margin-bottom: 5px;
+	background: #B3C9EF;
+}
+
+.debug_connection_method {
+	font-weight: bold;
+}
+
+.debug_connection_auxinfo {
+	margin-bottom: 1em;
+}
+
+.debug_connection_block {
+	border: 1px solid #999;
+	margin-left: 3em;
+	margin-bottom: 5px;
+}
+
+.debug_connection_block pre {
+	margin: 0.5em 1em;
+}
+
+.login-box input {
+	width: 100%;
+}

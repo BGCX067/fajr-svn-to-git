@@ -1,0 +1,24 @@
+{##
+ # Contains macros for 'settings' pages.
+ #
+ # @copyright  Copyright (c) 2010-2011 The Fajr authors (see AUTHORS).
+ #             Use of this source code is governed by a MIT license that can be
+ #             found in the LICENSE file in the project root directory.
+ # @author     TODO
+ #}
+
+{##
+ # Vypise taby k nastaveniam
+ #
+ # @param safeHtml $content obsah aktualneho tabu
+ # @param safeString $selectedTab aktivny tab
+ #}
+{% macro settingsTabs(content, selectedTab) %}
+  {% import "macros/decorators.xhtml" as decorators %}
+  {% url changeSkinLink for ['action': 'userSettings.Skin'] %}
+  {{ decorators.tabs(content,
+      ['Skin': [ 'title': 'Zmeň skin',
+                 'url': changeSkinLink ]
+      ], selectedTab) }}
+{% endmacro %}
+

@@ -1,0 +1,22 @@
+<div class="submodul"> 
+    <div class="submodul-text">Prehľady z ľudských zdrojov</div> 
+    <ul class="aplikacie">
+        <li class="aplikacia">
+            <div class="clear">
+                <div class="kod">LZ014</div>
+                <div class="info-ico">
+                    <img src="../images/portal_2/info_UK.jpg" onClick="showPopis('LZ014')"/></div>
+                <div class="linka">
+                    <a href="#" url="/ais/servlets/WebUIServlet?appClassName=ais.gui.lz.LZ014App&kodAplikacie=LZ014&uiLang=SK"
+                        title="Vyhľadávanie osôb, prezentácia" onClick="linkClick( event, this )" leaf="true" >
+                        Vyhľadávanie osôb, prezentácia<br/>
+                        <small>Ostrá prevádzka</small>
+                    </a>
+                </div>
+                <div class="popis" id="popis-LZ014" style="display: none;">
+                    <br/>Vyhľadávanie osôb (študent, zamestnanec, absolvent),
+                            prezentácia vyhľadanej osoby</div>
+            </div>
+        </li>
+    </ul>
+</div>

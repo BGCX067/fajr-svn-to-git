@@ -1,0 +1,56 @@
+{##
+ # Template for all fajr pages.
+ #
+ # @copyright  Copyright (c) 2010-2011 The Fajr authors (see AUTHORS).
+ #             Use of this source code is governed by a MIT license that can be
+ #             found in the LICENSE file in the project root directory.
+ # @author     TODO
+ #}
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="{{ language }}" lang="{{ language }}">
+  {% import "macros/trace.xhtml" as traceGen %}
+  <head>
+    {% block head %}
+      <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+      {% if base %}
+        <base href="{{ base }}" />
+      {% endif %}
+      {% include "layout/javascripts.xhtml" %}
+      {% include "layout/css.xhtml" %}
+
+      <link href="favicon.ico" rel="icon" type="image/x-icon" />
+      <title>{% block title %}{% endblock %} - Fajr</title>
+    {% endblock %}
+  </head>
+  <body>
+    <div class="container">
+      {% include "parts/linkbar.xhtml" %}
+      {% url mainPage for ['_file': 'index.php'] %}
+      <h1 class="logo"><a class="logo" href="{{ mainPage }}">FAJR</a>: {% display title %}</h1>
+      {% block warnings %}
+        {% include "parts/warnings.xhtml" %}
+      {% endblock %}
+      {% block content %}{% endblock %}
+      {% if trace %}
+        <div class="span-24">
+          {{ traceGen.trace(trace) }}
+        </div>
+      {% endif %}
+    </div>
+    {# TODO(ppershing): move analytics to special file #}
+    {% if google_analytics %}
+      <script type="text/javascript">
+        var _gaq = _gaq || [];
+        _gaq.push(['_setAccount', '{{ google_analytics }}']);
+        _gaq.push(['_trackPageview']);
+
+        (function() {
+          var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+          ga.src = 'javascripts/third_party/ga.js';
+          var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+        })();
+      </script>
+    {% endif %}
+  </body>
+</html>

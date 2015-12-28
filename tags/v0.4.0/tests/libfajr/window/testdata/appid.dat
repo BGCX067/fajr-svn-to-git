@@ -1,0 +1,176 @@
+<html> 
+<head> 
+<meta http-equiv='Content-Type' content='text/html; charset=UTF-8'></meta> 
+<link rel='stylesheet' href='/ais/webui2/components/appbody.css?4.29'/> 
+<link rel='stylesheet' href='/ais/webui2/components/dialog.css?4.29'/> 
+<link rel='shortcut icon' href='/ais/favicon.ico'/> 
+<title>Evidencia štúdia</title> 
+ 
+<script type='application/javascript' src='/ais/webui2/webui/browserDetect.js?4.29'></script> 
+<script type='application/javascript' src='/ais/webui2/webui/common.js?4.29'></script> 
+<script type='application/javascript' src='/ais/webui2/components/js/factory.js?4.29'></script> 
+<script type='application/javascript' src='/ais/webui2/webui/log.js?4.29'></script> 
+<script type='application/javascript' src='/ais/webui2/components/js/component.js?4.29'></script> 
+<script type='application/javascript' src='/ais/webui2/components/event.js?4.29'></script> 
+<script type='application/javascript' src='/ais/webui2/components/dialogBody.js?4.29'></script> 
+<script type='application/javascript' src='/ais/webui2/components/dialog.js?4.29'></script> 
+<script type='application/javascript' src='/ais/webui2/components/dialogManager.js?4.29'></script> 
+<script type='application/javascript' src='/ais/webui2/components/focusManager.js?4.29'></script> 
+<script type='application/javascript' src='/ais/webui2/components/styleManager.js?4.29'></script> 
+<script type='application/javascript' defer='defer' src='/ais/webui2/webui/nativeDialogs.js?4.29'></script> 
+ 
+<script type='application/javascript' src='/ais/webui2/components/js/action.js?4.29'></script> 
+<script type='application/javascript' src='/ais/webui2/components/js/button.js?4.29'></script> 
+<script type='application/javascript' defer='defer' src='/ais/webui2/components/js/checkBox.js?4.29'></script> 
+<script type='application/javascript' defer='defer' src='/ais/webui2/components/js/label.js?4.29'></script> 
+<script type='application/javascript' src='/ais/webui2/components/js/panel.js?4.29'></script> 
+<script type='application/javascript' src='/ais/webui2/components/js/splitPane.js?4.29'></script> 
+<script type='application/javascript' defer='defer' src='/ais/webui2/components/js/progressBar.js?4.29'></script> 
+<script type='application/javascript' src='/ais/webui2/components/js/tabbedPane.js?4.29'></script> 
+<script type='application/javascript' defer='defer' src='/ais/webui2/components/js/upDown.js?4.29'></script> 
+ 
+<script type='application/javascript' src='/ais/webui2/components/js/list/comboBox.js?4.29'></script> 
+<script type='application/javascript' defer='defer' src='/ais/webui2/components/js/list/list.js?4.29'></script> 
+<script type='application/javascript' src='/ais/webui2/components/js/list/radioBox.js?4.29'></script> 
+<script type='application/javascript' defer='defer' src='/ais/webui2/components/js/list/checkList.js?4.29'></script> 
+<script type='application/javascript' src='/ais/webui2/components/js/list/radioGroupButton.js?4.29'></script> 
+ 
+<script type='application/javascript' src='/ais/webui2/components/js/text/textControl.js?4.29'></script> 
+<script type='application/javascript' defer='defer' src='/ais/webui2/components/js/text/dateControl.js?4.29'></script> 
+<script type='application/javascript' defer='defer' src='/ais/webui2/components/js/text/htmlArea.js?4.29'></script> 
+<script type='application/javascript' defer='defer' src='/ais/webui2/components/js/text/numberControl.js?4.29'></script> 
+<script type='application/javascript' src='/ais/webui2/components/js/text/textField.js?4.29'></script> 
+ 
+<script type='application/javascript' src='/ais/webui2/components/js/table/tableService.js?4.29'></script> 
+<script type='application/javascript' src='/ais/webui2/components/js/table/selectionmodel.js?4.29'></script> 
+<script type='application/javascript' defer='defer' src='/ais/webui2/components/js/table/dataediting.js?4.29'></script> 
+<script type='application/javascript' src='/ais/webui2/components/js/table/columnmodel.js?4.29'></script> 
+<script type='application/javascript' src='/ais/webui2/components/js/table/tablehandler.js?4.29'></script> 
+<script type='application/javascript' src='/ais/webui2/components/js/table/tablemodel.js?4.29'></script> 
+<script type='application/javascript' src='/ais/webui2/components/js/table/table.js?4.29'></script> 
+ 
+<script type='application/javascript' defer='defer' src='/ais/webui2/components/js/tree/synchronizer.js?4.29'></script> 
+<script type='application/javascript' src='/ais/webui2/components/js/tree/treemodel.js?4.29'></script> 
+<script type='application/javascript' src='/ais/webui2/components/js/tree/tree.js?4.29'></script> 
+ 
+<script type='application/javascript' defer='defer' src='/ais/webui2/components/js/menu/popupmenu.js?4.29'></script> 
+<script type='application/javascript' defer='defer' src='/ais/webui2/components/js/interactive.js?4.29'></script> 
+ 
+<script type='application/javascript' src='/ais/webui2/webui/app.js?4.29'></script> 
+ 
+</head> 
+ 
+<body onload='window.setTimeout("WebUI_init(\"21767494\", \"ais\", \"ais/webui2\")", 1)'
+
+      onbeforeunload='onbeforeunloadHandler()'
+
+      onunload='onunloadHandler()'
+
+      ondblclick='ondblclickHandler()'
+
+      onkeydown='onkeydownHandler()'
+
+      onresize='onresizeHandler()'
+
+      id='webuiBody' scroll='no' style='overflow: hidden;' tabIndex='-1'> 
+ 
+<span tabIndex='-1'> 
+ 
+ <iframe marginwidth='0' marginheight='0' scrolling='auto' frameborder='0'
+
+   style='position: absolute; top: -200px; width: 500px; height: 150px; display: none;'
+
+   src='/ais/webui2/webui/request.html?4.29' name='requestFrame'></iframe> 
+ <iframe marginwidth='0' marginheight='0' scrolling='auto' frameborder='0'
+
+   style='position: absolute; top: -200px; width: 500px; height: 150px; display: none;'
+
+   src='/ais/webui2/webui/blank.html?4.29' name='resultFrame'></iframe> 
+ <iframe marginwidth='0' marginheight='0' scrolling='auto' frameborder='0'
+
+   style='position: absolute; top: 300px; width: 500px; height: 150px; display: none;'
+
+   src='/ais/webui2/webui/blank.html?4.29' name='downloadFrame'></iframe> 
+ <iframe marginwidth='0' marginheight='0' scrolling='auto' frameborder='0'
+
+   style='position: absolute; top: 0px; left: 0px; width: 500px; height: 100%; display: none;'
+
+   src='/ais/webui2/webui/log.html?4.29' name='logFrame'></iframe> 
+ <iframe marginwidth='0' marginheight='0' scrolling='auto' frameborder='0'
+
+  style='position: absolute; top: -200px; width: 500px; height: 150px; display: none;'
+
+  src='/ais/webui2/webui/blank.html?4.29' name='customFrame'></iframe> 
+ 
+ <span id='webuiProperties'
+
+  style='display:none; white-space:pre; position:absolute; top:-1; left:-1; width:0; height:0;'
+
+  viewer='web'
+
+  debugLevel='10' lang='' useXmlHttpRequest='false' shtdwnUrl='/ais/webui/webui/blank.html' whatsUpTime='30000' pingTime='180000' idleEventInterval='0' serverTime='08/01/2010 11:57:11'
+
+  jawsMode='false' autoFocusNext='true' tabSkipsReadOnly='true' allTabStop='false' useColorScheme='default' useUserColors='false'
+
+  disableFieldBackground='#ebead8' downloadContext='files'
+
+  computeColorForSelection='true' tableFocusSelectionBackground='#add8e6' tableFocusSelectionForeground='inherit' tableBlurSelectionBackground='#e0e0e0' tableBlurSelectionForeground='inherit'> 
+  <script type='text/plain' id='loadingTableDataMsg'><!--Prebieha načítavanie údajov...--></script> 
+  <script type='text/plain' id='deleteRowConfirmMsg'><!--Chcete naozaj vymazať aktuálny riadok?--></script> 
+  <script type='text/plain' id='deleteRowToolTipMsg'><!--Vymazanie aktuálneho riadku--></script> 
+  <script type='text/plain' id='addRowToolTipMsg'><!--Pridanie riadku--></script> 
+  <script type='text/plain' id='columnsToolTipMsg'><!--Nastavenie stĺpcov--></script> 
+  <script type='text/plain' id='rowNumbersToolTipMsg'><!--Čísla riadkov--></script> 
+  <script type='text/plain' id='rowCountToolTipMsg'><!--Počet záznamov--></script> 
+  <script type='text/plain' id='sortToolTipMsg'><!--Nastavenie triedenia--></script> 
+  <script type='text/plain' id='invalidDateMsg'><!--Neexistujúci dátum alebo čas!--></script> 
+  <script type='text/plain' id='invalidMaskInputMsg'><!--Nesprávne vyplnené textové pole--></script> 
+  <script type='text/plain' id='numericValueNotInRangeMsg'><!--null--></script> 
+  <script type='text/plain' id='messageBoxTitle'><!--Oznam--></script> 
+  <script type='text/plain' id='confirmBoxTitle'><!--Potvrdenie--></script> 
+  <script type='text/plain' id='fileUploadTitle'><!--Výber a upload súboru--></script> 
+  <script type='text/plain' id='noFileSelected'><!--Nie je vybratý žiaden súbor--></script> 
+  <script type='text/plain' id='abortBoxTitle'><!--Prerušenie--></script> 
+  <script type='text/plain' id='onAppClosedMsg'><!--Aplikácia je na sevri skončená.--></script> 
+  <script type='text/plain' id='killConfirmMessage'><!----></script> 
+  <script type='text/plain' id='customUrl'><!--/ais/web/integracia.html--></script> 
+  <script type='text/plain' id='webUIParams'><!----></script> 
+  <script type='text/plain' id='truncatedTableDataMsg'><!--Ďalšie údaje nebudú sprístupnené. Upresnite, prosím, výberové podmienky!--></script> 
+  <script type='text/plain' id='width'><!--0--></script> 
+  <script type='text/plain' id='height'><!--0--></script> 
+  <script type='text/plain' id='version'><!--?4.29--></script> 
+ </span> 
+</span> 
+<span id='disableDialogsGlass'
+
+  style='cursor:wait; visibility:hidden; position:absolute; left:0; top:0; height:0; width:0;
+
+         z-index:-1; background-image:url(/ais/webui2/components/images/transparent.gif?4.29)'
+
+  onclick='cmn_cancelEvent(event)'> 
+</span> 
+<span id='moveDialogSubGlass'
+
+  onmousemove='onmousemoveMoveDialogHandler(event);'
+
+  onmouseup='onmouseupMoveDialogHandler(event);'
+
+  style='display: none; position: absolute; left: 0px; top: 0px; height: 0px; width: 0px; z-index: -1;
+
+         background-image:url(/ais/webui2/components/images/transparent.gif?4.29)'
+
+  > 
+  <span id='moveDialogGlass'
+
+    style='display: none; position: absolute; border: 1px dotted darkblue;
+
+           left: 0px; top: 0px; height: 0px; width: 0px; z-index: -1;
+
+           background-image:url(/ais/webui2/components/images/transparent.gif?4.29)'
+
+    > 
+  </span> 
+</span> 
+ 
+</body> 
+</html> 

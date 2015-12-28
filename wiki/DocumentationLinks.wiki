@@ -1,0 +1,12 @@
+= Introduction =
+
+Here you can find useful links for current head revision of fajr.
+
+
+= Details =
+
+  * [http://fks.sk/~ppershing/fajr_head/report/documentation/ libfajr documentation]
+  * [http://fks.sk/~ppershing/fajr_head/report/doc_public/ libfajr public interface]
+  * [http://fks.sk/~ppershing/fajr_head/report/tests/report.html test failures]
+  * [http://fks.sk/~ppershing/fajr_head/report/tests/coverage/ test code coverage]
+  * [http://fks.sk/~ppershing/fajr_head/report/ here you can find all previous and more]

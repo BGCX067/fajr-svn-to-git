@@ -1,0 +1,69 @@
+{##
+ # Displays login box div for cosign password/cookie login.
+ #
+ # @copyright  Copyright (c) 2010-2011 The Fajr authors (see AUTHORS).
+ #             Use of this source code is governed by a MIT license that can be
+ #             found in the LICENSE file in the project root directory.
+ # @author     TODO
+ #}
+
+{##
+ # disclaimer
+ #}
+<div class="velkyDisclaimer span-21 prepend-1 last">
+{% include "parts/disclaimer.xhtml" %}
+</div>
+<hr class="space" />
+{##
+ # password login box
+ #}
+<div class="span-7 prepend-1">
+  <form method="post" action="">
+    <fieldset class="login-box">
+      <input type="hidden" name="serverName" value="{{ currentServer.serverName }}">
+      <input type="hidden" name="loginType" value="cosignpassword" />
+      <legend>Prihlásenie heslom do <br/>{{ currentServer.serverName }} </legend>
+      <div>
+        <label for="login">Prihlasovacie meno</label>
+        <br/>
+        <input type="text" name="login" id="login"/>
+        <br/>
+        <label for="password">Heslo</label>
+        <br/>
+        <input type="password" name="password" id="password"/>
+        <br/>
+        <button type="submit" name="submit">
+          <img alt="" src="images/third_party/silk/key_go.png"/>
+          Prihlásiť
+        </button>
+      </div>
+    </fieldset>
+  </form>
+</div>
+{##
+ # cookie login box
+ #}
+<div class="span-7 last">
+  <form method="post" action="">
+    <fieldset class="login-box">
+      <input type="hidden" name="serverName" value="{{ currentServer.serverName }}" />
+      <input type="hidden" name="loginType" value="cosigncookie" />
+      <legend>Prihlásenie cez cookie do <br/>{{ currentServer.serverName }} </legend>
+      <div>
+      bezpečne sa
+      <a href="https://login.uniba.sk/?{{ currentServer.cosignCookieName|urlencode }}&amp;https://{{ currentServer.serverName|urlencode }}/ais/login.do?"
+         >prihlás</a>
+      do {{ currentServer.instanceName }} a skopíruj si cookie.
+      <hr/>
+      <label for="cosignCookie">{{ currentServer.cosignCookieName }}</label>
+      <br/>
+      <input type="password" name="cosignCookie" id="cosignCookie"/>
+      <br/>
+      <button type="submit" name="submit">
+        <img alt="" src="images/third_party/silk/key_add.png"/>
+        Prihlásiť
+      </button>
+      </div>
+    </fieldset>
+  </form>
+</div>

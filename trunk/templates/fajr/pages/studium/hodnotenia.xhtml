@@ -1,0 +1,134 @@
+{##
+ # TODO: description
+ #
+ # @copyright  Copyright (c) 2010-2011 The Fajr authors (see AUTHORS).
+ #             Use of this source code is governed by a MIT license that can be
+ #             found in the LICENSE file in the project root directory.
+ # @author     TODO
+ #}
+{% extends "layout/studium.xhtml" %}
+{% block title %}Hodnotenia a priemery{% endblock %}
+{% block application_content %}
+{% import "macros/decorators.xhtml" as decorators %}
+{% import "macros/studium.xhtml" as studiumMacros %}
+{% import "macros/table.xhtml" as table %}
+{% parent %}
+{% set tabContent %}
+
+  {# -------------------- Hodnotenia -------------------- #}
+
+  {% set head %}
+    {{ table.column("Semester", "sortable-text favour-reverse") }}
+    {{ table.column("Názov predmetu", "sortable-text") }}
+    {{ table.column("Kredit predmetu", "sortable-numeric") }}
+    {{ table.column("Klasifikačný stupeň", "sortable-text") }}
+    {{ table.column("Dátum hodnotenia", "sortable-date-dmy") }}
+    {{ table.column("Termín", "sortable-text") }}
+    {{ table.column("Známka popis", "sortable-text") }}
+  {% endset %}
+
+  {% set body %}
+    {% for row in hodnotenia %}
+      {% if row.semester == 'L' %}
+        {% set rowClass = 'leto' %}
+      {% elseif row.semester == 'Z' %}
+        {% set rowClass = 'zima' %}
+      {% else %}
+        {% set rowClass = 'rok' %}
+      {% endif %}
+      {{ table.row(rowClass) }}
+        <td>{{ row.semester }}</td>
+        <td>{{ row.nazov }}</td>
+        <td>{{ row.kredit }}</td>
+        <td>{{ row.znamka }}</td>
+        <td>{{ row.datum }}</td>
+        <td>{{ row.termin }}</td>
+        <td>{{ row.znamkaPopis }}</td>
+      {{ table.endrow() }}
+    {% endfor %}
+  {% endset %}
+
+  {% set title %}
+    <h2>Hodnotenia</h2>
+  {% endset %}
+
+  {% set tableHTML %}
+  {{ decorators.table(none, head, body, none, hodnotenia|length == 0) }}
+  {% endset %}
+
+  {{ decorators.collapsible(title, tableHTML, false) }}
+
+  {# ---------------- Priemery ------------------------ #}
+
+  {% set head %}
+    {{ table.column("Akademický rok", "sortable-text") }}
+    {{ table.column("Názov priemeru", "sortable-text") }}
+    {{ table.column("Kód semestra", "sortable-text") }}
+    {{ table.column("Získaný kredit", "sortable-numeric") }}
+    {{ table.column("Celkový počet predmetov", "sortable-numeric") }}
+    {{ table.column("Počet neabsolvovaných predmetov", "sortable-numeric") }}
+    {{ table.column("Študijný priemer", "sortable-numeric") }}
+    {{ table.column("Vážený priemer", "sortable-numeric") }}
+    {{ table.column("Priemer na koľký pokus", "sortable-numeric") }}
+    {{ table.column("Dátum výpočtu priemeru", "sortable-date-dmy") }}
+  {% endset %}
+
+  {% set body %}
+    {% for row in priemery %}
+      {{ table.row(none, false) }}
+        <td>{{ row.priemerInfoPopisAkadRok }}</td>
+        <td>{{ row.priemerNazov }}</td>
+        <td>{{ row.priemerInfoKodSemester }}</td>
+        <td>{{ row.ziskanyKredit }}</td>
+        <td>{{ row.pocetPredmetov }}</td>
+        <td>{{ row.pocetNeabs }}</td>
+        <td>{{ row.studPriemer }}</td>
+        <td>{{ row.vazPriemer }}</td>
+        <td>{{ row.pokusyPriemer }}</td>
+        <td>{{ row.priemerInfoDatum }}</td>
+      {{ table.endrow() }}
+    {% endfor %}
+  {% endset %}
+
+  {% set title %}
+    <h2>Priemery</h2>
+  {% endset %}
+
+  {% macro vazenyPriemer(priemer) %}
+    {% set ibaOhodnotene = priemer.vazenyPriemer(false) %}
+    {% set vsetky = priemer.vazenyPriemer(true) %}
+    {{ "%.2f"|format(vsetky) }}
+    {% if ibaOhodnotene != vsetky %}
+      ({{ "%.2f"|format(ibaOhodnotene)}} iba doteraz ohodnotené predmety)
+    {% endif %}
+  {% endmacro %}
+
+  {% set content %}
+    Nasledovné priemery sú prebraté z AISu, čiže to (ne)funguje presne rovnako:
+    {{ decorators.table(none, head, body, none, priemery|length == 0) }}
+    {% if priemeryCalculator.hasPriemer %}
+      <p><br />
+        Nasledovné vážené študijné priemery sú počítané Fajrom priebežne z tabuľky
+        Hodnotenia, <strong>preto nemôžu byť považované ako oficiálne</strong>:
+        <br />
+        <br />
+        {% if priemeryCalculator.obdobia.zima.hasPriemer %}
+          Zimný semester: {{ _self.vazenyPriemer(priemeryCalculator.obdobia.zima) }}<br />
+        {% endif %}
+        {% if priemeryCalculator.obdobia.leto.hasPriemer %}
+          Letný semester: {{ _self.vazenyPriemer(priemeryCalculator.obdobia.leto) }}<br />
+        {% endif %}
+        {% if priemeryCalculator.obdobia.rok.hasPriemer %}
+          Celý akad. rok: {{ _self.vazenyPriemer(priemeryCalculator.obdobia.rok) }}<br />
+        {% endif %}
+      </p>
+    {% endif %}
+  {% endset %}
+
+  {{ decorators.collapsible(title, content, false) }}
+
+{% endset %}
+
+{{ studiumMacros.studiumTabs(tabContent, 'Hodnotenia', studium, zapisnyList) }}
+
+{% endblock %}

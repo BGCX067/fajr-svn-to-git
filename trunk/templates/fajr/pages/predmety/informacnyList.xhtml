@@ -1,0 +1,16 @@
+{##
+ # Show the raw HTML result.
+ #
+ # @copyright  Copyright (c) 2010-2011 The Fajr authors (see AUTHORS).
+ #             Use of this source code is governed by a MIT license that can be
+ #             found in the LICENSE file in the project root directory.
+ # @author     Tomi Belan <tomi.belan@gmail.com>
+ #}
+{# TODO(anty): use parser and a template #}
+<pre>{{ content|escape }}</pre>
+{% if trace %}
+  {% import "macros/trace.xhtml" as traceGen %}
+  {% include "layout/javascripts.xhtml" %}
+  {% include "layout/css.xhtml" %}
+  {{ traceGen.trace(trace) }}
+{% endif %}

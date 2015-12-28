@@ -1,0 +1,91 @@
+{##
+ # Contains macros for decoration of elements.
+ #
+ # @copyright  Copyright (c) 2010-2011 The Fajr authors (see AUTHORS).
+ #             Use of this source code is governed by a MIT license that can be
+ #             found in the LICENSE file in the project root directory.
+ # @author     TODO
+ #}
+
+{# Note: All macros in decorators take SAFE values and they are NOT escaped #}
+
+{##
+ # Spravi content "rozklikavaci"
+ # @param safeHtml $title nazov
+ # @param safeHtml $content obsah rozklikavacieho elementu
+ # @param bool $collapsed ma byt defaultne skryty?
+ #}
+{% macro collapsible(title, content, collapsed) %}
+  {% unique collapsible id %}
+  <div class="collapsible" id="{{ id }}">
+    <div class="collapsibleheader togglevisibility" onclick="toggleVisibility('{{ id }}')">
+      {{ title|safe }}
+    </div>
+    <div class="collapsiblecontent">
+      {{ content|safe }}
+    </div>
+    {% if collapsed %}
+      <script type="text/javascript">
+        toggleVisibility("{{ id }}");
+      </script>
+    {% endif %}
+  </div>
+{% endmacro %}
+
+{##
+ # Zobrazi tabulku dat.
+ #
+ # @param safeString $class css trieda, pouzita ako colorstyle-sorting$class
+ # @param safeHtml $head content hlavicky tabulky (obsah v ramci prveho <tr>)
+ # @param safeHtml $body content riadkov z obsahom tabulky
+ # @param safeHtml $foot content footera
+ # @param bool $empty zobrazit informacie o neexistencii udajov namiesto tabulky?
+ # @param bool $collapsed ma byt defaultne skryty?
+ #}
+{% macro table(class, head, body, foot, empty) %}
+  {% if empty %}
+    <font color="red"> Dáta pre túto tabuľku neboli nájdené.</font><hr class="space" />
+  {% else %}
+    {% unique table id %}
+    {% if class != "" %}
+      {% set class=" "+class %}
+    {% endif %}
+    <table id="{{ id }}" class="colstyle-sorting{{ class }}">
+      <thead>
+        <tr>
+          {{ head|safe }}
+        </tr>
+      </thead>
+      {# tu by mal byt po spravnosti tfoot, aby bol vystup validny
+         lenze to je treba najprv upravit ten triediaci skript
+         (pri tlaci chceme totiz tfoot iba na spodu bez opakovania)
+         jedna moznost je nepouzit tfoot, ale tbody s nejakym classom
+      #}
+      <tbody>
+        {{ body|safe }}
+      </tbody>
+      {% if foot %}
+        <tfoot>
+          {{ foot|safe }}
+        </tfoot>
+      {% endif %}
+   {% endif %}
+  </table>
+{% endmacro %}
+
+{##
+ # Zobrazi "taby".
+ #
+ # @param safeHtml $content obsah aktualneho tabu
+ # @param array(title,url) $definitions definicie tabov
+ # @param safeString $selectedTab nazov aktualneho tabu
+ #}
+{% macro tabs(content, definitions, selectedTab) %}
+<div class="tab_header">
+  {% for tabKey in definitions|keys %}{% set tab = definitions[tabKey] %}{#
+    #}<span class="tab{% if tabKey == selectedTab %}_selected{% endif %}"
+          ><a href="{{ tab.url }}">{{ tab.title }}</a></span>{#
+  #}{% endfor %}
+</div>
+{{ content|safe }}
+{% endmacro %}

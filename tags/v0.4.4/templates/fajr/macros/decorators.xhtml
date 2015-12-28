@@ -1,0 +1,83 @@
+{# all macros in decorators take SAFE values and they are NOT escaped #}
+
+{% macro collapsible(title, content, collapsed) %}
+  {% unique collapsible id %}
+  <div class="collapsible" id="{{ id }}">
+    <div class="collapsibleheader togglevisibility" onclick="toggleVisibility('{{ id }}')">
+      {{ title|safe }}
+    </div>
+    <div class="collapsiblecontent">
+      {{ content|safe }}
+    </div>
+    {% if collapsed %}
+      <script type="text/javascript">
+        toggleVisibility("{{ id }}");
+      </script>
+    {% endif %}
+  </div>
+{% endmacro %}
+
+{% macro table(class, head, body, foot, empty) %}
+  {% if empty %}
+    <font color="red"> Dáta pre túto tabuľku neboli nájdené.</font><hr class="space" />
+  {% else %}
+    {% unique table id %}
+    {% if class != "" %}
+      {% set class=" "+class %}
+    {% endif %}
+    <table id="{{ id }}" class="colstyle-sorting{{ class }}">
+      <thead>
+        <tr>
+          {{ head|safe }}
+        </tr>
+      </thead>
+      {# tu by mal byt po spravnosti tfoot, aby bol vystup validny
+         lenze to je treba najprv upravit ten triediaci skript
+         (pri tlaci chceme totiz tfoot iba na spodu bez opakovania)
+         jedna moznost je nepouzit tfoot, ale tbody s nejakym classom
+      #}
+      <tbody>
+        {{ body|safe }}
+      </tbody>
+      {% if foot %}
+        <tfoot>
+          {{ foot|safe }}
+        </tfoot>
+      {% endif %}
+   {% endif %}
+  </table>
+{% endmacro %}
+
+{% macro tabs(content, definitions, selectedTab) %}
+<div class="tab_header">
+  {% for tabKey in definitions|keys %}{% set tab = definitions[tabKey] %}{#
+    #}<span class="tab{% if tabKey == selectedTab %}_selected{% endif %}"
+          ><a href="{{ tab.url }}">{{ tab.title }}</a></span>{#
+  #}{% endfor %}
+</div>
+{{ content|safe }}
+{% endmacro %}
+
+{% macro studiumtabs(content, selectedTab, studium, zapisnyList) %}
+{% url terminyLink for     ['action': 'studium.MojeTerminyHodnotenia',
+                            'studium': studium,
+                            'list': zapisnyList] %}
+{% url zapisLink   for     ['action': 'studium.ZoznamTerminov',
+                            'studium': studium,
+                            'list': zapisnyList] %}
+{% url zapisnyListLink for ['action': 'studium.ZapisanePredmety',
+                            'studium': studium,
+                            'list': zapisnyList] %}
+{% url hodnoteniaLink for  ['action': 'studium.Hodnotenia',
+                            'studium': studium,
+                            'list': zapisnyList] %}
+{{ _self.tabs(content, ['TerminyHodnotenia': ['title': 'Moje skúšky',
+                                              'url': terminyLink],
+                        'ZapisSkusok':       ['title': 'Prihlásenie na skúšky',
+                                              'url': zapisLink],
+                        'ZapisnyList':       ['title': 'Zápisný list',
+                                              'url': zapisnyListLink],
+                        'Hodnotenia':        ['title': 'Hodnotenia/Priemery',
+                                              'url': hodnoteniaLink]
+                       ], selectedTab) }}
+{% endmacro %}

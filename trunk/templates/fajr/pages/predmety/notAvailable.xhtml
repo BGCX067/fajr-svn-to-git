@@ -1,0 +1,17 @@
+{##
+ # Show user information that he does not have access to the ais content.
+ #
+ # @copyright  Copyright (c) 2010-2011 The Fajr authors (see AUTHORS).
+ #             Use of this source code is governed by a MIT license that can be
+ #             found in the LICENSE file in the project root directory.
+ # @author     Tomi Belan <tomi.belan@gmail.com>
+ #}
+{% extends "layout/application.xhtml" %}
+{% block title %}Aplikácia neprístupná{% endblock %}
+{% block application_content %}
+  {% parent %}
+  <div class="error">
+    Snažíte sa dostať do časti fajru, ktorá by mala byť pre všetkých,
+    AIS však tvrdí, že tam nemáte prístup. Sorry.
+  </div>
+{% endblock %}

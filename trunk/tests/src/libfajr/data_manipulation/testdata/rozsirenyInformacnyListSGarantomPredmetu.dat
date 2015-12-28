@@ -1,0 +1,101 @@
+<html xmlns:html="http://www.w3.org/1999/xhtml"><head>
+
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1250">
+<style type="text/css">
+					p {margin:0px;}
+					tr { vertical-align:top;}
+					div {margin:0px;border:0px;padding:0px;}
+					table {border-collapse:collapse;}
+				</style>
+<title>Informačné listy</title>
+</head><body>
+<center>
+<div style="width: 16cm;">
+<div style="text-align: left;">
+<b>Názov vysokej školy, názov fakulty:&nbsp;</b>Univerzita Komenského v Bratislave - Fakulta matematiky, fyziky a informatiky</div>
+<table style="width: 16cm; margin-bottom: 5px;" border="1" cellpadding="2" cellspacing="0">
+<tbody><tr>
+<td align="center"><b>Informačný list predmetu</b></td>
+</tr>
+</tbody></table>
+<table style="width: 16cm; margin-bottom: 30px; page-break-after: always;" border="1" cellpadding="2" cellspacing="0">
+<tbody><tr style="display: none;">
+<td style="width: 19%;"></td><td style="width: 6%;"></td><td style="width: 6%;"></td><td style="width: 18%;"></td><td style="width: 32%;"></td><td style="width: 19%;"></td>
+</tr>
+<tr>
+<td style="width: 31%;" colspan="3">
+<div>
+<b>Kód:</b>&nbsp;FMFI.KI/2-INF-235/00</div>
+</td><td style="width: 69%;" colspan="3"><b>Názov:</b>&nbsp;Kryptológia (2)</td>
+</tr>
+<tr>
+<td colspan="6"><b>Študijný program:</b>&nbsp;
+								mINF, mINF/k&nbsp;</td>
+</tr>
+<tr>
+<td style="width: 49%;" colspan="4"><b>Garantuje:</b>&nbsp;
+								</td><td style="width: 51%;" colspan="2"><b>Zabezpečuje:</b>&nbsp;</td>
+</tr>
+<tr>
+<td style="width: 19%;" colspan="1"><b>Obdobie štúdia predmetu:</b>&nbsp;4</td><td style="width: 62%;" colspan="4"><b>Forma výučby:</b>&nbsp;Kurz<br>
+<b>Odporúčaný rozsah výučby ( v hodinách ):</b>
+<br>
+<b>Týždenný:</b>&nbsp;4&nbsp;<b>Za obdobie štúdia:</b>&nbsp;56</td><td style="width: 19%;" colspan="1"><b>Počet kreditov:</b>&nbsp;6</td>
+</tr>
+<tr>
+<td colspan="6"><b>Podmieňujúce predmety:</b>&nbsp;</td>
+</tr>
+<tr>
+<td colspan="6"><b>Obsahová prerekvizita:</b>&nbsp;<p>1-INF-640 Kryptológia (1)</p>
+</td>
+</tr>
+<tr>
+<td colspan="6">
+<div style="margin-bottom: 5px;">
+<b>Spôsob hodnotenia a skončenia štúdia predmetu:</b>&nbsp;Hodnotenie</div>
+<div style="margin-bottom: 5px;">
+<b>Priebežné hodnotenie (napr. test, samostatná práca...):</b>&nbsp;</div>
+<div>
+<b>Záverečné hodnotenie (napr. skúška, záverečná práca...):</b>&nbsp;<p>skúška</p>
+</div>
+</td>
+</tr>
+<tr>
+<td colspan="6"><b>Cieľ predmetu:</b>&nbsp;<p>Prezentovať zložitejšie 
+kryptografické konštrukcie s použitím základných prvkov ako aj prístupy k
+ formálnemu zdôvodneniu ich bezpečnosti.
+</p>
+</td>
+</tr>
+<tr>
+<td colspan="6"><b>Stručná osnova predmetu:</b>&nbsp;<p>Schémy na 
+zdieľanie tajomstva, podpisové schémy s dodatočnými vlastnosťami, 
+formálna analýza autentizačných protokolov, bezznalostné dokazovacie 
+systémy, primitíva protokolov s viacerými účastníkmi (oblivious 
+transfer, bit commitment), digitálne peniaze, elektronické voľby, 
+dokázateľná bezpečnosť schém pre asymetrické šifrovanie a digitálne 
+podpisy.
+</p>
+</td>
+</tr>
+<tr>
+<td colspan="6"><b>Literatúra:</b>&nbsp;<p>Stinson D.: Cryptography: Theory and Practice, 3rd Edition, CRC Press, 2005.
+</p>
+<p>Menezes A.J., Van Oorschot P.C.: Handbook of Applied Cryptography, CRC Press, 1996.
+</p>
+<p>Koblitz N.: A Course in Number Theory and Cryptography, Springer-Verlag, 1987.
+</p>
+<p>Mao W.: Modern Cryptography: Theory and Practice, Hewlett-Packard, 2003.
+</p>
+</td>
+</tr>
+<tr>
+<td style="width: 49%;" colspan="4"><b>Jazyk, v ktorom sa predmet vyučuje:</b>
+<br>anglický, slovenský</td><td style="width: 51%;" colspan="2"><b>Podpis garanta a dátum poslednej úpravy listu:</b>
+<br>14.08.2009</td>
+</tr>
+</tbody></table>
+<br>
+</div>
+</center>
+</body></html>

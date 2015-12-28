@@ -1,0 +1,88 @@
+{##
+ # Contains macros for 'studium' pages.
+ #
+ # @copyright  Copyright (c) 2010-2011 The Fajr authors (see AUTHORS).
+ #             Use of this source code is governed by a MIT license that can be
+ #             found in the LICENSE file in the project root directory.
+ # @author     TODO
+ #}
+
+{##
+ # Vypise tabulku so zoznamom prihlasenych na skusku
+ # @param DataTable(Prihlaseni) $prihlaseni
+ #}
+{% macro zoznamPrihlasenych(prihlaseni) %}
+  {% import "macros/decorators.xhtml" as decorators %}
+  {% import "macros/table.xhtml" as table %}
+
+  {% if prihlaseni %}
+
+    {% set head %}
+      {{ table.column("Dátum prihlásenia", "sortable-sortDatumCas") }}
+      {{ table.column("Plné meno", "sortable-sortPriezviskoMeno") }}
+      {{ table.column("Skratka študijného programu", "sortable-text") }}
+      {{ table.column("Ročník", "sortable-numeric") }}
+    {% endset %}
+
+    {% set body %}
+      {% for row in prihlaseni %}
+        {{ table.row(none, false) }}
+          <td>{{ row.datumPrihlas }}</td>
+          <td>{{ row.plneMeno }}</td>
+          <td>{{ row.skratka }}</td>
+          <td>{{ row.rocnik }}</td>
+        {{ table.endrow() }}
+      {% endfor %}
+    {% endset %}
+
+    {% set title %}
+      <h2>Zoznam prihlásených na vybratý termín</h2>
+    {% endset %}
+
+    {% set tableHTML %}
+    {{ decorators.table(none, head, body, none, prihlaseni|length == 0) }}
+    {% endset %}
+
+    {{ decorators.collapsible(title, tableHTML, false) }}
+
+  {% endif %}
+
+{% endmacro %}
+
+{##
+ # Vypise taby k casti o studiu
+ # @param safeHtml $content obsah aktualneho tabu
+ # @param (TODO: safe?)string $selectedTab aktivny tab
+ # @param int $studium id studia
+ # @param int $zapisnyList id zapisneho listu
+ #}
+{% macro studiumTabs(content, selectedTab, studium, zapisnyList) %}
+  {% import "macros/decorators.xhtml" as decorators %}
+  {% url terminyLink for     ['action': 'studium.MojeTerminyHodnotenia',
+                              'studium': studium,
+                              'list': zapisnyList] %}
+  {% url zapisLink   for     ['action': 'studium.ZoznamTerminov',
+                              'studium': studium,
+                              'list': zapisnyList] %}
+  {% url zapisnyListLink for ['action': 'studium.ZapisanePredmety',
+                              'studium': studium,
+                              'list': zapisnyList] %}
+  {% url hodnoteniaLink for  ['action': 'studium.Hodnotenia',
+                              'studium': studium,
+                              'list': zapisnyList] %}
+  {% url prehladKreditovLink for  ['action': 'studium.PrehladKreditov',
+                                   'studium': studium,
+                                   'list': zapisnyList] %}
+  {{ decorators.tabs(content, 
+      ['TerminyHodnotenia': ['title': 'Moje skúšky',
+                              'url': terminyLink],
+       'ZapisSkusok':       ['title': 'Prihlásenie na skúšky',
+                             'url': zapisLink],
+       'ZapisnyList':       ['title': 'Zápisný list',
+                             'url': zapisnyListLink],
+       'Hodnotenia':        ['title': 'Hodnotenia/Priemery',
+                             'url': hodnoteniaLink],
+       'PrehladKreditov':   ['title': 'Prehľad kreditov',
+                             'url': prehladKreditovLink]
+      ], selectedTab) }}
+{% endmacro %}

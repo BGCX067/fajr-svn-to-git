@@ -1,0 +1,25 @@
+{##
+ # Zobrazme spravu, ze aktualny tab vyzaduje zapisny list
+ #
+ # @copyright  Copyright (c) 2011 The Fajr authors (see AUTHORS).
+ #             Use of this source code is governed by a MIT license that can be
+ #             found in the LICENSE file in the project root directory.
+ # @author     Martin Sucha <anty.sk+fajr@gmail.com>
+ #}
+{% extends "layout/studium.xhtml" %}
+{% block title %}Chýba zápisný list{% endblock %}
+{% block application_content %}  
+
+
+{% import "macros/decorators.xhtml" as decorators %}
+{% import "macros/studium.xhtml" as studiumMacros %}
+{% parent %}
+{% set tabContent %}
+  <div class="error">
+    Táto časť vyžaduje zápisný list, v aktuálne zvolenom štúdiu sa však žiaden
+    nevyskytuje. {# TODO(anty): link na vytvorenie noveho #}
+  </div>
+{% endset %}
+
+{{ studiumMacros.studiumTabs(tabContent, activeTab, studium, none) }}
+{% endblock %}

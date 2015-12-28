@@ -1,0 +1,319 @@
+
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"> 
+<html> 
+  <head> 
+    <base href="https://ais2.uniba.sk/ais/portal/pages/portal_layout.jsp"> 
+    <link rel="stylesheet" href="../css/portal_2_common.css" type="text/css" /> 
+    <link rel="stylesheet" href="../css/portal_2_UK.css" type="text/css" /> 
+    
+    <link rel="icon" href="/ais/portal/images/portal_2/favicon.ico" type="image/x-icon"/> 
+    <link rel="shortcut icon" href="/ais/portal/images/portal_2/favicon.ico"  type="image/x-icon"/> 
+    
+    <script language="javascript" id="jQuery" src="../js/jquery-1.3.2.js" ></script> 
+    
+    <script language="javascript" src="../js/portal_2.js" ></script> 
+ 
+    <script>      
+      $(document).ready(function()
+      {
+        $("#logo").mouseover(function ()
+        {
+          $("#top-banner-img").attr( "src", "../images/portal_2/top_UK_color.gif" );
+        });
+      
+        $("#logo").mouseout(function ()
+        {
+          $("#top-banner-img").attr( "src", "../images/portal_2/top_UK_gray.gif" );
+        });
+ 
+        $( ".left-menu-item" ).mouseover( function() { $( this ).addClass( "left-menu-item-highlight" ); } );       
+        $( ".left-menu-item" ).mouseout(  function() { $( this ).removeClass( "left-menu-item-highlight" ); } );
+        
+          $( "#id-text" ).css( 'left', $( "#p1" ).offset().left + 205 );
+ 
+        $( "#info" ).click( 
+            function() 
+            { 
+              $( this ).find( '.popis' ).toggle( 'slow' );
+            } );               
+        
+      } );
+ 
+      function showPopis( id )
+      {
+        $( '#popis-' + id ).toggle( 'slow' );
+      }
+        
+    </script> 
+    
+    <title>AiS2</title> 
+  </head> 
+  <body> 
+ 
+    <div style="border: none; text-align: center;"> 
+    
+      <div class="page-holder"> 
+    
+      <div style="text-align: center;"> 
+    
+      <div style="width: 1055px;"> 
+      <div class="page"> 
+      
+        <div> 
+        
+          
+  
+ 
+ 
+<div class="top"> 
+ 
+  <div class="user-name"></div> 
+  
+  
+    
+  
+  
+  <img id="top-banner-img" src="../images/portal_2/top_UK_gray.gif" usemap="#map" /> 
+   
+  <map name="map"> 
+    <area id="logo" shape="circle" coords="900,73,55" 
+        href="http://www.uniba.sk" alt="Univerzita Komenského v Bratislave"  target="_blank" 
+        title="Univerzita Komenského v Bratislave"/> 
+  </map> 
+  
+</div> 
+ 
+                    
+          <div class="left-side-panel"> 
+            
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+  
+  
+    
+ 
+      
+      
+      
+      
+        
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+  <div class="snip"> 
+    <div class="title">Prihlásenie</div> 
+    <form name="LoginForm" method="get" action="/ais/login.do"> 
+    <input type="submit" class="button" value="Prihlásiť" title="Kliknite pre prihlasenie" > 
+    </form> 
+  </div> 
+ 
+ 
+ 
+ 
+ 
+ 
+  
+  
+  
+ 
+      
+        <div class="snip"> 
+          <div class="title">Test prehliadača</div> 
+          <div class="body"> 
+            <div class="snip-element"> 
+              <p>Pomocou tohoto testu môžete overiť správnosť nastavení vášho prehliadača pre prácu s AiS2.</p> 
+            </div>              
+          </div> 
+          <button class="button" onClick="document.location.href='/ais/checkSettings/settings.jsp'">Spustiť test </button> 
+        </div> 
+          
+        <div class="snip"> 
+          <div class="title">Projekt AiS2</div> 
+          <div class="body"> 
+            <div class="snip-element"> 
+              <p>Projekt AiS2 bol v rokoch 2005-2007 podporovaný MŠ SR formou centrálneho rozvojového projektu. Viac informácií je dostupných na Portáli AiS2.</p> 
+            </div>              
+          </div> 
+        </div> 
+    
+      
+      
+          
+    
+  
+  
+  
+  
+  
+ 
+          </div> 
+          <div class="right-panel"> 
+          
+            
+ 
+<div class="navigation-panel"> 
+ 
+ 
+    <ul class="top-menu"> 
+      <li class='active'> 
+        <a href="../changeTab.do?tab=0">AiS2</a> 
+      </li> 
+  
+      
+      <li > 
+        <a href="../changeTab.do?tab=5" title="Podporované webové prehliadače, Test prehliadača"> 
+          Nastavenia</a> 
+      </li> 
+      
+      <li > 
+        <a href="../changeTab.do?tab=4" title="Riešenie problémov - kontakty"> 
+          Riešenie problémov</a> 
+      </li> 
+ 
+    </ul>   
+ 
+ 
+  
+    <ul class="jazyky"> 
+  <li><a href='../changeLocale.do?locale=SK'>SK</a></li><li><a href='../changeLocale.do?locale=EN'>EN</a></li><li></li> 
+    </ul>   
+  
+</div> 
+            
+            <div class="right-side-panel"> 
+              
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+  
+  
+  
+ 
+            </div> 
+            
+            <div class="content"> 
+              
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+  
+  
+  
+  
+    
+    
+      
+      
+        
+        
+        <img src="../images/portal_2/logo.jpeg" /> 
+        
+      
+      
+      
+    
+    
+    
+    
+  
+  
+ 
+            </div> 
+                      
+          </div> 
+          
+          
+        </div> 
+ 
+        <br style="clear:both;"/> 
+                
+        <div class="bottom"><div class="verzia">AiS2 verzia 2.3.15.30</div></div> 
+        <div class="copyright">Akademický informačný systém AiS2 &copy; UPJŠ Košice &#169; UPJŠ 1997-2009</div> 
+        <div class="somsak">dizajn &copy; šomšák, 2009</div> 
+        
+      </div> 
+      <div class="bottom" style="width: 1055px;"><img src="../images/portal_2/bottom_UK.gif"/></div> 
+      </div> 
+        
+        </div> 
+        
+        <div class="zalozka-ais"> 
+          <a href="http://www.ais2.eu" target="_blank" title="Nové okno prezentačný portál AIS"> 
+            <img src="../images/portal_2/zalozka_ais.gif" alt="Informačný portál AiS2"/></a> 
+        </div> 
+      </div> 
+        
+        
+      
+    </div> 
+ 
+  </body> 
+</html>

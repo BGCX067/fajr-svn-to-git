@@ -1,0 +1,17 @@
+{##
+ # Template for all settings pages.
+ #
+ # @copyright  Copyright (c) 2010-2011 The Fajr authors (see AUTHORS).
+ #             Use of this source code is governed by a MIT license that can be
+ #             found in the LICENSE file in the project root directory.
+ # @author     TODO
+ #}
+{% extends "layout/application.xhtml" %}
+{% block head %}
+  {% parent %}
+  <link rel="stylesheet" href="css/fajr/settings.css" type="text/css" media="screen, projection" />
+{% endblock %}
+{% block application_content %}
+  <a href="{{ mainPage }}">&lt;&lt; späť do fajru &lt;&lt</a>
+{% parent %}
+{% endblock %}

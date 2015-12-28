@@ -1,0 +1,98 @@
+{% extends "layout/studium.xhtml" %}
+{% block title %}Prihlásenie na skúšky{% endblock %}
+{% block application_content %}
+{% import "macros/decorators.xhtml" as decorators %}
+{% import "macros/table.xhtml" as table %}
+{% import "macros/studium.xhtml" as studiumMacros %}
+{% parent %}
+{% set tabContent %}
+  {% set head %}
+    {{ table.column("Predmet") }}
+    {{ table.column("Čas") }}
+    {{ table.column("Dátum") }}
+    {{ table.column("Miestnosti") }}
+    {{ table.column("Hodnotiaci") }}
+    {{ table.column("Počet prihlásených študentov") }}
+    {{ table.column("Maximálny počet") }}
+    {{ table.column("Poznámka") }}
+    {{ table.column("Interval pre prihlasovanie") }}
+    {{ table.column("Interval pre odhlasovanie") }}
+    {{ table.column("Prihlás") }}
+  {% endset %}
+
+  {% macro riadok(row, prihlas, studium, zapisnyList, action) %}
+    {% url link for ['action': action,
+                     'studium': studium,
+                     'list': zapisnyList,
+                     'predmet': row.predmetIndex,
+                     'termin': row.index] %}
+    <td><a href="{{ link }}">{{ row.predmet }}</a></td>
+    <td>{{ row.cas }}</td>
+    <td>{{ row.dat }}</td>
+    <td>{{ row.miestnosti }}</td>
+    <td>{{ row.hodnotiaci }}</td>
+    <td>{{ row.pocetPrihlasenych }}</td>
+    <td>{{ row.maxPocet }}</td>
+    <td>{{ row.poznamka }}</td>
+    <td>{{ row.prihlasovanie }}</td>
+    <td>{{ row.odhlasovanie }}</td>
+    <td>{{ prihlas|safe }}</td>
+  {% endmacro %}
+
+  {% set body %}
+    {% for row in terminy %}
+      {{ table.row(none, (termin != none) and (predmet != none) and
+                         (row.index == termin) and (row.predmetIndex == predmet)) }}
+        {% if row.mozeSaPrihlasit <= 0 %} {# moze sa prihlasit #}
+          {% url action for ['action': 'studium.PrihlasNaSkusku',
+                             'studium': studium,
+                             'list': zapisnyList] %}
+          {% set prihlas %}
+            {# TODO(anty): update after those checks are moved to the model #}
+            {% if row.mozeSaPrihlasit == "fajr\\controller\\studium\\StudiumController::PRIHLASIT_MOZE_ZNAMKA"|constant %}
+              Už máš zapísané "{{ row.znamka }}"
+            {% endif %}
+            <form method='post' action='{{ action }}'>
+              <div>
+                <input type="hidden" name="prihlasPredmetIndex"
+                       value="{{ row.predmetIndex }}" />
+                <input type="hidden" name="prihlasTerminIndex"
+                       value="{{ row.index }}" />
+                <input type="hidden" name="hash" value="{{ row.hashNaPrihlasenie }}"/>
+                <button name="submit" type="submit" class="tableButton positive">
+                  <img src="images/add.png" alt="" />Prihlás ma!
+                </button>
+              </div>
+            </form>
+          {% endset %}
+        {% elseif row.mozeSaPrihlasit == "fajr\\controller\\studium\\StudiumController::PRIHLASIT_NEMOZE_CAS"|constant %}
+          {% set prihlas="Nedá sa (neskoro)" %}
+        {% elseif row.mozeSaPrihlasit == "fajr\\controller\\studium\\StudiumController::PRIHLASIT_NEMOZE_POCET"|constant %}
+          {% set prihlas="Termín je plný" %}
+        {% elseif row.mozeSaPrihlasit == "fajr\\controller\\studium\\StudiumController::PRIHLASIT_NEMOZE_ZNAMKA"|constant %}
+          {% set prihlas %}Už máš zapísané "{{ row.znamka }}"{% endset %}
+        {% else %}
+          {% set prihlas="Nedá sa, dôvod neznámy" %}
+        {% endif %}
+        {{ _self.riadok(row, prihlas, studium, zapisnyList, action) }}
+      {{ table.endrow() }}
+    {% endfor %}
+  {% endset %}
+
+  {% set title %}
+    <h2>Termíny, na ktoré sa môžem prihlásiť</h2>
+  {% endset %}
+
+  {% set tableHTML %}
+  {{ decorators.table(none, head, body, none, terminy|length == 0) }}
+  {% endset %}
+
+  {{ decorators.collapsible(title, tableHTML, false) }}
+
+  {# ---- zoznam prihlasenych --- #}
+  {{ studiumMacros.zoznamPrihlasenych(prihlaseni) }}
+
+{% endset %}
+
+{{ decorators.studiumtabs(tabContent, 'ZapisSkusok', studium, zapisnyList) }}
+{% endblock %}

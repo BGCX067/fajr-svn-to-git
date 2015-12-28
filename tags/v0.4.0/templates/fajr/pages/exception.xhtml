@@ -1,0 +1,41 @@
+{% extends "layout/main.xhtml" %}
+{% block title %}Chyba{% endblock %}
+
+{% macro recursiveException(exception, showStackTrace) %}
+  <div class="exception">
+    {{ exception.message }}
+    {% if showStackTrace %}
+      <br />
+      <strong>at {{ exception.file }}: {{ exception.line }}</strong>
+      <br />
+      <strong>Stacktrace:</strong><br />
+      <ul>
+        {% for item in exception.trace %}
+          <li>
+            <strong>{{ item.file}}: {{ item.line }}</strong>
+            <br />
+            Function: {{ item.function }}
+            <br />
+            Arguments:
+            <ul>
+              {% for arg in item.args %}
+                <li>{{ arg }}</li>
+              {% endfor %}
+            </ul>
+          </li>
+        {% endfor %}
+      </ul>
+      {% if exception.previous %}
+        <strong>Caused by:</strong><br />
+        {{ _self.recursiveException(exception.previous, showStackTrace) }}
+      {% endif %}
+    {% endif %}
+  </div>
+{% endmacro %}
+
+{% block content %}
+<div class="error">
+  <h2>Pri spracúvaní požiadavky nastala chyba:</h2>
+  {{ _self.recursiveException(exception, showStackTrace) }}
+</div>
+{% endblock %}

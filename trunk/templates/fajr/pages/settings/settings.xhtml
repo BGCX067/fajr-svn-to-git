@@ -1,0 +1,20 @@
+{##
+ # Settings page.
+ #
+ # @copyright  Copyright (c) 2010-2011 The Fajr authors (see AUTHORS).
+ #             Use of this source code is governed by a MIT license that can be
+ #             found in the LICENSE file in the project root directory.
+ # @author     TODO
+ #}
+{% extends "layout/settings.xhtml" %}
+{% block title %}Nastavenia{% endblock %}
+{% block application_content %}
+{% import "macros/settings.xhtml" as settingsMacros %}
+{% parent %}
+  {% set tabContent %}
+  <h2>
+  Vyberte si prosím nastavenia, ktoré chcete modifikovať.
+  </h2>
+  {% endset %}
+  {{ settingsMacros.settingsTabs(tabContent, '') }}
+{% endblock %}

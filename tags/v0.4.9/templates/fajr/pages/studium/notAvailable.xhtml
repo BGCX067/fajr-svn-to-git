@@ -1,0 +1,9 @@
+{% extends "layout/application.xhtml" %}
+{% block title %}Študentská časť neprístupná{% endblock %}
+{% block application_content %}
+  {% parent %}
+  <div class="error">
+  Snažíte sa dostať do časti fajru, ktorá je pre študentov,
+	AIS však tvrdí, že tam nemáte prístup. Sorry.
+  </div>
+{% endblock %}

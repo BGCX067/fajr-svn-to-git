@@ -1,0 +1,85 @@
+html, body {
+  background-color: black;
+  color: #00FF00;
+  font-family: courier;
+}
+
+input[type=text], input[type=password], select, button[type=submit] {
+  background-color: #111111;
+  color: white;
+}
+
+a {
+  color: #6666FF;
+}
+
+a:active, a:hover {
+  color: #7777FF;
+}
+
+h1, h2, h3, h4, h5 {
+  color: #77FF77;
+}
+
+div.collapsible {
+  border-color: gray;
+}
+
+thead th {
+  background-color: #002200;
+}
+
+tr {
+  border: solid white;
+}
+
+tfoot tr {
+  background-color: black;
+}
+
+tr:nth-child(even) {
+  background-color: #111111;
+}
+
+tr:hover,
+    tr.leto:hover, tr.leto:nth-child(even):hover,
+    tr.zima:hover, tr.zima:nth-child(even):hover,
+    tr.rok:hover, tr.rok:nth-child(even):hover {
+  background-color: #002200;
+}
+
+.tab {
+  background-color: #222222;
+}
+
+.tab_selected {
+  background-color: #004400;
+}
+
+.tab_header {
+  border-bottom: solid gray;
+}
+
+tr.leto {
+  background-color: #555530;
+}
+
+tr.leto:nth-child(even) {
+  background-color: #444430;
+}
+
+tr.zima {
+  background-color: #303055;
+}
+
+tr.zima:nth-child(even) {
+  background-color: #303044;
+}
+
+tr.rok {
+  background-color: #305530;
+}
+
+tr.rok:nth-child(even) {
+  background-color: #304430;
+}

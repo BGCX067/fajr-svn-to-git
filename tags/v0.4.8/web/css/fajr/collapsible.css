@@ -1,0 +1,31 @@
+/* expand/collapse elements */
+.togglevisibility {
+  cursor:pointer;
+}
+
+.collapsibleheader {
+  margin-bottom: 0px;
+  border-bottom: 1px solid gray;
+}
+
+div.collapsible div.togglevisibility {
+  padding-left: 30px;
+  background-image: url('../../images/third_party/silk/arrow_in.png');
+  background-position: 3px 3px;
+  background-repeat: no-repeat;
+}
+
+div.collapsible.collapsed div.togglevisibility {
+  background-image: url('../../images/third_party/silk/arrow_out.png');
+}
+
+div.collapsible.collapsed div.collapsiblecontent {
+  display: none;
+}
+
+/* div around all collapsible elements */
+div.collapsible {
+  border: 1px solid black;
+  margin: 5px;
+  margin-bottom: 15px;
+}

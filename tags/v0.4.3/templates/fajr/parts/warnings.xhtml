@@ -1,0 +1,38 @@
+{% macro addWarning(message) %}
+  <div class="warningBanner">
+    <strong>
+    {{ message|safe }}
+    </strong>
+  </div>
+{% endmacro %}
+
+{% if banner_debug %}
+  {{ _self.addWarning('Development verzia.
+    Ostrú verziu nájdeš na
+    <a href="https://fajr.dcs.fmph.uniba.sk"> fajr.dcs.fmph.uniba.sk </a>') }}
+{% endif %}
+{% if currentServer.isBeta %}
+  {{ _self.addWarning('Používa sa AIS2 BETA.
+      Všetky informácie v tejto inštancii AISu sú
+      dočasné a neovplyvňujú ostrú verziu AISu!') }}
+{% endif %}
+{% if aisVersionIncompatible %}
+  {% set aisVersionWarning %}
+    Fajr komunikuje s  AISom verzie {{ aisVersion }}, lenže
+    na tejto verzii ešte nebol otestovaný. V aplikácii sa môžu vyskytnúť nečakané chyby.
+  {% endset %}
+  {{ _self.addWarning(aisVersionWarning) }}
+{% endif %}
+{% if warnings %}
+  {% for warning in warnings %}
+    {% if warning.type == "unexpectedTableStructure" %}
+      {% set warningMessage %}
+        Fajr nemusí fungovať správne: Štruktúra tabuľky {{ warning.tableName }}
+        získaná z AISu je neočakávaná, pravdepodobne sa zmenilo niečo v AISe.
+      {% endset %}
+    {% else %}
+      {% set warningMessage %} Neznáma chyba {% endset %}
+    {% endif %}
+    {{ _self.addWarning(warningMessage) }}
+  {% endfor %}
+{% endif %}

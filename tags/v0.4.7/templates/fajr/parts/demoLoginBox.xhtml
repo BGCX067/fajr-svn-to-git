@@ -1,0 +1,20 @@
+<div class="span-14 prepend-1 last">
+  {# Cosign proxy needs GET method! #}
+  <form method="get" action="fajr.php">
+    <fieldset class="login-box">
+      <input type="hidden" name="serverName" value="{{ currentServer.serverName }}" />
+      <input type="hidden" name="loginType" value="nologin" />
+      <legend>Prihlásenie do {{ currentServer.serverName }} </legend>
+      <div>
+        <div class="velkyDisclaimer">
+          Nemáš prístup do AISu? Alebo len nechceš brať mačku vo vreci? Pozri si ako vyzerá fajr
+          aj bez nutnosti prihlásiť sa!
+        </div>
+        <br/>
+        <button type="submit" name="submit">
+          Ukáž demo
+        </button>
+      </div>
+    </fieldset>
+  </form>
+</div>

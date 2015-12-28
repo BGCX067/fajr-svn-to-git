@@ -1,0 +1,46 @@
+{% extends "layout/studium.xhtml" %}
+{% block title %}Zápisný list{% endblock %}
+{% block application_content %}
+{% import "macros/decorators.xhtml" as decorators %}
+{% import "macros/table.xhtml" as table %}
+{% parent %}
+{% set tabContent %}
+  {% set head %}
+    {{ table.column("semester") }}
+    {{ table.column("názov predmetu") }}
+    {{ table.column("kredit") }}
+    {{ table.column("kód typu výučby") }}
+    {{ table.column("skratka") }}
+  {% endset %}
+
+  {% set body %}
+    {% for row in predmetyZapisnehoListu %}
+      {{ table.row(row.kodSemester == "L" ? 'leto' : 'zima', false) }}
+        <td>{{ row.kodSemester }}</td>
+        <td>{{ row.nazov }}</td>
+        <td>{{ row.kredit }}</td>
+        <td>{{ row.kodTypVyucby }}</td>
+        <td>{{ row.skratka }}</td>
+      {{ table.endrow() }}
+    {% endfor %}
+  {% endset %}
+
+  {% set foot %}
+    {{ table.row(none, false) }}
+      <td></td>
+      <td>Celkom {{ pocetPredmetovZima+pocetPredmetovLeto }} predmetov
+        ({{ pocetPredmetovZima }} v zime, {{ pocetPredmetovLeto }} v lete)</td>
+      <td>{{ kreditovCelkomZima+kreditovCelkomLeto }}
+        ({{ kreditovCelkomZima }}+{{ kreditovCelkomLeto }})</td>
+      <td></td>
+      <td></td>
+    {{ table.endrow() }}
+  {% endset %}
+
+  {{ decorators.table(none, head, body, foot, predmetyZapisnehoListu|length == 0) }}
+
+{% endset %}
+
+{{ decorators.studiumtabs(tabContent, 'ZapisnyList', studium, zapisnyList) }}
+
+{% endblock %}

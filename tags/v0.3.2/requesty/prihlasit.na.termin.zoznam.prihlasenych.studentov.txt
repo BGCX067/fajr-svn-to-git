@@ -1,0 +1,670 @@
+Som v aplikacii "VSES007: Terminy hodnotenia".
+Zvolil som si jeden termin hodnotenia a klikol som na
+"Prihlasit sa na termin".
+
+POST na url=
+https://ais2.uniba.sk/ais/servlets/WebUIServlet?appId=30589988&antiCache=-58675877954000&viewer=web
+
+s parametrom xml_spec=
+<request>
+      <serial>10</serial>
+      <events>
+            <ev>
+                  <dlgName>VSES007_StudentZoznamPrihlaseniNaSkuskuDlg0</dlgName>
+                  <compName>pridatTerminAction</compName>
+                  <event class='avc.ui.event.AVCActionEvent'></event>
+            </ev>
+      </events>
+      <changedProps>
+            <changedProperties>
+                  <objName>app</objName>
+                  <propertyValues>
+                        <nameValue>
+                              <name>activeDlgName</name>
+                              <value>VSES007_StudentZoznamPrihlaseniNaSkuskuDlg0</value>
+                        </nameValue>
+                  </propertyValues>
+            </changedProperties>
+            <changedProperties>
+                  <objName>VSES007_StudentZoznamPrihlaseniNaSkuskuDlg0</objName>
+                  <propertyValues>
+                        <nameValue>
+                              <name>x</name>
+                              <value>-4</value>
+                        </nameValue>
+                        <nameValue>
+                              <name>y</name>
+                              <value>-4</value>
+                        </nameValue>
+                  </propertyValues>
+                  <embObjChProps>
+                        <changedProperties>
+                              <objName>terminyTable</objName>
+                              <propertyValues>
+                                    <nameValue>
+                                          <name>dataView</name>
+                                          <isXml>true</isXml>
+                                          <value>
+                                                <![CDATA[ <root> <selection> <activeIndex>3</activeIndex> <selectedIndexes>3</selectedIndexes> </selection> </root> ]]>
+                                                </value>
+                                    </nameValue>
+                                    <nameValue>
+                                          <name>editMode</name>
+                                          <isXml>false</isXml>
+                                          <value>false</value>
+                                    </nameValue>
+                              </propertyValues>
+                              <embObjChProps isNull='true'/>
+                        </changedProperties>
+                  </embObjChProps>
+            </changedProperties>
+      </changedProps>
+</request>
+
+odpoved=
+<html id='resultFrameHTML'><head><meta http-equiv='Content-Type' content='text/html; charset=utf-8'></meta>
+<script type='application/javascript'>
+window.parent.Logger_log('Received response', window.parent.Logger_DEBUG);
+
+function webui() { return window.parent.webui; }
+function f() { return window.parent.factory; }
+function dm() { return window.parent.dialogManager; }
+function isResponseIdle(rs) { return webui().lastDoneRequest == rs; }
+
+function main0() {
+if (isResponseIdle(10)) { return; }
+window.parent.Logger_log('start updating components', window.parent.Logger_DEBUG);
+webui().prepareUpdatingDialogs();
+dm().openDialog("VSES206_VyberTerminuHodnoteniaDlg1","Výber termínu hodnotenia","VSES206","VSES007_StudentZoznamPrihlaseniNaSkuskuDlg0",true,false,63,63,755,331,true,true,true,541,331,null,false);
+}
+
+function main() {
+if (isResponseIdle(10)) { return; }
+webui().noteLastDoneRequest(10);
+window.parent.Logger_log('Response main started', window.parent.Logger_DEBUG);
+dm().setActiveDialogName('VSES206_VyberTerminuHodnoteniaDlg1');
+webui().enableApplication();
+}
+
+main0();
+
+</script>
+</head>
+<body onload='main()'>
+</body>
+</html>
+
+Okamzite nasleduje
+
+GET na url=
+https://ais2.uniba.sk/ais/servlets/WebUIServlet?appId=30589988&form=VSES206_VyberTerminuHodnoteniaDlg1&antiCache=-58675877954000
+
+odpoved=
+<html><title>Výber termínu hodnotenia</title>
+ <head><meta http-equiv='Content-Type' content='text/html; charset=utf-8'></meta></head>
+<link rel='stylesheet' href='/ais/webui2/web/styles-common.css?4.29' type='text/css'/>
+<link rel='stylesheet' href='/ais/webui2/web/styles-commonff.css?4.29' type='text/css'/>
+<link rel='stylesheet' href='/ais/webui2/web/styles.css?4.29' type='text/css'/>
+<link rel='stylesheet' href='/ais/web/styles.css' type='text/css'/>
+ <script type='text/javascript'>
+ var w=window;
+ var top=window.parent;
+ var webui=top.webui;
+ var f=top.factory;
+ var comfac=top.factory;
+ var dialogName="VSES206_VyberTerminuHodnoteniaDlg1";
+ var jsArray = new Array();
+ function getDialogJSObject() { return jsArray[dialogName]; }
+ function setDialogJSObject(jsObject) { jsArray[dialogName] = jsObject; }
+ function getJSObject(id) { return jsArray[id]; }
+ function setJSObject(id, jsObject) { jsArray[id] = jsObject; }
+ top.Logger_log('nacitany dialog: ' + dialogName + ' zacina renderovanie', top.Logger_DEBUG);  </script>
+
+ <body focusedComponent='enterButton' firstFocusableComponent='enterButton'  inRequestEnabledComponents='closeButton' jsct='body' onload='f.initDialogBodyJSO(event,w)' onkeydown='f.hbe(event,w)' ondoubleclick='f.hbe(event,w)' onclick='f.hbe(event,w)' onmousedown='f.hbe(event,w)' onmouseup='f.hbe(event,w)' onmouseover='f.hbe(event,w)' scroll='no' minHeight='331' minWidth='541' id='VSES206_VyberTerminuHodnoteniaDlg1' usedListenersMask='196674' oncontextmenu='f.onContextMenu(event, this,w)'
+ style=' height:331px; position:absolute; color:#333333; width:755px; font-size:11; top:63px; left:63px;' >
+<div class='menuBack' jsct='popupMenu' id='runPopupMenu'>
+<table class='menuBorder' cellSpacing='0' cellPadding='0'>
+<tr class='menuItem' jsct='menuItem' id='menuItem1' actionName='zobrazitZoznamPrihlasenychAction' label='Zobraziť zoznam prihlásených'>
+ <td class='miIconNone'></td>
+ <td class='miMainText' nowrap='true'>Zobraziť zoznam prihlásených</td>
+ <td class='miRightText' nowrap='true'></td>
+ <td class='miSubpopup'></td>
+</tr>
+</table>
+</div>
+  <span id='dialogComponentsSpan' xstyle='visibility:hidden;'>
+<div class='panelDefault' jsct='panel' oncontextmenu='f.onContextMenu(event, this,w);'  id='buttonPanel' minWidth='0' minHeight='0' pastHeight='28' pastWidth='740' collapsed='false' collapsable='false' autoscrolls='false'
+ style='position:absolute;z-index:0; border:1px solid #8d8d80; left: 8px; top: 8px; width: 740px; height: 28px;' anchors='rlt'>
+<button jsct='button' onclick='f.h(event,this,w)' onfocus='f.onFocus(event,this,w)' onmousedown='f.h(event,this,w)' onblur='f.h(event,this,w)' onmouseover='f.h(event,this,w)' onmouseout='f.h(event,this,w)' tabIndex='1' pFCName='runButton' nFCName='closeButton' actionName='enterAction' id='enterButton' title='Potvrdenie&nbsp;(Enter)' oncontextmenu='f.onContextMenu(event, this,w)' class='buttonOnToolbar' style=' position:absolute; top:2px; left:4px;'
+ _image='okay'><div><img id='buttonImage' class='buttonImageOnly' src='/ais/images/okay.gif'/><img id='buttonPopupArrow' style='display: none;' src='/ais/webui2/components/images/arrow-down.gif?4.29'/><span id='buttonSpan' style=' display:none;' ></span></div></button>
+<button jsct='button' onclick='f.h(event,this,w)' onfocus='f.onFocus(event,this,w)' onmousedown='f.h(event,this,w)' onblur='f.h(event,this,w)' onmouseover='f.h(event,this,w)' onmouseout='f.h(event,this,w)' inRequestEnabled='true' tabIndex='2' pFCName='enterButton' nFCName='registryButton' actionName='closeAction' id='closeButton' usedListenersMask='131136' title='Návrat&nbsp;(Esc)' oncontextmenu='f.onContextMenu(event, this,w)' class='buttonOnToolbar' style=' position:absolute; top:2px; left:57px;'
+ _image='cancel'><div><img id='buttonImage' class='buttonImageOnly' src='/ais/images/cancel.gif'/><img id='buttonPopupArrow' style='display: none;' src='/ais/webui2/components/images/arrow-down.gif?4.29'/><span id='buttonSpan' style=' display:none;' ></span></div></button>
+<button jsct='button' onclick='f.h(event,this,w)' onfocus='f.onFocus(event,this,w)' onmousedown='f.h(event,this,w)' onblur='f.h(event,this,w)' onmouseover='f.h(event,this,w)' onmouseout='f.h(event,this,w)' tabIndex='3' pFCName='closeButton' nFCName='helpButton' actionName='registryAction' id='registryButton' title='Uloženie&nbsp;nastavení' oncontextmenu='f.onContextMenu(event, this,w)' class='buttonOnToolbar' style=' position:absolute; top:2px; left:85px;'
+ _image='registry'><div><img id='buttonImage' class='buttonImageOnly' src='/ais/images/registry.gif'/><img id='buttonPopupArrow' style='display: none;' src='/ais/webui2/components/images/arrow-down.gif?4.29'/><span id='buttonSpan' style=' display:none;' ></span></div></button>
+<button jsct='button' onclick='f.h(event,this,w)' onfocus='f.onFocus(event,this,w)' onmousedown='f.h(event,this,w)' onblur='f.h(event,this,w)' onmouseover='f.h(event,this,w)' onmouseout='f.h(event,this,w)' tabIndex='4' pFCName='registryButton' nFCName='predmetTextField' actionName='helpAction' id='helpButton' title='Nápoveda' oncontextmenu='f.onContextMenu(event, this,w)' anchors='rt' class='buttonOnToolbar' style=' position:absolute; top:2px; left:705px;'
+ _image='help'><div><img id='buttonImage' class='buttonImageOnly' src='/ais/images/help.gif'/><img id='buttonPopupArrow' style='display: none;' src='/ais/webui2/components/images/arrow-down.gif?4.29'/><span id='buttonSpan' style=' display:none;' ></span></div></button>
+  </div>
+<div class='panelUser' jsct='panel' oncontextmenu='f.onContextMenu(event, this,w);'  id='panel1' minWidth='0' minHeight='0' pastHeight='84' pastWidth='740' collapsed='false' collapsable='false' autoscrolls='false'
+ style='position:absolute;z-index:0; border:1px solid #8D8D80; left: 8px; top: 40px; width: 740px; height: 84px; font-size: 11; color: #333333; background-color: #dedec8;' anchors='rlt'>
+<label class='labelDefault' style=' left: 8px; top: 60px; width: 100;'
+ jsct='label' id='label3'>Spôsoby hodnotenia</label>
+<label class='labelDefault' style=' left: 8px; top: 12px; width: 40;'
+ jsct='label' for='predmetTextField' id='label1'>Predmet</label>
+<label class='labelDefault' style=' left: 8px; top: 36px; width: 48;'
+ jsct='label' for='vyucujuciTextField' id='label2'>Vyučujúci</label>
+<input jsct='textField'  class='textFieldDefault' ondragstart='f.h(event,this,w)' ondrop='f.h(event,this,w)' ondeactivate='f.h(event,this,w)' onblur='f.h(event,this,w)' onfocus='f.onFocus(event,this,w)' onkeydown='f.h(event,this,w)' onkeypress='f.h(event,this,w)' onchange='f.h(event,this,w)' onpropertychange='f.h(event,this,w)' onpaste='f.h(event,this,w)' oncut='f.h(event,this,w)' oncontextmenu='f.h(event,this,w)' value='FMFI.KI/2-INF-134/00 - Pravdepodobnostné algoritmy' tabIndex='5' pFCName='helpButton' nFCName='vybratPredmetButton'
+ id='predmetTextField' selStart='0'
+ ttlt='true' dbgc='#fefefe' robgc='#ebead8' _readOnly='true' enterToNext='false'
+ style=' background-color:#ebead8; left: 120px; top: 8px; width: 558; text-align: left;' anchors='rlt'/>
+<button jsct='button' onclick='f.h(event,this,w)' onfocus='f.onFocus(event,this,w)' onmousedown='f.h(event,this,w)' onblur='f.h(event,this,w)' onmouseover='f.h(event,this,w)' onmouseout='f.h(event,this,w)' tabIndex='6' pFCName='predmetTextField' nFCName='vymazatPredmetButton' actionName='vybratPredmetAction' id='vybratPredmetButton' title='Vybrať&nbsp;predmet' enabled='false' disabled='true' oncontextmenu='f.onContextMenu(event, this,w)' anchors='rt' class='buttonWithIconOnly' style=' position:absolute; top:7px; left:682px;'
+ _image='vyber'><div><img id='buttonImage' class='buttonImageOnly' style='-moz-opacity:0.2; opacity:0.2; filter:alpha(opacity=25, style=0) gray;' src='/ais/images/vyber.gif'/><img id='buttonPopupArrow' style='display: none;' src='/ais/webui2/components/images/arrow-down-gray.gif?4.29'/><span id='buttonSpan' style='color: #999999; display:none;' disabled='true'></span></div></button>
+<button jsct='button' onclick='f.h(event,this,w)' onfocus='f.onFocus(event,this,w)' onmousedown='f.h(event,this,w)' onblur='f.h(event,this,w)' onmouseover='f.h(event,this,w)' onmouseout='f.h(event,this,w)' tabIndex='7' pFCName='vybratPredmetButton' nFCName='vyucujuciTextField' actionName='vymazatPredmetAction' id='vymazatPredmetButton' title='Vymazať&nbsp;predmet' enabled='false' disabled='true' oncontextmenu='f.onContextMenu(event, this,w)' anchors='rt' class='buttonWithIconOnly' style=' position:absolute; top:7px; left:708px;'
+ _image='zmazat'><div><img id='buttonImage' class='buttonImageOnly' style='-moz-opacity:0.2; opacity:0.2; filter:alpha(opacity=25, style=0) gray;' src='/ais/images/zmazat.gif'/><img id='buttonPopupArrow' style='display: none;' src='/ais/webui2/components/images/arrow-down-gray.gif?4.29'/><span id='buttonSpan' style='color: #999999; display:none;' disabled='true'></span></div></button>
+<input jsct='textField'  class='textFieldDefault' ondragstart='f.h(event,this,w)' ondrop='f.h(event,this,w)' ondeactivate='f.h(event,this,w)' onblur='f.h(event,this,w)' onfocus='f.onFocus(event,this,w)' onkeydown='f.h(event,this,w)' onkeypress='f.h(event,this,w)' onchange='f.h(event,this,w)' onpropertychange='f.h(event,this,w)' onpaste='f.h(event,this,w)' oncut='f.h(event,this,w)' oncontextmenu='f.h(event,this,w)' tabIndex='8' pFCName='vymazatPredmetButton' nFCName='vybratVyucujucehoButton'
+ id='vyucujuciTextField' selStart='0'
+ ttlt='true' dbgc='#fefefe' robgc='#ebead8' _readOnly='true' enterToNext='false'
+ style=' background-color:#ebead8; left: 120px; top: 32px; width: 558; text-align: left;' anchors='rlt'/>
+<button jsct='button' onclick='f.h(event,this,w)' onfocus='f.onFocus(event,this,w)' onmousedown='f.h(event,this,w)' onblur='f.h(event,this,w)' onmouseover='f.h(event,this,w)' onmouseout='f.h(event,this,w)' tabIndex='9' pFCName='vyucujuciTextField' nFCName='vymazatVyucujucehoButton' actionName='vybratVyucujucehoAction' id='vybratVyucujucehoButton' title='Vybrať&nbsp;vyučujúceho' oncontextmenu='f.onContextMenu(event, this,w)' anchors='rt' class='buttonWithIconOnly' style=' position:absolute; top:31px; left:682px;'
+ _image='vyber'><div><img id='buttonImage' class='buttonImageOnly' src='/ais/images/vyber.gif'/><img id='buttonPopupArrow' style='display: none;' src='/ais/webui2/components/images/arrow-down.gif?4.29'/><span id='buttonSpan' style=' display:none;' ></span></div></button>
+<button jsct='button' onclick='f.h(event,this,w)' onfocus='f.onFocus(event,this,w)' onmousedown='f.h(event,this,w)' onblur='f.h(event,this,w)' onmouseover='f.h(event,this,w)' onmouseout='f.h(event,this,w)' tabIndex='10' pFCName='vybratVyucujucehoButton' nFCName='sposobHodnoteniaComboBox' actionName='vymazatVyucujucehoAction' id='vymazatVyucujucehoButton' title='Vymazať&nbsp;vyučujúceho' enabled='false' disabled='true' oncontextmenu='f.onContextMenu(event, this,w)' anchors='rt' class='buttonWithIconOnly' style=' position:absolute; top:31px; left:708px;'
+ _image='zmazat'><div><img id='buttonImage' class='buttonImageOnly' style='-moz-opacity:0.2; opacity:0.2; filter:alpha(opacity=25, style=0) gray;' src='/ais/images/zmazat.gif'/><img id='buttonPopupArrow' style='display: none;' src='/ais/webui2/components/images/arrow-down-gray.gif?4.29'/><span id='buttonSpan' style='color: #999999; display:none;' disabled='true'></span></div></button>
+<select jsct='comboBox' onfocus='f.onFocus(event,this,w)' onblur='f.h(event,this,w)' onchange='f.h(event,this,w)' onmousedown='f.h(event,this,w)' onkeydown='f.h(event,this,w)' onkeypress='f.h(event,this,w)' class='comboBoxDefault' id='sposobHodnoteniaComboBox' oncontextmenu='f.onContextMenu(event, this,w)' anchors='rlt' tabIndex='11' style=' position:absolute; width:362px; top:56px; left:120px;' pFCName='vymazatVyucujucehoButton' nFCName='aktualneTerminyCheckBox'>
+  <option id='0' selected='true' sid='' title=''></option>
+  <option id='1' sid='1' title='jednohodnotenie&nbsp;(skúška,&nbsp;klasifikovaný&nbsp;zápočet,&nbsp;...)'>jednohodnotenie&nbsp;(skúška,&nbsp;klasifikovaný&nbsp;zápočet,&nbsp;...)</option>
+  <option id='2' sid='X' title='priebežné&nbsp;hodnotenie&nbsp;(písomka,&nbsp;test,&nbsp;...)'>priebežné&nbsp;hodnotenie&nbsp;(písomka,&nbsp;test,&nbsp;...)</option>
+</select>
+<span jsct='checkBox' class='checkBox' onmousedown='f.h(event,this,w)' onmouseup='f.h(event,this,w)' onclick='f.h(event,this,w)' onkeydown='f.h(event,this,w)' pFCName='sposobHodnoteniaComboBox' nFCName='zobrazitTerminyButton' id='aktualneTerminyCheckBox' oncontextmenu='f.onContextMenu(event, this,w)' anchors='rt' style=' height:13px; position:absolute; color:#333333; width:216px; font-size:11; top:60px; left:490px;' _title='Zobraziť len aktuálne termíny'>
+  <input type='checkbox' onblur='f.h(event,f.getMasterComponent(this),w)' onfocus='f.onFocus(event,f.getMasterComponent(this),w)' onchange='f.h(event,f.getMasterComponent(this),w)' onpropertychange='f.h(event,f.getMasterComponent(this),w)' id='aktualneTerminyCheckBox_input' tabIndex='12' checked='true'/>
+<label for='aktualneTerminyCheckBox_input' >Zobraziť len aktuálne termíny</label></span>
+<button jsct='button' onclick='f.h(event,this,w)' onfocus='f.onFocus(event,this,w)' onmousedown='f.h(event,this,w)' onblur='f.h(event,this,w)' onmouseover='f.h(event,this,w)' onmouseout='f.h(event,this,w)' tabIndex='13' pFCName='aktualneTerminyCheckBox' nFCName='zoznamTerminovTable' actionName='zobrazitTerminyAction' id='zobrazitTerminyButton' title='Zobraziť&nbsp;termíny' oncontextmenu='f.onContextMenu(event, this,w)' anchors='rt' class='buttonWithIconOnly' style=' position:absolute; top:55px; left:708px;'
+ _image='finish'><div><img id='buttonImage' class='buttonImageOnly' src='/ais/images/finish.gif'/><img id='buttonPopupArrow' style='display: none;' src='/ais/webui2/components/images/arrow-down.gif?4.29'/><span id='buttonSpan' style=' display:none;' ></span></div></button>
+  </div>
+<div class='panelUser' jsct='panel' oncontextmenu='f.onContextMenu(event, this,w);'  id='panel2' minWidth='0' minHeight='0' pastHeight='196' pastWidth='740' collapsed='false' collapsable='false' autoscrolls='false'
+ style='position:absolute;z-index:0; border:1px solid #333333; left: 8px; top: 128px; width: 740px; height: 196px; font-size: 11; color: #333333; background-color: #dedec8;' anchors='rblt'>
+<span class='titledBorder' id='panel2_title_'>Zoznam termínov</span>
+<span jsct='table' class='tableSpan' onfocus='f.onFocus(event,this,w)' multipleSelection='false' cellSelectionMode='false' sortable='true' allwaysSelected='true' activeRow='-1' minNoFixedColumnsWidth='40' upDownEnabled='false' userAddRemoveRowsEnabled='false' selectAllEnabled='false' readOnly='true' scrollBottomEnabled='false' statusVisible='true' rowNumbersVisible='false' visibleStatusButtons='19' supportedEvents='SET_COLUMNS|SET_SORTING|ROW_COUNT|DEBUG_INFO|' tabIndex='14' pFCName='zobrazitTerminyButton' nFCName='runButton' id='zoznamTerminovTable' usedListenersMask='145472' popupMenu='runPopupMenu' oncontextmenu='f.onContextMenu(event, this,w)' anchors='rblt' style=' height:140px; position:absolute; color:#333333; background-color:#ffffff; width:722px; font-size:11; top:46px; left:8px;' title='WebUI&nbsp;Tabuľka'>
+ <iframe frameborder='1' id='zoznamTerminovTable_frame' title='WebUI&nbsp;Tabuľka' style='display: none; width: 722px; height: 140px;'></iframe>
+ <span style='display:none; white-space:pre;' id='zoznamTerminovTable_dataView'>
+ <script type='text/plain'  id='columnModel'><!--<table id='headerTab' cellspacing='0' cellpadding='0' tabIndex='-1' style='width: 813px;'><thead><tr>
+<td class='btSepLeft' style='cursor:default;'><div>&nbsp;</div></td><td id='headerCell' tabIndex='-1' index='0' shortname='kodFaza' valign='bottom' title='Kód fázy' style=' text-align: center; width:25px;'><div tabIndex='-1' style='width: 25px;'>Fáza</div></td><td class='btSepRight' id='s'><div>&nbsp;</div></td>
+<td class='btSepLeft' id='s'><div>&nbsp;</div></td><td id='headerCell' tabIndex='-1' index='1' shortname='dat' valign='bottom' title='Dátum' style=' text-align: center; width:60px;'><div tabIndex='-1' style='width: 60px;'>Dátum</div></td><td class='btSepRight' id='s'><div>&nbsp;</div></td>
+<td class='btSepLeft' id='s'><div>&nbsp;</div></td><td id='headerCell' tabIndex='-1' index='2' shortname='cas' valign='bottom' title='Čas' style=' text-align: center; width:46px;'><div tabIndex='-1' style='width: 46px;'>Čas</div></td><td class='btSepRight' id='s'><div>&nbsp;</div></td>
+<td class='btSepLeft' id='s'><div>&nbsp;</div></td><td id='headerCell' tabIndex='-1' index='3' shortname='miestnosti' valign='bottom' title='Miestnosti' style=' text-align: center; width:57px;'><div tabIndex='-1' style='width: 57px;'>Miestnosti</div></td><td class='btSepRight' id='s'><div>&nbsp;</div></td>
+<td class='btSepLeft' id='s'><div>&nbsp;</div></td><td id='headerCell' tabIndex='-1' index='4' shortname='pocetPrihlasenych' valign='bottom' title='Počet prihlásených študentov' style=' text-align: center; width:33px;'><div tabIndex='-1' style='width: 33px;'>Počet</div></td><td class='btSepRight' id='s'><div>&nbsp;</div></td>
+<td class='btSepLeft' id='s'><div>&nbsp;</div></td><td id='headerCell' tabIndex='-1' index='5' shortname='maxPocet' valign='bottom' title='Maximálny počet' style=' text-align: center; width:27px;'><div tabIndex='-1' style='width: 27px;'>Maximálny počet</div></td><td class='btSepRight' id='s'><div>&nbsp;</div></td>
+<td class='btSepLeft' id='s'><div>&nbsp;</div></td><td id='headerCell' tabIndex='-1' index='6' shortname='pocetHodn' valign='bottom' title='Počet hodnotiacich' style=' text-align: center; width:40px;'><div tabIndex='-1' style='width: 40px;'>Počet hodnotiacich</div></td><td class='btSepRight' id='s'><div>&nbsp;</div></td>
+<td class='btSepLeft' id='s'><div>&nbsp;</div></td><td id='headerCell' tabIndex='-1' index='7' shortname='hodnotiaci' valign='bottom' title='Hodnotiaci' style=' text-align: center; width:95px;'><div tabIndex='-1' style='width: 95px;'>Hodnotiaci</div></td><td class='btSepRight' id='s'><div>&nbsp;</div></td>
+<td class='btSepLeft' id='s'><div>&nbsp;</div></td><td id='headerCell' tabIndex='-1' index='8' shortname='prihlasovanie' valign='bottom' title='Interval pre prihlasovanie' style=' text-align: center; width:102px;'><div tabIndex='-1' style='width: 102px;'>Prihlasovanie</div></td><td class='btSepRight' id='s'><div>&nbsp;</div></td>
+<td class='btSepLeft' id='s'><div>&nbsp;</div></td><td id='headerCell' tabIndex='-1' index='9' shortname='odhlasovanie' valign='bottom' title='Interval pre odhlasovanie' style=' text-align: center; width:105px;'><div tabIndex='-1' style='width: 105px;'>Odhlasovanie</div></td><td class='btSepRight' id='s'><div>&nbsp;</div></td>
+<td class='btSepLeft' id='s'><div>&nbsp;</div></td><td id='headerCell' tabIndex='-1' index='10' shortname='poznamka' valign='bottom' title='Poznámka' style=' text-align: center; width:84px;'><div tabIndex='-1' style='width: 84px;'>Poznámka</div></td><td class='btSepRight' id='s'><div>&nbsp;</div></td>
+<td class='btSepLeft' id='s'><div>&nbsp;</div></td><td id='headerCell' tabIndex='-1' index='11' shortname='zaevidoval' valign='bottom' title='Zaevidoval' style=' text-align: center; width:43px;'><div tabIndex='-1' style='width: 43px;'>Zaevidoval</div></td><td class='btSepRight' id='s'><div>&nbsp;</div></td>
+</tr></thead></table>
+--></script>
+ <script type='text/plain'  id='dataTabColGroup'><!--<col shortname='kodFaza' sortable='true' style=' text-align: center;' width='33px'/><col shortname='dat' sortable='true' style=' text-align: center;' width='68px'/><col shortname='cas' sortable='true' style=' text-align: center;' width='54px'/><col shortname='miestnosti' sortable='true' width='65px'/><col shortname='pocetPrihlasenych' sortable='true' style=' text-align: center;' width='41px'/><col shortname='maxPocet' sortable='true' style=' text-align: center;' width='35px'/><col shortname='pocetHodn' sortable='true' style=' text-align: center;' width='48px'/><col shortname='hodnotiaci' sortable='true' width='103px'/><col shortname='prihlasovanie' sortable='true' style=' text-align: center;' width='110px'/><col shortname='odhlasovanie' sortable='true' style=' text-align: center;' width='113px'/><col shortname='poznamka' sortable='true' width='92px'/><col shortname='zaevidoval' sortable='true' width='51px'/>--></script>
+<script type='text/plain'  id='selectionModel' selection='' invertedSelection='false' multipleSelection='false' editMode='false'><!----></script>
+<script type='text/plain'  id='dataTabBodies'  bufferSize='50' dataSendType='update' showSelectionInUpdate='false'><!--
+<tbody id='dataTabBody0'>
+ </tbody>
+--></script>
+ <script type='text/plain'  id='dataPositionSpan' isEnd='true' newData='true' rowCount='0' declaredRowCount='0'></script>
+ <script type='text/plain'  id='rowHeaderDataTabBodies'><!--<tbody id='rowHeaderDataTabBody0'> </tbody>
+--></script>
+
+ </span>
+</span>
+<button jsct='button' onclick='f.h(event,this,w)' onfocus='f.onFocus(event,this,w)' onmousedown='f.h(event,this,w)' onblur='f.h(event,this,w)' onmouseover='f.h(event,this,w)' onmouseout='f.h(event,this,w)' tabIndex='15' pFCName='zoznamTerminovTable' nFCName='enterButton' id='runButton' popupMenu='runPopupMenu' oncontextmenu='f.onContextMenu(event, this,w)' flat='true' class='buttonUser' style=' height:22px; position:absolute; color:#333333; background-color:#d9d7c6; width:38px; font-size:11; top:20px; left:8px;'
+ _image='run'><div><img id='buttonImage' class='buttonImageWithText' src='/ais/images/run.gif'/><img id='buttonPopupArrow' src='/ais/webui2/components/images/arrow-down.gif?4.29'/><span id='buttonSpan' style=' display:none;' ></span></div></button>
+  </div>
+  </span>
+
+  <span id='radioGroupsSpan'>
+  </span>
+
+  <span id='actionsSpan'>
+   <span jsct='actionList' id='viewActionList' ownerContainerName='HeaderView'>
+    <span jsct='action' id='enterAction' enabledInUI='true' usedListenersMask='131136' toolTipText='Potvrdenie (Enter)' visible='true' visibleInUI='true' accessible='true' label='Potvrdenie' components='enterButton'></span>
+    <span jsct='action' id='registryAction' enabledInUI='true' usedListenersMask='131136' visible='true' visibleInUI='true' accessible='true' label='Uloženie nastavení obrazovky do registrov' components='registryButton'></span>
+    <span jsct='action' id='helpAction' enabledInUI='true' usedListenersMask='131136' visible='true' visibleInUI='true' accessible='true' label='Help' components='helpButton'></span>
+    <span jsct='action' id='closeAction' enabledInUI='true' usedListenersMask='131136' visible='true' visibleInUI='true' accessible='true' label='CloseAction' components='closeButton'></span>
+   </span>
+   <span jsct='actionList' id='actionList1'>
+    <span jsct='action' id='vybratPredmetAction' enabled='false' enabledInUI='true' usedListenersMask='131136' visible='true' visibleInUI='true' accessible='true' label='Vybrať predmet Action' components='vybratPredmetButton'></span>
+    <span jsct='action' id='vymazatPredmetAction' enabled='false' enabledInUI='true' usedListenersMask='131136' visible='true' visibleInUI='true' accessible='true' label='Vymazať predmet Action' components='vymazatPredmetButton'></span>
+    <span jsct='action' id='vybratVyucujucehoAction' enabledInUI='true' usedListenersMask='131136' visible='true' visibleInUI='true' accessible='true' label='Vybrať vyučujúceho Action' components='vybratVyucujucehoButton'></span>
+    <span jsct='action' id='vymazatVyucujucehoAction' enabled='false' enabledInUI='true' usedListenersMask='131136' visible='true' visibleInUI='true' accessible='true' label='Vymazať vyučujúceho Action' components='vymazatVyucujucehoButton'></span>
+    <span jsct='action' id='zobrazitTerminyAction' enabledInUI='true' usedListenersMask='131136' visible='true' visibleInUI='true' accessible='true' label='Zobraziť termíny Action' components='zobrazitTerminyButton'></span>
+   </span>
+   <span jsct='actionList' id='runActionList'>
+    <span jsct='action' id='zobrazitZoznamPrihlasenychAction' enabledInUI='true' usedListenersMask='131136' visible='true' visibleInUI='true' accessible='true' label='Zobraziť zoznam prihlásených' components='menuItem1'></span>
+   </span>
+  </span>
+
+  <script type='text/javascript'>
+    var initElements = new Array();
+    initElements[initElements.length] = 'zoznamTerminovTable';
+  </script>
+ </body>
+
+
+Kedze momentalne je mimo skuskoveho a chcem vidiet nejake terminy,
+tak odskrtavam checkbox "Zobrazit len aktualne terminy"
+a klikam na ikonku pre "Zobrazit terminy".
+
+POST na url=
+https://ais2.uniba.sk/ais/servlets/WebUIServlet?appId=30589988&antiCache=-58675877640000&viewer=web
+
+s parametrom xml_spec=
+<request>
+      <serial>12</serial>
+      <events>
+            <ev>
+                  <dlgName>VSES206_VyberTerminuHodnoteniaDlg1</dlgName>
+                  <compName>zobrazitTerminyAction</compName>
+                  <event class='avc.ui.event.AVCActionEvent'></event>
+            </ev>
+      </events>
+      <changedProps>
+            <changedProperties>
+                  <objName>app</objName>
+                  <propertyValues>
+                        <nameValue>
+                              <name>activeDlgName</name>
+                              <value>VSES206_VyberTerminuHodnoteniaDlg1</value>
+                        </nameValue>
+                  </propertyValues>
+            </changedProperties>
+            <changedProperties>
+                  <objName>VSES206_VyberTerminuHodnoteniaDlg1</objName>
+                  <propertyValues>
+                        <nameValue>
+                              <name>focusedComponent</name>
+                              <value>zobrazitTerminyButton</value>
+                        </nameValue>
+                  </propertyValues>
+                  <embObjChProps>
+                        <changedProperties>
+                              <objName>aktualneTerminyCheckBox</objName>
+                              <propertyValues>
+                                    <nameValue>
+                                          <name>selected</name>
+                                          <value>false</value>
+                                    </nameValue>
+                                    <nameValue>
+                                          <name>smoked</name>
+                                          <value>false</value>
+                                    </nameValue>
+                              </propertyValues>
+                              <embObjChProps isNull='true'/>
+                        </changedProperties>
+                  </embObjChProps>
+            </changedProperties>
+      </changedProps>
+</request>
+
+odpoved=
+<html id='resultFrameHTML'><head><meta http-equiv='Content-Type' content='text/html; charset=utf-8'></meta>
+<script type='application/javascript'>
+window.parent.Logger_log('Received response', window.parent.Logger_DEBUG);
+
+function webui() { return window.parent.webui; }
+function f() { return window.parent.factory; }
+function dm() { return window.parent.dialogManager; }
+function isResponseIdle(rs) { return webui().lastDoneRequest == rs; }
+
+function main0() {
+if (isResponseIdle(12)) { return; }
+window.parent.Logger_log('start updating components', window.parent.Logger_DEBUG);
+webui().prepareUpdatingDialogs();
+var VSES206_VyberTerminuHodnoteniaDlg1; try {VSES206_VyberTerminuHodnoteniaDlg1=dm().getDialog('VSES206_VyberTerminuHodnoteniaDlg1').getDialogContext(); } catch(e) {}
+}
+
+function main() {
+if (isResponseIdle(12)) { return; }
+webui().noteLastDoneRequest(12);
+window.parent.Logger_log('Response main started', window.parent.Logger_DEBUG);
+var VSES206_VyberTerminuHodnoteniaDlg1; try {VSES206_VyberTerminuHodnoteniaDlg1=dm().getDialog('VSES206_VyberTerminuHodnoteniaDlg1').getDialogContext(); } catch(e) {}
+try { f().getEnsuredJSOById("zoznamTerminovTable",VSES206_VyberTerminuHodnoteniaDlg1).setDataView("VSES206_VyberTerminuHodnoteniaDlg1_zoznamTerminovTable_dataView"); } catch(e) {}
+dm().setActiveDialogName('VSES206_VyberTerminuHodnoteniaDlg1');
+webui().enableApplication();
+}
+
+main0();
+
+</script>
+</head>
+<body onload='main()'>
+<span style='display:none; white-space:pre;'>
+<span style='display:none; white-space:pre;' id='VSES206_VyberTerminuHodnoteniaDlg1_zoznamTerminovTable_dataView'>
+<script type='text/plain'  id='selectionModel' selection='0' invertedSelection='false' multipleSelection='false' editMode='false'><!----></script>
+ <span id='dataTabBodies'  bufferSize='50' dataSendType='update' showSelectionInUpdate='true'>
+ <table id='dataTabTmp'>
+<tbody id='dataTabBody0'>
+<tr id='row_0' rid='0'><td style=' text-align:center;'>1</td><td style=' text-align:center;'>26.05.2010</td><td style=' text-align:center;'>16:00</td><td>&nbsp;</td><td style=' text-align:center;'>5</td><td style=' text-align:center;'>&nbsp;</td><td style=' text-align:center;'>1</td><td><div>doc. RNDr. Dana Pardubská, PhD.</div></td><td style=' text-align:center;'><div>do 25.05.2010 18:00</div></td><td style=' text-align:center;'><div>do 25.05.2010 18:00</div></td><td><div>ústna časť -  M 250</div></td><td><div>doc. RNDr. Dana Pardubská, PhD.</div></td></tr><tr id='row_1' rid='1'><td style=' text-align:center;'>&nbsp;</td><td style=' text-align:center;'>17.06.2010</td><td style=' text-align:center;'>15:00</td><td><div>FMFI F1 108</div></td><td style=' text-align:center;'>8</td><td style=' text-align:center;'>&nbsp;</td><td style=' text-align:center;'>1</td><td><div>doc. RNDr. Dana Pardubská, PhD.</div></td><td style=' text-align:center;'><div>do 17.06.2010 15:00</div></td><td style=' text-align:center;'><div>do 09.06.2010 15:00</div></td><td>&nbsp;</td><td><div>doc. RNDr. Dana Pardubská, PhD.</div></td></tr><tr id='row_2' rid='2'><td style=' text-align:center;'>1</td><td style=' text-align:center;'>18.06.2010</td><td style=' text-align:center;'>13:00</td><td><div>FMFI M VIII</div></td><td style=' text-align:center;'>4</td><td style=' text-align:center;'>&nbsp;</td><td style=' text-align:center;'>1</td><td><div>doc. RNDr. Dana Pardubská, PhD.</div></td><td style=' text-align:center;'><div>do 18.06.2010 12:00</div></td><td style=' text-align:center;'><div>do 18.06.2010 12:00</div></td><td><div>ústna časť</div></td><td><div>doc. RNDr. Dana Pardubská, PhD.</div></td></tr><tr id='row_3' rid='3'><td style=' text-align:center;'>1</td><td style=' text-align:center;'>21.06.2010</td><td style=' text-align:center;'>15:30</td><td>&nbsp;</td><td style=' text-align:center;'>4</td><td style=' text-align:center;'>&nbsp;</td><td style=' text-align:center;'>1</td><td><div>doc. RNDr. Dana Pardubská, PhD.</div></td><td style=' text-align:center;'><div>do 20.06.2010 15:30</div></td><td style=' text-align:center;'><div>do 20.06.2010 15:30</div></td><td><div>ústna časť-M 250</div></td><td><div>doc. RNDr. Dana Pardubská, PhD.</div></td></tr> </tbody>
+ </table></span>
+ <script type='text/plain'  id='dataPositionSpan' isEnd='true' rowCount='4' declaredRowCount='4'></script>
+ <span id='rowHeaderDataTabBodies'><table id='rowHeaderDataTabTmp'>
+<tbody id='rowHeaderDataTabBody0'><tr><td><div>1</div></td></tr><tr><td><div>2</div></td></tr><tr><td><div>3</div></td></tr><tr><td><div>4</div></td></tr> </tbody>
+ </table></span>
+
+</span>
+</span>
+</body>
+</html>
+
+Nacitali sa mi terminy.
+Jeden si vyberam a davam si zobrazit zoznam prihlasenych.
+
+POST na url=
+https://ais2.uniba.sk/ais/servlets/WebUIServlet?appId=30589988&antiCache=-58675877412000&viewer=web
+
+s parametrom xml_spec=
+<request>
+      <serial>15</serial>
+      <events>
+            <ev>
+                  <dlgName>VSES206_VyberTerminuHodnoteniaDlg1</dlgName>
+                  <compName>zobrazitZoznamPrihlasenychAction</compName>
+                  <event class='avc.ui.event.AVCActionEvent'></event>
+            </ev>
+      </events>
+      <changedProps>
+            <changedProperties>
+                  <objName>app</objName>
+                  <propertyValues>
+                        <nameValue>
+                              <name>activeDlgName</name>
+                              <value>VSES206_VyberTerminuHodnoteniaDlg1</value>
+                        </nameValue>
+                  </propertyValues>
+            </changedProperties>
+            <changedProperties>
+                  <objName>VSES206_VyberTerminuHodnoteniaDlg1</objName>
+                  <propertyValues>
+                        <nameValue>
+                              <name>focusedComponent</name>
+                              <value>runButton</value>
+                        </nameValue>
+                  </propertyValues>
+                  <embObjChProps>
+                        <changedProperties>
+                              <objName>zoznamTerminovTable</objName>
+                              <propertyValues>
+                                    <nameValue>
+                                          <name>dataView</name>
+                                          <isXml>true</isXml>
+                                          <value>
+                                                <![CDATA[ <root> <selection> <activeIndex>3</activeIndex> <selectedIndexes>3</selectedIndexes> </selection> </root> ]]>
+                                                </value>
+                                    </nameValue>
+                                    <nameValue>
+                                          <name>editMode</name>
+                                          <isXml>false</isXml>
+                                          <value>false</value>
+                                    </nameValue>
+                              </propertyValues>
+                              <embObjChProps isNull='true'/>
+                        </changedProperties>
+                  </embObjChProps>
+            </changedProperties>
+      </changedProps>
+</request>
+
+odpoved=
+<html id='resultFrameHTML'><head><meta http-equiv='Content-Type' content='text/html; charset=utf-8'></meta>
+<script type='application/javascript'>
+window.parent.Logger_log('Received response', window.parent.Logger_DEBUG);
+
+function webui() { return window.parent.webui; }
+function f() { return window.parent.factory; }
+function dm() { return window.parent.dialogManager; }
+function isResponseIdle(rs) { return webui().lastDoneRequest == rs; }
+
+function main0() {
+if (isResponseIdle(15)) { return; }
+window.parent.Logger_log('start updating components', window.parent.Logger_DEBUG);
+webui().prepareUpdatingDialogs();
+dm().openDialog("VSES006_StudentZoznamPrihlasenychDlg2","Zoznam prihlásených","VSES006","VSES206_VyberTerminuHodnoteniaDlg1",true,false,0,0,651,344,true,true,true,357,294,null,false);
+}
+
+function main() {
+if (isResponseIdle(15)) { return; }
+webui().noteLastDoneRequest(15);
+window.parent.Logger_log('Response main started', window.parent.Logger_DEBUG);
+dm().setActiveDialogName('VSES006_StudentZoznamPrihlasenychDlg2');
+webui().enableApplication();
+}
+
+main0();
+
+</script>
+</head>
+<body onload='main()'>
+</body>
+</html>
+
+Ihned nasleduje
+
+GET na url=
+https://ais2.uniba.sk/ais/servlets/WebUIServlet?appId=30589988&form=VSES006_StudentZoznamPrihlasenychDlg2&antiCache=-58675877412000
+
+odpoved=
+<html><title>Zoznam prihlásených</title>
+ <head><meta http-equiv='Content-Type' content='text/html; charset=utf-8'></meta></head>
+<link rel='stylesheet' href='/ais/webui2/web/styles-common.css?4.29' type='text/css'/>
+<link rel='stylesheet' href='/ais/webui2/web/styles-commonff.css?4.29' type='text/css'/>
+<link rel='stylesheet' href='/ais/webui2/web/styles.css?4.29' type='text/css'/>
+<link rel='stylesheet' href='/ais/web/styles.css' type='text/css'/>
+ <script type='text/javascript'>
+ var w=window;
+ var top=window.parent;
+ var webui=top.webui;
+ var f=top.factory;
+ var comfac=top.factory;
+ var dialogName="VSES006_StudentZoznamPrihlasenychDlg2";
+ var jsArray = new Array();
+ function getDialogJSObject() { return jsArray[dialogName]; }
+ function setDialogJSObject(jsObject) { jsArray[dialogName] = jsObject; }
+ function getJSObject(id) { return jsArray[id]; }
+ function setJSObject(id, jsObject) { jsArray[id] = jsObject; }
+ top.Logger_log('nacitany dialog: ' + dialogName + ' zacina renderovanie', top.Logger_DEBUG);  </script>
+
+ <body focusedComponent='prihlaseniTable' firstFocusableComponent='prihlaseniTable'  inRequestEnabledComponents='closeButton' jsct='body' onload='f.initDialogBodyJSO(event,w)' onkeydown='f.hbe(event,w)' ondoubleclick='f.hbe(event,w)' onclick='f.hbe(event,w)' onmousedown='f.hbe(event,w)' onmouseup='f.hbe(event,w)' onmouseover='f.hbe(event,w)' scroll='no' minHeight='294' minWidth='357' id='VSES006_StudentZoznamPrihlasenychDlg2' usedListenersMask='131138' oncontextmenu='f.onContextMenu(event, this,w)'
+ style=' height:344px; position:absolute; color:#333333; width:651px; font-size:11; top:0px; left:0px;' >
+  <span id='dialogComponentsSpan' xstyle='visibility:hidden;'>
+<div class='panelDefault' jsct='panel' oncontextmenu='f.onContextMenu(event, this,w);'  id='buttonPanel' minWidth='0' minHeight='0' pastHeight='28' pastWidth='636' collapsed='false' collapsable='false' autoscrolls='false'
+ style='position:absolute;z-index:0; border:1px solid #8d8d80; left: 8px; top: 8px; width: 636px; height: 28px;' anchors='rlt'>
+<button jsct='button' onclick='f.h(event,this,w)' onfocus='f.onFocus(event,this,w)' onmousedown='f.h(event,this,w)' onblur='f.h(event,this,w)' onmouseover='f.h(event,this,w)' onmouseout='f.h(event,this,w)' inRequestEnabled='true' tabIndex='2' pFCName='prihlaseniTable' nFCName='registryButton' actionName='closeAction' id='closeButton' usedListenersMask='131136' title='Návrat&nbsp;(Esc)' oncontextmenu='f.onContextMenu(event, this,w)' class='buttonOnToolbar' style=' position:absolute; top:2px; left:5px;'
+ _image='cancel'><div><img id='buttonImage' class='buttonImageOnly' src='/ais/images/cancel.gif'/><img id='buttonPopupArrow' style='display: none;' src='/ais/webui2/components/images/arrow-down.gif?4.29'/><span id='buttonSpan' style=' display:none;' ></span></div></button>
+<button jsct='button' onclick='f.h(event,this,w)' onfocus='f.onFocus(event,this,w)' onmousedown='f.h(event,this,w)' onblur='f.h(event,this,w)' onmouseover='f.h(event,this,w)' onmouseout='f.h(event,this,w)' tabIndex='3' pFCName='closeButton' nFCName='helpButton' actionName='registryAction' id='registryButton' title='Uloženie&nbsp;nastavení' oncontextmenu='f.onContextMenu(event, this,w)' class='buttonOnToolbar' style=' position:absolute; top:2px; left:33px;'
+ _image='registry'><div><img id='buttonImage' class='buttonImageOnly' src='/ais/images/registry.gif'/><img id='buttonPopupArrow' style='display: none;' src='/ais/webui2/components/images/arrow-down.gif?4.29'/><span id='buttonSpan' style=' display:none;' ></span></div></button>
+<button jsct='button' onclick='f.h(event,this,w)' onfocus='f.onFocus(event,this,w)' onmousedown='f.h(event,this,w)' onblur='f.h(event,this,w)' onmouseover='f.h(event,this,w)' onmouseout='f.h(event,this,w)' tabIndex='4' pFCName='registryButton' nFCName='prihlaseniTable' actionName='helpAction' id='helpButton' title='Nápoveda' oncontextmenu='f.onContextMenu(event, this,w)' anchors='rt' class='buttonOnToolbar' style=' position:absolute; top:2px; left:601px;'
+ _image='help'><div><img id='buttonImage' class='buttonImageOnly' src='/ais/images/help.gif'/><img id='buttonPopupArrow' style='display: none;' src='/ais/webui2/components/images/arrow-down.gif?4.29'/><span id='buttonSpan' style=' display:none;' ></span></div></button>
+  </div>
+<div class='panelUser' jsct='panel' oncontextmenu='f.onContextMenu(event, this,w);'  id='hlavickaPanel' minWidth='0' minHeight='0' pastHeight='80' pastWidth='636' collapsed='false' collapsable='false' autoscrolls='false'
+ style='position:absolute;z-index:0; border:1px solid #8d8d80; left: 8px; top: 40px; width: 636px; height: 80px; font-size: 11; color: #333333; background-color: #dedec8;' anchors='rlt'>
+<input jsct='textField'  class='textFieldDefault' ondragstart='f.h(event,this,w)' ondrop='f.h(event,this,w)' ondeactivate='f.h(event,this,w)' onblur='f.h(event,this,w)' onfocus='f.onFocus(event,this,w)' onkeydown='f.h(event,this,w)' onkeypress='f.h(event,this,w)' onchange='f.h(event,this,w)' onpropertychange='f.h(event,this,w)' onpaste='f.h(event,this,w)' oncut='f.h(event,this,w)' oncontextmenu='f.h(event,this,w)' value='FMFI.KI/2-INF-134/00 - Pravdepodobnostné algoritmy' tabIndex='-1'
+ id='predmetTextField' selStart='0' title='Skratk&nbsp;a&nbsp;názov&nbsp;predmetu'
+ ttlt='true' dbgc='#fefefe' robgc='#ebead8' _readOnly='true' enterToNext='false'
+ style=' background-color:#ebead8; left: 8px; top: 8px; width: 620; text-align: left;' anchors='rl'/>
+<input jsct='textField'  class='textFieldDefault' ondragstart='f.h(event,this,w)' ondrop='f.h(event,this,w)' ondeactivate='f.h(event,this,w)' onblur='f.h(event,this,w)' onfocus='f.onFocus(event,this,w)' onkeydown='f.h(event,this,w)' onkeypress='f.h(event,this,w)' onchange='f.h(event,this,w)' onpropertychange='f.h(event,this,w)' onpaste='f.h(event,this,w)' oncut='f.h(event,this,w)' oncontextmenu='f.h(event,this,w)' value='jednohodnotenie (skúška, klasifikovaný zápočet, ...)' tabIndex='-1'
+ id='typTextField' selStart='0' title='Typ&nbsp;hodnotenia'
+ ttlt='true' dbgc='#fefefe' robgc='#ebead8' _readOnly='true' enterToNext='false'
+ style=' background-color:#ebead8; left: 8px; top: 31px; width: 620; text-align: left;' anchors='rl'/>
+<input jsct='textField'  class='textFieldDefault' ondragstart='f.h(event,this,w)' ondrop='f.h(event,this,w)' ondeactivate='f.h(event,this,w)' onblur='f.h(event,this,w)' onfocus='f.onFocus(event,this,w)' onkeydown='f.h(event,this,w)' onkeypress='f.h(event,this,w)' onchange='f.h(event,this,w)' onpropertychange='f.h(event,this,w)' onpaste='f.h(event,this,w)' oncut='f.h(event,this,w)' oncontextmenu='f.h(event,this,w)' value='21.06.2010, doc. RNDr. Dana Pardubská, PhD.' tabIndex='-1'
+ id='skusajuciTextField' selStart='0' title='Dátum&nbsp;hodnotenia&nbsp;a&nbsp;hodnotiaci'
+ ttlt='true' dbgc='#fefefe' robgc='#ebead8' _readOnly='true' enterToNext='false'
+ style=' background-color:#ebead8; left: 8px; top: 53px; width: 620; text-align: left;' anchors='rl'/>
+  </div>
+<div class='panelUser' jsct='panel' oncontextmenu='f.onContextMenu(event, this,w);'  id='zoznamPrihlasenychPanel' minWidth='0' minHeight='0' pastHeight='214' pastWidth='636' collapsed='false' collapsable='false' autoscrolls='false'
+ style='position:absolute;z-index:0; border:1px solid #333333; left: 8px; top: 124px; width: 636px; height: 214px; font-size: 11; color: #333333; background-color: #dedec8;' anchors='rblt'>
+<span class='titledBorder' id='zoznamPrihlasenychPanel_title_'>Zoznam prihlásených</span>
+<span jsct='table' class='tableSpan' onfocus='f.onFocus(event,this,w)' multipleSelection='false' cellSelectionMode='false' sortable='true' allwaysSelected='true' activeRow='-1' minNoFixedColumnsWidth='40' upDownEnabled='false' userAddRemoveRowsEnabled='false' selectAllEnabled='false' readOnly='true' scrollBottomEnabled='false' statusVisible='false' rowNumbersVisible='false' visibleStatusButtons='19' supportedEvents='SET_COLUMNS|SET_SORTING|ROW_COUNT|DEBUG_INFO|' tabIndex='1' pFCName='helpButton' nFCName='closeButton' id='prihlaseniTable' usedListenersMask='145472' oncontextmenu='f.onContextMenu(event, this,w)' anchors='rblt' style=' height:178px; position:absolute; color:#333333; background-color:#ffffff; width:620px; font-size:11; top:24px; left:8px;' title='WebUI&nbsp;Tabuľka'>
+ <iframe frameborder='1' id='prihlaseniTable_frame' title='WebUI&nbsp;Tabuľka' style='display: none; width: 620px; height: 178px;'></iframe>
+ <span style='display:none; white-space:pre;' id='prihlaseniTable_dataView'>
+ <script type='text/plain'  id='columnModel'><!--<table id='headerTab' cellspacing='0' cellpadding='0' tabIndex='-1' style='width: 691px;'><thead><tr>
+<td class='btSepLeft' style='cursor:default;'><div>&nbsp;</div></td><td id='headerCell' tabIndex='-1' index='0' shortname='meno' valign='bottom' title='Meno' style=' text-align: center; width:92px;'><div tabIndex='-1' style='width: 92px;'>Meno</div></td><td class='btSepRight' id='s'><div>&nbsp;</div></td>
+<td class='btSepLeft' id='s'><div>&nbsp;</div></td><td id='headerCell' tabIndex='-1' index='1' shortname='priezvisko' valign='bottom' title='Priezvisko' style=' text-align: center; width:143px;'><div tabIndex='-1' style='width: 143px;'>Priezvisko</div></td><td class='btSepRight' id='s'><div>&nbsp;</div></td>
+<td class='btSepLeft' id='s'><div>&nbsp;</div></td><td id='headerCell' tabIndex='-1' index='2' shortname='skratka' valign='bottom' title='Skratka študijného programu' style=' text-align: center; width:46px;'><div tabIndex='-1' style='width: 46px;'>Skratka študijného programu</div></td><td class='btSepRight' id='s'><div>&nbsp;</div></td>
+<td class='btSepLeft' id='s'><div>&nbsp;</div></td><td id='headerCell' tabIndex='-1' index='3' shortname='datumPrihlas' valign='bottom' title='Dátum prihlásenia' style=' text-align: center; width:110px;'><div tabIndex='-1' style='width: 110px;'>Prihl.</div></td><td class='btSepRight' id='s'><div>&nbsp;</div></td>
+<td class='btSepLeft' id='s'><div>&nbsp;</div></td><td id='headerCell' tabIndex='-1' index='4' shortname='plneMeno' valign='bottom' title='Plné meno' style=' text-align: center; width:138px;'><div tabIndex='-1' style='width: 138px;'>Plné meno</div></td><td class='btSepRight' id='s'><div>&nbsp;</div></td>
+<td class='btSepLeft' id='s'><div>&nbsp;</div></td><td id='headerCell' tabIndex='-1' index='5' shortname='rocnik' valign='bottom' title='Ročník' style=' text-align: center; width:57px;'><div tabIndex='-1' style='width: 57px;'>Ročník</div></td><td class='btSepRight' id='s'><div>&nbsp;</div></td>
+<td class='btSepLeft' id='s'><div>&nbsp;</div></td><td id='headerCell' tabIndex='-1' index='6' shortname='kruzok' valign='bottom' title='Krúžok' style=' text-align: center; width:49px;'><div tabIndex='-1' style='width: 49px;'>Krúžok</div></td><td class='btSepRight' id='s'><div>&nbsp;</div></td>
+</tr></thead></table>
+--></script>
+ <script type='text/plain'  id='dataTabColGroup'><!--<col shortname='meno' sortable='true' width='100px'/><col shortname='priezvisko' sortable='true' width='151px'/><col shortname='skratka' sortable='true' style=' text-align: center;' width='54px'/><col shortname='datumPrihlas' sortable='true' style=' text-align: center;' width='118px'/><col shortname='plneMeno' sortable='true' width='146px'/><col shortname='rocnik' sortable='true' style=' text-align: center;' width='65px'/><col shortname='kruzok' sortable='true' style=' text-align: center;' width='57px'/>--></script>
+<script type='text/plain'  id='selectionModel' selection='0' invertedSelection='false' multipleSelection='false' editMode='false'><!----></script>
+<script type='text/plain'  id='dataTabBodies'  bufferSize='50' dataSendType='update' showSelectionInUpdate='false'><!--
+<tbody id='dataTabBody0'>
+<tr id='row_0' rid='0'><td>Martin</td><td>Vlčák</td><td style=' text-align:center;'>mINF</td><td style=' text-align:center;'><div>17.06.2010 23:06:43</div></td><td><div>Martin Vlčák</div></td><td style=' text-align:center;'>1</td><td style=' text-align:center;'>&nbsp;</td></tr><tr id='row_1' rid='1'><td>Slavomír</td><td>Takáč</td><td style=' text-align:center;'>mINF</td><td style=' text-align:center;'><div>19.06.2010 01:28:03</div></td><td><div>Bc. Slavomír Takáč</div></td><td style=' text-align:center;'>1</td><td style=' text-align:center;'>&nbsp;</td></tr><tr id='row_2' rid='2'><td>Viliam</td><td>Dillinger</td><td style=' text-align:center;'>mINF</td><td style=' text-align:center;'><div>18.06.2010 14:40:47</div></td><td><div>Viliam Dillinger</div></td><td style=' text-align:center;'>1</td><td style=' text-align:center;'>&nbsp;</td></tr><tr id='row_3' rid='3'><td>Jozef</td><td>Spišiak</td><td style=' text-align:center;'>mINF</td><td style=' text-align:center;'><div>19.06.2010 08:57:38</div></td><td><div>Jozef Spišiak</div></td><td style=' text-align:center;'>1</td><td style=' text-align:center;'>&nbsp;</td></tr> </tbody>
+--></script>
+ <script type='text/plain'  id='dataPositionSpan' isEnd='true' newData='true' rowCount='4' declaredRowCount='4'></script>
+ <script type='text/plain'  id='rowHeaderDataTabBodies'><!--<tbody id='rowHeaderDataTabBody0'><tr><td><div>1</div></td></tr><tr><td><div>2</div></td></tr><tr><td><div>3</div></td></tr><tr><td><div>4</div></td></tr> </tbody>
+--></script>
+
+ </span>
+</span>
+  </div>
+  </span>
+
+  <span id='radioGroupsSpan'>
+  </span>
+
+  <span id='actionsSpan'>
+   <span jsct='actionList' id='dummyActionList'>
+    <span jsct='action' id='registryAction' enabledInUI='true' usedListenersMask='131136' visible='true' visibleInUI='true' accessible='true' label='Uloženie nastavení obrazovky do registrov' components='registryButton'></span>
+    <span jsct='action' id='helpAction' enabledInUI='true' usedListenersMask='131136' visible='true' visibleInUI='true' accessible='true' label='Help' components='helpButton'></span>
+    <span jsct='action' id='closeAction' enabledInUI='true' usedListenersMask='131136' visible='true' visibleInUI='true' accessible='true' label='CloseAction' components='closeButton'></span>
+   </span>
+  </span>
+
+  <script type='text/javascript'>
+    var initElements = new Array();
+    initElements[initElements.length] = 'prihlaseniTable';
+  </script>
+ </body>
+
+A vidim zoznam prihlasenych na dany termin.
+Tu uz niet co robit, tak zatvaram tento dialog krizikom.
+
+POST na url=
+https://ais2.uniba.sk/ais/servlets/WebUIServlet?appId=30589988&antiCache=-58675877169000&viewer=web
+
+s parametrom xml_spec=
+<request>
+      <serial>17</serial>
+      <events>
+            <ev>
+                  <dlgName>VSES006_StudentZoznamPrihlasenychDlg2</dlgName>
+                  <event class='avc.ui.event.AVCComponentEvent'>
+                        <command>CLOSE</command>
+                  </event>
+            </ev>
+      </events>
+      <changedProps>
+            <changedProperties>
+                  <objName>app</objName>
+                  <propertyValues>
+                        <nameValue>
+                              <name>activeDlgName</name>
+                              <value>VSES006_StudentZoznamPrihlasenychDlg2</value>
+                        </nameValue>
+                  </propertyValues>
+            </changedProperties>
+      </changedProps>
+</request>
+
+odpoved=
+<html id='resultFrameHTML'><head><meta http-equiv='Content-Type' content='text/html; charset=utf-8'></meta>
+<script type='application/javascript'>
+window.parent.Logger_log('Received response', window.parent.Logger_DEBUG);
+
+function webui() { return window.parent.webui; }
+function f() { return window.parent.factory; }
+function dm() { return window.parent.dialogManager; }
+function isResponseIdle(rs) { return webui().lastDoneRequest == rs; }
+
+function main0() {
+if (isResponseIdle(17)) { return; }
+window.parent.Logger_log('start updating components', window.parent.Logger_DEBUG);
+webui().prepareUpdatingDialogs();
+dm().closeDialog("VSES006_StudentZoznamPrihlasenychDlg2");
+}
+
+function main() {
+if (isResponseIdle(17)) { return; }
+webui().noteLastDoneRequest(17);
+window.parent.Logger_log('Response main started', window.parent.Logger_DEBUG);
+webui().enableApplication();
+}
+
+main0();
+
+</script>
+</head>
+<body onload='main()'>
+</body>
+</html>
+
+Dostal som sa spat na predchadzajuci dialog,
+ktory tiez krizikom zatvaram.
+
+POST na url=
+https://ais2.uniba.sk/ais/servlets/WebUIServlet?appId=30589988&antiCache=-58675877065000&viewer=web
+
+s parametrom xml_spec=
+<request>
+      <serial>17</serial>
+      <events>
+            <ev>
+                  <dlgName>VSES006_StudentZoznamPrihlasenychDlg2</dlgName>
+                  <event class='avc.ui.event.AVCComponentEvent'>
+                        <command>CLOSE</command>
+                  </event>
+            </ev>
+      </events>
+      <changedProps>
+            <changedProperties>
+                  <objName>app</objName>
+                  <propertyValues>
+                        <nameValue>
+                              <name>activeDlgName</name>
+                              <value>VSES006_StudentZoznamPrihlasenychDlg2</value>
+                        </nameValue>
+                  </propertyValues>
+            </changedProperties>
+      </changedProps>
+</request>
+
+odpoved=
+<html id='resultFrameHTML'><head><meta http-equiv='Content-Type' content='text/html; charset=utf-8'></meta>
+<script type='application/javascript'>
+window.parent.Logger_log('Received response', window.parent.Logger_DEBUG);
+
+function webui() { return window.parent.webui; }
+function f() { return window.parent.factory; }
+function dm() { return window.parent.dialogManager; }
+function isResponseIdle(rs) { return webui().lastDoneRequest == rs; }
+
+function main0() {
+if (isResponseIdle(18)) { return; }
+window.parent.Logger_log('start updating components', window.parent.Logger_DEBUG);
+webui().prepareUpdatingDialogs();
+dm().closeDialog("VSES206_VyberTerminuHodnoteniaDlg1");
+}
+
+function main() {
+if (isResponseIdle(18)) { return; }
+webui().noteLastDoneRequest(18);
+window.parent.Logger_log('Response main started', window.parent.Logger_DEBUG);
+webui().enableApplication();
+}
+
+main0();
+
+</script>
+</head>
+<body onload='main()'>
+</body>
+</html>
+
+A som spat tam kde som bol na zaciatku.

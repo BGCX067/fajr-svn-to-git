@@ -1,0 +1,74 @@
+a:link:after, a:visited:after {
+  content:"";
+}
+
+a:link, a:visited {
+  font-weight: normal;
+}
+
+th a, td a {
+  text-decoration: none;
+  color: black;
+}
+
+img.togglevisibilityimg {
+  display: none;
+}
+
+.tab {
+  display: none;
+}
+
+.tab_selected{
+  display: none;
+}
+
+table {
+  border: 2px solid black;
+  border-collapse: collapse;
+}
+
+div.collapsible.collapsed {
+  /* Ak je cast stranky schovana, nebudeme tlacit ani jej nadpis
+   (na papieri si ju nerozbalim kliknutim na nadpis tak ci tak) */
+  display: none;
+}
+
+tr {
+ margin: 0px;
+ padding: 0px;
+}
+
+tr {
+  page-break-inside: avoid;
+}
+
+td, th {
+  border-bottom: 2px solid black;
+  border-right: 1px dashed black;
+  padding: 10px;
+}
+
+th a:link, th a:visited {
+  font-weight: bold;
+  text-decoration: none;
+}
+
+tfoot {
+  display: table-row-group;
+  font-style: italic;
+}
+
+.logo {
+  display: none;
+}
+
+.logout {
+  display: none;
+}
+
+button.tableButton img
+{
+  display: none;
+}
+

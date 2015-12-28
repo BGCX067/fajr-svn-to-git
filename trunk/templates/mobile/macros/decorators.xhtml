@@ -1,0 +1,173 @@
+{##
+ # Contains macros for decoration of elements.
+ #
+ # @copyright  Copyright (c) 2010-2011 The Fajr authors (see AUTHORS).
+ #             Use of this source code is governed by a MIT license that can be
+ #             found in the LICENSE file in the project root directory.
+ # @author     Michal Hozza
+ #}
+
+{# Note: All macros in decorators take SAFE values and they are NOT escaped #}
+
+{##
+ # Spravi content "rozklikavaci"
+ # @param safeHtml $title nazov
+ # @param safeHtml $content obsah rozklikavacieho elementu
+ # @param bool $collapsed ma byt defaultne skryty?
+ #}
+{% macro collapsible(title, content, collapsed) %}
+  {% unique collapsible id %}
+  <div class="collapsible" id="{{ id }}">
+    <div class="collapsibleheader togglevisibility" onclick="toggleVisibility('{{ id }}')">
+      {{ title|safe }}
+    </div>
+    <div class="collapsiblecontent">
+      {{ content|safe }}
+    </div>
+    {% if collapsed %}
+      <script type="text/javascript">
+        toggleVisibility("{{ id }}");
+      </script>
+    {% endif %}
+  </div>
+{% endmacro %}
+
+{##
+ # Zobrazi tabulku dat.
+ #
+ # @param safeString $class css trieda, pouzita ako colorstyle-sorting$class
+ # @param safeHtml $head content hlavicky tabulky (obsah v ramci prveho <tr>)
+ # @param safeHtml $body content riadkov z obsahom tabulky
+ # @param safeHtml $foot content footera
+ # @param bool $empty zobrazit informacie o neexistencii udajov namiesto tabulky?
+ # @param bool $collapsed ma byt defaultne skryty?
+ #}
+{% macro table(class, head, body, foot, empty) %}
+  {% if empty %}
+    <font color="red"> Dáta pre túto tabuľku neboli nájdené.</font><hr class="space" />
+  {% else %}
+    {% unique table id %}
+    {% if class != "" %}
+      {% set class=" "+class %}
+    {% endif %}
+    <table id="{{ id }}" class="colstyle-sorting{{ class }}">
+      <thead>
+        <tr>
+          {{ head|safe }}
+        </tr>
+      </thead>
+      {# tu by mal byt po spravnosti tfoot, aby bol vystup validny
+         lenze to je treba najprv upravit ten triediaci skript
+         (pri tlaci chceme totiz tfoot iba na spodu bez opakovania)
+         jedna moznost je nepouzit tfoot, ale tbody s nejakym classom
+      #}
+      <tbody>
+        {{ body|safe }}
+      </tbody>
+      {% if foot %}
+        <tfoot>
+          {{ foot|safe }}
+        </tfoot>
+      {% endif %}
+   {% endif %}
+  </table>
+{% endmacro %}
+
+{##
+ # Vyrobi select
+ # 
+ # @param safeString $id id selectu
+ # @param safeString $name meno selectu
+ # @param safeString $onChange co sa ma stat pri zmene
+ # @param array(title,url) $items polozky
+ # @param safeString $selectedItem vybrata polozka
+ # @param safeString $class css class
+ #}
+
+{% macro select(id,name,onChange, items, selectedItem, class) %}
+  <select name="{{name}}" id="{{id}}" {% if onChange %} onChange="{{onChange}}" {% endif %} {% if class %} class="{{class}}" {% endif %}>
+    {% for option in items|keys %}
+      {% set item = items[option] %}
+      {% if option == selectedItem %}
+	{% set selected='selected="true"' %}
+      {% else %}
+	{% set selected='' %}
+      {% endif %}
+	<option {{ selected }} value="{{ item.url }}">{{ item.title }}</option>
+    {% endfor %}
+  </select>      
+{% endmacro %}
+
+
+{##
+ # Zobrazi "taby".
+ #
+ # @param safeHtml $content obsah aktualneho tabu
+ # @param array(title,url) $definitions definicie tabov
+ # @param safeString $selectedTab nazov aktualneho tabu
+ #}
+{% macro tabs(content, definitions, selectedTab, class) %}
+<div {% if class %} class="{{class}}" {% endif %}>
+  <form id="tabsForm" method="get" action="index.php">       
+      Menu:
+      {#<select name="tabsSelect" id="tabsSelect" onChange="location.href=$('tabsSelect').value;" {% if class %} class="{{class}}" {% endif %}>
+        {% for tabKey in definitions|keys %}
+	  {% set tab = definitions[tabKey] %}
+          {% if tabKey == selectedTab %}
+            {% set selected='selected="true"' %}
+          {% else %}
+            {% set selected='' %}
+          {% endif %}
+            <option {{ selected }} value="{{ tab.url }}">{{ tab.title }}</option>
+        {% endfor %}
+      </select>#}
+      {{_self.select("tabsSelect","tabsSelect","location.href=$('tabsSelect').value;",definitions,selectedTab,class)}}
+  </form>  
+</div>
+<noscript>
+<div>
+  {% for tabKey in definitions|keys %}{% set tab = definitions[tabKey] %}
+  {% if tabKey != selectedTab %}<a href="{{ tab.url }}">{% endif %}{{ tab.title }}{% if tabKey != selectedTab %}</a>{% endif %}<br/>
+  {% endfor %}
+</div>
+</noscript>
+{{ content|safe }}
+{% endmacro %}
+
+{##
+  # Obali text tagom <span> s class.
+  #
+  # @param safeString $text text, ktory treba obalit 
+  # @param safeString $class class, ktora sa ma pouzit
+  ##}
+
+{% macro span(text,class) %}
+  <span class="{{class}}">{{text | safe}}</span>
+{% endmacro %}
+
+{##
+  # Vyrobi riadok rozklikavacieho bloku.
+  #
+  # @param safeHTML $head hlavicka
+  # @param safeHTML $body obycajny text
+  ##}
+
+{% macro riadok(head,body) %}
+  <li class="table_box">{{_self.span(head,"head")}} {{_self.span(body,"body")}}</li>
+{% endmacro %}
+
+{##
+  # Zobrazi content, alebo informacie o neexistencii udajov
+  #
+  # @param safeHTML $content obsah, ktory sa ma zobrazit
+  # @param bool $empty zobrazit informacie o neexistencii udajov namiesto obsahu?
+  ##}
+
+{% macro printbox(content,empty) %}
+  {% if empty %}
+    <span class="empty_content"> Dáta pre túto tabuľku neboli nájdené.</span><hr class="space" />
+  {% else %}
+    {{ content | safe}}
+  {% endif%}
+{% endmacro %}
+

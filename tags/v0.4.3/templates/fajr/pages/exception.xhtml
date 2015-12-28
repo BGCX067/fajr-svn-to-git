@@ -1,0 +1,43 @@
+{% extends "layout/application.xhtml" %}
+{% block title %}Chyba{% endblock %}
+
+{% macro recursiveException(exception, showStackTrace) %}
+  <div class="exception">
+    {{ exception.message }}
+    {% if showStackTrace %}
+      <br />
+      <strong>at {{ exception.file }}: {{ exception.line }}</strong>
+      <br />
+      <strong>Stacktrace:</strong><br />
+      <ul>
+        {% for item in exception.trace %}
+          <li>
+            {{ item.file}}: {{ item.line }}
+            <br />
+            Function: {{ item.function }}({{ item.args|join(', ') }})
+          </li>
+        {% endfor %}
+      </ul>
+      {% if exception.previous %}
+        <strong>Caused by:</strong><br />
+        {{ _self.recursiveException(exception.previous, showStackTrace) }}
+      {% endif %}
+    {% endif %}
+  </div>
+{% endmacro %}
+
+{% block content %}
+  {% url logout for ['action': 'logout'] %}
+  <div class="logout">
+    <a class="button negative" href="{{ logout }}">
+    <img src="images/door_in.png" alt=""/>Odhlásiť</a>
+  </div>
+<div class="error">
+  <h2>Pri spracúvaní požiadavky nastala chyba:</h2>
+  {{ _self.recursiveException(exception, showStackTrace) }}
+</div>
+  <div class="prepend-1">
+    {% url mainPage for [] %}
+    <a href="{{ mainPage }}">Späť na hlavnú stránku</a>
+  </div>
+{% endblock %}

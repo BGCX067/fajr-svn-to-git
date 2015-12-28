@@ -1,0 +1,25 @@
+{% if availableServers|length > 1 %}
+<div class='prepend-1 span-7 last increase-line-height'>
+  <form id="serverSelectForm" method="post" action="index.php">
+    <fieldset>
+      <legend>Zmeň AIS2 Server<br/>na ktorý sa fajr pripája:</legend>
+      <select name="serverName"
+        onChange="$('serverSelectForm').submit();">
+        {% for key,item in availableServers|items  %}
+          {% if item == currentServer %}
+            {% set selected='selected="true"' %}
+          {% else %}
+            {% set selected='' %}
+          {% endif %}
+            <option {{ selected }} value="{{ key }}">{{ item.serverName }}</option>
+        {% endfor %}
+      </select>
+      <br/>
+      <button type="submit">
+{# <img alt="" src="images/third_party/silk/key_go.png"/> #}
+        Zmeň server
+      </button>
+    </fieldset>
+  </form>
+</div>
+{% endif %}

@@ -1,0 +1,70 @@
+/* ??? */
+
+.increase-line-height {
+  line-height:1.5;
+}
+
+/* general style for all clickable elements */
+.clickable { 
+  cursor: pointer;
+}
+
+.clickable:hover {
+  background-color: #85FF85;
+}
+
+/* Main title && logo */
+
+h1 {
+  margin: 0.5ex;
+  font-size: 300%;
+}
+
+.logo {
+  padding-left: 64px;
+  background: transparent url("../../images/logo.png") 16px 50% no-repeat;
+  min-height: 32px;
+}
+
+/* Logout */
+
+.logout {
+  position: absolute;
+  right: 10px;
+  top: 10px;
+}
+
+
+/* Buttons */
+
+div.logout a.button
+{
+  border: 1px solid #fbc2c4;
+  float: none;
+  display: inline;
+}
+
+button.tableButton
+{
+  white-space:nowrap;
+  margin:0 0 0 0;
+}
+
+.warningBanner {
+  font-size: 150%;
+  margin: 1ex;
+  padding: 0.5ex;
+  padding-left: 36px;
+  border: 1px solid red;
+  background: transparent url("../../images/third_party/silk/error.png") 10px 50% no-repeat;
+  min-height: 16px;
+}
+
+.warningBanner strong {
+  font-weight: normal;
+  font-style: normal;
+}
+
+div.linkbar {
+  margin: 1ex;
+}

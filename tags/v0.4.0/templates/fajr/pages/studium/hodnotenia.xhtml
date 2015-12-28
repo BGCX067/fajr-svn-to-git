@@ -1,0 +1,118 @@
+{% extends "layout/studium.xhtml" %}
+{% block title %}Hodnotenia a priemery{% endblock %}
+{% block application_content %}
+{% import "macros/decorators.xhtml" as decorators %}
+{% import "macros/table.xhtml" as table %}
+{% parent %}
+{% set tabContent %}
+
+  {# -------------------- Hodnotenia -------------------- #}
+
+  {% set head %}
+    {{ table.column("Semester") }}
+    {{ table.column("Názov predmetu") }}
+    {{ table.column("Kredit predmetu") }}
+    {{ table.column("Klasifikačný stupeň") }}
+    {{ table.column("Dátum hodnotenia") }}
+    {{ table.column("Termín") }}
+    {{ table.column("Známka popis") }}
+  {% endset %}
+
+  {% set body %}
+    {% for row in hodnotenia %}
+      {{ table.row(row.semester == "L" ? 'leto' : 'zima', false) }}
+        <td>{{ row.semester }}</td>
+        <td>{{ row.nazov }}</td>
+        <td>{{ row.kredit }}</td>
+        <td>{{ row.znamka }}</td>
+        <td>{{ row.datum }}</td>
+        <td>{{ row.termin }}</td>
+        <td>{{ row.znamkaPopis }}</td>
+      {{ table.endrow() }}
+    {% endfor %}
+  {% endset %}
+
+  {% set title %}
+    <h2>Hodnotenia</h2>
+  {% endset %}
+
+  {% set tableHTML %}
+  {{ decorators.table(none, head, body, none, hodnotenia|length == 0) }}
+  {% endset %}
+
+  {{ decorators.collapsible(title, tableHTML, false) }}
+
+  {# ---------------- Priemery ------------------------ #}
+
+  {% set head %}
+    {{ table.column("Akademický rok") }}
+    {{ table.column("Názov priemeru") }}
+    {{ table.column("Kód semestra") }}
+    {{ table.column("Získaný kredit") }}
+    {{ table.column("Celkový počet predmetov") }}
+    {{ table.column("Počet neabsolvovaných predmetov") }}
+    {{ table.column("Študijný priemer") }}
+    {{ table.column("Vážený priemer") }}
+    {{ table.column("Priemer na koľký pokus") }}
+    {{ table.column("Dátum výpočtu priemeru") }}
+  {% endset %}
+
+  {% set body %}
+    {% for row in priemery %}
+      {{ table.row(none, false) }}
+        <td>{{ row.priemerInfoPopisAkadRok }}</td>
+        <td>{{ row.priemerNazov }}</td>
+        <td>{{ row.priemerInfoKodSemester }}</td>
+        <td>{{ row.ziskanyKredit }}</td>
+        <td>{{ row.pocetPredmetov }}</td>
+        <td>{{ row.pocetNeabs }}</td>
+        <td>{{ row.studPriemer }}</td>
+        <td>{{ row.vazPriemer }}</td>
+        <td>{{ row.pokusyPriemer }}</td>
+        <td>{{ row.priemerInfoDatum }}</td>
+      {{ table.endrow() }}
+    {% endfor %}
+  {% endset %}
+
+  {% set title %}
+    <h2>Priemery</h2>
+  {% endset %}
+
+  {% macro vazenyPriemer(priemer) %}
+    {% set ibaOhodnotene = priemer.vazenyPriemer(true) %}
+    {% set vsetky = priemer.vazenyPriemer(false) %}
+    {{ "%.2f"|format(vsetky) }}
+    {% if ibaOhodnotene != vsetky %}
+      ({{ "%.2f"|format(ibaOhodnotene)}} iba doteraz ohodnotené predmety)
+    {% endif %}
+  {% endmacro %}
+
+  {% set content %}
+    Nasledovné priemery sú prebraté z AISu, čiže to (ne)funguje presne rovnako:
+    {{ decorators.table(none, head, body, none, priemery|length == 0) }}
+    {% if priemeryCalculator.hasPriemer %}
+      <p><br />
+        Nasledovné vážené študijné priemery sú počítané Fajrom priebežne z tabuľky
+        Hodnotenia, <strong>preto nemôžu byť považované ako oficiálne</strong>:
+        <br />
+        <br />
+        {% if priemeryCalculator.obdobia.zima.hasPriemer %}
+          Zimný semester: {{ _self.vazenyPriemer(priemeryCalculator.obdobia.zima) }}<br />
+        {% endif %}
+        {% if priemeryCalculator.obdobia.leto.hasPriemer %}
+          Letný semester: {{ _self.vazenyPriemer(priemeryCalculator.obdobia.leto) }}<br />
+        {% endif %}
+        {% if priemeryCalculator.obdobia.rok.hasPriemer %}
+          Celý akad. rok: {{ _self.vazenyPriemer(priemeryCalculator.obdobia.rok) }}<br />
+        {% endif %}
+      </p>
+    {% endif %}
+  {% endset %}
+
+  {{ decorators.collapsible(title, content, false) }}
+
+{% endset %}
+
+{{ decorators.studiumtabs(tabContent, 'Hodnotenia', studium, zapisnyList) }}
+
+{% endblock %}

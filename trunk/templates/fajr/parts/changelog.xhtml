@@ -1,0 +1,16 @@
+{##
+ # Displays items from changelog
+ #
+ # @copyright  Copyright (c) 2010-2011 The Fajr authors (see AUTHORS).
+ #             Use of this source code is governed by a MIT license that can be
+ #             found in the LICENSE file in the project root directory.
+ # @author     TODO
+ #}
+<div class='changelog prepend-1 span-21 last increase-line-height'>
+  <strong>Changelog:</strong>
+  <ul>
+    {% for item in version.changelog  %}
+      <li>{{ item.date }} (verzia {{ item.version }}) - {{ item.description }}</li>
+    {% endfor %}
+  </ul>
+</div>

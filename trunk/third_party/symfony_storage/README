@@ -1,0 +1,4 @@
+This is part of the symfony framework,
+available from http://svn.symfony-project.com/branches/1.4/lib/storage
+
+Autoloader is copied from symfony dependency injection by PPershing.

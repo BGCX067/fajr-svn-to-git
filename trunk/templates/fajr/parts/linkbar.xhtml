@@ -1,0 +1,38 @@
+{##
+ # Displays linkbar on the top of the page.
+ #
+ # @copyright  Copyright (c) 2010-2011 The Fajr authors (see AUTHORS).
+ #             Use of this source code is governed by a MIT license that can be
+ #             found in the LICENSE file in the project root directory.
+ # @author     TODO
+ #}
+<div class='linkbar'>{# TODO: use <ul> #}
+  {##
+   # generic links on the left
+   #}
+  <div class='linkbarLeft'>
+  <a href="http://code.google.com/p/fajr/"
+    >Stránka projektu</a>&nbsp;|&nbsp;<a
+    href="mailto:fajr-users@googlegroups.com"
+    >Mailinglist</a>&nbsp;|&nbsp;<a
+    href="http://code.google.com/p/fajr/issues/entry"
+    >Nahlás problém</a>
+  </div>
+  {##
+   # user-related links on the right
+   #}
+  <div class='linkbarRight'>
+    {% if loggedIn %}
+      {% url logoutUrl for ['action': 'logout', '_file': 'index.php'] %}
+      {% url settingsUrl for ['action': 'userSettings.Settings'] %}
+      <nobr>{{ aisUserName }}</nobr>&nbsp;|&nbsp;<a 
+        {% if developmentVersion %}
+        href="{{ settingsUrl }}">Nastavenia</a>&nbsp;|&nbsp;<a
+        {% endif %}
+        href="{{ logoutUrl }}">Odhlásiť</a>
+    {% else %}
+      Neprihlásený
+    {% endif %}
+  </div>
+</div>
+

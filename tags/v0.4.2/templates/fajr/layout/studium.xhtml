@@ -1,0 +1,89 @@
+{% extends "layout/application.xhtml" %}
+{% block application_content %}
+{% import "macros/decorators.xhtml" as decorators %}
+{% import "macros/table.xhtml" as table %}
+{% parent %}
+
+{# --------------------- ZOZNAM STUDII -------------------------------#}
+
+{% set head %}
+  {{ table.column("ročník") }}
+  {{ table.column("rok štúdia") }}
+  {{ table.column("skratka") }}
+  {{ table.column("študijný program") }}
+  {{ table.column("doplňujúce údaje") }}
+  {{ table.column("dĺžka štúdia") }}
+  {{ table.column("dĺžka v semestroch") }}
+  {{ table.column("začiatok štúdia") }}
+  {{ table.column("koniec štúdia") }}
+  {{ table.column("číslo programu") }}
+{% endset %}
+
+{% set body %}
+  {% for row in zoznamStudii.data %}
+    {{ table.row(none, row.index == studium) }}
+      {% url link for ['action': action, 'studium': row.index] %}
+      <td><a href="{{ link }}">{{ row.rokDoporuceny }}</a></td>
+      <td>{{ row.rokStudia }}</td>
+      <td>{{ row.studijnyProgramSkratka }}</td>
+      <td>{{ row.studijnyProgramPopis }}</td>
+      <td>{{ row.studijnyProgramDoplnUdaje }}</td>
+      <td>{{ row.dobaStudia }}</td>
+      <td>{{ row.studijnyProgramDlzka }}</td>
+      <td>{{ row.zaciatokStudia }}</td>
+      <td>{{ row.koniecStudia }}</td>
+      <td>{{ row.studijnyProgramIdProgramCRS }}</td>
+    {{ table.endrow() }}
+  {% endfor %}
+{% endset %}
+
+{% set title %}
+  <h2>Zoznam štúdií</h2>
+{% endset %}
+
+{% set tableHTML %}
+{{ decorators.table(none, head, body) }}
+{% endset %}
+
+{{ decorators.collapsible(title, tableHTML, true) }}
+
+{# --------------------- ZOZNAM ZAPISNYCH LISTOV -------------------#}
+
+{% set head %}
+  {{ table.column("akademicky rok") }}
+  {{ table.column("ročník") }}
+  {{ table.column("krúžok") }}
+  {{ table.column("skratka") }}
+  {{ table.column("doplňujúce údaje") }}
+  {{ table.column("dĺžka v semestroch") }}
+  {{ table.column("dátum zápisu") }}
+  {{ table.column("číslo programu") }}
+{% endset %}
+
+{% set body %}
+  {% for row in zapisneListy.data %}
+    {{ table.row(none, row.index == zapisnyList) }}
+      {% url link for ['action': action, 'studium': studium, 'list': row.index] %}
+      <td><a href="{{ link }}">{{ row.popisAkadRok }}</a></td>
+      <td>{{ row.rokRocnik }}</td>
+      <td>{{ row.studProgramSkratka }}</td>
+      <td>{{ row.studProgramPopis }}</td>
+      <td>{{ row.studProgramDoplnUdaje }}</td>
+      <td>{{ row.studProgramDlzka }}</td>
+      <td>{{ row.datumZapisu }}</td>
+      <td>{{ row.studProgramIdProgramCRS }}</td>
+    {{ table.endrow() }}
+  {% endfor %}
+{% endset %}
+
+{% set title %}
+  <h2>Zoznam zápisných listov</h2>
+{% endset %}
+
+{% set tableHTML %}
+{{ decorators.table(none, head, body) }}
+{% endset %}
+
+{{ decorators.collapsible(title, tableHTML, true) }}
+
+{% endblock %}

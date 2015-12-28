@@ -1,0 +1,16 @@
+DirectoryIndex index.php
+
+<IfModule rewrite_module>
+	RewriteEngine On
+
+	# presmerovanie na https
+	RewriteCond %{HTTPS} off
+	RewriteRule (.*) https://%{HTTP_HOST}%{REQUEST_URI} [QSA,R,L]
+
+	# existujuce adresare nechaj tak
+	#RewriteCond %{REQUEST_FILENAME} !-d
+	# takisto subory
+	#RewriteCond %{REQUEST_FILENAME} !-f
+	# prepis /nieco na index.php/nieco
+	#RewriteRule (.*) index.php/$1
+</IfModule>

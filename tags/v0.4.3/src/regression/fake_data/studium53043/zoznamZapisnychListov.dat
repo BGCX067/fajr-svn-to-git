@@ -1,0 +1,43 @@
+<?php
+
+return
+  array (
+    0 => 
+    array (
+      0 => '2009/2010',
+      1 => '1',
+      2 => 'mINF',
+      3 => 'informatika a bosoráctvo',
+      4 => '(Jednoodborové štúdium, magisterský II. st., denná forma)',
+      5 => '04.09.2009',
+      6 => 'A',
+      7 => 'N',
+      8 => '4',
+      9 => '',
+      10 => '4747',
+      11 => '',
+      12 => '',
+      13 => 'FMFI',
+      14 => '',
+      15 => '',
+    ),
+    1 => 
+    array (
+      0 => '2010/2011',
+      1 => '2',
+      2 => 'mINF',
+      3 => 'informatika a bosoráctvo',
+      4 => '(Jednoodborové štúdium, magisterský II. st., denná forma)',
+      5 => '03.09.2010',
+      6 => 'A',
+      7 => 'N',
+      8 => '4',
+      9 => '',
+      10 => '4747',
+      11 => '',
+      12 => '',
+      13 => 'FMFI',
+      14 => '',
+      15 => '',
+    ),
+  );

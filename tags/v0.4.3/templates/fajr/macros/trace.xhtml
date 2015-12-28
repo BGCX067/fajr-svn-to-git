@@ -1,0 +1,46 @@
+{% macro tooltip(info) %}
+  <div class="trace_s">{{ "%+0.2f" |format(info.elapsedTime) }}s
+    <div class="trace_tooltip">Function {{ info.class }}::{{ info.function }}()<br />
+      Line:&nbsp;{{ info.line }}<br />
+      File:&nbsp;{{ info.file }}<br />
+      <br />
+      Code snippet:
+      <pre>{{ info.snippet }}</pre>
+    </div>
+  </div>
+{% endmacro %}
+
+{% macro traceItem(item, content) %}
+<div class="trace">
+  {{ _self.tooltip(item.info) }}
+  {{ content }}
+</div>
+{% endmacro %}
+
+{% macro traceDataContent(value) %}
+  <pre>{{ value }}</pre>
+{% endmacro%}
+
+{% macro traceVariableContent(name, value) %}
+  ${{ name }}:= <pre class="trace">{{ value }}</pre>
+{% endmacro %}
+
+{% macro trace(trace) %}
+  {% set content %}
+    <div>
+      {% for child in trace.children %}
+        {% if child.type == "log" %}
+          {{ _self.traceItem(child, child.data) }}
+        {% elseif child.type == "data" %}
+          {{ _self.traceItem(child, _self.traceDataContent(child.data)) }}
+        {% elseif child.type == "variable" %}
+          {{ _self.traceItem(child, _self.traceVariableContent(child.name, child.data)) }}
+        {% elseif child.type == "trace" %}
+          {{ _self.traceItem(child, _self.trace(child.trace)) }}
+        {% endif %}
+      {% endfor %}
+    </div>
+  {% endset %}
+  {% import "macros/decorators.xhtml" as decorators %}
+  {{ decorators.collapsible(trace.header, content, true) }}
+{% endmacro %}

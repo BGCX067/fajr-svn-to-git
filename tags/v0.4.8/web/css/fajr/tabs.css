@@ -1,0 +1,34 @@
+/* Tabs */
+
+.tab_header {
+  border-bottom: 2px solid black;
+  padding: 6px;
+  margin: 0px;
+  margin-top: 20px;
+  margin-bottom: 10px;
+}
+
+.tab a, .tab_selected a {
+  text-decoration: none;
+  font-size: 18px;
+}
+
+.tab:hover, .tab_selected:hover {
+  background-color: lightgreen;
+}
+
+.tab, .tab_selected{
+  margin-left: 15px;
+  padding: 4px;
+  border: 2px solid black;
+  padding-bottom: 5px;
+  background-color: #dfd;
+}
+.tab_selected {
+  border-bottom: 0px;
+  padding-bottom: 7px;
+}
+
+.tab_selected {
+  background-color:yellow;
+}

@@ -1,0 +1,100 @@
+Index: html/InlineHtmlProcessor.java
+===================================================================
+--- html/InlineHtmlProcessor.java	(revision 817)
++++ html/InlineHtmlProcessor.java	(working copy)
+@@ -47,6 +47,12 @@
+     try {
+       LOGGER.trace("inlining html for {}", file.getFileName());
+       String source = file.getData();
++      // Mega hack, HtmlDocParser makes total mess with encodings
++      // so skip it if we want utf-8, you can test html interactions
++      // in another testfile.
++      if (source.indexOf("//JsTestDriver:use-UTF-8-compatibility-hack") > -1) {
++        return file;
++      }
+       Writer writer = new CharArrayWriter();
+       parser.parse(
+           lexer.createStream(
+Index: TestResourceServlet.java
+===================================================================
+--- TestResourceServlet.java	(revision 817)
++++ TestResourceServlet.java	(working copy)
+@@ -41,7 +41,10 @@
+     resp.setHeader("Pragma", "no-cache");
+     resp.setHeader("Cache-Control", "private, no-cache, no-store, max-age=0, must-revalidate");
+     resp.setHeader("Expires", TIME_IN_THE_PAST);
+-    resp.setHeader("Content-Type", "text/plain");
++    // Firefox is ignoring utf-8 in firebug but it works in test,
++    // don't ask me why. The output is correct utf-8 at least
++    // according to WireShark's packet dumps.
++    resp.setHeader("Content-Type", "text/plain; charset=utf-8");
+     service(req.getPathInfo().substring(1) /* remove the first / */, resp.getWriter());
+   }
+ 
+Index: FileSetServlet.java
+===================================================================
+--- FileSetServlet.java	(revision 817)
++++ FileSetServlet.java	(working copy)
+@@ -35,6 +35,14 @@
+ import javax.servlet.http.HttpServletRequest;
+ import javax.servlet.http.HttpServletResponse;
+ 
++import java.io.UnsupportedEncodingException;
++import java.nio.charset.CharsetEncoder;
++import java.nio.charset.CharsetDecoder;
++import java.nio.charset.Charset;
++import java.nio.CharBuffer;
++import java.nio.ByteBuffer;
++import java.io.IOException;
++
+ /**
+  * @author jeremiele@google.com (Jeremie Lenfant-Engelmann)
+  */
+@@ -182,7 +190,20 @@
+ 
+     for (FileInfo f : filesData) {
+       String path = f.getFileName();
+-      filesCache.addFile(path, f);
++      try {
++        // Big hack, don't ask my why, but this works on fks.sk
++        // Problem is that gson.fromJson mess up encoding.
++        CharsetEncoder encoder = Charset.forName("UTF-8").newEncoder();
++        CharsetDecoder decoder = Charset.forName("ISO-8859-1").newDecoder();
++
++        ByteBuffer bbuf = encoder.encode(CharBuffer.wrap(f.getData()));
++        CharBuffer cbuf = decoder.decode(bbuf);
++
++        String utf = cbuf.toString();
++        f.setData(utf);
++        filesCache.addFile(path, f);
++      } catch (IOException e) {
++      }
+     }
+   }
+ }
+Index: SimpleFileReader.java
+===================================================================
+--- SimpleFileReader.java	(revision 817)
++++ SimpleFileReader.java	(working copy)
+@@ -16,6 +16,7 @@
+ package com.google.jstestdriver;
+ 
+ import java.io.BufferedInputStream;
++import java.io.InputStreamReader;
+ import java.io.FileInputStream;
+ import java.io.IOException;
+ 
+@@ -26,9 +27,11 @@
+ public class SimpleFileReader implements FileReader {
+ 
+   public String readFile(String file)  {
+-    BufferedInputStream bis = null;
++    InputStreamReader bis = null;
+     try {
+-      bis = new BufferedInputStream(new FileInputStream(file));
++      // This is hack, if we want to serve binary files,
++      // we may check for js/html by regexp.
++      bis = new InputStreamReader(new FileInputStream(file), "UTF-8");
+       StringBuilder sb = new StringBuilder();
+ 
+       for (int c = bis.read(); c != -1; c = bis.read()) {

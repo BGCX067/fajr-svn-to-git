@@ -1,0 +1,6 @@
+{{ version.versionNumber }}
+{% if version.buildTimeInfo %}
+[{{ version.buildTimeInfo.date | date('d.m.Y') }},
+ {{ version.buildTimeInfo.url }},
+ rev: {{ version.buildTimeInfo.revision }}]
+{% endif %}

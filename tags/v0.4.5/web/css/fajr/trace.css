@@ -1,0 +1,73 @@
+/* Debug */
+
+.debug {
+  border: 1px solid black;
+  padding: 2px;
+  margin: 5px;
+}
+
+.debug_connection {
+  margin-bottom: 0.5em;
+}
+
+.debug_connection_header, .debug_connection_block_title {
+  border-bottom: 1px solid #999;
+  padding: 2px;
+  margin-bottom: 5px;
+  background: #B3C9EF;
+}
+
+.debug_connection_method {
+  font-weight: bold;
+}
+
+.debug_connection_auxinfo {
+  margin-bottom: 1em;
+}
+
+.debug_connection_block {
+  border: 1px solid #999;
+  margin-left: 3em;
+  margin-bottom: 5px;
+}
+
+.debug_connection_block pre {
+  margin: 0.5em 1em;
+}
+
+.trace {
+  padding-left: 20px;
+  background-image: url('../../images/trace.png');
+  background-position: 3px 3px;
+  background-repeat: no-repeat;
+
+  margin-top: 5px;
+  margin-bottom: 5px;
+}
+
+pre.trace {
+  background-image: url('../../images/trace_data.png');
+  padding-left: 25px;
+  background-position: 2px 0px;
+}
+
+.trace_s {
+  color: gray;
+  position: relative;
+  display: inline;
+}
+.trace_tooltip {
+  display: none;
+}
+
+.trace_s:hover div.trace_tooltip {
+  display:block;
+  position: absolute;
+  bottom: 2em;
+  left: 2em;
+  padding: 1em;
+  border:1px solid #0cf;
+  background-color:#cff;
+  color:#000;
+  z-index: 1;
+}

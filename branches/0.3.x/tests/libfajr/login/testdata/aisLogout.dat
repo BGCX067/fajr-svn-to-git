@@ -1,0 +1,69 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+ <head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8"> 
+  <meta http-equiv="Expires" content="-1">
+  <META HTTP-EQUIV="CACHE-CONTROL" CONTENT="NO-CACHE">
+  <link rel="stylesheet" type="text/css" href="/css/web_uk.css" media="screen" />
+  <link rel="stylesheet" type="text/css" href="/css/web_uk_print.css" media="print" />
+<title>IIKS - Odhlásenie</title>
+<script type="text/javascript" src="/js/prototype.js"></script>
+<script type="text/javascript">
+        window.onload = function() {
+                        Event.observe('back', 'click', function()
+        {history.go(-1)});
+                        $('logout').focus();
+                                }
+</script>
+ </head>
+ <body>
+  <div id="body">
+   <div id="container">
+    <div id="container1">
+     <div id="container2">
+      <div id="header">
+       <img id="top_left" src="/css/top_left.jpg" alt="" />
+       <img id="top_right" src="/css/top_right.jpg" alt="" />
+       <a id="logoUK_link" href="http://www.uniba.sk" accesskey="1" title="Univerzita
+       Komenského"><img id="logoUK" src="/css/logo_uk.gif" alt="Univerzita
+       Komenského" /></a>        <a id="titleUK_link" href="http://www.uniba.sk"><img id="titleUK"
+       src="/css/header_title.jpg" alt="Univerzita Komenského v Bratislave" /></a>        <a id="logo2_link" href="."><img id="logo2" src="/logo2.jpg" alt="" /></a>
+      </div> 
+      <div id="content">
+       <div id="content_in">
+ 
+ 
+
+
+<h1>IIKS - Odhlásenie</h1>
+
+<p>Idete sa odhlásiť zo <a href="/services/">všetkých aplikácii</a> pokrývaných
+Integrovaným informačným a komunikačným systémom. Ste si istí?</p>
+
+<form name="f" method="post" action="/logout.cgi">
+            <p>
+                <input type="button" id="back" value="Naspäť" />
+                <input type="submit" id="logout" name="verify" value="Odhlásiť" />
+            <input type="hidden" name="url" value="https://login.uniba.sk/" />
+        </form>
+<p>
+<i>Poznámka: gombík "Naspäť" vyžaduje JavaScript. Ak sa po jeho stlačení nič
+nedeje, je Javascript vo vašom prehliadači vypnutý.</i>
+<!--Po odhlásení sa Váš prehliadač prejde na: https://login.uniba.sk/<p>-->        </div><!-- #content_in -->
+       </div><!-- #content -->
+       <div class="clear"></div>    
+       <div id="footer">
+        <div id="footer_in">
+         <img id="bottom_left" src="/css/bottom_left.jpg" alt="" />
+         <img id="bottom_right" src="/css/bottom_right.jpg" alt="" />   
+         <div id="copyright">
+          Copyright &copy; Univerzita Komenského v Bratislave, 2007
+         </div>
+        </div><!-- #footer_in -->
+       </div><!-- #footer -->
+      </div><!-- #container2 -->
+     </div><!-- #container1 -->
+    </div><!-- #container -->
+   </div><!-- #body -->
+  </body>
+ </html>

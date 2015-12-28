@@ -1,0 +1,43 @@
+Fajr - README
+=============
+
+Inštalácia
+==========
+
+1. Nakopírujte si aplikáciu na disk a nastavte web server tak, aby klientom
+   poskytoval len podadresár web z adresára aplikácie. Toto je dôležité kvôli
+   zvýšeniu bezpečnosti aplikácie.
+
+2. Ak používate Apache, skopírujte súbor ./web/htaccess.example do
+   ./web/.htaccess (na Windows je treba použiť iný program ako Explorer,
+   napríklad príkazový riadok). V tomto súbore sú voľby na presmerovanie na
+   zabezpečené spojenie (odporúčame nevypínať a nastaviť si na web serveri SSL)
+   a prepisovanie URL (môžte odkomentovať+zapnúť v konfigurácii,
+   ak chcete mať krajšie URL-ká)
+
+3. Skopírujte súbor ./config/configuration.example.php do ./config/configuration.php
+   Prednastavené hodnoty konfiguračných volieb by mali byť vhodné pre väčšinu
+   inštalácií, no napriek tomu ponúkame možnosť ich pohodlne zmeniť
+   na jednom mieste - v tomto súbore.
+
+4. Teraz treba nastaviť adresáre pre dočasné súbory používané fajrom.
+   Fajr používa tieto adresáre na ukladanie informácií potrebných na
+   zapamätanie stavu aplikácie (sessions a AISove cookies), preto treba
+   tieto adresáre nastaviť bezpečne. Je možné nastaviť aj iné umiestnenie ako
+   ./temp, čo je výhodné ak chcete neskôr spúšťať svn update (po správnom
+   nastavení práv svn update nebude vedieť do ./temp pristupovať), v tomto
+   prípade berte Vaše adresáre namiesto tých uvedených nižšie.
+   Nastavte práva pre adresáre ./temp, ./temp/cookies a ./temp/sessions tak,
+   aby grupa bola www-data, práva pre others boli prázdne a práva pre webserver
+   boli "-wx" a nikto iný tam nevedel nič robiť (čiže za predpokladu, že nie ste
+   administrátor, práva by mali byť "d----wx---" - vy ani nikto iný okrem
+   webservera nebude vedieť čítať cookie, webserver bude vedieť, ale musí mať
+   správny názov súboru, nevie získať zoznam tých súborov).
+
+5. Hotovo! Teraz môžete zadať adresu súboru ./web/index.php do webového
+   prehliadača a začať túto aplikáciu používať.
+
+Vývoj
+=====
+
+Podporné nástroje používané pri vývoji sú popísané v súbore scripts/README. 

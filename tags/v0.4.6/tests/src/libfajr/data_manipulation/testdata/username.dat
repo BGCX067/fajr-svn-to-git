@@ -1,0 +1,529 @@
+
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"> 
+<html> 
+	<head> 
+		<base href="https://ais2-beta.uniba.sk/ais/portal/pages/portal_layout.jsp"> 
+		<link rel="stylesheet" href="../css/portal_2_common.css" type="text/css" /> 
+		<link rel="stylesheet" href="../css/portal_2_UK.css" type="text/css" /> 
+		
+		<link rel="icon" href="/ais/portal/images/portal_2/favicon.ico" type="image/x-icon"/> 
+		<link rel="shortcut icon" href="/ais/portal/images/portal_2/favicon.ico"	type="image/x-icon"/> 
+		
+		<script language="javascript" id="jQuery" src="../js/jquery-1.3.2.js" ></script> 
+		
+		<script language="javascript" src="../js/portal_2.js" ></script> 
+ 
+		<script>			
+			$(document).ready(function()
+			{
+			  $("#logo").mouseover(function ()
+			  {
+				  $("#top-banner-img").attr( "src", "../images/portal_2/top_UK_color.gif" );
+			  });
+			
+			  $("#logo").mouseout(function ()
+			  {
+				  $("#top-banner-img").attr( "src", "../images/portal_2/top_UK_gray.gif" );
+			  });
+ 
+			  $( ".left-menu-item" ).mouseover( function() { $( this ).addClass( "left-menu-item-highlight" ); } );			  
+			  $( ".left-menu-item" ).mouseout(  function() { $( this ).removeClass( "left-menu-item-highlight" ); } );
+			  
+		  	  $( "#id-text" ).css( 'left', $( "#p1" ).offset().left + 205 );
+		  	  $( "#id-text" ).show( 'slow' );
+ 
+			  $( "#info" ).click( 
+					  function() 
+					  { 
+				  		$( this ).find( '.popis' ).toggle( 'slow' );
+					  } );					  			  			 
+			  
+			} );
+ 
+			function showPopis( id )
+			{
+				$( '#popis-' + id ).slideDown( 'slow' );
+			}
+				
+		</script> 
+		
+		<title>AiS2</title> 
+	</head> 
+	<body> 
+ 
+		<div style="border: none; text-align: center;"> 
+		
+			<div class="page-holder"> 
+		
+			<div style="text-align: center;"> 
+		
+			<div style="width: 1055px;"> 
+			<div class="page"> 
+			
+				<div> 
+				
+					
+	
+ 
+ 
+<div class="top"> 
+ 
+	<div class="user-name">Bc. Peter Perešíni</div> 
+	
+	
+		
+			<div id="p1"></div> 
+			<div id="id-text">beta - skoliaca verzia neobsahuje aktualne udaje</div> 
+		
+	
+	
+	<img id="top-banner-img" src="../images/portal_2/top_UK_gray.gif" usemap="#map" /> 
+	 
+	<map name="map"> 
+		<area id="logo" shape="circle" coords="900,73,55" 
+				href="http://www.uniba.sk" alt="Univerzita Komenského v Bratislave"  target="_blank" 
+				title="Univerzita Komenského v Bratislave"/> 
+	</map> 
+	
+</div> 
+ 
+										
+					<div class="left-side-panel"> 
+						
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+	
+	
+		
+ 
+			
+ 
+				
+ 
+	
+ 
+ 
+<div class="new-messages"> 
+ 
+ 
+ 
+	
+		
+	
+		<img src="../images/portal_2/messages_zero.gif" /> 
+		Nové správy:&nbsp;0</a> 
+		
+ 
+ 
+ 
+</div> 
+			
+				<ul> 
+				
+						
+							
+							
+								<li class="left-menu-item"> 
+									<a href="../changeModul.do?modul=SP" title="Správa používateľov">Správa používateľov</a> 
+								</li> 
+							
+													
+						
+						
+							
+							
+								<li class="left-menu-item"> 
+									<a href="../changeModul.do?modul=LZ" title="Ľudské zdroje">Ľudské zdroje</a> 
+								</li> 
+							
+													
+						
+						
+							
+							
+								<li class="left-menu-item"> 
+									<a href="../changeModul.do?modul=ES" title="Evidencia štúdia">Evidencia štúdia</a> 
+								</li> 
+							
+													
+						
+						
+							
+								<li class="left-menu-item-active"> 
+									Študijné programy
+								</li> 
+							
+							
+													
+						
+						
+							
+							
+								<li class="left-menu-item"> 
+									<a href="../changeModul.do?modul=RH" title="Rozvrh">Rozvrh</a> 
+								</li> 
+							
+													
+						
+						
+							
+							
+								<li class="left-menu-item"> 
+									<a href="../changeModul.do?modul=UB" title="Ubytovanie">Ubytovanie</a> 
+								</li> 
+							
+													
+						
+						
+							
+							
+								<li class="left-menu-item"> 
+									<a href="../changeModul.do?modul=AS" title="Administratívny systém">Administratívny systém</a> 
+								</li> 
+							
+													
+						
+						
+							
+							
+								<li class="left-menu-item"> 
+									<a href="../changeModul.do?modul=RP" title="Reporty, zostavy">Reporty, zostavy</a> 
+								</li> 
+							
+													
+						
+				</ul> 
+				
+			
+			
+			
+			
+					
+		
+	
+	
+	
+	
+	
+ 
+					</div> 
+					<div class="right-panel"> 
+					
+						
+ 
+<div class="navigation-panel"> 
+ 
+ 
+		<ul class="top-menu"> 
+			<li class='active'> 
+				<a href="../changeTab.do?tab=0">AiS2</a> 
+			</li> 
+	
+			
+			<li > 
+				<a href="../changeTab.do?tab=5" title="Podporované webové prehliadače, Test prehliadača"> 
+					Nastavenia</a> 
+			</li> 
+			
+			<li > 
+				<a href="../changeTab.do?tab=4" title="Riešenie problémov - kontakty"> 
+					Riešenie problémov</a> 
+			</li> 
+ 
+		</ul>		
+ 
+ 
+	
+		<ul class="jazyky"> 
+	<li><a href='../changeLocale.do?locale=SK'>SK</a></li><li><a href='../changeLocale.do?locale=EN'>EN</a></li><li></li> 
+		</ul>		
+	
+</div> 
+						
+						<div class="right-side-panel"> 
+							
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+	
+		
+		
+		<hr /> 
+		<ul> 
+		
+			<li>	
+				<img src="../images/portal_2/favorit1.gif"/> 
+				<a class="appStart"
+					url="/ais/servlets/WebUIServlet?appClassName=ais.gui.vs.rh.VSRH009App&kodAplikacie=VSRH009"
+					onclick="linkClick( event, this )" leaf="true"
+					title="Rozvrh hodín"> 
+					Rozvrh hodín
+				</a> 
+			</li> 
+		
+			<li>	
+				<img src="../images/portal_2/favorit2.gif"/> 
+				<a class="appStart"
+					url="/ais/servlets/WebUIServlet?appClassName=ais.gui.vs.st.VSST157App&kodAplikacie=VSST157"
+					onclick="linkClick( event, this )" leaf="true"
+					title="Nástenka"> 
+					Nástenka
+				</a> 
+			</li> 
+		
+			<li>	
+				<img src="../images/portal_2/favorit3.gif"/> 
+				<a class="appStart"
+					url="/ais/servlets/WebUIServlet?appClassName=ais.gui.vs.es.VSES017App&kodAplikacie=VSES017"
+					onclick="linkClick( event, this )" leaf="true"
+					title="Administrácia štúdia"> 
+					Administrácia štúdia
+				</a> 
+			</li> 
+		
+			<li>	
+				<img src="../images/portal_2/favorit4.gif"/> 
+				<a class="appStart"
+					url="/ais/servlets/WebUIServlet?appClassName=ais.gui.as.AS022App&kodAplikacie=AS022"
+					onclick="linkClick( event, this )" leaf="true"
+					title="Dokumenty"> 
+					Dokumenty
+				</a> 
+			</li> 
+		
+		</ul>	
+		
+		
+		<hr /> 
+		
+		<ul> 
+			<li> 
+				<img src="../images/portal_2/question.jpeg"/> 
+				<a href="/ais/checkSettings/settings.jsp"
+					title="Spustiť test ">Spustiť test </a> 
+			</li> 
+		</ul>		
+		<br/> 
+		<button onClick="javascript:logout();" class="button" accesskey="x" title='Odhlásenie'> 
+			Odhlásenie</button> 
+	
+	
+ 
+						</div> 
+						
+						<div class="content"> 
+							
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+	
+	
+		<div class="obsah"> 
+	
+		
+		
+			
+			
+				
+					
+					
+					
+					
+					
+						
+						
+								<div class="submodul"> 
+									<div class="submodul-text">Správa parametrov študijných programov, plánov</div> 
+								
+									<ul class="aplikacie"> 
+						
+								
+									<li class="aplikacia"> 
+										<div class="clear"> 
+											<div class="kod">VSST010</div> 
+											<div class="info-ico"><img src="../images/portal_2/info_UK.jpg" onClick="showPopis('VSST010')"/></div> 
+											<div class="linka"> 
+												
+												<a href="#" url="/ais/servlets/WebUIServlet?appClassName=ais.gui.vs.st.VSST010App&kodAplikacie=VSST010&uiLang=SK" title="Správa dátumov akcií" onClick="linkClick( event, this )" leaf="true" > 
+													Správa dátumov akcií<br/><small>Ostrá prevádzka</small> 
+												</a> 
+											</div> 
+											<div class="popis" id="popis-VSST010" style="display: none;"><br/>Definovanie dátumových intervalov pre zvolený akademický rok, počas ktorého sú sprístupnené jednotlivé akcie spojené s tvorbou odporúčaných študijných plánov, evidenciou hodnotenia štúdia, tvorbou rozvrhu, ...</div> 
+										</div> 
+									</li> 
+								
+								</ul> 
+								</div>						
+								
+						
+								<div class="submodul"> 
+									<div class="submodul-text">Výstupné zostavy zo študijných programov</div> 
+								
+									<ul class="aplikacie"> 
+						
+								
+									<li class="aplikacia"> 
+										<div class="clear"> 
+											<div class="kod">VSST178</div> 
+											<div class="info-ico"><img src="../images/portal_2/info_UK.jpg" onClick="showPopis('VSST178')"/></div> 
+											<div class="linka"> 
+												
+												<a href="#" url="/ais/servlets/WebUIServlet?appClassName=ais.gui.vs.st.VSST178App&kodAplikacie=VSST178&uiLang=SK" title="Študijné plány, informačné listy, ... študijných programov" onClick="linkClick( event, this )" leaf="true" > 
+													Študijné plány, informačné listy, ... študijných programov<br/><small>Ostrá prevádzka</small> 
+												</a> 
+											</div> 
+											<div class="popis" id="popis-VSST178" style="display: none;"><br/>Výstupné zostavy pre študijné programy - odporúčané študijné plány, informačné listy, sylaby štátnicových predmetov, ... študijného programu, podprogramu</div> 
+										</div> 
+									</li> 
+								
+									<li class="aplikacia"> 
+										<div class="clear"> 
+											<div class="kod">VSST060</div> 
+											<div class="info-ico"><img src="../images/portal_2/info_UK.jpg" onClick="showPopis('VSST060')"/></div> 
+											<div class="linka"> 
+												
+												<a href="#" url="/ais/servlets/WebUIServlet?appClassName=ais.gui.vs.st.VSST060App&kodAplikacie=VSST060&uiLang=SK" title="Register predmetov" onClick="linkClick( event, this )" leaf="true" > 
+													Register predmetov<br/><small>Ostrá prevádzka</small> 
+												</a> 
+											</div> 
+											<div class="popis" id="popis-VSST060" style="display: none;"><br/>Prehľad, vyhľadávanie všetkých predmetov na univerzite, informačné listy, zoznam zapísaných študentov, ...</div> 
+										</div> 
+									</li> 
+								
+								</ul> 
+								</div>						
+								
+						
+								<div class="submodul"> 
+									<div class="submodul-text">Elektronická nástenka predmetov</div> 
+								
+									<ul class="aplikacie"> 
+						
+								
+									<li class="aplikacia"> 
+										<div class="clear"> 
+											<div class="kod">VSST157</div> 
+											<div class="info-ico"><img src="../images/portal_2/info_UK.jpg" onClick="showPopis('VSST157')"/></div> 
+											<div class="linka"> 
+												
+												<a href="#" url="/ais/servlets/WebUIServlet?appClassName=ais.gui.vs.st.VSST157App&kodAplikacie=VSST157&uiLang=SK" title="Elektronická nástenka predmetu" onClick="linkClick( event, this )" leaf="true" > 
+													Elektronická nástenka predmetu<br/><small>Ostrá prevádzka</small> 
+												</a> 
+											</div> 
+											<div class="popis" id="popis-VSST157" style="display: none;"><br/>Zverejňovanie odkazov k predmetu vzhľadom na akademický rok a vyučujúceho predmetu (dôležité termíny, úlohy, príklady, ...).
+Pomocou elektronickej nástenky môže vyučujúci komunikovať so študentmi prihlásenými na jednotlivé predmety a naopak.</div> 
+										</div> 
+									</li> 
+								
+								</ul> 
+								</div>						
+								
+							
+						
+								
+							
+					
+					
+				
+			
+			
+			
+			
+			
+		
+		
+		</div>				
+		
+	
+	
+	
+	
+ 
+						</div> 
+											
+					</div> 
+					
+					
+				</div> 
+ 
+				<br style="clear:both;"/> 
+								
+				<div class="bottom"><div class="verzia">AiS2 verzia 2.3.19.35</div></div> 
+				<div class="copyright">Akademický informačný systém AiS2 &copy; UPJŠ Košice 2007-2010</div> 
+				<div class="somsak">dizajn &copy; šomšák, 2009</div> 
+				
+			</div> 
+			<div class="bottom" style="width: 1055px;"><img src="../images/portal_2/bottom_UK.gif"/></div> 
+			</div> 
+				
+				</div> 
+				
+				<div class="zalozka-ais"> 
+					<a href="http://www.ais2.eu" target="_blank" title="Nové okno prezentačný portál AIS"> 
+						<img src="../images/portal_2/zalozka_ais.gif" alt="Informačný portál AiS2"/></a> 
+				</div> 
+			</div> 
+				
+				
+			
+		</div> 
+ 
+	</body> 
+</html>

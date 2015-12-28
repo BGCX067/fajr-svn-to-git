@@ -1,0 +1,21 @@
+#Development tools that may be handy.
+
+= Introduction =
+
+We use a lot of development tools that helps productivity. This page tries to make overview of them and explain basic concepts. Some tools have dedicated help pages as well.
+All tools can be found in the "scripts" directory of trunk.
+
+
+= Tools =
+
+*update_cscope.py:* Cscope is linux tool for finding method declarations of functions. You may get a vim plugin for it. This scripts updates cscope database.
+
+*run_tests.sh:* We use PHPUnit unittesting platform. This script runs standard setup of tests and stores results in trunk/report/tests (and displays them as well).
+
+*make_coding_standard.sh:* Each php file in the repository should adhere to [TODO coding standard]. This way, it will be easier for other developers to read and change your code. This script will generate trunk/report/codingStandard.html file which contains list of current violations of coding style guide.
+
+*make_all_doc.sh:* We use PHPDocumentor to crawl the source code and generate nice html documentations. Stored result is in trunk/report/documentation and trunk/report/doc_public.
+
+*upload.py:* Before commiting, the code should be review by some authors. This tool is used to post review on [http://codereview.appspot.com rietveld review tool]. Basic usage is here: TODO, but you may prefer using gcl/gcl.py as it have more functionality.
+
+*gcl/gcl:* You may have more than one change in progress. GCL tool is borrowed from chromium project and enables you to manage more "changelists" in svn and also wraps the upload.py script. Basic usage is here: [GclPy].

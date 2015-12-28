@@ -1,0 +1,125 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="sk" lang="sk">
+ <head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8"> 
+  <meta http-equiv="Expires" content="-1">
+  <META HTTP-EQUIV="CACHE-CONTROL" CONTENT="NO-CACHE">
+  <link rel="stylesheet" type="text/css" href="css/web_uk.css" media="screen" />
+  <link rel="stylesheet" type="text/css" href="css/web_uk_print.css" media="print" />
+<style>
+.icon
+{
+ border-style:none;
+ margin:0 0 0 0;
+ padding:0 0 0 0;
+}
+   
+xtable, xtd
+ {
+  border-style:none;
+ }
+ </style>    
+ <title>IIKS - Prihlásenie</title>
+ </head>
+ <body>
+  <div id="body">
+   <div id="container">
+    <div id="container1">
+     <div id="container2">
+      <div id="header">
+       <img id="top_left" src="css/top_left.jpg" alt="" />
+       <img id="top_right" src="css/top_right.jpg" alt="" />
+       <a id="logoUK_link" href="http://www.uniba.sk" accesskey="1" title="Univerzita
+       Komenského"><img id="logoUK" src="css/logo_uk.gif" alt="Univerzita
+       Komenského" /></a>        <a id="titleUK_link" href="http://www.uniba.sk"><img id="titleUK"
+       src="css/header_title.jpg" alt="Univerzita Komenského v Bratislave" /></a>        <a id="logo2_link" href="."><img id="logo2" src="/logo2.jpg" alt="" /></a>
+      </div> 
+      <div id="content">
+       <div id="content_in">
+ 
+
+	<h1 style="text-align: center">IIKS - Prihlásenie</h1>
+	<p>
+	Na tejto stránke sa môžete prihlásiť do Integrovaného informačného a
+	komunikačného systému (IIKS). <!--Prosím, vyplňte formulár:--><br/>
+	Webová časť IIKS je realizovaná cez systém Cosign. Viac informácií o
+	ňom nájdete
+	<a href="http://www.uniba.sk/jas"><b>na tejto stránke</b></a>.<br/>
+	Pokiaľ nemáte svoje konto aktivované, obráťte sa
+	<a href=http://www.uniba.sk/index.php?id=2714><b>na svojho správcu
+	hesiel</b></a>.
+	<p><br/>
+	</p>
+
+
+	<h1>POZOR! zachovávajte zásady ochrany informácií:</h1>
+	  <ul>
+	  <li>pri ústnej, telefonickej, ani e-mailovej komunikácii Univerzita Komenského
+	  	od Vás nikdy nepožaduje Vaše heslo</li>
+	  <li>svoje heslo neoznamujte ani ďalším osobám, neposielajte ho e-mailom a nehovorte
+	  	ho do telefónu</li>
+	  <li>Vaše heslo používajte len na tých stránkach, pre ktoré je určené</li>
+	  <li>ak máte podozrenie, že sa prezradilo Vaše prihlasovacie heslo,
+	  	<a href="https://int-app1.rec.uniba.sk/CDO2Web/public/changePassPublic">
+	  		<b>zmeňte si ho tu</b></a></li>
+	  </ul>
+  	  <p>Ak máte podozrenie na bezpečnostný incident obráťte sa na adresu
+  	  	<a href="mailto:bezpecnost@uniba.sk"><b>bezpečnosti</b></a>.
+	<p><br/>
+	
+
+
+
+	<form action="/cosign.cgi" method="post" name="kerberos">
+	<table border="0" cellspacing="0" cellpadding="0"> 
+		<tr>
+		<input type="hidden" name="ref" value="" />
+		<td>Prihlasovacie meno:</td><td><input type="text" name="login"></td>		
+<!--		<td>Heslo:</td><td><input type="password" name="krbpwd"></td> -->
+		<td>Heslo:</td><td><input type="password" name="password"></td>
+		</tr><tr><td><input type="submit"
+		value="Prihlásiť"></td>
+		</tr>
+	</table> 
+	</form>
+	
+	<script language="javascript">
+	<!--
+	document.kerberos.login.focus()
+	//-->
+	</script>
+	
+<!--
+
+	<form action="/cosign.cgi" method="post" name="l1pass">		
+	<table border="0" cellspacing="0" cellpadding="0"> 
+		<tr>
+		<input type="hidden" name="ref" value="" />
+		<td>Prihlasovacie meno:</td><td><input type="text" name="login"></td>
+		
+		<td>Heslo:</td><td><input type="password" name="l1pwd"></td>
+		</tr><tr><td><input type="submit"
+		value="Prihlásiť"></td>
+		</tr>
+	</table> 
+	</form>
+-->
+
+        </div><!-- #content_in -->
+       </div><!-- #content -->
+       <div class="clear"></div>	
+       <div id="footer">
+        <div id="footer_in">
+         <img id="bottom_left" src="/css/bottom_left.jpg" alt="" />
+         <img id="bottom_right" src="/css/bottom_right.jpg" alt="" />	
+         <div id="copyright">
+          Copyright &copy; Univerzita Komenského v Bratislave, 2007
+         </div>
+        </div><!-- #footer_in -->
+       </div><!-- #footer -->
+      </div><!-- #container2 -->
+     </div><!-- #container1 -->
+    </div><!-- #container -->
+   </div><!-- #body -->
+  </body>
+ </html>

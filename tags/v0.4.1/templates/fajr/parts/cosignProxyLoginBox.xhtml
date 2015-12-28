@@ -1,0 +1,19 @@
+<div class="span-14 prepend-1 last">
+  {# Cosign proxy needs GET method! #}
+  <form method="get" action="fajr.php">
+    <fieldset class="login-box">
+      <input type="hidden" name="serverName" value="{{ currentServer.serverName }}">
+      <input type="hidden" name="loginType" value="cosignproxy" />
+      <legend>Prihlásenie do {{ currentServer.serverName }} </legend>
+      <div>
+        <div class="velkyDisclaimer">
+          {% include "parts/disclaimer.xhtml" %}
+        </div>
+        <br/>
+        <button type="submit" name="submit">
+          Súhlasím a prihlásiť
+        </button>
+      </div>
+    </fieldset>
+  </form>
+</div>

@@ -1,0 +1,27 @@
+{##
+ # Contains all stylesheets that should be loaded
+ #
+ # @copyright  Copyright (c) 2010-2011 The Fajr authors (see AUTHORS).
+ #             Use of this source code is governed by a MIT license that can be
+ #             found in the LICENSE file in the project root directory.
+ # @author     TODO
+ #}
+{# blueprint #}
+<link rel="stylesheet" href="css/third_party/blueprint/screen.css"
+    type="text/css" media="screen, projection" />
+<link rel="stylesheet" href="css/third_party/blueprint/plugins/buttons/screen.css"
+    type="text/css" media="screen, projection" />
+<link rel="stylesheet" href="css/third_party/blueprint/print.css"
+    type="text/css" media="print" />
+<!--[if lt IE 8]><link rel="stylesheet" href="css/third_party/blueprint/ie.css"
+    type="text/css" media="screen, projection" /><![endif]-->
+{# nase css #}
+<link rel="stylesheet" href="css/fajr/main_page.css" type="text/css" media="screen, projection" />
+<link rel="stylesheet" href="css/fajr/collapsible.css" type="text/css" media="screen, projection" />
+<link rel="stylesheet" href="css/fajr/tables.css" type="text/css" media="screen, projection" />
+<link rel="stylesheet" href="css/fajr/tabs.css" type="text/css" media="screen, projection" />
+<link rel="stylesheet" href="css/fajr/custom.css" type="text/css" media="screen, projection" />
+<link rel="stylesheet" href="css/fajr/customprint.css" type="text/css" media="print" />
+{% if trace %}
+  <link rel="stylesheet" href="css/fajr/trace.css" type="text/css" media="screen, projection" />
+{% endif %}

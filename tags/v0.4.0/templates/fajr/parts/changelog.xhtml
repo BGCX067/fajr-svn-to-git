@@ -1,0 +1,8 @@
+<div class='changelog prepend-1 span-21 last increase-line-height'>
+  <strong>Changelog:</strong>
+  <ul>
+    {% for item in version.changelog  %}
+      <li>{{ item.date }} (verzia {{ item.version }}) - {{ item.description }}</li>
+    {% endfor %}
+  </ul>
+</div>

@@ -1,0 +1,31 @@
+<html id='resultFrameHTML'><head><meta http-equiv='Content-Type' content='text/html; charset=utf-8'></meta>
+<script type='application/javascript'>
+window.parent.Logger_log('Received response', window.parent.Logger_DEBUG);
+
+function webui() { return window.parent.webui; }
+function f() { return window.parent.factory; }
+function dm() { return window.parent.dialogManager; }
+function isResponseIdle(rs) { return webui().lastDoneRequest == rs; }
+
+function main0() {
+if (isResponseIdle(1)) { return; }
+window.parent.Logger_log('start updating components', window.parent.Logger_DEBUG);
+webui().prepareUpdatingDialogs();
+dm().openDialog("VSES206_VyberTerminuHodnoteniaDlg1","Výber termínu hodnotenia","VSES206","VSES007_StudentZoznamPrihlaseniNaSkuskuDlg0",true,false,63,63,755,331,true,true,true,541,331,null,false);
+}
+
+function main() {
+if (isResponseIdle(1)) { return; }
+webui().noteLastDoneRequest(1);
+window.parent.Logger_log('Response main started', window.parent.Logger_DEBUG);
+dm().setActiveDialogName('VSES206_VyberTerminuHodnoteniaDlg1');
+webui().enableApplication();
+}
+
+main0();
+
+</script>
+</head>
+<body onload='main()'>
+</body>
+</html>

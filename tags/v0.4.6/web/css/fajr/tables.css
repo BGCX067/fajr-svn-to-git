@@ -1,0 +1,80 @@
+table {
+  margin: 2px;
+  padding-right: 5px;
+}
+
+tr {
+  padding: 5px;
+  margin: 5px;
+}
+
+/* table headers */
+thead th {
+  background-color:#b3c9ef;
+}
+
+th.forwardSort, th.reverseSort { 
+  background-color: yellow;
+}
+
+/* table rows */
+td,th {
+  border-bottom: 1px solid #999;
+}
+
+tr:hover {
+  background-color: #fdc;
+}
+
+tr:nth-child(even) {
+  background-color: #F0F8FF;
+}
+
+tr.selected {background-color:yellow;}
+
+tr.terminold {
+  color:gray;
+}
+
+tr.terminmozeodhlasit {
+  color:green;
+}
+
+tr.terminnemozeodhlasit {
+  color: orange;
+}
+
+tr.terminodhlaseny {
+  color: #aaa;
+}
+
+tr.leto {
+  background-color: #FFFFD0;
+}
+
+tr.leto:nth-child(even) {
+  background-color: #FFFFC2;
+}
+
+tr.zima {
+  background-color: #E0E0FF;
+}
+
+tr.zima:nth-child(even) {
+  background-color: #D1D1FF;
+}
+
+tr.rok {
+  background-color: #E0FFE0;
+}
+
+tr.rok:nth-child(even) {
+  background-color: #D1FFD1;
+}
+
+/* table footer */
+
+tfoot tr {
+  background-color:#efefef;
+  font-style: italic;
+}

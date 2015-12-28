@@ -1,0 +1,37 @@
+{% macro zoznamPrihlasenych(prihlaseni) %}
+{% import "macros/decorators.xhtml" as decorators %}
+{% import "macros/table.xhtml" as table %}
+
+  {% if prihlaseni %}
+
+    {% set head %}
+      {{ table.column("Dátum prihlásenia") }}
+      {{ table.column("Plné meno") }}
+      {{ table.column("Skratka študijného programu") }}
+      {{ table.column("Ročník") }}
+    {% endset %}
+
+    {% set body %}
+      {% for row in prihlaseni %}
+        {{ table.row(none, false) }}
+          <td>{{ row.datumPrihlas }}</td>
+          <td>{{ row.plneMeno }}</td>
+          <td>{{ row.skratka }}</td>
+          <td>{{ row.rocnik }}</td>
+        {{ table.endrow() }}
+      {% endfor %}
+    {% endset %}
+
+    {% set title %}
+      <h2>Zoznam prihlásených na vybratý termín</h2>
+    {% endset %}
+
+    {% set tableHTML %}
+    {{ decorators.table(none, head, body, none, prihlaseni|length == 0) }}
+    {% endset %}
+
+    {{ decorators.collapsible(title, tableHTML, false) }}
+
+  {% endif %}
+
+{% endmacro %}

@@ -1,0 +1,29 @@
+<?xml version="1.0"?>
+<ruleset name="Fajr">
+ <description>The Fajr coding standard.</description>
+
+ <rule ref="Generic.ControlStructures.InlineControlStructure"/>
+ <rule ref="Generic.Formatting.DisallowMultipleStatements"/>
+ <rule ref="Generic.Formatting.SpaceAfterCast"/>
+ <rule ref="Generic.Functions.OpeningFunctionBraceBsdAllman"/>
+ <rule ref="Generic.Metrics.CyclomaticComplexity"/>
+ <rule ref="Generic.Metrics.NestingLevel"/>
+ <rule ref="Generic.NamingConventions.UpperCaseConstantName"/>
+ <rule ref="Generic.PHP.DisallowShortOpenTag.php"/>
+ <rule ref="Generic.PHP.ForbiddenFunctions.php"/>
+ <rule ref="Generic.PHP.LowerCaseConstant.php"/>
+ <rule ref="Generic.PHP.NoSilencedErrors.php"/>
+ <rule ref="Generic.WhiteSpace.DisallowTabIndent"/>
+ <rule ref="Generic.Files.LineEndings"/>
+ <rule ref="PEAR">
+   <exclude name="Generic.Files.LineLength"/>
+   <exclude name="Generic.WhiteSpace.ScopeIndent"/>
+   <exclude name="PEAR.Commenting.FileComment"/>
+   <exclude name="PEAR.Commenting.ClassComment"/>
+   <exclude name="PEAR.NamingConventions.ValidFunctionName"/>
+   <exclude name="PEAR.NamingConventions.ValidVariableName"/>
+   <exclude name="PEAR.WhiteSpace.ScopeIndent"/>
+ </rule>
+ <rule ref="Squiz.Functions.GlobalFunction"/>
+
+</ruleset>

@@ -1,0 +1,62 @@
+{% extends "layout/main.xhtml" %}
+{% block title %}Vitajte{% endblock %}
+{% block content %}
+{% import "macros/utils.xhtml" as utils %}
+{% block loginBox %}
+  {# loginBox #}
+  {% include "parts/passwordLoginBox.xhtml" %}
+{% endblock %}
+<hr class="space" />
+
+{# warnings #}
+<div class="span-18 prepend-1 last increase-line-height">
+  <p>
+    Vitajte pred bránou do aplikácie FAJR.
+    Snahou tejto miniaplikácie je poskytovať najčastejšie používané funkcie
+    {{ utils.instanceLink(instanceName, serverName) }} a to jednoducho, rýchlo,
+    bez zbytočných klikaní a na všetkých browseroch.
+  </p>
+  <p>
+    Táto aplikácia nerobí nič zlé (aspoň jej autori o tom nevedia).
+    Ale ak jej aj tak nedôverujete, môžete si ju rozbehnúť u seba.
+    Stačí vám k tomu webserver, PHP a jej
+    <a href="http://code.google.com/p/fajr/source/checkout">zdrojové kódy</a>
+    (pre viac informácií viď <a href="http://code.google.com/p/fajr/source/browse/trunk/README">README</a>).
+    Ak jej ani tak nedôverujete, používajte AIS ;-).
+  </p>
+  {% block info %}
+    {% include "parts/passwordInfo.xhtml" %}
+  {% endblock %}
+</div>
+
+{# terms #}
+{% url termsOfUse for ['action': 'termsOfUse', '_file': 'index.php'] %}
+<div class="span-21 prepend-1 last increase-line-height">
+  <p>
+    Prihlásením do systému Fajr súhlasíte s
+    <a href="{{ termsOfUse }}">Podmienkami používania</a>
+  </p>
+</div>
+
+{# credits #}
+<div class="span-21 prepend-1 last increase-line-height">
+  <p>
+    Stránka mohla vzniknúť vďaka
+    <a href="http://www.prototypejs.org/">Prototype</a>,
+    <a href="http://www.blueprintcss.org/">Blueprint</a>,
+    <a href="http://www.frequency-decoder.com/2006/09/16/unobtrusive-table-sort-script-revisited">Unobtrusive Table Sort Script</a>,
+    <a href="http://www.famfamfam.com/lab/icons/silk/">Silk icons</a>,
+    <a href="http://www.twig-project.org/">Twig</a> a
+    <a href="http://components.symfony-project.org/dependency-injection/">Symfony Dependency Injection</a>.
+  </p>
+</div>
+
+{# version #}
+<div class='version prepend-1 span-21 last increase-line-height'>
+  <strong>Verzia fajru:</strong> {{ version.versionString }}
+</div>
+
+{# changelog #}
+{% include "parts/changelog.xhtml" %}
+
+{% endblock %}
